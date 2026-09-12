@@ -1,0 +1,302 @@
+{
+  "evaluations": [
+    {
+      "point_id": "目前状态窗口",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "40",
+          "url": "https://news.qq.com/rain/a/20260526A068FB00",
+          "domain": "qq.com",
+          "quote": "2026\n年,每个前沿模型都在宣传,至少提供\n100\n万\nToken\n的上下文窗口。但实际上,几乎没有一个模型能够很好地利用所有这些信息。在\nMRCR\nv2(多参考检索基准测试实验室报告)中,最佳模型是\nGPT-5.5,得分为\n74.0%。其他模型如\nClaude\nOpus\n4.7\n得分为\n32.2%,被远远地抛在了后面。",
+          "supports": "目前状态窗口的局部事实：但实际上,几乎没有一个模型能够很好地利用所有这些信息。"
+        },
+        {
+          "web_id": "58",
+          "url": "https://arxiv.org/abs/2602.05258",
+          "domain": "arxiv.org",
+          "quote": "arXiv:2602.05258(cs)\n[Submitted on 5 Feb 2026]\nTitle: CoPE: Clipped RoPE as A Scalable Free Lunch for Long Context LLMs\nAuthors: Haoran Li,Sucheng Ren,Alan Yuille,Feng Wang\nAbstract: Rotary Positional Embedding (RoPE) is a key component of context scaling in Large Language Models (LLMs). While various methods have been proposed to adapt RoPE to longer contexts, their guiding principles generally fall into two categories: (1) out-of-distribution (OOD) mitigation, which scales RoPE frequencies to accommodate unseen positions, and (2) Semantic Modeling, which posits that the attention scores computed with RoPE should always prioritize semantically similar tokens. In this work, we unify these seemingly distinct objectives through a minimalist in",
+          "supports": "目前状态窗口的局部事实：While various methods have been proposed to adapt RoPE to longer contexts, their guiding principles generally fall into two categories: (1) out-of-distribution (OOD) mitigation, which scales RoPE freq…（其余条件见完整引文）"
+        }
+      ],
+      "source_domains": [
+        "arxiv.org",
+        "qq.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "有2026年模型和论文，但未逐一说明入选版本及评测截至查询日的公开或可用状态。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有2个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补准确版本对应的状态日期，旧榜单不能代表当前能力。"
+      ]
+    },
+    {
+      "point_id": "主流模型集合",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "40",
+          "url": "https://news.qq.com/rain/a/20260526A068FB00",
+          "domain": "qq.com",
+          "quote": "2026\n年,每个前沿模型都在宣传,至少提供\n100\n万\nToken\n的上下文窗口。但实际上,几乎没有一个模型能够很好地利用所有这些信息。在\nMRCR\nv2(多参考检索基准测试实验室报告)中,最佳模型是\nGPT-5.5,得分为\n74.0%。其他模型如\nClaude\nOpus\n4.7\n得分为\n32.2%,被远远地抛在了后面。目前,100\n万\nToekn\n似乎是主要前沿实验室提供的最大上下文窗口。",
+          "supports": "主流模型集合的局部事实：但实际上,几乎没有一个模型能够很好地利用所有这些信息。"
+        },
+        {
+          "web_id": "20",
+          "url": "https://www.php.cn/faq/2484452.html",
+          "domain": "php.cn",
+          "quote": "例如GPT-4o标称128K窗口,意味着其单次前向传播最多能对128,000个Token执行完整注意力计算;而Claude\n3.5\nSonnet的200K窗口则依赖MRCR\nv2优化的检索路径,在同等长度下维持更高信息保真度。",
+          "supports": "主流模型集合的局部事实：例如GPT-4o标称128K窗口,意味着其单次前向传播最多能对128,000个Token执行完整注意力计算;而Claude"
+        }
+      ],
+      "source_domains": [
+        "php.cn",
+        "qq.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "前沿模型和版本名称存在，但主流筛选与全体型号配置映射不完整。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有2个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补主流纳入依据、模型列表和各上下文配置。"
+      ]
+    },
+    {
+      "point_id": "长上下文范围",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "20",
+          "url": "https://www.php.cn/faq/2484452.html",
+          "domain": "php.cn",
+          "quote": "大模型上下文窗口是指模型在单次推理过程中能够处理的最大输入文本长度,以Token为单位计量,它定义了模型可同时“看见”并参与计算的全部信息范围。当用户向模型提供提示词、历史对话、文档片段或工具输出时,这些内容共同占用该窗口;一旦超出上限,早期内容将被自动覆盖或截断。以下是理解这一概念的关键事实:\n一、上下文窗口的技术本质\n上下文窗口是Transformer架构中注意力机制的硬性约束,直接关联位置编码的设计边界与KV缓存的显存容量。它并非模型“记忆”的延伸,而是当前推理步中可被注意力权重显式访问的序列长度上限。例如GPT-4o标称128K窗口,意味着其单次前向传播最多能对128,000个Token执行完整注意力计算;而Claude\n3.5\nSonnet的200K窗口则依赖MRCR\nv2优化的检索路径,在同等长度下维持更高信息保真度。\n1、位置编码决定模型能否“定位”长序列中的任意位置:RoPE、NTK-aware插值、YaRN等方法通过调整旋转基频或插值粒度,使未训练过的长位置仍生成合理角度偏移。\n2、KV缓存占用随窗口长度线性增长:128K窗口下,仅键值对存储就需约2GB显存(以FP16精度估算),远超常规消费级GPU承载能力。\n3、注意力计算复杂度为O(n2):当n从8K升至128K,理论计算量激增256倍,必须依赖局部注意力、滑动窗口或哈希分块等稀疏化手段降本。",
+          "supports": "长上下文范围的局部事实：1、位置编码决定模型能否“定位”长序列中的任意位置:RoPE、NTK-aware插值、YaRN等方法通过调整旋转基频或插值粒度,使未训练过的长位置仍生成合理角度偏移。"
+        },
+        {
+          "web_id": "117",
+          "url": "https://www.huxiu.com/article/3099684.html",
+          "domain": "huxiu.com",
+          "quote": "新基准名为RULER,包含检索、多跳追踪、聚合、问答四大类共13项任务。RULER定义了“有效上下文长度”,即模型能保持与Llama-7B基线在4K长度下同等性能的最大长度。",
+          "supports": "长上下文范围的局部事实：RULER定义了“有效上下文长度”,即模型能保持与Llama-7B基线在4K长度下同等性能的最大长度。"
+        },
+        {
+          "web_id": "114",
+          "url": "https://arxiv.org/abs/2409.02076",
+          "domain": "arxiv.org",
+          "quote": "Abstract: Current benchmarks like Needle-in-a-Haystack (NIAH), Ruler, and Needlebench focus on models' ability to understand long-context input sequences but fail to capture a critical dimension: the generation of high-quality long-form text.",
+          "supports": "长上下文范围的局部事实：Abstract: Current benchmarks like Needle-in-a-Haystack (NIAH), Ruler, and Needlebench focus on models' ability to understand long-context input sequences but fail to capture a critical dimension: the …（其余条件见完整引文）"
+        }
+      ],
+      "source_domains": [
+        "arxiv.org",
+        "huxiu.com",
+        "php.cn"
+      ],
+      "independent_source_count": 3,
+      "coverage_reason": "明确token窗口与有效任务能力差异，但未完整交代共享的输入输出预算及纳入范围。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有3个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补输入输出预算的关系，不能只按最大接收长度定义能力。"
+      ]
+    },
+    {
+      "point_id": "公开评测限定",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "40",
+          "url": "https://news.qq.com/rain/a/20260526A068FB00",
+          "domain": "qq.com",
+          "quote": "在\nMRCR\nv2(多参考检索基准测试实验室报告)中,最佳模型是\nGPT-5.5,得分为\n74.0%。其他模型如\nClaude\nOpus\n4.7\n得分为\n32.2%,被远远地抛在了后面。",
+          "supports": "公开评测限定的局部事实：v2(多参考检索基准测试实验室报告)中,最佳模型是"
+        },
+        {
+          "web_id": "40",
+          "url": "https://news.qq.com/rain/a/20260526A068FB00",
+          "domain": "qq.com",
+          "quote": "Subquadratic\n是一家位于迈阿密的初创公司。他们在\n5\n月\n5\n日推出了其首个模型——一个能够处理\n1200\n万\nToken\n窗口的模型,并声称它可以绕过所有这些问题。更重要的是,该公司表示,按照计划,他们将很快提供具有\n5000\n万上下文窗口的模型。该公司拥有\n11\n名博士研究员。他们认为,其\nSubquadratic\nSelective\nAttention(SSA)架构在计算和内存方面均与上下文长度呈线性增长关系。该公司表示,在\n100\n万\nToken\n的规模下,其运行速度比密集注意力快\n52\n倍;在\n1200\n万\nToken\n的“大海捞针”检索任务中,准确率达到\n92.1%。这一上下文长度是当前任何前沿模型都难以企及的;而且,其模型在\nMRCR\nv2\n测试中获得了\n83\n分,比\nOpenAI\n高出\n9\n分。",
+          "supports": "公开评测限定的局部事实：Attention(SSA)架构在计算和内存方面均与上下文长度呈线性增长关系。"
+        }
+      ],
+      "source_domains": [
+        "qq.com"
+      ],
+      "independent_source_count": 1,
+      "coverage_reason": "有公开报道的具体测试分数与模型，但不同成绩的公布日期及测试记录未逐项齐备。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有1个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补各项结果公布时间和对应记录。"
+      ]
+    },
+    {
+      "point_id": "技术路线与机制",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "20",
+          "url": "https://www.php.cn/faq/2484452.html",
+          "domain": "php.cn",
+          "quote": "1、位置编码决定模型能否“定位”长序列中的任意位置:RoPE、NTK-aware插值、YaRN等方法通过调整旋转基频或插值粒度,使未训练过的长位置仍生成合理角度偏移。\n2、KV缓存占用随窗口长度线性增长:128K窗口下,仅键值对存储就需约2GB显存(以FP16精度估算),远超常规消费级GPU承载能力。\n3、注意力计算复杂度为O(n2):当n从8K升至128K,理论计算量激增256倍,必须依赖局部注意力、滑动窗口或哈希分块等稀疏化手段降本。",
+          "supports": "技术路线与机制的局部事实：1、位置编码决定模型能否“定位”长序列中的任意位置:RoPE、NTK-aware插值、YaRN等方法通过调整旋转基频或插值粒度,使未训练过的长位置仍生成合理角度偏移。"
+        },
+        {
+          "web_id": "58",
+          "url": "https://arxiv.org/abs/2602.05258",
+          "domain": "arxiv.org",
+          "quote": "Abstract: Rotary Positional Embedding (RoPE) is a key component of context scaling in Large Language Models (LLMs). While various methods have been proposed to adapt RoPE to longer contexts, their guiding principles generally fall into two categories: (1) out-of-distribution (OOD) mitigation, which scales RoPE frequencies to accommodate unseen positions, and (2) Semantic Modeling, which posits that the attention scores computed with RoPE should always prioritize semantically similar tokens. In this work, we unify these seemingly distinct objectives through a minimalist in",
+          "supports": "技术路线与机制的局部事实：While various methods have been proposed to adapt RoPE to longer contexts, their guiding principles generally fall into two categories: (1) out-of-distribution (OOD) mitigation, which scales RoPE freq…（其余条件见完整引文）"
+        },
+        {
+          "web_id": "40",
+          "url": "https://news.qq.com/rain/a/20260526A068FB00",
+          "domain": "qq.com",
+          "quote": "他们认为,其\nSubquadratic\nSelective\nAttention(SSA)架构在计算和内存方面均与上下文长度呈线性增长关系。该公司表示,在\n100\n万\nToken\n的规模下,其运行速度比密集注意力快\n52\n倍;在\n1200\n万\nToken\n的“大海捞针”检索任务中,准确率达到\n92.1%。",
+          "supports": "技术路线与机制的局部事实：Attention(SSA)架构在计算和内存方面均与上下文长度呈线性增长关系。"
+        }
+      ],
+      "source_domains": [
+        "arxiv.org",
+        "php.cn",
+        "qq.com"
+      ],
+      "independent_source_count": 3,
+      "coverage_reason": "位置扩展与注意力降本机制有所描述，但部分论文摘要截断，各主要路线与公开实现未完整关联。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有3个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补各路线实现机制和采用模型，不能以路线名代替机制。"
+      ]
+    },
+    {
+      "point_id": "评测条件与指标",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "62",
+          "url": "https://www.youleyou.com/terms/829.html",
+          "domain": "youleyou.com",
+          "quote": "将任务分为四大类:单文档问答(如HotpotQA)、多文档问答(如MuSiQue)、摘要生成(如GovReport)和Few-Shot学习(如TREC)。每个任务都提供了严格的数据切分和评估指标,比如用精确匹配、F1分数或ROUGE分数量化模型输出质量。\n评测时,模型需要在给定长文本(通常几千到数万token)中定位并利用关键信息。LongBench通过控制上下文长度、答案位置和干扰信息密度,全面考察模型的长程依赖建模能力、记忆衰减曲线以及对边界信息的敏感度。",
+          "supports": "评测条件与指标的局部事实：将任务分为四大类:单文档问答(如HotpotQA)、多文档问答(如MuSiQue)、摘要生成(如GovReport)和Few-Shot学习(如TREC)。"
+        },
+        {
+          "web_id": "117",
+          "url": "https://www.huxiu.com/article/3099684.html",
+          "domain": "huxiu.com",
+          "quote": "新基准名为RULER,包含检索、多跳追踪、聚合、问答四大类共13项任务。RULER定义了“有效上下文长度”,即模型能保持与Llama-7B基线在4K长度下同等性能的最大长度。",
+          "supports": "评测条件与指标的局部事实：RULER定义了“有效上下文长度”,即模型能保持与Llama-7B基线在4K长度下同等性能的最大长度。"
+        },
+        {
+          "web_id": "40",
+          "url": "https://news.qq.com/rain/a/20260526A068FB00",
+          "domain": "qq.com",
+          "quote": "该公司表示,在\n100\n万\nToken\n的规模下,其运行速度比密集注意力快\n52\n倍;在\n1200\n万\nToken\n的“大海捞针”检索任务中,准确率达到\n92.1%。这一上下文长度是当前任何前沿模型都难以企及的;而且,其模型在\nMRCR\nv2\n测试中获得了\n83\n分,比\nOpenAI\n高出\n9\n分。",
+          "supports": "评测条件与指标的局部事实：这一上下文长度是当前任何前沿模型都难以企及的;而且,其模型在"
+        }
+      ],
+      "source_domains": [
+        "huxiu.com",
+        "qq.com",
+        "youleyou.com"
+      ],
+      "independent_source_count": 3,
+      "coverage_reason": "有任务指标及少量测试长度，但不同分数没有成套模型配置和输入输出设置。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有3个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补每组分数的实际测试长度、版本和推理设置。"
+      ]
+    },
+    {
+      "point_id": "逐模型公开成绩",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "40",
+          "url": "https://news.qq.com/rain/a/20260526A068FB00",
+          "domain": "qq.com",
+          "quote": "在\nMRCR\nv2(多参考检索基准测试实验室报告)中,最佳模型是\nGPT-5.5,得分为\n74.0%。其他模型如\nClaude\nOpus\n4.7\n得分为\n32.2%,被远远地抛在了后面。",
+          "supports": "逐模型公开成绩的局部事实：v2(多参考检索基准测试实验室报告)中,最佳模型是"
+        },
+        {
+          "web_id": "40",
+          "url": "https://news.qq.com/rain/a/20260526A068FB00",
+          "domain": "qq.com",
+          "quote": "该公司表示,在\n100\n万\nToken\n的规模下,其运行速度比密集注意力快\n52\n倍;在\n1200\n万\nToken\n的“大海捞针”检索任务中,准确率达到\n92.1%。这一上下文长度是当前任何前沿模型都难以企及的;而且,其模型在\nMRCR\nv2\n测试中获得了\n83\n分,比\nOpenAI\n高出\n9\n分。",
+          "supports": "逐模型公开成绩的局部事实：这一上下文长度是当前任何前沿模型都难以企及的;而且,其模型在"
+        }
+      ],
+      "source_domains": [
+        "qq.com"
+      ],
+      "independent_source_count": 1,
+      "coverage_reason": "有MRCR与捞针数值，但各入选模型的测试长度与条件对应不齐。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有1个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补逐模型成绩表和测试条件，不能用窗口标称长度填空。"
+      ]
+    },
+    {
+      "point_id": "能力适用边界",
+      "coverage": "direct",
+      "coverage_score": 2,
+      "support": 3,
+      "evidence": [
+        {
+          "web_id": "20",
+          "url": "https://www.php.cn/faq/2484452.html",
+          "domain": "php.cn",
+          "quote": "1、位置编码决定模型能否“定位”长序列中的任意位置:RoPE、NTK-aware插值、YaRN等方法通过调整旋转基频或插值粒度,使未训练过的长位置仍生成合理角度偏移。\n2、KV缓存占用随窗口长度线性增长:128K窗口下,仅键值对存储就需约2GB显存(以FP16精度估算),远超常规消费级GPU承载能力。\n3、注意力计算复杂度为O(n2):当n从8K升至128K,理论计算量激增256倍,必须依赖局部注意力、滑动窗口或哈希分块等稀疏化手段降本。",
+          "supports": "能力适用边界的直接事实：1、位置编码决定模型能否“定位”长序列中的任意位置:RoPE、NTK-aware插值、YaRN等方法通过调整旋转基频或插值粒度,使未训练过的长位置仍生成合理角度偏移。"
+        },
+        {
+          "web_id": "93",
+          "url": "https://arxiv.org/abs/2507.22411",
+          "domain": "arxiv.org",
+          "quote": "Abstract: Recent reports suggest that LLMs can handle increasingly long contexts. However, many existing benchmarks for context understanding embed substantial query-irrelevant content, which shifts evaluation toward retrieving relevant snippets rather than fully integrating all provided information. Under this setting, we view that current benchmarks can overestimate true context-understanding ability of LLMs.",
+          "supports": "能力适用边界的直接事实：However, many existing benchmarks for context understanding embed substantial query-irrelevant content, which shifts evaluation toward retrieving relevant snippets rather than fully integrating all pr…（其余条件见完整引文）"
+        },
+        {
+          "web_id": "117",
+          "url": "https://www.huxiu.com/article/3099684.html",
+          "domain": "huxiu.com",
+          "quote": "•  大模型如GPT-4在上下文长度扩展时性能下降明显 • 類 RULER基准包含13项任务,覆盖检索、多跳追踪、聚合、问答等领域 •  训练上下文长度、模型大小和架构对模型性能的影响进行了深入分析 无情戳穿“长上下文”大模型的虚标现象:英伟达新研究发现,包括GPT-4在内的10个大模型,生成达到128k甚至1M上下文长度的都有。 但一番考验下来,在新指标“有效上下文”上缩水严重,能达到32K的都不多。 新基准名为RULER,包含检索、多跳追踪、聚合、问答四大类共13项任务。RULER定义了“有效上下文长度”,即模型能保持与Llama-7B基线在4K长度下同等性能的最大长度。",
+          "supports": "能力适用边界的直接事实：•  大模型如GPT-4在上下文长度扩展时性能下降明显 • 類 RULER基准包含13项任务,覆盖检索、多跳追踪、聚合、问答等领域 •  训练上下文长度、模型大小和架构对模型性能的影响进行了深入分析 无情戳穿“长上下文”大模型的虚标现象:英伟达新研究发现,包括GPT-4在内的10个大模型,生成达到128k甚至1M上下文长度的都有。"
+        }
+      ],
+      "source_domains": [
+        "arxiv.org",
+        "huxiu.com",
+        "php.cn"
+      ],
+      "independent_source_count": 3,
+      "coverage_reason": "KV缓存及注意力的资源增长、检索型基准的能力高估与有效长度下降均关联具体机制或评测。",
+      "support_reason": "逐字引文直接支撑该项要求；按主域名和稿件去重后有3个独立来源。",
+      "inference_or_gaps": []
+    }
+  ],
+  "summary": {
+    "point_count": 8,
+    "coverage_counts": {
+      "direct": 1,
+      "inferred": 7,
+      "none": 0
+    },
+    "coverage_total": 9,
+    "coverage_average": 1.13,
+    "coverage_max": 2,
+    "support_total": 10,
+    "support_average": 1.25,
+    "support_max": 3
+  }
+}

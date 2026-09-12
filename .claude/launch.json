@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "show-trajectory",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["show_trajectory/server.py", "--no-browser"],
+      "port": 8765
+    }
+  ]
+}

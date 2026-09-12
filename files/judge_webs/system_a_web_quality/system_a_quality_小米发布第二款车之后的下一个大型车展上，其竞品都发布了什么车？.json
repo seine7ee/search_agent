@@ -1,0 +1,297 @@
+{
+  "evaluations": [
+    {
+      "point_id": "第二款车与发布时间",
+      "coverage": "direct",
+      "coverage_score": 2,
+      "support": 3,
+      "evidence": [
+        {
+          "web_id": "8",
+          "url": "https://www.bjnews.com.cn/detail/1733756659168564.html",
+          "domain": "bjnews.com.cn",
+          "quote": "新京报贝壳财经讯(记者陈维城)12月9日晚间,小米汽车官方微博发布动态显示,小米汽车第二款车型为SUV,定名为“小米YU7”,预计2025年6-7月正式上市。",
+          "supports": "第二款车与发布时间的直接事实：新京报贝壳财经讯(记者陈维城)12月9日晚间,小米汽车官方微博发布动态显示,小米汽车第二款车型为SUV,定名为“小米YU7”,预计2025年6-7月正式上市。"
+        },
+        {
+          "web_id": "25",
+          "url": "http://km.bendibao.com/news/2025521/96170.shtm",
+          "domain": "bendibao.com",
+          "quote": "【导语】:小米汽车正式公布了小米首款\nSUV\n车型「YU7」御7的发布时间为5月22日晚7点。\n2025年小米yu7发布会最新消息\n|\n5月21日\n小米汽车正式公布了小米首款\nSUV\n车型「YU7」御7的发布时间为5月22日晚7点。\n同时发布的还有全新手机SoC芯片「玄戒O1」、小米15SPro、小米平板7Ultra。\n介绍\n小米YU7是小米汽车旗下第二款量产车,定位中大型轿跑SUV,预计将于2025年6月-7月上市,市场预计售价在30-40万元之间,上市后将与特斯拉ModelY竞争。",
+          "supports": "第二款车与发布时间的直接事实：小米YU7是小米汽车旗下第二款量产车,定位中大型轿跑SUV,预计将于2025年6月-7月上市,市场预计售价在30-40万元之间,上市后将与特斯拉ModelY竞争。"
+        },
+        {
+          "web_id": "24",
+          "url": "https://smartcar.cnmo.com/news/794033.html",
+          "domain": "cnmo.com",
+          "quote": "【CNMO科技消息】2025年6月26日晚间,经过多轮预热和宣传,小米旗下首款纯电动SUV——小米YU7正式上市。",
+          "supports": "第二款车与发布时间的直接事实：【CNMO科技消息】2025年6月26日晚间,经过多轮预热和宣传,小米旗下首款纯电动SUV——小米YU7正式上市。"
+        }
+      ],
+      "source_domains": [
+        "bendibao.com",
+        "bjnews.com.cn",
+        "cnmo.com"
+      ],
+      "independent_source_count": 3,
+      "coverage_reason": "第二款车型身份、5月发布及6月上市事件可按明确车型名关联，且可区分发布和上市。",
+      "support_reason": "逐字引文直接支撑该项要求；按主域名和稿件去重后有3个独立来源。",
+      "inference_or_gaps": []
+    },
+    {
+      "point_id": "大型车展范围",
+      "coverage": "direct",
+      "coverage_score": 2,
+      "support": 3,
+      "evidence": [
+        {
+          "web_id": "41",
+          "url": "http://sz.bendibao.com/xiuxian/2022516/889641.htm",
+          "domain": "bendibao.com",
+          "quote": "【导语】:2025年粤港澳大湾区车展将于2025年6月在深圳国际会展中心(宝安)如期举办。\n2025粤港澳大湾区车展时间\n具体时间\n2025年5月31日(媒体日),10:00--17:00(16:00之后停止检票入场)\n2025年6月1日一6月8日,09:00--17:00(16:00之后停止检票入场)\n提示\n1、最后一天会提前半小时闭馆,请您做好出行计划\n2、媒体日普通观众也可以凭通票入场观展\n图文无关\n图源:酷吧\n本届车展以“面向科技、面向未来、面向市场”为主题,汇聚112家整车品牌、1039款车型及50场新车发布会,呈现全球、全国&华南首发车型、前沿技术与产业生态协同的新图景,为深圳加速打造“新一代世界一流汽车城”注入强劲动能。",
+          "supports": "大型车展范围的直接事实：本届车展以“面向科技、面向未来、面向市场”为主题,汇聚112家整车品牌、1039款车型及50场新车发布会,呈现全球、全国&华南首发车型、前沿技术与产业生态协同的新图景,为深圳加速打造“新一代世界一流汽车城”注入强劲动能。"
+        },
+        {
+          "web_id": "46",
+          "url": "https://news.qq.com/rain/a/20250508A0980F00",
+          "domain": "qq.com",
+          "quote": "作为西部地区规模最大、规格最高的年度汽车盛会,自\n1998\n年创办以来,成都车展已成为中国四大\nA\n级车展之一(IT之家注:北京、上海、广州、成都)。",
+          "supports": "大型车展范围的直接事实：级车展之一(IT之家注:北京、上海、广州、成都)。"
+        }
+      ],
+      "source_domains": [
+        "bendibao.com",
+        "qq.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "大湾区展的品牌车型规模和成都四大A级身份提供大型车展的具体依据。",
+      "support_reason": "逐字引文直接支撑该项要求；按主域名和稿件去重后有2个独立来源。",
+      "inference_or_gaps": []
+    },
+    {
+      "point_id": "发布之后",
+      "coverage": "direct",
+      "coverage_score": 2,
+      "support": 3,
+      "evidence": [
+        {
+          "web_id": "22",
+          "url": "https://www.toutiao.com/article/7507265220360978981/",
+          "domain": "toutiao.com",
+          "quote": "5月22日晚,小米集团董事长雷军在小米15周年战略新品发布会上宣布,小米YU7正式发布,定位",
+          "supports": "发布之后的直接事实：5月22日晚,小米集团董事长雷军在小米15周年战略新品发布会上宣布,小米YU7正式发布,定位"
+        },
+        {
+          "web_id": "41",
+          "url": "http://sz.bendibao.com/xiuxian/2022516/889641.htm",
+          "domain": "bendibao.com",
+          "quote": "2025粤港澳大湾区车展时间\n具体时间\n2025年5月31日(媒体日),10:00--17:00(16:00之后停止检票入场)\n2025年6月1日一6月8日,09:00--17:00(16:00之后停止检票入场)",
+          "supports": "发布之后的直接事实：2025年5月31日(媒体日),10:00--17:00(16:00之后停止检票入场)"
+        },
+        {
+          "web_id": "24",
+          "url": "https://smartcar.cnmo.com/news/794033.html",
+          "domain": "cnmo.com",
+          "quote": "【CNMO科技消息】2025年6月26日晚间,经过多轮预热和宣传,小米旗下首款纯电动SUV——小米YU7正式上市。",
+          "supports": "发布之后的直接事实：【CNMO科技消息】2025年6月26日晚间,经过多轮预热和宣传,小米旗下首款纯电动SUV——小米YU7正式上市。"
+        },
+        {
+          "web_id": "45",
+          "url": "http://cd.bendibao.com/xiuxian/2025512/197649.shtm",
+          "domain": "bendibao.com",
+          "quote": "【导语】:目前,第二十八届成都国际汽车展览会时间、地点已经官宣啦。时间为2025年8月29日\n-\n9月7日(8月29日为媒体日),地点在西博城。",
+          "supports": "发布之后的直接事实：【导语】:目前,第二十八届成都国际汽车展览会时间、地点已经官宣啦。"
+        }
+      ],
+      "source_domains": [
+        "bendibao.com",
+        "cnmo.com",
+        "toutiao.com"
+      ],
+      "independent_source_count": 3,
+      "coverage_reason": "发布时间和候选展会起始日期均已给出，可直接按日期筛选发布之后的活动。",
+      "support_reason": "逐字引文直接支撑该项要求；按主域名和稿件去重后有3个独立来源。",
+      "inference_or_gaps": []
+    },
+    {
+      "point_id": "下一场车展",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "41",
+          "url": "http://sz.bendibao.com/xiuxian/2022516/889641.htm",
+          "domain": "bendibao.com",
+          "quote": "2025粤港澳大湾区车展时间\n具体时间\n2025年5月31日(媒体日),10:00--17:00(16:00之后停止检票入场)\n2025年6月1日一6月8日,09:00--17:00(16:00之后停止检票入场)",
+          "supports": "下一场车展的局部事实：2025年5月31日(媒体日),10:00--17:00(16:00之后停止检票入场)"
+        },
+        {
+          "web_id": "45",
+          "url": "http://cd.bendibao.com/xiuxian/2025512/197649.shtm",
+          "domain": "bendibao.com",
+          "quote": "【导语】:目前,第二十八届成都国际汽车展览会时间、地点已经官宣啦。时间为2025年8月29日\n-\n9月7日(8月29日为媒体日),地点在西博城。",
+          "supports": "下一场车展的局部事实：【导语】:目前,第二十八届成都国际汽车展览会时间、地点已经官宣啦。"
+        }
+      ],
+      "source_domains": [
+        "bendibao.com"
+      ],
+      "independent_source_count": 1,
+      "coverage_reason": "存在多个车展日期，但没有覆盖发布至目标活动全区间且统一大型标准的日程。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有1个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需明确5月发布与6月上市口径及大型范围，再排除更早候选；不能径直把成都定为下一场。"
+      ]
+    },
+    {
+      "point_id": "竞品范围",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "25",
+          "url": "http://km.bendibao.com/news/2025521/96170.shtm",
+          "domain": "bendibao.com",
+          "quote": "小米YU7是小米汽车旗下第二款量产车,定位中大型轿跑SUV,预计将于2025年6月-7月上市,市场预计售价在30-40万元之间,上市后将与特斯拉ModelY竞争。",
+          "supports": "竞品范围的局部事实：小米YU7是小米汽车旗下第二款量产车,定位中大型轿跑SUV,预计将于2025年6月-7月上市,市场预计售价在30-40万元之间,上市后将与特斯拉ModelY竞争。"
+        },
+        {
+          "web_id": "5",
+          "url": "https://chd.in-en.com/html/chd-2441580.shtml",
+          "domain": "in-en.com",
+          "quote": "有汽车博主在社交媒体晒出了一张图片,其中明确显示小米的第二款车型可能为豪华中大型SUV,并且大概率为增程车型,对标理想旗舰L9。",
+          "supports": "竞品范围的局部事实：有汽车博主在社交媒体晒出了一张图片,其中明确显示小米的第二款车型可能为豪华中大型SUV,并且大概率为增程车型,对标理想旗舰L9。"
+        }
+      ],
+      "source_domains": [
+        "bendibao.com",
+        "in-en.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "有Model Y竞争关系，也有另一车型猜测，但不能确定统一竞品集合及品牌扩展边界。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有2个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补齐实际车型口径下的竞品标准、成员及是否纳入品牌其他车型。"
+      ]
+    },
+    {
+      "point_id": "竞争主体限定",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "25",
+          "url": "http://km.bendibao.com/news/2025521/96170.shtm",
+          "domain": "bendibao.com",
+          "quote": "小米YU7是小米汽车旗下第二款量产车,定位中大型轿跑SUV,预计将于2025年6月-7月上市,市场预计售价在30-40万元之间,上市后将与特斯拉ModelY竞争。",
+          "supports": "竞争主体限定的局部事实：小米YU7是小米汽车旗下第二款量产车,定位中大型轿跑SUV,预计将于2025年6月-7月上市,市场预计售价在30-40万元之间,上市后将与特斯拉ModelY竞争。"
+        },
+        {
+          "web_id": "109",
+          "url": "https://new.qq.com/rain/a/20250607A06O9000",
+          "domain": "qq.com",
+          "quote": "6月7日, 2025第二十七届重庆国际汽车展览会(以下简称重庆国际车展)盛大启幕,特斯拉将携最新版人形机器人、赛博越野旅行车、中国制造Model 3与焕新Model Y亮相,展位号为N2馆2T13。",
+          "supports": "竞争主体限定的局部事实：6月7日, 2025第二十七届重庆国际汽车展览会(以下简称重庆国际车展)盛大启幕,特斯拉将携最新版人形机器人、赛博越野旅行车、中国制造Model 3与焕新Model Y亮相,展位号为N2馆2T13。"
+        }
+      ],
+      "source_domains": [
+        "bendibao.com",
+        "qq.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "有特斯拉参展主体和竞争关系，但没有将所有纳入车型发布逐一限制到已明确竞品范围。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有2个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需将主体、竞争关系与相应发布记录逐项关联。"
+      ]
+    },
+    {
+      "point_id": "车展发布事件",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "64",
+          "url": "https://news.yiche.com/hao/wenzhang/103187952/",
+          "domain": "yiche.com",
+          "quote": "2025年8月29日,第二十八届成都国际汽车展览会正式开幕,作为下半年国内首场A级车展,成都车展立足车市“金九银十”前的黄金档期,不仅是全国年中车市的核心舞台,更是中西部地区连接全球汽车产业链的关键平台。",
+          "supports": "车展发布事件的局部事实：2025年8月29日,第二十八届成都国际汽车展览会正式开幕,作为下半年国内首场A级车展,成都车展立足车市“金九银十”前的黄金档期,不仅是全国年中车市的核心舞台,更是中西部地区连接全球汽车产业链的关键平台。"
+        },
+        {
+          "web_id": "64",
+          "url": "https://news.yiche.com/hao/wenzhang/103187952/",
+          "domain": "yiche.com",
+          "quote": "梅赛德斯-奔驰在本届车展上推出全新AMG\nCLE\n53\n4MATIC+敞篷轿跑车,同时带来全新纯电CLA。宝马带来了全新M2\nCS以及全新X3\nM50两款新车,首次亮相国内车展。奥迪则携27款明星车型登场,其中包括一汽奥迪Q6L\ne-tron家族、上汽奥迪A5L\nSportback等。其它品牌新车还包括全新沃尔沃XC70、smart精灵五号EHD、现代帕里斯帝等。",
+          "supports": "车展发布事件的局部事实：其它品牌新车还包括全新沃尔沃XC70、smart精灵五号EHD、现代帕里斯帝等。"
+        },
+        {
+          "web_id": "109",
+          "url": "https://new.qq.com/rain/a/20250607A06O9000",
+          "domain": "qq.com",
+          "quote": "6月7日, 2025第二十七届重庆国际汽车展览会(以下简称重庆国际车展)盛大启幕,特斯拉将携最新版人形机器人、赛博越野旅行车、中国制造Model 3与焕新Model Y亮相,展位号为N2馆2T13。",
+          "supports": "车展发布事件的局部事实：6月7日, 2025第二十七届重庆国际汽车展览会(以下简称重庆国际车展)盛大启幕,特斯拉将携最新版人形机器人、赛博越野旅行车、中国制造Model 3与焕新Model Y亮相,展位号为N2馆2T13。"
+        }
+      ],
+      "source_domains": [
+        "qq.com",
+        "yiche.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "有成都的新车推出及重庆参展记录，但不支持未确定目标车展上的统一发布口径。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有2个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需区分参展、首秀与发布，并补足所选目标车展对应事件。"
+      ]
+    },
+    {
+      "point_id": "发布车型清单",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "64",
+          "url": "https://news.yiche.com/hao/wenzhang/103187952/",
+          "domain": "yiche.com",
+          "quote": "广丰铂智7、全新威兰达、新款锋兰达、\n魏牌全新高山、全新坦克500\nHi4-Z和Hi4-T\n广丰铂智7\n魏牌全新高山\n【2号馆】\n埃安、荣威、名爵、别克、上汽大通、五菱、上汽大众、吉利银河\n重磅新车:\n埃安i60、荣威M7\nDMH、全新MG4、别克至境L7、五菱缤果S、上汽大众朗逸Pro、吉利银河M9",
+          "supports": "发布车型清单的局部事实：DMH、全新MG4、别克至境L7、五菱缤果S、上汽大众朗逸Pro、吉利银河M9"
+        },
+        {
+          "web_id": "25",
+          "url": "http://km.bendibao.com/news/2025521/96170.shtm",
+          "domain": "bendibao.com",
+          "quote": "小米YU7是小米汽车旗下第二款量产车,定位中大型轿跑SUV,预计将于2025年6月-7月上市,市场预计售价在30-40万元之间,上市后将与特斯拉ModelY竞争。",
+          "supports": "发布车型清单的局部事实：小米YU7是小米汽车旗下第二款量产车,定位中大型轿跑SUV,预计将于2025年6月-7月上市,市场预计售价在30-40万元之间,上市后将与特斯拉ModelY竞争。"
+        }
+      ],
+      "source_domains": [
+        "bendibao.com",
+        "yiche.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "新车名单与竞争关系分散，名单不是已确定竞品逐成员的发布清单。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有2个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补齐所有竞品的发布或明确无发布信息。"
+      ]
+    }
+  ],
+  "summary": {
+    "point_count": 8,
+    "coverage_counts": {
+      "direct": 3,
+      "inferred": 5,
+      "none": 0
+    },
+    "coverage_total": 11,
+    "coverage_average": 1.38,
+    "coverage_max": 2,
+    "support_total": 14,
+    "support_average": 1.75,
+    "support_max": 3
+  }
+}

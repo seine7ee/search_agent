@@ -1,0 +1,610 @@
+{
+  "methodology": {
+    "evidence_scope": "仅指定 answer_agent_handoff.webs 保存正文，不访问网页补齐，不使用已有答案或其他轨迹字段。",
+    "prompt_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/web_quality_prompt",
+    "prompt_sha256": "91e65823c427aa7c6669f30b91f190fb18a94d26a7089f909ada72fb6c3841d0",
+    "point_granularity": "逐原始point完整具体要求，不继承闸门停分；缺失的逐成员字段使整项为inferred，不代表缺失事实可推导。",
+    "time_reference": "相对时间以各轨迹文件名运行日为参照；system_a为2026-08-24，system_b为2026-09-04，system_c为2026-08-24（小米为2026-08-26）。",
+    "aggregation": "主比较为7个query等权宏平均；同时报告52个point等权微平均。用未舍入分数汇总，最终四舍五入两位。coverage与support不合成总分。",
+    "support_interpretation": "support仅衡量原文完整支撑及独立来源数量，不额外验证网页陈述在现实中为真。",
+    "paired_sensitivity": "额外对三个系统同时剔除长上下文query后比较6组；此分析不替代含空结果的主评价。"
+  },
+  "results": [
+    {
+      "group": 1,
+      "query": "全球人形机器人量产进展如何，主要厂商的时间表是什么？",
+      "system": "system_a",
+      "points_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/judge_result/judge_web_res_全球人形机器人量产进展如何，主要厂商的时间表是什么？.json",
+      "trajectory_path": "/Users/seinelee/Documents/my_search_agent/batch_trajectories/multi_agent/traj_全球人形机器人量产进展如何，主要厂商的时间表是什么？_2026-08-24_1787541059497.json",
+      "result_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/system_a_web_quality/system_a_quality_全球人形机器人量产进展如何，主要厂商的时间表是什么？.json",
+      "web_count": 131,
+      "summary": {
+        "point_count": 8,
+        "coverage_counts": {
+          "direct": 4,
+          "inferred": 4,
+          "none": 0
+        },
+        "coverage_total": 12,
+        "coverage_average": 1.5,
+        "coverage_max": 2,
+        "support_total": 16,
+        "support_average": 2.0,
+        "support_max": 3
+      }
+    },
+    {
+      "group": 1,
+      "query": "全球人形机器人量产进展如何，主要厂商的时间表是什么？",
+      "system": "system_b",
+      "points_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/judge_result/judge_web_res_全球人形机器人量产进展如何，主要厂商的时间表是什么？.json",
+      "trajectory_path": "/Users/seinelee/Documents/my_search_agent/batch_trajectories/scheme_b/traj_全球人形机器人量产进展如何，主要厂商的时间表是什么？_2026-09-04_1788537318100.json",
+      "result_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/system_b_web_quality/system_b_quality_全球人形机器人量产进展如何，主要厂商的时间表是什么？.json",
+      "web_count": 176,
+      "summary": {
+        "point_count": 8,
+        "coverage_counts": {
+          "direct": 4,
+          "inferred": 4,
+          "none": 0
+        },
+        "coverage_total": 12,
+        "coverage_average": 1.5,
+        "coverage_max": 2,
+        "support_total": 16,
+        "support_average": 2.0,
+        "support_max": 3
+      }
+    },
+    {
+      "group": 1,
+      "query": "全球人形机器人量产进展如何，主要厂商的时间表是什么？",
+      "system": "system_c",
+      "points_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/judge_result/judge_web_res_全球人形机器人量产进展如何，主要厂商的时间表是什么？.json",
+      "trajectory_path": "/Users/seinelee/Documents/my_search_agent/batch_trajectories/single_agent/traj_全球人形机器人量产进展如何，主要厂商的时间表是什么？_2026-08-24_1787535035524.json",
+      "result_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/system_c_web_quality/system_c_quality_全球人形机器人量产进展如何，主要厂商的时间表是什么？.json",
+      "web_count": 47,
+      "summary": {
+        "point_count": 8,
+        "coverage_counts": {
+          "direct": 3,
+          "inferred": 5,
+          "none": 0
+        },
+        "coverage_total": 11,
+        "coverage_average": 1.38,
+        "coverage_max": 2,
+        "support_total": 14,
+        "support_average": 1.75,
+        "support_max": 3
+      }
+    },
+    {
+      "group": 2,
+      "query": "分析近五年全球半导体产业链的关键并购及其影响。",
+      "system": "system_a",
+      "points_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/judge_result/judge_web_res_分析近五年全球半导体产业链的关键并购及其影响。.json",
+      "trajectory_path": "/Users/seinelee/Documents/my_search_agent/batch_trajectories/multi_agent/traj_分析近五年全球半导体产业链的关键并购及其影响。_2026-08-24_1787539207167.json",
+      "result_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/system_a_web_quality/system_a_quality_分析近五年全球半导体产业链的关键并购及其影响。.json",
+      "web_count": 150,
+      "summary": {
+        "point_count": 8,
+        "coverage_counts": {
+          "direct": 3,
+          "inferred": 5,
+          "none": 0
+        },
+        "coverage_total": 11,
+        "coverage_average": 1.38,
+        "coverage_max": 2,
+        "support_total": 14,
+        "support_average": 1.75,
+        "support_max": 3
+      }
+    },
+    {
+      "group": 2,
+      "query": "分析近五年全球半导体产业链的关键并购及其影响。",
+      "system": "system_b",
+      "points_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/judge_result/judge_web_res_分析近五年全球半导体产业链的关键并购及其影响。.json",
+      "trajectory_path": "/Users/seinelee/Documents/my_search_agent/batch_trajectories/scheme_b/traj_分析近五年全球半导体产业链的关键并购及其影响。_2026-09-04_1788537091465.json",
+      "result_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/system_b_web_quality/system_b_quality_分析近五年全球半导体产业链的关键并购及其影响。.json",
+      "web_count": 130,
+      "summary": {
+        "point_count": 8,
+        "coverage_counts": {
+          "direct": 3,
+          "inferred": 5,
+          "none": 0
+        },
+        "coverage_total": 11,
+        "coverage_average": 1.38,
+        "coverage_max": 2,
+        "support_total": 14,
+        "support_average": 1.75,
+        "support_max": 3
+      }
+    },
+    {
+      "group": 2,
+      "query": "分析近五年全球半导体产业链的关键并购及其影响。",
+      "system": "system_c",
+      "points_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/judge_result/judge_web_res_分析近五年全球半导体产业链的关键并购及其影响。.json",
+      "trajectory_path": "/Users/seinelee/Documents/my_search_agent/batch_trajectories/single_agent/traj_分析近五年全球半导体产业链的关键并购及其影响。_2026-08-24_1787534135625.json",
+      "result_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/system_c_web_quality/system_c_quality_分析近五年全球半导体产业链的关键并购及其影响。.json",
+      "web_count": 80,
+      "summary": {
+        "point_count": 8,
+        "coverage_counts": {
+          "direct": 3,
+          "inferred": 5,
+          "none": 0
+        },
+        "coverage_total": 11,
+        "coverage_average": 1.38,
+        "coverage_max": 2,
+        "support_total": 14,
+        "support_average": 1.75,
+        "support_max": 3
+      }
+    },
+    {
+      "group": 3,
+      "query": "梳理生成式 AI 在搜索产品中的主要落地方式和代表性产品。",
+      "system": "system_a",
+      "points_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/judge_result/judge_web_res_梳理生成式 AI 在搜索产品中的主要落地方式和代表性产品。.json",
+      "trajectory_path": "/Users/seinelee/Documents/my_search_agent/batch_trajectories/multi_agent/traj_梳理生成式 AI 在搜索产品中的主要落地方式和代表性产品。_2026-08-24_1787537840987.json",
+      "result_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/system_a_web_quality/system_a_quality_梳理生成式 AI 在搜索产品中的主要落地方式和代表性产品。.json",
+      "web_count": 56,
+      "summary": {
+        "point_count": 5,
+        "coverage_counts": {
+          "direct": 3,
+          "inferred": 2,
+          "none": 0
+        },
+        "coverage_total": 8,
+        "coverage_average": 1.6,
+        "coverage_max": 2,
+        "support_total": 10,
+        "support_average": 2.0,
+        "support_max": 3
+      }
+    },
+    {
+      "group": 3,
+      "query": "梳理生成式 AI 在搜索产品中的主要落地方式和代表性产品。",
+      "system": "system_b",
+      "points_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/judge_result/judge_web_res_梳理生成式 AI 在搜索产品中的主要落地方式和代表性产品。.json",
+      "trajectory_path": "/Users/seinelee/Documents/my_search_agent/batch_trajectories/scheme_b/traj_梳理生成式 AI 在搜索产品中的主要落地方式和代表性产品。_2026-09-04_1788537023916.json",
+      "result_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/system_b_web_quality/system_b_quality_梳理生成式 AI 在搜索产品中的主要落地方式和代表性产品。.json",
+      "web_count": 69,
+      "summary": {
+        "point_count": 5,
+        "coverage_counts": {
+          "direct": 3,
+          "inferred": 2,
+          "none": 0
+        },
+        "coverage_total": 8,
+        "coverage_average": 1.6,
+        "coverage_max": 2,
+        "support_total": 11,
+        "support_average": 2.2,
+        "support_max": 3
+      }
+    },
+    {
+      "group": 3,
+      "query": "梳理生成式 AI 在搜索产品中的主要落地方式和代表性产品。",
+      "system": "system_c",
+      "points_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/judge_result/judge_web_res_梳理生成式 AI 在搜索产品中的主要落地方式和代表性产品。.json",
+      "trajectory_path": "/Users/seinelee/Documents/my_search_agent/batch_trajectories/single_agent/traj_梳理生成式 AI 在搜索产品中的主要落地方式和代表性产品。_2026-08-24_1787533454787.json",
+      "result_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/system_c_web_quality/system_c_quality_梳理生成式 AI 在搜索产品中的主要落地方式和代表性产品。.json",
+      "web_count": 35,
+      "summary": {
+        "point_count": 5,
+        "coverage_counts": {
+          "direct": 3,
+          "inferred": 2,
+          "none": 0
+        },
+        "coverage_total": 8,
+        "coverage_average": 1.6,
+        "coverage_max": 2,
+        "support_total": 11,
+        "support_average": 2.2,
+        "support_max": 3
+      }
+    },
+    {
+      "group": 4,
+      "query": "比较中国主要云计算厂商最新公开的收入、增速和市场定位。",
+      "system": "system_a",
+      "points_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/judge_result/judge_web_res_比较中国主要云计算厂商最新公开的收入、增速和市场定位。.json",
+      "trajectory_path": "/Users/seinelee/Documents/my_search_agent/batch_trajectories/multi_agent/traj_比较中国主要云计算厂商最新公开的收入、增速和市场定位。_2026-08-24_1787540246054.json",
+      "result_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/system_a_web_quality/system_a_quality_比较中国主要云计算厂商最新公开的收入、增速和市场定位。.json",
+      "web_count": 84,
+      "summary": {
+        "point_count": 8,
+        "coverage_counts": {
+          "direct": 3,
+          "inferred": 5,
+          "none": 0
+        },
+        "coverage_total": 11,
+        "coverage_average": 1.38,
+        "coverage_max": 2,
+        "support_total": 14,
+        "support_average": 1.75,
+        "support_max": 3
+      }
+    },
+    {
+      "group": 4,
+      "query": "比较中国主要云计算厂商最新公开的收入、增速和市场定位。",
+      "system": "system_b",
+      "points_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/judge_result/judge_web_res_比较中国主要云计算厂商最新公开的收入、增速和市场定位。.json",
+      "trajectory_path": "/Users/seinelee/Documents/my_search_agent/batch_trajectories/scheme_b/traj_比较中国主要云计算厂商最新公开的收入、增速和市场定位。_2026-09-04_1788537163351.json",
+      "result_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/system_b_web_quality/system_b_quality_比较中国主要云计算厂商最新公开的收入、增速和市场定位。.json",
+      "web_count": 129,
+      "summary": {
+        "point_count": 8,
+        "coverage_counts": {
+          "direct": 3,
+          "inferred": 5,
+          "none": 0
+        },
+        "coverage_total": 11,
+        "coverage_average": 1.38,
+        "coverage_max": 2,
+        "support_total": 14,
+        "support_average": 1.75,
+        "support_max": 3
+      }
+    },
+    {
+      "group": 4,
+      "query": "比较中国主要云计算厂商最新公开的收入、增速和市场定位。",
+      "system": "system_c",
+      "points_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/judge_result/judge_web_res_比较中国主要云计算厂商最新公开的收入、增速和市场定位。.json",
+      "trajectory_path": "/Users/seinelee/Documents/my_search_agent/batch_trajectories/single_agent/traj_比较中国主要云计算厂商最新公开的收入、增速和市场定位。_2026-08-24_1787534574034.json",
+      "result_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/system_c_web_quality/system_c_quality_比较中国主要云计算厂商最新公开的收入、增速和市场定位。.json",
+      "web_count": 84,
+      "summary": {
+        "point_count": 8,
+        "coverage_counts": {
+          "direct": 4,
+          "inferred": 4,
+          "none": 0
+        },
+        "coverage_total": 12,
+        "coverage_average": 1.5,
+        "coverage_max": 2,
+        "support_total": 14,
+        "support_average": 1.75,
+        "support_max": 3
+      }
+    },
+    {
+      "group": 5,
+      "query": "目前主流大模型长上下文能力的技术路线和公开评测结果有哪些？",
+      "system": "system_a",
+      "points_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/judge_result/judge_web_res_目前主流大模型长上下文能力的技术路线和公开评测结果有哪些？.json",
+      "trajectory_path": "/Users/seinelee/Documents/my_search_agent/batch_trajectories/multi_agent/traj_目前主流大模型长上下文能力的技术路线和公开评测结果有哪些？_2026-08-24_1787538403874.json",
+      "result_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/system_a_web_quality/system_a_quality_目前主流大模型长上下文能力的技术路线和公开评测结果有哪些？.json",
+      "web_count": 130,
+      "summary": {
+        "point_count": 8,
+        "coverage_counts": {
+          "direct": 1,
+          "inferred": 7,
+          "none": 0
+        },
+        "coverage_total": 9,
+        "coverage_average": 1.13,
+        "coverage_max": 2,
+        "support_total": 10,
+        "support_average": 1.25,
+        "support_max": 3
+      }
+    },
+    {
+      "group": 5,
+      "query": "目前主流大模型长上下文能力的技术路线和公开评测结果有哪些？",
+      "system": "system_b",
+      "points_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/judge_result/judge_web_res_目前主流大模型长上下文能力的技术路线和公开评测结果有哪些？.json",
+      "trajectory_path": "/Users/seinelee/Documents/my_search_agent/batch_trajectories/scheme_b/traj_目前主流大模型长上下文能力的技术路线和公开评测结果有哪些？_2026-09-04_1788537085900.json",
+      "result_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/system_b_web_quality/system_b_quality_目前主流大模型长上下文能力的技术路线和公开评测结果有哪些？.json",
+      "web_count": 0,
+      "summary": {
+        "point_count": 8,
+        "coverage_counts": {
+          "direct": 0,
+          "inferred": 0,
+          "none": 8
+        },
+        "coverage_total": 0,
+        "coverage_average": 0.0,
+        "coverage_max": 2,
+        "support_total": 0,
+        "support_average": 0.0,
+        "support_max": 3
+      }
+    },
+    {
+      "group": 5,
+      "query": "目前主流大模型长上下文能力的技术路线和公开评测结果有哪些？",
+      "system": "system_c",
+      "points_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/judge_result/judge_web_res_目前主流大模型长上下文能力的技术路线和公开评测结果有哪些？.json",
+      "trajectory_path": "/Users/seinelee/Documents/my_search_agent/batch_trajectories/single_agent/traj_目前主流大模型长上下文能力的技术路线和公开评测结果有哪些？_2026-08-24_1787533630227.json",
+      "result_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/system_c_web_quality/system_c_quality_目前主流大模型长上下文能力的技术路线和公开评测结果有哪些？.json",
+      "web_count": 101,
+      "summary": {
+        "point_count": 8,
+        "coverage_counts": {
+          "direct": 1,
+          "inferred": 7,
+          "none": 0
+        },
+        "coverage_total": 9,
+        "coverage_average": 1.13,
+        "coverage_max": 2,
+        "support_total": 10,
+        "support_average": 1.25,
+        "support_max": 3
+      }
+    },
+    {
+      "group": 6,
+      "query": "近三年动力电池技术有哪些重要突破，分别由哪些企业推动？",
+      "system": "system_a",
+      "points_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/judge_result/judge_web_res_近三年动力电池技术有哪些重要突破，分别由哪些企业推动？.json",
+      "trajectory_path": "/Users/seinelee/Documents/my_search_agent/batch_trajectories/multi_agent/traj_近三年动力电池技术有哪些重要突破，分别由哪些企业推动？_2026-08-24_1787542217694.json",
+      "result_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/system_a_web_quality/system_a_quality_近三年动力电池技术有哪些重要突破，分别由哪些企业推动？.json",
+      "web_count": 43,
+      "summary": {
+        "point_count": 7,
+        "coverage_counts": {
+          "direct": 1,
+          "inferred": 6,
+          "none": 0
+        },
+        "coverage_total": 8,
+        "coverage_average": 1.14,
+        "coverage_max": 2,
+        "support_total": 9,
+        "support_average": 1.29,
+        "support_max": 3
+      }
+    },
+    {
+      "group": 6,
+      "query": "近三年动力电池技术有哪些重要突破，分别由哪些企业推动？",
+      "system": "system_b",
+      "points_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/judge_result/judge_web_res_近三年动力电池技术有哪些重要突破，分别由哪些企业推动？.json",
+      "trajectory_path": "/Users/seinelee/Documents/my_search_agent/batch_trajectories/scheme_b/traj_近三年动力电池技术有哪些重要突破，分别由哪些企业推动？_2026-09-04_1788537583883.json",
+      "result_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/system_b_web_quality/system_b_quality_近三年动力电池技术有哪些重要突破，分别由哪些企业推动？.json",
+      "web_count": 165,
+      "summary": {
+        "point_count": 7,
+        "coverage_counts": {
+          "direct": 3,
+          "inferred": 4,
+          "none": 0
+        },
+        "coverage_total": 10,
+        "coverage_average": 1.43,
+        "coverage_max": 2,
+        "support_total": 13,
+        "support_average": 1.86,
+        "support_max": 3
+      }
+    },
+    {
+      "group": 6,
+      "query": "近三年动力电池技术有哪些重要突破，分别由哪些企业推动？",
+      "system": "system_c",
+      "points_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/judge_result/judge_web_res_近三年动力电池技术有哪些重要突破，分别由哪些企业推动？.json",
+      "trajectory_path": "/Users/seinelee/Documents/my_search_agent/batch_trajectories/single_agent/traj_近三年动力电池技术有哪些重要突破，分别由哪些企业推动？_2026-08-24_1787535197172.json",
+      "result_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/system_c_web_quality/system_c_quality_近三年动力电池技术有哪些重要突破，分别由哪些企业推动？.json",
+      "web_count": 65,
+      "summary": {
+        "point_count": 7,
+        "coverage_counts": {
+          "direct": 2,
+          "inferred": 5,
+          "none": 0
+        },
+        "coverage_total": 9,
+        "coverage_average": 1.29,
+        "coverage_max": 2,
+        "support_total": 11,
+        "support_average": 1.57,
+        "support_max": 3
+      }
+    },
+    {
+      "group": 7,
+      "query": "小米发布第二款车之后的下一个大型车展上，其竞品都发布了什么车？",
+      "system": "system_a",
+      "points_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/judge_result/judge_web_res_小米发布第二款车之后的下一个大型车展上，其竞品都发布了什么车？.json",
+      "trajectory_path": "/Users/seinelee/Documents/my_search_agent/batch_trajectories/multi_agent/traj_小米发布第二款车之后的下一个大型车展上，其竞品都发布了什么车？_2026-08-24_1787535881631.json",
+      "result_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/system_a_web_quality/system_a_quality_小米发布第二款车之后的下一个大型车展上，其竞品都发布了什么车？.json",
+      "web_count": 119,
+      "summary": {
+        "point_count": 8,
+        "coverage_counts": {
+          "direct": 3,
+          "inferred": 5,
+          "none": 0
+        },
+        "coverage_total": 11,
+        "coverage_average": 1.38,
+        "coverage_max": 2,
+        "support_total": 14,
+        "support_average": 1.75,
+        "support_max": 3
+      }
+    },
+    {
+      "group": 7,
+      "query": "小米发布第二款车之后的下一个大型车展上，其竞品都发布了什么车？",
+      "system": "system_b",
+      "points_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/judge_result/judge_web_res_小米发布第二款车之后的下一个大型车展上，其竞品都发布了什么车？.json",
+      "trajectory_path": "/Users/seinelee/Documents/my_search_agent/batch_trajectories/scheme_b/traj_小米发布第二款车之后的下一个大型车展上，其竞品都发布了什么车？_2026-09-04_1788536770950.json",
+      "result_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/system_b_web_quality/system_b_quality_小米发布第二款车之后的下一个大型车展上，其竞品都发布了什么车？.json",
+      "web_count": 70,
+      "summary": {
+        "point_count": 8,
+        "coverage_counts": {
+          "direct": 3,
+          "inferred": 5,
+          "none": 0
+        },
+        "coverage_total": 11,
+        "coverage_average": 1.38,
+        "coverage_max": 2,
+        "support_total": 14,
+        "support_average": 1.75,
+        "support_max": 3
+      }
+    },
+    {
+      "group": 7,
+      "query": "小米发布第二款车之后的下一个大型车展上，其竞品都发布了什么车？",
+      "system": "system_c",
+      "points_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/judge_result/judge_web_res_小米发布第二款车之后的下一个大型车展上，其竞品都发布了什么车？.json",
+      "trajectory_path": "/Users/seinelee/Documents/my_search_agent/deep_search_single_agent/deep_search_single_agent/trajectories/traj_小米第二款车发布之后的下一个大型车展上，其竞品都发布了什么车_2026年08月26日_1787755354303.json",
+      "result_path": "/Users/seinelee/Documents/my_search_agent/files/judge_webs/system_c_web_quality/system_c_quality_小米发布第二款车之后的下一个大型车展上，其竞品都发布了什么车？.json",
+      "web_count": 89,
+      "summary": {
+        "point_count": 8,
+        "coverage_counts": {
+          "direct": 3,
+          "inferred": 5,
+          "none": 0
+        },
+        "coverage_total": 11,
+        "coverage_average": 1.38,
+        "coverage_max": 2,
+        "support_total": 14,
+        "support_average": 1.75,
+        "support_max": 3
+      }
+    }
+  ],
+  "overall": {
+    "system_a": {
+      "query_count": 7,
+      "point_count": 52,
+      "coverage_total": 70,
+      "support_total": 87,
+      "coverage_micro_average": 1.35,
+      "support_micro_average": 1.67,
+      "coverage_macro_average": 1.36,
+      "support_macro_average": 1.68,
+      "coverage_counts": {
+        "direct": 18,
+        "inferred": 34,
+        "none": 0
+      },
+      "empty_web_query_count": 0
+    },
+    "system_b": {
+      "query_count": 7,
+      "point_count": 52,
+      "coverage_total": 63,
+      "support_total": 82,
+      "coverage_micro_average": 1.21,
+      "support_micro_average": 1.58,
+      "coverage_macro_average": 1.24,
+      "support_macro_average": 1.62,
+      "coverage_counts": {
+        "direct": 19,
+        "inferred": 25,
+        "none": 8
+      },
+      "empty_web_query_count": 1
+    },
+    "system_c": {
+      "query_count": 7,
+      "point_count": 52,
+      "coverage_total": 71,
+      "support_total": 88,
+      "coverage_micro_average": 1.37,
+      "support_micro_average": 1.69,
+      "coverage_macro_average": 1.38,
+      "support_macro_average": 1.72,
+      "coverage_counts": {
+        "direct": 19,
+        "inferred": 33,
+        "none": 0
+      },
+      "empty_web_query_count": 0
+    }
+  },
+  "paired_six_queries": {
+    "system_a": {
+      "query_count": 6,
+      "point_count": 44,
+      "coverage_total": 61,
+      "support_total": 77,
+      "coverage_micro_average": 1.39,
+      "support_micro_average": 1.75,
+      "coverage_macro_average": 1.39,
+      "support_macro_average": 1.76,
+      "coverage_counts": {
+        "direct": 17,
+        "inferred": 27,
+        "none": 0
+      },
+      "empty_web_query_count": 0
+    },
+    "system_b": {
+      "query_count": 6,
+      "point_count": 44,
+      "coverage_total": 63,
+      "support_total": 82,
+      "coverage_micro_average": 1.43,
+      "support_micro_average": 1.86,
+      "coverage_macro_average": 1.44,
+      "support_macro_average": 1.88,
+      "coverage_counts": {
+        "direct": 19,
+        "inferred": 25,
+        "none": 0
+      },
+      "empty_web_query_count": 0
+    },
+    "system_c": {
+      "query_count": 6,
+      "point_count": 44,
+      "coverage_total": 62,
+      "support_total": 78,
+      "coverage_micro_average": 1.41,
+      "support_micro_average": 1.77,
+      "coverage_macro_average": 1.42,
+      "support_macro_average": 1.8,
+      "coverage_counts": {
+        "direct": 18,
+        "inferred": 26,
+        "none": 0
+      },
+      "empty_web_query_count": 0
+    }
+  },
+  "validation": {
+    "result_file_count": 21,
+    "point_evaluation_count": 156,
+    "quote_count": 351,
+    "all_quotes_exact_continuous_substrings": true,
+    "point_ids_and_order_match_inputs": true,
+    "support_3_has_at_least_two_independent_sources": true
+  },
+  "conclusions": {
+    "all_seven_queries": "本次指定样本中，coverage与support的宏平均、微平均排序均为system_c > system_a > system_b。system_c相对system_a仅多1个coverage总分和1个support总分，优势很小。",
+    "paired_six_queries": "三个系统同时剔除长上下文一组后，coverage与support均为system_b > system_c > system_a。system_b的空webs交付是主评价排名下降的重要原因。",
+    "limits": "每个query每系统只有一个样本，运行日期不同，且评分粒度为完整point；不能据此证明系统长期优劣或得分差异有统计显著性。网页数量不作为质量分数。"
+  }
+}

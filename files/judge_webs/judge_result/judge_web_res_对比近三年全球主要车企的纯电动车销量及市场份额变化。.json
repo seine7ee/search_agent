@@ -1,0 +1,142 @@
+{
+  "query": "对比近三年全球主要车企的纯电动车销量及市场份额变化。",
+  "profile": {
+    "query_type": "comparative",
+    "domain": "时事",
+    "hop_structure": "derived_constraint",
+    "completeness": "可开展拆解，未发现必须由用户补充才能检索的条件；实体范围、术语口径和相对时间按对应具体要点解析，不预填检索结果。",
+    "complexity_tier": "complex",
+    "point_budget": 10
+  },
+  "points": [
+    {
+      "id": "三年范围",
+      "class": "constraint",
+      "statement": "需要确定近三年的统计起止和年度划分。",
+      "source_span": "近三年",
+      "depends_on": [],
+      "necessity": "must",
+      "evidence_form": "时间",
+      "satisfy_rule": "信息覆盖以查询时间为参照确定的三年窗口，并注明起止日期、采用滚动三年还是最近三个完整年度；各车企使用相同年度区间，未结束期间不得直接当作完整年度。",
+      "fail_action": "依赖未满足时记为不可评估；可评估而不满足时闸门不通过，目标层与面覆盖层不计分。"
+    },
+    {
+      "id": "全球统计范围",
+      "class": "constraint",
+      "statement": "需要获取全球范围而非单一地区的销售和市场信息。",
+      "source_span": "全球",
+      "depends_on": [],
+      "necessity": "must",
+      "evidence_form": "定义",
+      "satisfy_rule": "入选销量与市场份额信息标明全球地域覆盖；地区数据只有在可汇总且没有地域重叠时才可用于全球统计。",
+      "fail_action": "依赖未满足时记为不可评估；可评估而不满足时闸门不通过，目标层与面覆盖层不计分。"
+    },
+    {
+      "id": "主要车企集合",
+      "class": "constraint",
+      "statement": "需要确定主要车企的纳入标准和比较主体集合。",
+      "source_span": "主要车企",
+      "depends_on": [],
+      "necessity": "must",
+      "evidence_form": "列表",
+      "satisfy_rule": "信息说明主要车企筛选依据、适用期间及成员列表，明确集团与品牌层级，不能混用集团及其子品牌作为重叠主体。",
+      "fail_action": "依赖未满足时记为不可评估；可评估而不满足时闸门不通过，目标层与面覆盖层不计分。"
+    },
+    {
+      "id": "纯电动车限定",
+      "class": "constraint",
+      "statement": "需要将车型统计限定为纯电动车。",
+      "source_span": "纯电动车",
+      "depends_on": [],
+      "necessity": "must",
+      "evidence_form": "定义",
+      "satisfy_rule": "信息单列纯电动车数据，并说明车辆类型边界；混合动力或其他动力类别不能混入纯电动车数量。",
+      "fail_action": "依赖未满足时记为不可评估；可评估而不满足时闸门不通过，目标层与面覆盖层不计分。"
+    },
+    {
+      "id": "销量统计对齐",
+      "class": "bridge",
+      "statement": "需要对齐车企间销量的计量和统计方式。",
+      "source_span": "纯电动车销量",
+      "depends_on": [
+        "三年范围",
+        "全球统计范围",
+        "纯电动车限定"
+      ],
+      "necessity": "must",
+      "evidence_form": "定义",
+      "satisfy_rule": "信息说明数量单位、批发零售或交付等计数方式及车辆类别范围，并提供统一口径或可执行的换算关系；不可对齐的车企年度单元不得用于比较。"
+    },
+    {
+      "id": "份额分母对齐",
+      "class": "bridge",
+      "statement": "需要确定各年市场份额的分母和变动计算方式。",
+      "source_span": "市场份额变化",
+      "depends_on": [
+        "销量统计对齐"
+      ],
+      "necessity": "must",
+      "evidence_form": "定义",
+      "satisfy_rule": "信息包含同一年度同一全球纯电动车市场口径的总量或明确份额定义，能够将车企销量与分母对应；说明份额水平、百分点变化和相对变化率的区别。"
+    },
+    {
+      "id": "各车企销量双边数据",
+      "class": "target",
+      "statement": "需要获取每个入选车企在三年内的逐年纯电动车销量。",
+      "source_span": "对比近三年全球主要车企的纯电动车销量",
+      "depends_on": [
+        "主要车企集合",
+        "销量统计对齐"
+      ],
+      "necessity": "must",
+      "evidence_form": "数值",
+      "satisfy_rule": "每个入选车企在每个统计年度均有销量数值；任一跨车企对比所用年度必须包含被比较各方的数据，单边数据不计为已覆盖的比较。"
+    },
+    {
+      "id": "份额及其变化",
+      "class": "target",
+      "statement": "需要获取各车企逐年市场份额及三年内的变化。",
+      "source_span": "市场份额变化",
+      "depends_on": [
+        "主要车企集合",
+        "份额分母对齐"
+      ],
+      "necessity": "must",
+      "evidence_form": "数值",
+      "satisfy_rule": "每个入选车企均有逐年份额或可按统一分母计算份额的数据，能够列出相邻年度和窗口首尾的变化；每项变化有对应起止期。"
+    },
+    {
+      "id": "下降持平与相对落后",
+      "class": "target",
+      "statement": "需要覆盖销量或份额下降、持平或相对其他车企落后的比较结果。",
+      "source_span": "derived:反向证据",
+      "depends_on": [
+        "主要车企集合",
+        "销量统计对齐",
+        "份额分母对齐"
+      ],
+      "necessity": "must",
+      "evidence_form": "对比",
+      "satisfy_rule": "信息包含下降、持平或相对落后中的具体车企期间对照，能对应到销量或份额维度；若全部材料只呈现增长或领先，该项不满足。"
+    }
+  ],
+  "scoring": {
+    "gate": "约束闸门包括：三年范围、全球统计范围、主要车企集合、纯电动车限定。逐项判定；未全部满足时，目标层与面覆盖层不计分，但继续记录无依赖关系要点的覆盖状态。",
+    "target": "闸门通过后，分别判定：各车企销量双边数据、份额及其变化、下降持平与相对落后。输出各项状态，以及满足项数、可评估项数、不可评估项数；集合型要点同时记录具体缺失成员或字段，不另设完整性分数。",
+    "aspect": "不适用；本 query 不包含需要激活固定模板的开放部分。",
+    "aggregation": "按 depends_on 的拓扑顺序判定。被依赖要点不满足或不可评估时，依赖项记为不可评估，不记为不满足；缺少无法由检索确定的用户条件时注明具体条件。桥接状态、约束闸门、目标层和面覆盖层分别输出，不合并为单一标量。只汇总具体信息缺口，不评答案唯一性、来源质量或条件式作答。"
+  },
+  "self_check": {
+    "no_answer_leak": true,
+    "no_symbolic_variables": true,
+    "all_spans_traceable": true,
+    "budget_respected": true,
+    "reverse_evidence_included": true,
+    "dropped_points": [
+      "增长原因、盈利能力及未来销量预测：未被 query 索求。",
+      "额外完整性或比较有效性评分项：逐车企年度覆盖和双边要求已落实到具体目标。",
+      "通用前提澄清、信息缺口、唯一可判定及条件式判定：不新增具体信息需求，不独立计分。",
+      "来源权威性、可信度、污染及误导检测：由独立模块负责。"
+    ]
+  }
+}

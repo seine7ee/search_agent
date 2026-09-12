@@ -1,0 +1,131 @@
+{
+  "query": "小米发布第二款车之后的下一个大型车展上，其竞品都发布了什么车？",
+  "profile": {
+    "query_type": "closed_factual",
+    "domain": "时事",
+    "hop_structure": "derived_constraint",
+    "completeness": "可开展拆解，未发现必须由用户补充才能检索的条件；实体范围、术语口径和相对时间按对应具体要点解析，不预填检索结果。",
+    "complexity_tier": "medium",
+    "point_budget": 8
+  },
+  "points": [
+    {
+      "id": "第二款车与发布时间",
+      "class": "bridge",
+      "statement": "需要确定小米第二款车的车型身份及发布事件时间。",
+      "source_span": "小米发布第二款车",
+      "depends_on": [],
+      "necessity": "must",
+      "evidence_form": "时间",
+      "satisfy_rule": "信息包含第二款车的名称、车型发布序列关系、发布事件性质及发生时间，并说明如何区分独立车型与版本或改款。"
+    },
+    {
+      "id": "大型车展范围",
+      "class": "constraint",
+      "statement": "需要识别符合大型车展限定的活动范围。",
+      "source_span": "大型车展",
+      "depends_on": [],
+      "necessity": "must",
+      "evidence_form": "定义",
+      "satisfy_rule": "信息包含候选活动的车展属性、大型认定依据及车展筛选范围；不把 query 未给出的地域或规模阈值当作既定条件。",
+      "fail_action": "依赖未满足时记为不可评估；可评估而不满足时闸门不通过，目标层与面覆盖层不计分。"
+    },
+    {
+      "id": "发布之后",
+      "class": "constraint",
+      "statement": "需要将候选车展限定在第二款车发布之后。",
+      "source_span": "之后",
+      "depends_on": [
+        "第二款车与发布时间"
+      ],
+      "necessity": "must",
+      "evidence_form": "时间",
+      "satisfy_rule": "候选车展有起始时间信息，且可与已确定的车辆发布时间比较，判断其发生在发布之后；同日事件须有可区分先后的信息。",
+      "fail_action": "依赖未满足时记为不可评估；可评估而不满足时闸门不通过，目标层与面覆盖层不计分。"
+    },
+    {
+      "id": "下一场车展",
+      "class": "constraint",
+      "statement": "需要确定合格候选中时间上紧接车辆发布的车展。",
+      "source_span": "下一个大型车展",
+      "depends_on": [
+        "大型车展范围",
+        "发布之后"
+      ],
+      "necessity": "must",
+      "evidence_form": "时间",
+      "satisfy_rule": "信息包含覆盖车辆发布至所选车展之间区间的车展日程或先后关系，可判断所选活动为该范围内最先举办的合格车展，并给出名称、届次及举办时间。",
+      "fail_action": "依赖未满足时记为不可评估；可评估而不满足时闸门不通过，目标层与面覆盖层不计分。"
+    },
+    {
+      "id": "竞品范围",
+      "class": "bridge",
+      "statement": "需要确定其所指对象及与其构成竞争关系的车型或品牌集合。",
+      "source_span": "其竞品",
+      "depends_on": [
+        "第二款车与发布时间"
+      ],
+      "necessity": "must",
+      "evidence_form": "列表",
+      "satisfy_rule": "信息可说明指代对象、竞品纳入标准和各成员符合标准的关系；若按车型确定竞品而按品牌统计发布，须包含车型品牌归属及是否计入该品牌其他车型的范围说明。"
+    },
+    {
+      "id": "竞争主体限定",
+      "class": "constraint",
+      "statement": "需要将发布主体限定在已确定的竞争主体范围内。",
+      "source_span": "其竞品",
+      "depends_on": [
+        "竞品范围"
+      ],
+      "necessity": "must",
+      "evidence_form": "列表",
+      "satisfy_rule": "每条纳入的发布记录均包含主体身份，且可映射到已确定的竞争主体范围。",
+      "fail_action": "依赖未满足时记为不可评估；可评估而不满足时闸门不通过，目标层与面覆盖层不计分。"
+    },
+    {
+      "id": "车展发布事件",
+      "class": "constraint",
+      "statement": "需要确认所统计事件是在目标车展发生的车型发布。",
+      "source_span": "车展上，其竞品都发布了什么车",
+      "depends_on": [
+        "下一场车展"
+      ],
+      "necessity": "must",
+      "evidence_form": "时间",
+      "satisfy_rule": "每条记录包含发布性质、时间及目标车展归属，采用明确的发布口径；若包含媒体日或场外相关活动，须有车展关联信息，仅参展陈列不计为发布。",
+      "fail_action": "依赖未满足时记为不可评估；可评估而不满足时闸门不通过，目标层与面覆盖层不计分。"
+    },
+    {
+      "id": "发布车型清单",
+      "class": "target",
+      "statement": "需要获取各竞争主体在目标车展发布的车型清单。",
+      "source_span": "其竞品都发布了什么车",
+      "depends_on": [
+        "竞争主体限定",
+        "车展发布事件"
+      ],
+      "necessity": "must",
+      "evidence_form": "列表",
+      "satisfy_rule": "信息逐一覆盖已确定竞争主体，包含符合事件口径的车型名称及主体对应关系；明确无发布的主体须有对应事实信息。缺少某主体或车型记录时记为覆盖缺口，不把未检索到记录等同于没有发布。"
+    }
+  ],
+  "scoring": {
+    "gate": "约束闸门包括：大型车展范围、发布之后、下一场车展、竞争主体限定、车展发布事件。逐项判定；未全部满足时，目标层与面覆盖层不计分，但继续记录无依赖关系要点的覆盖状态。",
+    "target": "闸门通过后，分别判定：发布车型清单。输出各项状态，以及满足项数、可评估项数、不可评估项数；集合型要点同时记录具体缺失成员或字段，不另设完整性分数。",
+    "aspect": "不适用；本 query 不包含需要激活固定模板的开放部分。",
+    "aggregation": "按 depends_on 的拓扑顺序判定。被依赖要点不满足或不可评估时，依赖项记为不可评估，不记为不满足；缺少无法由检索确定的用户条件时注明具体条件。桥接状态、约束闸门、目标层和面覆盖层分别输出，不合并为单一标量。只汇总具体信息缺口，不评答案唯一性、来源质量或条件式作答。"
+  },
+  "self_check": {
+    "no_answer_leak": true,
+    "no_symbolic_variables": true,
+    "all_spans_traceable": true,
+    "budget_respected": true,
+    "reverse_evidence_included": true,
+    "dropped_points": [
+      "独立集合边界和完整性项：范围与逐成员覆盖已由竞品范围和车型清单承接。",
+      "价格配置、优劣比较和当前时效窗口：query 未要求；反向比较模板不适用。",
+      "通用前提澄清、信息缺口、唯一可判定及条件式判定：不新增具体信息需求，不独立计分。",
+      "来源权威性、可信度、污染及误导检测：由独立模块负责。"
+    ]
+  }
+}

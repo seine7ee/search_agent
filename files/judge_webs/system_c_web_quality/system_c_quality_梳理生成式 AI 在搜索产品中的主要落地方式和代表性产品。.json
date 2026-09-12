@@ -1,0 +1,180 @@
+{
+  "evaluations": [
+    {
+      "point_id": "生成式技术限定",
+      "coverage": "direct",
+      "coverage_score": 2,
+      "support": 3,
+      "evidence": [
+        {
+          "web_id": "9",
+          "url": "https://news.qq.com/rain/a/20250405A014L300",
+          "domain": "qq.com",
+          "quote": "今天宣布的有趣功能之一是 Bing 搜索引擎的 Copilot Search。该工具将传统网络搜索与生成式搜索结果相结合。IT之家从微软博客获悉,微软声称这一功能“改变了网络搜索”,Copilot Search 通过 Bing 检查来自多个网站的信息,以显示更详细和准确的响应内容。这些搜索结果将显示引用和建议,引导人们了解更多关于某个主题的信息。",
+          "supports": "生成式技术限定的直接事实：IT之家从微软博客获悉,微软声称这一功能“改变了网络搜索”,Copilot Search 通过 Bing 检查来自多个网站的信息,以显示更详细和准确的响应内容。"
+        },
+        {
+          "web_id": "14",
+          "url": "https://www.sgpjbg.com/hyshuju/3d770a37846bcf8b14d16c0924a2f2af.html",
+          "domain": "sgpjbg.com",
+          "quote": "谷歌于 2023 年开始启动搜索生成式体验(SGE)实验,以生成式 AI 大模型 Gemini为基础,自动生成搜索内容摘要并进行垂类推荐等算法优化。AI Overviews 是SGE 的升级版,在5月的 2024 GoogleI/O 开发者大会上作为“25 年间最大更新”发布,与谷歌核心网络排名系统集成,旨在保证搜索准确性,仅显示由高质量网页信息支持的结果。AI Overviews 继承了 SGE 的内容摘要生成能力,支持视频搜索,具有一次搜索解决系列问题的多步骤推理功能和集成谷歌文档邮箱的规划功能。",
+          "supports": "生成式技术限定的直接事实：AI Overviews 是SGE 的升级版,在5月的 2024 GoogleI/O 开发者大会上作为“25 年间最大更新”发布,与谷歌核心网络排名系统集成,旨在保证搜索准确性,仅显示由高质量网页信息支持的结果。"
+        }
+      ],
+      "source_domains": [
+        "qq.com",
+        "sgpjbg.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "两个不同报道直接说明生成式搜索和生成摘要所承担的任务。",
+      "support_reason": "逐字引文直接支撑该项要求；按主域名和稿件去重后有2个独立来源。",
+      "inference_or_gaps": []
+    },
+    {
+      "point_id": "搜索产品限定",
+      "coverage": "direct",
+      "coverage_score": 2,
+      "support": 3,
+      "evidence": [
+        {
+          "web_id": "9",
+          "url": "https://news.qq.com/rain/a/20250405A014L300",
+          "domain": "qq.com",
+          "quote": "今天宣布的有趣功能之一是 Bing 搜索引擎的 Copilot Search。该工具将传统网络搜索与生成式搜索结果相结合。IT之家从微软博客获悉,微软声称这一功能“改变了网络搜索”,Copilot Search 通过 Bing 检查来自多个网站的信息,以显示更详细和准确的响应内容。这些搜索结果将显示引用和建议,引导人们了解更多关于某个主题的信息。",
+          "supports": "搜索产品限定的直接事实：IT之家从微软博客获悉,微软声称这一功能“改变了网络搜索”,Copilot Search 通过 Bing 检查来自多个网站的信息,以显示更详细和准确的响应内容。"
+        },
+        {
+          "web_id": "19",
+          "url": "http://zhuanti.cww.net.cn/article?id=8620E94E45914D91AA20BBFF60024ECC",
+          "domain": "cww.net.cn",
+          "quote": "互联网搜索是当前生成式AI搜索引擎的一种重要形式,它主要面向互联网上的海量公开信息进行搜索。这类搜索引擎包括传统搜索引擎的升级版本,如百度(百度搜索AI探索版)、微软(NewBing)、谷歌(Bard)。同时,也涵盖了一些基于对话式的创新AI搜索应用,如Perplexity AI、秘塔AI,这些平台通过技术与用户体验深度融合,不断通过创新功能吸引用户,并试图挑战传统搜索引擎的地位。\n二是平台内嵌搜索。平台内嵌搜索是另一种常见的生成式AI搜索引擎类型。它通常作为平台的一个功能模块存在,专门用于搜索平台内的私有数据。这类搜索引擎的核心优势在于能够利用平台积累的大量用户行为数据、偏好、历史搜索记录等信息,为用户提供定制化的搜索结果。",
+          "supports": "搜索产品限定的直接事实：同时,也涵盖了一些基于对话式的创新AI搜索应用,如Perplexity AI、秘塔AI,这些平台通过技术与用户体验深度融合,不断通过创新功能吸引用户,并试图挑战传统搜索引擎的地位。"
+        }
+      ],
+      "source_domains": [
+        "cww.net.cn",
+        "qq.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "搜索引擎内结果与平台私有数据检索的产品位置、信息对象明确。",
+      "support_reason": "逐字引文直接支撑该项要求；按主域名和稿件去重后有2个独立来源。",
+      "inference_or_gaps": []
+    },
+    {
+      "point_id": "主要落地方式",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "19",
+          "url": "http://zhuanti.cww.net.cn/article?id=8620E94E45914D91AA20BBFF60024ECC",
+          "domain": "cww.net.cn",
+          "quote": "生成式AI搜索产品主要类型包括‌:\n一是互联网搜索。互联网搜索是当前生成式AI搜索引擎的一种重要形式,它主要面向互联网上的海量公开信息进行搜索。这类搜索引擎包括传统搜索引擎的升级版本,如百度(百度搜索AI探索版)、微软(NewBing)、谷歌(Bard)。同时,也涵盖了一些基于对话式的创新AI搜索应用,如Perplexity AI、秘塔AI,这些平台通过技术与用户体验深度融合,不断通过创新功能吸引用户,并试图挑战传统搜索引擎的地位。\n二是平台内嵌搜索。平台内嵌搜索是另一种常见的生成式AI搜索引擎类型。它通常作为平台的一个功能模块存在,专门用于搜索平台内的私有数据。这类搜索引擎的核心优势在于能够利用平台积累的大量用户行为数据、偏好、历史搜索记录等信息,为用户提供定制化的搜索结果。如小红书的达芬奇,通过AI技术分",
+          "supports": "主要落地方式的局部事实：同时,也涵盖了一些基于对话式的创新AI搜索应用,如Perplexity AI、秘塔AI,这些平台通过技术与用户体验深度融合,不断通过创新功能吸引用户,并试图挑战传统搜索引擎的地位。"
+        },
+        {
+          "web_id": "17",
+          "url": "http://www.changbiyuan.com/douyin/aiknowledge/2023/aiknowledge_0818/66114.html",
+          "domain": "changbiyuan.com",
+          "quote": "专注AIGC领域的专业社区,关注OpenAI、百度文心一言等大语言模型(LLM)的发展和 应用 落地,关注LLM的基准评测和市场研究,欢迎关注! 8月16日,谷歌在官网公布了其生成式AI搜索(SGE)的3个新功能,包括自动显示知识概念、解释代码和自动总结网页内容。 SGE是谷歌在今年5月“2023 Google I/O”大会上,发布的一款集成生成式AI的搜索产品。",
+          "supports": "主要落地方式的局部事实：专注AIGC领域的专业社区,关注OpenAI、百度文心一言等大语言模型(LLM)的发展和 应用 落地,关注LLM的基准评测和市场研究,欢迎关注! 8月16日,谷歌在官网公布了其生成式AI搜索(SGE)的3个新功能,包括自动显示知识概念、解释代码和自动总结网页内容。"
+        }
+      ],
+      "source_domains": [
+        "changbiyuan.com",
+        "cww.net.cn"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "分类后文截断，只保存部分生成式搜索类型及单产品功能。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有2个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补齐逐类工作流程和主要类型选取依据。"
+      ]
+    },
+    {
+      "point_id": "代表产品与方式对应",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "18",
+          "url": "https://m.blog.csdn.net/Suee2020/article/details/142792301",
+          "domain": "csdn.net",
+          "quote": "1 Perplexity 强大的对话式AI搜索引擎 https://www.perplexity.ai Perplexity\n 2 Genspark AI Agent搜索引擎 https://www.genspark.ai MainFunc(景鲲、朱凯华)\n 3 Kimi.ai 智能助手 https://kimi.moonshot.cn/ 月之暗面(杨植麟)\n 4 秘塔AI搜索 AI搜索引擎 https://metaso.cn/ 秘塔科技\n 5 ThinkAny AI搜索引擎 https://thinkany.ai/zh 独立全栈开发者艾逗笔\n 6 ChatGPT 自然语言人工智能聊天机器人 https://chatgpt.com/ OpenAI\n 7 Quark AI搜索浏览器 https://www.quark.cn/ 夸克浏览器\n 8 知乎直答 知乎AI搜索产品 https://zhida.zhihu.com/ 知乎\n 9 天工AI 对话式AI助手 https://www.tiangong.cn/ 昆仑万维\n 10 360AI搜索 360旗下AI搜索应用 https://so.360.com/ 360集团\n 11 kagi search 付费搜索引擎 https://kagi.com/ 美国公司Kagi\n 12 开搜AI搜索 查资料、学知识、做研究 https://kaisouai.com/?from=aihub 上海词遇网络科技有限公司\n 13 海螺AI 智能聊天机器人 https://hailuoai.com/ MiniMax\n 14 Lepton Search 对话式AI搜索工具 https://search.lepton.run/?ref=aihub.cn LeptonAI(贾扬清)",
+          "supports": "代表产品与方式对应的局部事实：14 Lepton Search 对话式AI搜索工具 https://search.lepton.run/?ref=aihub.cn LeptonAI(贾扬清)"
+        },
+        {
+          "web_id": "14",
+          "url": "https://www.sgpjbg.com/hyshuju/3d770a37846bcf8b14d16c0924a2f2af.html",
+          "domain": "sgpjbg.com",
+          "quote": "谷歌于 2023 年开始启动搜索生成式体验(SGE)实验,以生成式 AI 大模型 Gemini为基础,自动生成搜索内容摘要并进行垂类推荐等算法优化。AI Overviews 是SGE 的升级版,在5月的 2024 GoogleI/O 开发者大会上作为“25 年间最大更新”发布,与谷歌核心网络排名系统集成,旨在保证搜索准确性,仅显示由高质量网页信息支持的结果。AI Overviews 继承了 SGE 的内容摘要生成能力,支持视频搜索,具有一次搜索解决系列问题的多步骤推理功能和集成谷歌文档邮箱的规划功能。",
+          "supports": "代表产品与方式对应的局部事实：AI Overviews 是SGE 的升级版,在5月的 2024 GoogleI/O 开发者大会上作为“25 年间最大更新”发布,与谷歌核心网络排名系统集成,旨在保证搜索准确性,仅显示由高质量网页信息支持的结果。"
+        }
+      ],
+      "source_domains": [
+        "csdn.net",
+        "sgpjbg.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "产品表多数只有名称和一句标签，Google 案例虽详细，不能支撑每种方式的代表性对应。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有2个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需逐类补充场景、可观察功能及代表性理由。"
+      ]
+    },
+    {
+      "point_id": "适用边界",
+      "coverage": "direct",
+      "coverage_score": 2,
+      "support": 3,
+      "evidence": [
+        {
+          "web_id": "13",
+          "url": "https://www.extremetech.com/internet/google-unleashes-ai-search-results-in-preview",
+          "domain": "extremetech.com",
+          "quote": "Credit: Google Google announced several experimental search features at Google I/O earlier this month, and now it's opening up access to them in the new Search Labs. Naturally, the search experiments are based on generative AI, which Google has focused on since its disastrous Bard demo in February. Front and center in the Search Lab is the SGE (Search Generative Experience), and like it or not, this could be the future of finding information on the internet. The SGE is available on both mobile and desktop for those who have opted in.",
+          "supports": "适用边界的直接事实：Credit: Google Google announced several experimental search features at Google I/O earlier this month, and now it's opening up access to them in the new Search Labs."
+        },
+        {
+          "web_id": "14",
+          "url": "https://www.sgpjbg.com/hyshuju/3d770a37846bcf8b14d16c0924a2f2af.html",
+          "domain": "sgpjbg.com",
+          "quote": "该产品推出两周后受到广泛质疑,谷歌实行改进,但据企业 SEO 平台 BrightEdge 于同年 6 月的调查数据,谷歌淡化了这一功能,AI overviews 在搜索中的出现频率已于初始的 84%降至约 15%。",
+          "supports": "适用边界的直接事实：该产品推出两周后受到广泛质疑,谷歌实行改进,但据企业 SEO 平台 BrightEdge 于同年 6 月的调查数据,谷歌淡化了这一功能,AI overviews 在搜索中的出现频率已于初始的 84%降至约 15%。"
+        },
+        {
+          "web_id": "15",
+          "url": "https://www.gizmochina.com/2023/11/09/google-expands-generative-ai-in-search-to-over-120-countries/",
+          "domain": "gizmochina.com",
+          "quote": "SGE was initially launched in the United States and later expanded to India and Japan. The latest expansion brings SGE to a wider range of users, including those in Mexico, Brazil, South Korea, Indonesia, Nigeria, Kenya, and South Africa. A complete list of supported countries and territories is available on Google’s website . To enable SGE in Chrome on desktop, users can visit Search Labs. Access to SGE through the Google app on Android and iOS will be available in the coming week.",
+          "supports": "适用边界的直接事实：The latest expansion brings SGE to a wider range of users, including those in Mexico, Brazil, South Korea, Indonesia, Nigeria, Kenya, and South Africa."
+        }
+      ],
+      "source_domains": [
+        "extremetech.com",
+        "gizmochina.com",
+        "sgpjbg.com"
+      ],
+      "independent_source_count": 3,
+      "coverage_reason": "不同稿件直接提供 SGE 的加入实验前提、国家地区和端侧限制，以及概览触发频率变化。",
+      "support_reason": "逐字引文直接支撑该项要求；按主域名和稿件去重后有3个独立来源。",
+      "inference_or_gaps": []
+    }
+  ],
+  "summary": {
+    "point_count": 5,
+    "coverage_counts": {
+      "direct": 3,
+      "inferred": 2,
+      "none": 0
+    },
+    "coverage_total": 8,
+    "coverage_average": 1.6,
+    "coverage_max": 2,
+    "support_total": 11,
+    "support_average": 2.2,
+    "support_max": 3
+  }
+}

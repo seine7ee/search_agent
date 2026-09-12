@@ -1,0 +1,164 @@
+{
+  "evaluations": [
+    {
+      "point_id": "生成式技术限定",
+      "coverage": "direct",
+      "coverage_score": 2,
+      "support": 3,
+      "evidence": [
+        {
+          "web_id": "2",
+          "url": "http://zhuanti.cww.net.cn/article?id=8620E94E45914D91AA20BBFF60024ECC",
+          "domain": "cww.net.cn",
+          "quote": "传统的搜索引擎主要依赖关键词匹配,向用户展示一系列相关链接,而生成式AI搜索正在颠覆这一模式。它不仅具备对语义和上下文的深刻理解能力,更能直接生成精确无误的答案,为用户提供前所未有的高效、便捷的搜索体验。本文将介绍生成式AI搜索的产品形态、技术原理、市场竞争格局,并浅析其未来发展趋势和面临的挑战。\n生成式AI搜索产品概述\n在搜索引擎的演进历程中,用户从PC端搜索向移动端APP内搜索迁移,而当前大模型技术的应用更是将搜索转变为一种开放式、生成式的智能问答和多轮交互过程,显著增强了交互性和智能性。",
+          "supports": "生成式技术限定的直接事实：在搜索引擎的演进历程中,用户从PC端搜索向移动端APP内搜索迁移,而当前大模型技术的应用更是将搜索转变为一种开放式、生成式的智能问答和多轮交互过程,显著增强了交互性和智能性。"
+        },
+        {
+          "web_id": "27",
+          "url": "https://www.iadke.com/a/guanggao/zixun/2026/0522/16174.html",
+          "domain": "iadke.com",
+          "quote": "2026年5月20日,谷歌在其搜索广告业务中全面引入Gemini人工智能模型。\n用户在搜索商品时,系统不仅推送赞助产品,还自动生成选购解读文案,并支持点击进入AI聊天广告,实时解答疑问、引导咨询。",
+          "supports": "生成式技术限定的直接事实：用户在搜索商品时,系统不仅推送赞助产品,还自动生成选购解读文案,并支持点击进入AI聊天广告,实时解答疑问、引导咨询。"
+        }
+      ],
+      "source_domains": [
+        "cww.net.cn",
+        "iadke.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "正文明确区分链接检索与生成答案，并给出生成选购解读的功能。",
+      "support_reason": "逐字引文直接支撑该项要求；按主域名和稿件去重后有2个独立来源。",
+      "inference_or_gaps": []
+    },
+    {
+      "point_id": "搜索产品限定",
+      "coverage": "direct",
+      "coverage_score": 2,
+      "support": 3,
+      "evidence": [
+        {
+          "web_id": "12",
+          "url": "https://www.aitop100.cn/tools/detail/1990.html",
+          "domain": "aitop100.cn",
+          "quote": "Perplexity AI产品功能与特点 对话式搜索体验 Perplexity AI 提供了类似聊天机器人的交互方式,用户可以通过自然语言提问,系统会理解并提供相关答案。这种方式使得信息检索变得更加直观。 多层次回答 该平台支持多种搜索模式,包括快速回答和详细回答。用户可以选择获取简短的信息或深入分析的内容,从而满足不同的信息需求。",
+          "supports": "搜索产品限定的直接事实：Perplexity AI产品功能与特点 对话式搜索体验 Perplexity AI 提供了类似聊天机器人的交互方式,用户可以通过自然语言提问,系统会理解并提供相关答案。"
+        },
+        {
+          "web_id": "39",
+          "url": "https://new.qq.com/rain/a/20241221A0704400",
+          "domain": "qq.com",
+          "quote": "「点点」与小红书定位相似,是一款 主打生活场景 的AI 搜索产品。 「点点」背后的公司主体为上海生动诗章科技有限公司,法人为魏旷(小红书产品经理)。 其中「点点」的核心功能包括: 1. 自动定位你的位置 ,并联想推送你可能会问的关于旅游攻略,美食景点等问题; 2. 哪里不会点哪里 ,AI 自动总结全网信息(以小红书内容为主; 百家号/携程旅行/搜狐网等信息为辅) ,用户可以 在点点的回答中点击感兴趣,想要深入了解的任何地方,点点会联想三个额外的问题。 3.  对话富有“画面感” ,用户可以随时随地拍照进行提问,并且答案中含有视频回复。",
+          "supports": "搜索产品限定的直接事实：其中「点点」的核心功能包括: 1. 自动定位你的位置 ,并联想推送你可能会问的关于旅游攻略,美食景点等问题; 2. 哪里不会点哪里 ,AI 自动总结全网信息(以小红书内容为主; 百家号/携程旅行/搜狐网等信息为辅) ,用户可以 在点点的回答中点击感兴趣,想要深入了解的任何地方,点点会联想三个额外的问题。"
+        }
+      ],
+      "source_domains": [
+        "aitop100.cn",
+        "qq.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "对话式检索和生活搜索的任务、信息对象、交互与输出均有直接描述。",
+      "support_reason": "逐字引文直接支撑该项要求；按主域名和稿件去重后有2个独立来源。",
+      "inference_or_gaps": []
+    },
+    {
+      "point_id": "主要落地方式",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "2",
+          "url": "http://zhuanti.cww.net.cn/article?id=8620E94E45914D91AA20BBFF60024ECC",
+          "domain": "cww.net.cn",
+          "quote": "生成式AI搜索产品主要类型包括‌:\n一是互联网搜索。互联网搜索是当前生成式AI搜索引擎的一种重要形式,它主要面向互联网上的海量公开信息进行搜索。这类搜索引擎包括传统搜索引擎的升级版本,如百度(百度搜索AI探索版)、微软(NewBing)、谷歌(Bard)。同时,也涵盖了一些基于对话式的创新AI搜索应用,如Perplexity AI、秘塔AI,这些平台通过技术与用户体验深度融合,不断通过创新功能吸引用户,并试图挑战传统搜索引擎的地位。\n二是平台内嵌搜索。平台内嵌搜索是另一种常见的生成式AI搜索引擎类型。它通常作为平台的一个功能模块存在,专门用于搜索平台内的私有数据。这类搜索引擎的核心优势在于能够利用平台积累的大量用户行为数据、偏好、历史搜索记录等信息,为用户提供定制化的搜索结果。如小红书的达芬奇,通过AI技术分",
+          "supports": "主要落地方式的局部事实：同时,也涵盖了一些基于对话式的创新AI搜索应用,如Perplexity AI、秘塔AI,这些平台通过技术与用户体验深度融合,不断通过创新功能吸引用户,并试图挑战传统搜索引擎的地位。"
+        },
+        {
+          "web_id": "28",
+          "url": "https://ai.zhiding.cn/2026/0520/3187626.shtml",
+          "domain": "zhiding.cn",
+          "quote": "Stein)向媒体表示,当用户输入自然语言问题时,将\"可靠地\"看到AI概览。在AI概览中继续追问会自动跳转至AI模式,用户也可以直接向搜索框附加文档、照片、视频和Chrome标签页,进入AI模式开始提问。",
+          "supports": "主要落地方式的局部事实：在AI概览中继续追问会自动跳转至AI模式,用户也可以直接向搜索框附加文档、照片、视频和Chrome标签页,进入AI模式开始提问。"
+        }
+      ],
+      "source_domains": [
+        "cww.net.cn",
+        "zhiding.cn"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "有互联网/平台内嵌分类及单产品流程，但分类正文截断，未逐类说明主要方式的选择依据与完整流程。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有2个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补全分类及逐类输入输出和选取依据，不能从局部产品流程推广为全景。"
+      ]
+    },
+    {
+      "point_id": "代表产品与方式对应",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "2",
+          "url": "http://zhuanti.cww.net.cn/article?id=8620E94E45914D91AA20BBFF60024ECC",
+          "domain": "cww.net.cn",
+          "quote": "这类搜索引擎包括传统搜索引擎的升级版本,如百度(百度搜索AI探索版)、微软(NewBing)、谷歌(Bard)。同时,也涵盖了一些基于对话式的创新AI搜索应用,如Perplexity AI、秘塔AI,这些平台通过技术与用户体验深度融合,不断通过创新功能吸引用户,并试图挑战传统搜索引擎的地位。\n二是平台内嵌搜索。平台内嵌搜索是另一种常见的生成式AI搜索引擎类型。它通常作为平台的一个功能模块存在,专门用于搜索平台内的私有数据。这类搜索引擎的核心优势在于能够利用平台积累的大量用户行为数据、偏好、历史搜索记录等信息,为用户提供定制化的搜索结果。如小红书的达芬奇,通过AI技术分",
+          "supports": "代表产品与方式对应的局部事实：同时,也涵盖了一些基于对话式的创新AI搜索应用,如Perplexity AI、秘塔AI,这些平台通过技术与用户体验深度融合,不断通过创新功能吸引用户,并试图挑战传统搜索引擎的地位。"
+        },
+        {
+          "web_id": "39",
+          "url": "https://new.qq.com/rain/a/20241221A0704400",
+          "domain": "qq.com",
+          "quote": "「点点」与小红书定位相似,是一款 主打生活场景 的AI 搜索产品。 「点点」背后的公司主体为上海生动诗章科技有限公司,法人为魏旷(小红书产品经理)。 其中「点点」的核心功能包括: 1. 自动定位你的位置 ,并联想推送你可能会问的关于旅游攻略,美食景点等问题; 2. 哪里不会点哪里 ,AI 自动总结全网信息(以小红书内容为主; 百家号/携程旅行/搜狐网等信息为辅) ,用户可以 在点点的回答中点击感兴趣,想要深入了解的任何地方,点点会联想三个额外的问题。 3.  对话富有“画面感” ,用户可以随时随地拍照进行提问,并且答案中含有视频回复。",
+          "supports": "代表产品与方式对应的局部事实：其中「点点」的核心功能包括: 1. 自动定位你的位置 ,并联想推送你可能会问的关于旅游攻略,美食景点等问题; 2. 哪里不会点哪里 ,AI 自动总结全网信息(以小红书内容为主; 百家号/携程旅行/搜狐网等信息为辅) ,用户可以 在点点的回答中点击感兴趣,想要深入了解的任何地方,点点会联想三个额外的问题。"
+        }
+      ],
+      "source_domains": [
+        "cww.net.cn",
+        "qq.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "产品和功能可直接对应，但平台内嵌类案例介绍截断，逐类代表性理由不齐。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有2个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补足每类代表性理由与产品对应，不能以品牌被列举等同于代表性已经证明。"
+      ]
+    },
+    {
+      "point_id": "适用边界",
+      "coverage": "direct",
+      "coverage_score": 2,
+      "support": 2,
+      "evidence": [
+        {
+          "web_id": "32",
+          "url": "https://www.bilibili.com/read/cv22300592",
+          "domain": "bilibili.com",
+          "quote": "目录 AI搜索 AI绘图 自然语言对话 科学杂志期刊内容整理(限英文资料) AI搜索 newbing newbing - waitlist - 10天~1月 官网:https://www.bing.com/search 说明:使用方法很简单,通过Modheader修改请求头,访问https://www.bing.com/new,已谷歌账户加入等待列表 newbing AI搜索示例 phind 官网:https://www.phind.com/search 说明:可以用来写代码,查文献资料,整理背景知识 缺点:时不时会崩溃下,偶尔输出结果为英文,需要一定的语言底子 AI绘图 PicUP.AI 官网:https://www.picup.shop/text2image.html#/ 说明:需要注册登录,质量不是很高,游客单IP最多单日生成10张图片 这是我的参考图 AI创作参考图 这是工具生成的图片 百度飞浆 - ERNIE-ViLG AI 作画大模型 官网:https://wenxin.baidu.com/ernie-vilg 说明:参考图上传需要提供详细的个人信息 百度飞浆 - ERNIE-ViLG AI 作画 自然语言对话 Cleverbot 官网:https://www.cleve",
+          "supports": "适用边界的直接事实：目录 AI搜索 AI绘图 自然语言对话 科学杂志期刊内容整理(限英文资料) AI搜索 newbing newbing - waitlist - 10天~1月 官网:https://www.bing.com/search 说明:使用方法很简单,通过Modheader修改请求头,访问https://www.bing.com/new,已谷歌账户加入等待列表 newbing AI搜索示例 phind 官网…（其余条件见完整引文）"
+        }
+      ],
+      "source_domains": [
+        "bilibili.com"
+      ],
+      "independent_source_count": 1,
+      "coverage_reason": "正文把 phind 的崩溃和英文输出限制关联到代码及文献检索任务。",
+      "support_reason": "逐字引文直接支撑该项要求；所选证据为1个独立来源。",
+      "inference_or_gaps": []
+    }
+  ],
+  "summary": {
+    "point_count": 5,
+    "coverage_counts": {
+      "direct": 3,
+      "inferred": 2,
+      "none": 0
+    },
+    "coverage_total": 8,
+    "coverage_average": 1.6,
+    "coverage_max": 2,
+    "support_total": 10,
+    "support_average": 2.0,
+    "support_max": 3
+  }
+}

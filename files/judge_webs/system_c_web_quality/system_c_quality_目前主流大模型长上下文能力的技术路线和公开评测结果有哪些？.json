@@ -1,0 +1,288 @@
+{
+  "evaluations": [
+    {
+      "point_id": "目前状态窗口",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "27",
+          "url": "https://news.qq.com/rain/a/20250814A04PSB00",
+          "domain": "qq.com",
+          "quote": "大数据文摘出品Anthropic宣布,Claude\nSonnet\n4的上下文长度,现在达到了史无前例的100万个token。这项功能已经正式上线Anthropic\nAPI,并同步登陆Amazon\nBedrock,Google\nCloud的Vertex\nAI也即将支持。相比之前的20万个token,这次扩展是5倍的飞跃。",
+          "supports": "目前状态窗口的局部事实：4的上下文长度,现在达到了史无前例的100万个token。"
+        },
+        {
+          "web_id": "44",
+          "url": "https://juejin.cn/post/7634432180045004806",
+          "domain": "juejin.cn",
+          "quote": "2022\n年\nGPT-3.5\n上下文\n4K\ntoken,2024\n年\nClaude\n3\n做到\n200K,Gemini\n1.5\nPro\n冲到\n1M、实验版本\n2M;2025\n年\nGPT-4.1、Kimi\nK2、Qwen2.5-1M\n等陆续把\n1M\n级上下文推向生产。",
+          "supports": "目前状态窗口的局部事实：K2、Qwen2.5-1M"
+        },
+        {
+          "web_id": "79",
+          "url": "https://www.deepseek.com/?from_blog=true",
+          "domain": "deepseek.com",
+          "quote": "DeepSeek-V3 在推理速度上相较历史模型有了大幅提升。\n在目前大模型主流榜单中,DeepSeek-V3 在开源模型中位列榜首,与世界上最先进的闭源模型不分伯仲。\nBenchmark (Metric)\nDeepSeek V3\nDeepSeek V2.5\nQwen2.5\nLlama3.1\nClaude-3.5\nGPT-4o \n0905\n72B-Inst\n405B-Inst\nSonnet-1022\n0513",
+          "supports": "目前状态窗口的局部事实：在目前大模型主流榜单中,DeepSeek-V3 在开源模型中位列榜首,与世界上最先进的闭源模型不分伯仲。"
+        }
+      ],
+      "source_domains": [
+        "deepseek.com",
+        "juejin.cn",
+        "qq.com"
+      ],
+      "independent_source_count": 3,
+      "coverage_reason": "模型上线及历史版本有明确记录，但未说明各模型和评测截至查询日的适用状态。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有3个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补当前版本及成绩的状态日期。"
+      ]
+    },
+    {
+      "point_id": "主流模型集合",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "79",
+          "url": "https://www.deepseek.com/?from_blog=true",
+          "domain": "deepseek.com",
+          "quote": "DeepSeek-V3 在推理速度上相较历史模型有了大幅提升。\n在目前大模型主流榜单中,DeepSeek-V3 在开源模型中位列榜首,与世界上最先进的闭源模型不分伯仲。\nBenchmark (Metric)\nDeepSeek V3\nDeepSeek V2.5\nQwen2.5\nLlama3.1\nClaude-3.5\nGPT-4o \n0905\n72B-Inst\n405B-Inst\nSonnet-1022\n0513",
+          "supports": "主流模型集合的局部事实：在目前大模型主流榜单中,DeepSeek-V3 在开源模型中位列榜首,与世界上最先进的闭源模型不分伯仲。"
+        },
+        {
+          "web_id": "44",
+          "url": "https://juejin.cn/post/7634432180045004806",
+          "domain": "juejin.cn",
+          "quote": "2022\n年\nGPT-3.5\n上下文\n4K\ntoken,2024\n年\nClaude\n3\n做到\n200K,Gemini\n1.5\nPro\n冲到\n1M、实验版本\n2M;2025\n年\nGPT-4.1、Kimi\nK2、Qwen2.5-1M\n等陆续把\n1M\n级上下文推向生产。",
+          "supports": "主流模型集合的局部事实：K2、Qwen2.5-1M"
+        }
+      ],
+      "source_domains": [
+        "deepseek.com",
+        "juejin.cn"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "有榜单地位与版本表，但不同代际和配置混合，未形成统一主流筛选。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有2个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需明确纳入依据和各配置身份。"
+      ]
+    },
+    {
+      "point_id": "长上下文范围",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "27",
+          "url": "https://news.qq.com/rain/a/20250814A04PSB00",
+          "domain": "qq.com",
+          "quote": "相比之前的20万个token,这次扩展是5倍的飞跃。换句话说,Claude\nSonnet\n4现在可以一次性处理超过七万五千行代码,或几十篇学术论文,无须拆分,无须反复输入。上下文窗口的扩大,显著扩展了大语言模型可处理任务的规模。过去常见模型上下文在几千至数万字,现在可覆盖整套工程级代码、成百页文档及对话历史。AI开始“理解全局”,不仅是处理局部百万token带来的,不只是模型“记忆更久”,而是彻底提升了处理复杂任务的能力。一位开发者现在可以将整套代码工程上传给Claude,包括源码、测试、文档,Claude可以一次性加载全部内容,并且理解模块之间的架构关系。这意味着,Claude不仅能帮你“写一段函数”,还能指出某个类的设计在整体系统中是否合理,甚至发现跨文件的冗余和依赖错误。法律、科研、工程等领域同样受益。研究人员可以一次性让Claude读取上百份论文或技术文档,它能识别术语间的交叉引用、辨别观点之间的逻辑关系,并提供高质量的整合和总结。对于构建AI代理的开发者来说,这也意味着Claude能够维护多轮对话的一致性与连贯性。",
+          "supports": "长上下文范围的局部事实：一位开发者现在可以将整套代码工程上传给Claude,包括源码、测试、文档,Claude可以一次性加载全部内容,并且理解模块之间的架构关系。"
+        },
+        {
+          "web_id": "37",
+          "url": "https://www.youleyou.com/terms/829.html",
+          "domain": "youleyou.com",
+          "quote": "是一个专门为大语言模型设计的长上下文评测基准,包含20多个覆盖不同难度与场景的数据集,用于检测模型在处理数千到数万token长度的文本时能否精准回答问题、生成摘要或进行信息检索。\n为什么会被关注\n随着GPT-4、Claude等模型宣称支持百万级上下文窗口,用户开始关心这些长上下文能力是否真实可靠。LongBench提供了标准化测试流程,能暴露模型在长文本中“忘记”关键信息、位置偏差或逻辑断裂的问题,因此成为衡量大模型真实长文本能力的行业参考。\n此外,LongBench对比了不同模型在同一任务上的表现差异,帮助开发者和用户理解模型在处理长文档、科研论文或会议记录时的实际差距,从而选择更适合的模型或优化训练策略。\n核心逻辑\nLongBench\n将任务分为四大类:单文档问答(如HotpotQA)、多文档问答(如MuSiQue)、摘要生成(如GovReport)和Few-Shot学习(如TREC)。每个任务都提供了严格的数据切分和评估指标,比如用精确匹配、F1分数或ROUGE分数量化模型输出质量。\n评测时,模型需要在给定长文本(通常几千到数万token)中定位并利用关键信息。LongBench通过控制上下文长度、答案位置和干扰信息密度,全面考察模型的长程依赖建模能力、记忆衰减曲线以及对边界信息的敏感度。",
+          "supports": "长上下文范围的局部事实：是一个专门为大语言模型设计的长上下文评测基准,包含20多个覆盖不同难度与场景的数据集,用于检测模型在处理数千到数万token长度的文本时能否精准回答问题、生成摘要或进行信息检索。"
+        },
+        {
+          "web_id": "44",
+          "url": "https://juejin.cn/post/7634432180045004806",
+          "domain": "juejin.cn",
+          "quote": "对\ninfra\n工程师而言,这不是简单\"把\nmax_position\n调大\"就能解决的问题——注意力的\nO(n2)\n计算、KV\ncache\n的\nO(n)\n显存、位置编码外推的精度崩塌、长样本稀缺导致的训练困难、长序列的通信与负载不均,每一环都需要重构。\n本篇系统梳理长上下文的工程栈:从\nRoPE、YaRN、LongRoPE\n等位置编码扩展,到\nMamba\n/\n线性\nattention\n/\nNSA\n等计算复杂度优化,再到\nRing\nAttention\n/\nUlysses\n序列并行、MLA\n/\nStreamingLLM\n等\nKV\n压缩策略,最后落到评测(NIAH、RULER、LongBench)与\nAgent\n场景的\nKV\n复用。",
+          "supports": "长上下文范围的局部事实：显存、位置编码外推的精度崩塌、长样本稀缺导致的训练困难、长序列的通信与负载不均,每一环都需要重构。"
+        }
+      ],
+      "source_domains": [
+        "juejin.cn",
+        "qq.com",
+        "youleyou.com"
+      ],
+      "independent_source_count": 3,
+      "coverage_reason": "token规模、长任务与资源关系有说明，但缺输入输出共享预算及完整纳入标准。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有3个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补接收长度、输出预算和有效能力的完整区分。"
+      ]
+    },
+    {
+      "point_id": "公开评测限定",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "79",
+          "url": "https://www.deepseek.com/?from_blog=true",
+          "domain": "deepseek.com",
+          "quote": "Benchmark (Metric)\nDeepSeek V3\nDeepSeek V2.5\nQwen2.5\nLlama3.1\nClaude-3.5\nGPT-4o \n0905\n72B-Inst\n405B-Inst\nSonnet-1022\n0513\nArchitecture MoE MoE Dense Dense - -\n# Activated Params  37B 21B 72B 405B - -\n # Total Params 671B  236B 72B 405B - -\nEnglish MMLU (EM) 88.5 80.6 85.3 88.6 88.3 87.2\nMMLU-Redux (EM) 89.1 80.3 85.6 86.2  88.9 88.0\nMMLU-Pro (EM)  75.9 66.2  71.6 73.3 78.0 72.6\nDROP (3-shot F1) 91.6 87.8  76.7  88.7 88.3 83.7\n IF-Eval (Prompt Strict)  86.1 80.6  84.1 86.0  86.5 84.3\nGPQA-Diamond (Pass@1) 59.1 41.3 49.0 51.1 65.0 49.9\nSimpleQA (Correct) 24.9 10.2  9.1 17.1 28.4 38.2\nFRAMES (Acc.) 73.3 65.4 69.8 70.0 72.5 80.5\nLongBench v2 (Acc.) 48.7 35.4 39.4 36.1 41.0 48.1",
+          "supports": "公开评测限定的局部事实：IF-Eval (Prompt Strict)  86.1 80.6  84.1 86.0  86.5 84.3"
+        },
+        {
+          "web_id": "12",
+          "url": "https://arxiv.org/abs/2601.02872",
+          "domain": "arxiv.org",
+          "quote": "arXiv:2601.02872(cs)\n[Submitted on 6 Jan 2026]\nTitle: LongBench Pro: A More Realistic and Comprehensive Bilingual Long-Context Evaluation Benchmark\nAuthors: Ziyang Chen,Xing Wu,Junlong Jia,Chaochen Gao,Qi Fu,Debing Zhang,Songlin Hu\nAbstract: The rapid expansion of context length in large language models (LLMs) has outpaced existing evaluation benchmarks. Current long-context benchmarks often trade off scalability and realism: synthetic tasks underrepresent real-world complexity, while fully manual annotation is costly to scale to extreme lengths and diverse scenarios. We present LongBench Pro, a more realistic and comprehensive bilingual benchmark of 1,500 naturally occurring long-context samples in English and Chinese spanning 11 primary ta",
+          "supports": "公开评测限定的局部事实：Current long-context benchmarks often trade off scalability and realism: synthetic tasks underrepresent real-world complexity, while fully manual annotation is costly to scale to extreme lengths and d…（其余条件见完整引文）"
+        }
+      ],
+      "source_domains": [
+        "arxiv.org",
+        "deepseek.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "有官方LongBench v2成绩及公开论文，但成绩公布时间与完整测试记录未齐。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有2个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补各结果公布日期和对应记录。"
+      ]
+    },
+    {
+      "point_id": "技术路线与机制",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "30",
+          "url": "https://cloud.tencent.com/developer/article/2496104",
+          "domain": "tencent.com",
+          "quote": " 1. 输入上下文长度 DeepSeek-R1的输入上下文长度为128K。 DeepSeek-R1 从其基础模型 DeepSeek-V3-Base 继承了 128K 上下文长度。最初,DeepSeek-V3 使用 4K 上下文长度进行预训练。然后,利用 YaRN 技术,两阶段上下文长度扩展首先将其增加到 32K,然后增加到 128K。 YaRN (另一种 RoPE 扩展方法)是一种旨在有效扩展使用旋转位置嵌入 (RoPE)的大型语言模型 (LLM) 的上下文窗口的技术。 RoPE 使用旋转矩阵对位置信息进行编码,而YaRN 则修改这些旋转频率的缩放方式。它不是简单地推断频率(这通常会导致性能下降),而是平滑地插入和调整这些频率,从而能够更好地推广到更长的上下文。它在计算上是高效的,并且无需大量重新训练即可扩展模型上下文长度。  2. 总层数 DeepSeek-R1 由一个嵌入层、其后的 61 个变换器层以及输出阶段的多个预测头组成。 DeepSeek-R1 在所有 Transformer 层上采用 多头潜在注意力 (MLA) 层 ,而不是标准多头注意力。前三个 Transformer 层与其他层不同,使用标准前馈网络 (FFN) 层。从第 4 层到第 61 层,混合专家 (MoE) 层取代了 FFN 层。MLA 和MoE 的细节将在以下部分中探讨。",
+          "supports": "技术路线与机制的局部事实：YaRN (另一种 RoPE 扩展方法)是一种旨在有效扩展使用旋转位置嵌入 (RoPE)的大型语言模型 (LLM) 的上下文窗口的技术。"
+        },
+        {
+          "web_id": "44",
+          "url": "https://juejin.cn/post/7634432180045004806",
+          "domain": "juejin.cn",
+          "quote": "本篇系统梳理长上下文的工程栈:从\nRoPE、YaRN、LongRoPE\n等位置编码扩展,到\nMamba\n/\n线性\nattention\n/\nNSA\n等计算复杂度优化,再到\nRing\nAttention\n/\nUlysses\n序列并行、MLA\n/\nStreamingLLM\n等\nKV\n压缩策略,最后落到评测(NIAH、RULER、LongBench)与\nAgent\n场景的\nKV\n复用。",
+          "supports": "技术路线与机制的局部事实：压缩策略,最后落到评测(NIAH、RULER、LongBench)与"
+        }
+      ],
+      "source_domains": [
+        "juejin.cn",
+        "tencent.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "YaRN机制和模型关联明确，但其他路线大多只列名称，正文在工程概览处截断。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有2个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补稀疏、线性注意力和KV压缩等路线的具体机制及实现。"
+      ]
+    },
+    {
+      "point_id": "评测条件与指标",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "37",
+          "url": "https://www.youleyou.com/terms/829.html",
+          "domain": "youleyou.com",
+          "quote": "将任务分为四大类:单文档问答(如HotpotQA)、多文档问答(如MuSiQue)、摘要生成(如GovReport)和Few-Shot学习(如TREC)。每个任务都提供了严格的数据切分和评估指标,比如用精确匹配、F1分数或ROUGE分数量化模型输出质量。\n评测时,模型需要在给定长文本(通常几千到数万token)中定位并利用关键信息。LongBench通过控制上下文长度、答案位置和干扰信息密度,全面考察模型的长程依赖建模能力、记忆衰减曲线以及对边界信息的敏感度。",
+          "supports": "评测条件与指标的局部事实：将任务分为四大类:单文档问答(如HotpotQA)、多文档问答(如MuSiQue)、摘要生成(如GovReport)和Few-Shot学习(如TREC)。"
+        },
+        {
+          "web_id": "79",
+          "url": "https://www.deepseek.com/?from_blog=true",
+          "domain": "deepseek.com",
+          "quote": "Benchmark (Metric)\nDeepSeek V3\nDeepSeek V2.5\nQwen2.5\nLlama3.1\nClaude-3.5\nGPT-4o \n0905\n72B-Inst\n405B-Inst\nSonnet-1022\n0513\nArchitecture MoE MoE Dense Dense - -\n# Activated Params  37B 21B 72B 405B - -\n # Total Params 671B  236B 72B 405B - -\nEnglish MMLU (EM) 88.5 80.6 85.3 88.6 88.3 87.2\nMMLU-Redux (EM) 89.1 80.3 85.6 86.2  88.9 88.0\nMMLU-Pro (EM)  75.9 66.2  71.6 73.3 78.0 72.6\nDROP (3-shot F1) 91.6 87.8  76.7  88.7 88.3 83.7\n IF-Eval (Prompt Strict)  86.1 80.6  84.1 86.0  86.5 84.3\nGPQA-Diamond (Pass@1) 59.1 41.3 49.0 51.1 65.0 49.9\nSimpleQA (Correct) 24.9 10.2  9.1 17.1 28.4 38.2\nFRAMES (Acc.) 73.3 65.4 69.8 70.0 72.5 80.5\nLongBench v2 (Acc.) 48.7 35.4 39.4 36.1 41.0 48.1",
+          "supports": "评测条件与指标的局部事实：IF-Eval (Prompt Strict)  86.1 80.6  84.1 86.0  86.5 84.3"
+        }
+      ],
+      "source_domains": [
+        "deepseek.com",
+        "youleyou.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "基准定义和模型表可见，但每组成绩的测试长度、输入输出和推理设置缺失。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有2个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补与具体成绩一致的测试条件。"
+      ]
+    },
+    {
+      "point_id": "逐模型公开成绩",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "79",
+          "url": "https://www.deepseek.com/?from_blog=true",
+          "domain": "deepseek.com",
+          "quote": "Benchmark (Metric)\nDeepSeek V3\nDeepSeek V2.5\nQwen2.5\nLlama3.1\nClaude-3.5\nGPT-4o \n0905\n72B-Inst\n405B-Inst\nSonnet-1022\n0513\nArchitecture MoE MoE Dense Dense - -\n# Activated Params  37B 21B 72B 405B - -\n # Total Params 671B  236B 72B 405B - -\nEnglish MMLU (EM) 88.5 80.6 85.3 88.6 88.3 87.2\nMMLU-Redux (EM) 89.1 80.3 85.6 86.2  88.9 88.0\nMMLU-Pro (EM)  75.9 66.2  71.6 73.3 78.0 72.6\nDROP (3-shot F1) 91.6 87.8  76.7  88.7 88.3 83.7\n IF-Eval (Prompt Strict)  86.1 80.6  84.1 86.0  86.5 84.3\nGPQA-Diamond (Pass@1) 59.1 41.3 49.0 51.1 65.0 49.9\nSimpleQA (Correct) 24.9 10.2  9.1 17.1 28.4 38.2\nFRAMES (Acc.) 73.3 65.4 69.8 70.0 72.5 80.5\nLongBench v2 (Acc.) 48.7 35.4 39.4 36.1 41.0 48.1",
+          "supports": "逐模型公开成绩的局部事实：IF-Eval (Prompt Strict)  86.1 80.6  84.1 86.0  86.5 84.3"
+        }
+      ],
+      "source_domains": [
+        "deepseek.com"
+      ],
+      "independent_source_count": 1,
+      "coverage_reason": "六个模型的LongBench v2准确率直接出现，但缺测试长度及配置对应，不能完全满足该项。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有1个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补实际测试长度和条件，并列明其他入选模型成绩缺失。"
+      ]
+    },
+    {
+      "point_id": "能力适用边界",
+      "coverage": "direct",
+      "coverage_score": 2,
+      "support": 3,
+      "evidence": [
+        {
+          "web_id": "44",
+          "url": "https://juejin.cn/post/7634432180045004806",
+          "domain": "juejin.cn",
+          "quote": "对\ninfra\n工程师而言,这不是简单\"把\nmax_position\n调大\"就能解决的问题——注意力的\nO(n2)\n计算、KV\ncache\n的\nO(n)\n显存、位置编码外推的精度崩塌、长样本稀缺导致的训练困难、长序列的通信与负载不均,每一环都需要重构。",
+          "supports": "能力适用边界的直接事实：显存、位置编码外推的精度崩塌、长样本稀缺导致的训练困难、长序列的通信与负载不均,每一环都需要重构。"
+        },
+        {
+          "web_id": "37",
+          "url": "https://www.youleyou.com/terms/829.html",
+          "domain": "youleyou.com",
+          "quote": "LongBench提供了标准化测试流程,能暴露模型在长文本中“忘记”关键信息、位置偏差或逻辑断裂的问题,因此成为衡量大模型真实长文本能力的行业参考。\n此外,LongBench对比了不同模型在同一任务上的表现差异,帮助开发者和用户理解模型在处理长文档、科研论文或会议记录时的实际差距,从而选择更适合的模型或优化训练策略。\n核心逻辑\nLongBench\n将任务分为四大类:单文档问答(如HotpotQA)、多文档问答(如MuSiQue)、摘要生成(如GovReport)和Few-Shot学习(如TREC)。每个任务都提供了严格的数据切分和评估指标,比如用精确匹配、F1分数或ROUGE分数量化模型输出质量。\n评测时,模型需要在给定长文本(通常几千到数万token)中定位并利用关键信息。LongBench通过控制上下文长度、答案位置和干扰信息密度,全面考察模型的长程依赖建模能力、记忆衰减曲线以及对边界信息的敏感度。",
+          "supports": "能力适用边界的直接事实：此外,LongBench对比了不同模型在同一任务上的表现差异,帮助开发者和用户理解模型在处理长文档、科研论文或会议记录时的实际差距,从而选择更适合的模型或优化训练策略。"
+        },
+        {
+          "web_id": "30",
+          "url": "https://cloud.tencent.com/developer/article/2496104",
+          "domain": "tencent.com",
+          "quote": "YaRN (另一种 RoPE 扩展方法)是一种旨在有效扩展使用旋转位置嵌入 (RoPE)的大型语言模型 (LLM) 的上下文窗口的技术。 RoPE 使用旋转矩阵对位置信息进行编码,而YaRN 则修改这些旋转频率的缩放方式。它不是简单地推断频率(这通常会导致性能下降),而是平滑地插入和调整这些频率,从而能够更好地推广到更长的上下文。它在计算上是高效的,并且无需大量重新训练即可扩展模型上下文长度。",
+          "supports": "能力适用边界的直接事实：YaRN (另一种 RoPE 扩展方法)是一种旨在有效扩展使用旋转位置嵌入 (RoPE)的大型语言模型 (LLM) 的上下文窗口的技术。"
+        }
+      ],
+      "source_domains": [
+        "juejin.cn",
+        "tencent.com",
+        "youleyou.com"
+      ],
+      "independent_source_count": 3,
+      "coverage_reason": "注意力、缓存和位置外推限制及长文本位置偏差均关联具体对象和触发条件。",
+      "support_reason": "逐字引文直接支撑该项要求；按主域名和稿件去重后有3个独立来源。",
+      "inference_or_gaps": []
+    }
+  ],
+  "summary": {
+    "point_count": 8,
+    "coverage_counts": {
+      "direct": 1,
+      "inferred": 7,
+      "none": 0
+    },
+    "coverage_total": 9,
+    "coverage_average": 1.13,
+    "coverage_max": 2,
+    "support_total": 10,
+    "support_average": 1.25,
+    "support_max": 3
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "evaluations": [
+    {
+      "point_id": "第二款车与发布时间",
+      "coverage": "direct",
+      "coverage_score": 2,
+      "support": 3,
+      "evidence": [
+        {
+          "web_id": "4",
+          "url": "https://www.bjnews.com.cn/detail/1733756659168564.html",
+          "domain": "bjnews.com.cn",
+          "quote": "新京报贝壳财经讯(记者陈维城)12月9日晚间,小米汽车官方微博发布动态显示,小米汽车第二款车型为SUV,定名为“小米YU7”,预计2025年6-7月正式上市。",
+          "supports": "第二款车与发布时间的直接事实：新京报贝壳财经讯(记者陈维城)12月9日晚间,小米汽车官方微博发布动态显示,小米汽车第二款车型为SUV,定名为“小米YU7”,预计2025年6-7月正式上市。"
+        },
+        {
+          "web_id": "37",
+          "url": "https://new.qq.com/rain/a/20250522A09JTO00",
+          "domain": "qq.com",
+          "quote": "5月22日,小米集团董事长雷军在小米15周年战略新品发布会上宣布,小米YU7正式发布,定位 “豪华高性能SUV”。车身尺寸方面,YU7车长5米,轴距3米,车宽2米,属于中大型SUV级别。小米汽车公布了三款配色产品图,分别是宝石绿、钛金属色、熔岩橙。雷军在发布会上还透露,将有另外五款配色在未来的发布会上公布。5月22日下午,雷军发微博表示,小米YU7预计7月正式上市。",
+          "supports": "第二款车与发布时间的直接事实：5月22日,小米集团董事长雷军在小米15周年战略新品发布会上宣布,小米YU7正式发布,定位 “豪华高性能SUV”。"
+        }
+      ],
+      "source_domains": [
+        "bjnews.com.cn",
+        "qq.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "第二款车型身份、SUV类别及发布事件可按车型名直接关联。",
+      "support_reason": "逐字引文直接支撑该项要求；按主域名和稿件去重后有2个独立来源。",
+      "inference_or_gaps": []
+    },
+    {
+      "point_id": "大型车展范围",
+      "coverage": "direct",
+      "coverage_score": 2,
+      "support": 3,
+      "evidence": [
+        {
+          "web_id": "50",
+          "url": "https://news.qq.com/rain/a/20250508A0980F00",
+          "domain": "qq.com",
+          "quote": "作为西部地区规模最大、规格最高的年度汽车盛会,自\n1998\n年创办以来,成都车展已成为中国四大\nA\n级车展之一(IT之家注:北京、上海、广州、成都)。",
+          "supports": "大型车展范围的直接事实：级车展之一(IT之家注:北京、上海、广州、成都)。"
+        },
+        {
+          "web_id": "75",
+          "url": "https://sichuan.scol.com.cn/amsc/202508/83110871.html",
+          "domain": "scol.com.cn",
+          "quote": "图片由成都国际车展组委会提供8月29日,第二十八届成都国际汽车展览会(以下简称2025成都国际车展)在中国西部国际博览城开幕。本届展会以\n“领潮而立,向新而行”\n为主题,展览规模达22万平方米,覆盖12个室内展馆及多个室外区域,汇聚近120个参展品牌,让汽车保有量全国第一的成都再度成为全球汽车行业焦点。展会现场展出整车超1600辆,涵盖硬派新能源、豪华性能车等全品类车型。开幕首日,61场新车发布会密集举行,揭幕首发车型70款,展馆内人潮涌动,媒体关注度攀升。",
+          "supports": "大型车展范围的直接事实：为主题,展览规模达22万平方米,覆盖12个室内展馆及多个室外区域,汇聚近120个参展品牌,让汽车保有量全国第一的成都再度成为全球汽车行业焦点。"
+        }
+      ],
+      "source_domains": [
+        "qq.com",
+        "scol.com.cn"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "A级身份与实际展览规模均有直接报道。",
+      "support_reason": "逐字引文直接支撑该项要求；按主域名和稿件去重后有2个独立来源。",
+      "inference_or_gaps": []
+    },
+    {
+      "point_id": "发布之后",
+      "coverage": "direct",
+      "coverage_score": 2,
+      "support": 3,
+      "evidence": [
+        {
+          "web_id": "37",
+          "url": "https://new.qq.com/rain/a/20250522A09JTO00",
+          "domain": "qq.com",
+          "quote": "5月22日,小米集团董事长雷军在小米15周年战略新品发布会上宣布,小米YU7正式发布,定位 “豪华高性能SUV”。车身尺寸方面,YU7车长5米,轴距3米,车宽2米,属于中大型SUV级别。小米汽车公布了三款配色产品图,分别是宝石绿、钛金属色、熔岩橙。雷军在发布会上还透露,将有另外五款配色在未来的发布会上公布。5月22日下午,雷军发微博表示,小米YU7预计7月正式上市。",
+          "supports": "发布之后的直接事实：5月22日,小米集团董事长雷军在小米15周年战略新品发布会上宣布,小米YU7正式发布,定位 “豪华高性能SUV”。"
+        },
+        {
+          "web_id": "53",
+          "url": "http://cd.bendibao.com/xiuxian/2025512/197649.shtm",
+          "domain": "bendibao.com",
+          "quote": "时间为2025年8月29日\n-\n9月7日(8月29日为媒体日),地点在西博城。",
+          "supports": "发布之后的直接事实：9月7日(8月29日为媒体日),地点在西博城。"
+        }
+      ],
+      "source_domains": [
+        "bendibao.com",
+        "qq.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "车型发布和车展举办日期明确，可按日期直接比较先后。",
+      "support_reason": "逐字引文直接支撑该项要求；按主域名和稿件去重后有2个独立来源。",
+      "inference_or_gaps": []
+    },
+    {
+      "point_id": "下一场车展",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "49",
+          "url": "http://baa.m.yiche.com/qichezatan/thread-51575226.html",
+          "domain": "yiche.com",
+          "quote": "【5月】\n1、2025第十八届中国(南京)国际汽车博览会\n2、2025第十五届广西-东盟(柳州)国际汽车展览会\n3、2025苏州五一国际车展\n4、2025第二十四届青岛国际车展【****】\n5、2025第二十三届华中国际汽车展览会\n【6月】\n1、2025第二十七届重庆国际车展【****】\n2、2025第十四届中原国际汽车展览会\n3、2025第十四届南宁国际汽车展览会\n待定:粤港澳大湾区车展【*****】、昆明车展、呼和浩特车展\n【7月】\n1、2025第六届西安摩博会\n待定:长春车展【****】\n【8月】\n1、2025第二十七届哈尔滨国际车展【****】\n2、2025(第三十届)大连国际汽车展览会\n待定:银川车展、兰州车展\n【9月】\n1、2025年齐鲁国际车展(秋季)\n2、2025第二十四届青岛秋季国际车展\n3、2025第21届烟台国际汽车工业展览会\n4、2025第二十三届中国摩博会【****】\n待定:成都车展【*****】、武汉车展、石家庄车展",
+          "supports": "下一场车展的局部事实：待定:粤港澳大湾区车展【*****】、昆明车展、呼和浩特车展"
+        },
+        {
+          "web_id": "50",
+          "url": "https://news.qq.com/rain/a/20250508A0980F00",
+          "domain": "qq.com",
+          "quote": "IT之家\n5\n月\n8\n日消息,第二十八届成都国际汽车展览会(2025\n成都车展)今日官宣,将于\n8\n月\n29\n日\n-\n9\n月\n7\n日举办。",
+          "supports": "下一场车展的局部事实：日消息,第二十八届成都国际汽车展览会(2025"
+        }
+      ],
+      "source_domains": [
+        "qq.com",
+        "yiche.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "月度日程含多项待定车展，未闭合5月发布后最早合格展会的具体日期。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有2个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需明确发布口径、补齐待定日期并统一大型标准。"
+      ]
+    },
+    {
+      "point_id": "竞品范围",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "28",
+          "url": "https://www.yoojia.com/article/9521861620973672476.html",
+          "domain": "yoojia.com",
+          "quote": "据行业分析及市场预测,小米YU7已经展现出了强大的核心竞争力,直接对标特斯拉Model Y、小鹏G7等热门车型。",
+          "supports": "竞品范围的局部事实：据行业分析及市场预测,小米YU7已经展现出了强大的核心竞争力,直接对标特斯拉Model Y、小鹏G7等热门车型。"
+        },
+        {
+          "web_id": "28",
+          "url": "https://www.yoojia.com/article/9521861620973672476.html",
+          "domain": "yoojia.com",
+          "quote": "竞品对标:在同类市场中,与特斯拉Model Y(起售价26.39万)和阿维塔07(起价20万)相比,小米YU7如果以23万的价格入市,将显示出显著的价格优势,并对新能源SUV市场产生不小的冲击。",
+          "supports": "竞品范围的局部事实：竞品对标:在同类市场中,与特斯拉Model Y(起售价26.39万)和阿维塔07(起价20万)相比,小米YU7如果以23万的价格入市,将显示出显著的价格优势,并对新能源SUV市场产生不小的冲击。"
+        }
+      ],
+      "source_domains": [
+        "yoojia.com"
+      ],
+      "independent_source_count": 1,
+      "coverage_reason": "有Model Y、小鹏G7和阿维塔07对标，但属预测口径，品牌扩展边界没有交代。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有1个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补充实际竞争关系集合及是否纳入各品牌其他车型。"
+      ]
+    },
+    {
+      "point_id": "竞争主体限定",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "28",
+          "url": "https://www.yoojia.com/article/9521861620973672476.html",
+          "domain": "yoojia.com",
+          "quote": "据行业分析及市场预测,小米YU7已经展现出了强大的核心竞争力,直接对标特斯拉Model Y、小鹏G7等热门车型。",
+          "supports": "竞争主体限定的局部事实：据行业分析及市场预测,小米YU7已经展现出了强大的核心竞争力,直接对标特斯拉Model Y、小鹏G7等热门车型。"
+        },
+        {
+          "web_id": "75",
+          "url": "https://sichuan.scol.com.cn/amsc/202508/83110871.html",
+          "domain": "scol.com.cn",
+          "quote": "此外,全新改款小鹏P7、蔚来第三代\nES8、理想\ni8等车型也纷纷登场。",
+          "supports": "竞争主体限定的局部事实：此外,全新改款小鹏P7、蔚来第三代"
+        }
+      ],
+      "source_domains": [
+        "scol.com.cn",
+        "yoojia.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "竞品名和展会车型可局部对应，但不能覆盖所有发布主体的范围限定。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有2个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需逐条确认品牌扩展关系与入选记录。"
+      ]
+    },
+    {
+      "point_id": "车展发布事件",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "75",
+          "url": "https://sichuan.scol.com.cn/amsc/202508/83110871.html",
+          "domain": "scol.com.cn",
+          "quote": "五大品牌矩阵亮相,8月25日发布的智界新R7、问界M8纯电版等车型集中展出,覆盖全价位区间。小米汽车SU7\nUltra\n纽北限量版首展;乐道以\nL90\n占据展台核心,firefly\n萤火虫\n“游牧美拉德”\n特别版首发;smart\n发布\nEHD\n超级电混技术及首款搭载该技术的精灵\n#5,并推出全新\n#1\nBRABUS\n性能版。此外,全新改款小鹏P7、蔚来第三代\nES8、理想\ni8等车型也纷纷登场。",
+          "supports": "车展发布事件的局部事实：五大品牌矩阵亮相,8月25日发布的智界新R7、问界M8纯电版等车型集中展出,覆盖全价位区间。"
+        },
+        {
+          "web_id": "73",
+          "url": "https://data.eastmoney.com/report/zw_industry.jshtml?encodeUrl=LL5s7nKJR4zExFgtJe+5/gScefjiJj3KLw4KIOITzi4=",
+          "domain": "eastmoney.com",
+          "quote": "第二十八届成都国际汽车展览会(以下简称:“成都国际车展”)将于8月29日至9月7日在中国西部国际博览城拉开大幕。在2025年成都车展期间上市共有13款,以性能车、豪华车为主,车企借车展声量快速建立品牌高度。\n在车展前一个月内上市车型共12款,主流新能源车型密集发布,抢占暑期购车潮。车展后上市车型有3款,高端与细分市场车型精准卡位,延续热度并规避竞争。",
+          "supports": "车展发布事件的局部事实：第二十八届成都国际汽车展览会(以下简称:“成都国际车展”)将于8月29日至9月7日在中国西部国际博览城拉开大幕。"
+        }
+      ],
+      "source_domains": [
+        "eastmoney.com",
+        "scol.com.cn"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "有展前发布、展上首发及登场等不同事件，尚未按未定目标车展统一筛选。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有2个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需保留发布性质差别，并补目标车展归属。"
+      ]
+    },
+    {
+      "point_id": "发布车型清单",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "70",
+          "url": "https://news.yiche.com/hao/wenzhang/103187952/",
+          "domain": "yiche.com",
+          "quote": "梅赛德斯-奔驰在本届车展上推出全新AMG\nCLE\n53\n4MATIC+敞篷轿跑车,同时带来全新纯电CLA。宝马带来了全新M2\nCS以及全新X3\nM50两款新车,首次亮相国内车展。奥迪则携27款明星车型登场,其中包括一汽奥迪Q6L\ne-tron家族、上汽奥迪A5L\nSportback等。其它品牌新车还包括全新沃尔沃XC70、smart精灵五号EHD、现代帕里斯帝等。",
+          "supports": "发布车型清单的局部事实：其它品牌新车还包括全新沃尔沃XC70、smart精灵五号EHD、现代帕里斯帝等。"
+        },
+        {
+          "web_id": "75",
+          "url": "https://sichuan.scol.com.cn/amsc/202508/83110871.html",
+          "domain": "scol.com.cn",
+          "quote": "五大品牌矩阵亮相,8月25日发布的智界新R7、问界M8纯电版等车型集中展出,覆盖全价位区间。小米汽车SU7\nUltra\n纽北限量版首展;乐道以\nL90\n占据展台核心,firefly\n萤火虫\n“游牧美拉德”\n特别版首发;smart\n发布\nEHD\n超级电混技术及首款搭载该技术的精灵\n#5,并推出全新\n#1\nBRABUS\n性能版。此外,全新改款小鹏P7、蔚来第三代\nES8、理想\ni8等车型也纷纷登场。",
+          "supports": "发布车型清单的局部事实：五大品牌矩阵亮相,8月25日发布的智界新R7、问界M8纯电版等车型集中展出,覆盖全价位区间。"
+        }
+      ],
+      "source_domains": [
+        "scol.com.cn",
+        "yiche.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "存在展会车型集合，但与小米竞品范围未逐成员对应。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有2个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补齐全部竞品的发布状态，不以参展清单替代。"
+      ]
+    }
+  ],
+  "summary": {
+    "point_count": 8,
+    "coverage_counts": {
+      "direct": 3,
+      "inferred": 5,
+      "none": 0
+    },
+    "coverage_total": 11,
+    "coverage_average": 1.38,
+    "coverage_max": 2,
+    "support_total": 14,
+    "support_average": 1.75,
+    "support_max": 3
+  }
+}

@@ -1,0 +1,331 @@
+{
+  "trajectory": {
+    "user_query": "梳理主要经济体针对人工智能生成内容的监管政策差异。",
+    "current_date": "2026年08月08日",
+    "run_id": "1dce004bfb284e53a8e46772887ef31e",
+    "run_status": "FAILED",
+    "stop_reason": "ValueError: model returned empty content",
+    "metrics": {
+      "scheme": "scheme_a",
+      "total_turns": 1,
+      "search_turns": 1,
+      "model_call_count": 5,
+      "search_action_count": 1,
+      "search_query_count": 5,
+      "web_result_count": 0,
+      "unique_web_count": 0,
+      "termination_type": "FAILED",
+      "terminated_by_model": false,
+      "reached_max_turns": false,
+      "final_action": "FAILED",
+      "last_model_action": "SEARCH",
+      "started_at": "2026-08-10T15:38:15.581042+00:00",
+      "finished_at": "2026-08-10T15:38:42.174728+00:00",
+      "elapsed_ms": 26593.72
+    },
+    "goals": [
+      {
+        "search_goal_id": "GOAL_1",
+        "search_goal": "确定截至2026年8月，美国、欧盟、中国等主要经济体针对人工智能生成内容已发布的官方监管政策及其核心要求",
+        "status": "OPEN",
+        "status_reason": "",
+        "answer": "",
+        "supported_statement": "",
+        "supporting_evidence_ids": [],
+        "conflict_summary": "",
+        "conflicting_evidence_ids": [],
+        "evidence_gap": "",
+        "depends_on_goal_ids": [],
+        "search_queries": [
+          "美国 AI生成内容 监管政策 2026",
+          "欧盟 AI法案 AI生成内容 透明度义务 2026",
+          "中国 人工智能生成内容 管理办法 AIGC 监管",
+          "AI-generated content regulation United States European Union China comparison",
+          "major economies AI content labeling watermarking regulation 2026"
+        ],
+        "web_ids": [],
+        "evidence_ids": [],
+        "conflict_ids": [],
+        "turn_ids": [
+          1
+        ]
+      }
+    ],
+    "evidences": [],
+    "conflicts": [],
+    "webs": [],
+    "turns": [
+      {
+        "turn_id": 1,
+        "planner_input": {
+          "messages": [
+            {
+              "role": "system",
+              "content": "你是离线轨迹合成系统中首次处理用户 query 的 Search Planner。本阶段只负责创建第一个持久化搜索目标并规划可由网页搜索引擎执行的 query，不更新搜索状态，不输出答案或证据。\n\n目标规划约束：\n1. 从原始问题最基础、最明确、可检索验证的信息缺口创建一个目标，不要一次展开整个答案。\n2. 本轮必须且只能输出一个 INIT_GOAL，search_goal_id 固定为 GOAL_1。\n3. 首轮没有已有目标，因此 target_goal_id=null、target_conflict_id=null、depends_on_goal_ids=[]。\n4. search_goal 必须是单一事实目标；search_queries 提供 1～5 条互补 query，包含必要的实体、事件、时间或官方来源限定。\n\nJSON 输出硬约束：\n1. 只输出一个可被标准 JSON 解析器直接解析的 JSON 对象；不要 Markdown 代码块、注释、解释性前后缀或尾随逗号。\n2. 所有 key 和字符串必须使用双引号；空值使用 null，不得使用 None、单引号、NaN 或省略整个顶层字段。\n3. 顶层只能包含 search_actions；search_actions 必须是长度为 1 的数组，并严格使用下列字段与结构。\n\n首轮唯一输出格式：\n{\n  \"search_actions\": [{\n    \"search_action\": \"INIT_GOAL\",\n    \"action_reason\": \"为什么先搜索该目标\",\n    \"target_goal_id\": null,\n    \"target_conflict_id\": null,\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"首个持久化搜索目标\",\n    \"depends_on_goal_ids\": [],\n    \"search_queries\": [\"query 1\", \"query 2\"]\n  }]\n}"
+            },
+            {
+              "role": "user",
+              "content": "<constant_info>\nuser_query: 梳理主要经济体针对人工智能生成内容的监管政策差异。\ncurrent_date: 2026年08月08日\n</constant_info>\n\n<task>\n这是首轮。请从原始问题最明显、最基础的信息缺口创建第一个 INIT_GOAL，并规划搜索 query。\n</task>"
+            }
+          ],
+          "response": {
+            "search_actions": [
+              {
+                "search_action": "INIT_GOAL",
+                "action_reason": "原始问题需要比较主要经济体的监管差异，但尚未明确各经济体各自发布了哪些针对AI生成内容的监管政策，因此先建立基础信息目标，为后续对比提供事实清单。",
+                "target_goal_id": null,
+                "target_conflict_id": null,
+                "search_goal_id": "GOAL_1",
+                "search_goal": "确定截至2026年8月，美国、欧盟、中国等主要经济体针对人工智能生成内容已发布的官方监管政策及其核心要求",
+                "depends_on_goal_ids": [],
+                "search_queries": [
+                  "美国 AI生成内容 监管政策 2026",
+                  "欧盟 AI法案 AI生成内容 透明度义务 2026",
+                  "中国 人工智能生成内容 管理办法 AIGC 监管",
+                  "AI-generated content regulation United States European Union China comparison",
+                  "major economies AI content labeling watermarking regulation 2026"
+                ]
+              }
+            ]
+          },
+          "phase": "initial_plan"
+        },
+        "search_actions": [
+          {
+            "search_action": "INIT_GOAL",
+            "action_reason": "原始问题需要比较主要经济体的监管差异，但尚未明确各经济体各自发布了哪些针对AI生成内容的监管政策，因此先建立基础信息目标，为后续对比提供事实清单。",
+            "target_goal_id": null,
+            "target_conflict_id": null,
+            "search_goal_id": "GOAL_1",
+            "search_goal": "确定截至2026年8月，美国、欧盟、中国等主要经济体针对人工智能生成内容已发布的官方监管政策及其核心要求",
+            "depends_on_goal_ids": [],
+            "search_queries": [
+              "美国 AI生成内容 监管政策 2026",
+              "欧盟 AI法案 AI生成内容 透明度义务 2026",
+              "中国 人工智能生成内容 管理办法 AIGC 监管",
+              "AI-generated content regulation United States European Union China comparison",
+              "major economies AI content labeling watermarking regulation 2026"
+            ]
+          }
+        ],
+        "executions": [
+          {
+            "search_action": {
+              "search_action": "INIT_GOAL",
+              "action_reason": "原始问题需要比较主要经济体的监管差异，但尚未明确各经济体各自发布了哪些针对AI生成内容的监管政策，因此先建立基础信息目标，为后续对比提供事实清单。",
+              "target_goal_id": null,
+              "target_conflict_id": null,
+              "search_goal_id": "GOAL_1",
+              "search_goal": "确定截至2026年8月，美国、欧盟、中国等主要经济体针对人工智能生成内容已发布的官方监管政策及其核心要求",
+              "depends_on_goal_ids": [],
+              "search_queries": [
+                "美国 AI生成内容 监管政策 2026",
+                "欧盟 AI法案 AI生成内容 透明度义务 2026",
+                "中国 人工智能生成内容 管理办法 AIGC 监管",
+                "AI-generated content regulation United States European Union China comparison",
+                "major economies AI content labeling watermarking regulation 2026"
+              ]
+            },
+            "search_goal_id": "GOAL_1",
+            "search_queries": [
+              "美国 AI生成内容 监管政策 2026",
+              "欧盟 AI法案 AI生成内容 透明度义务 2026",
+              "中国 人工智能生成内容 管理办法 AIGC 监管",
+              "AI-generated content regulation United States European Union China comparison",
+              "major economies AI content labeling watermarking regulation 2026"
+            ],
+            "search_calls": [],
+            "search_errors": [
+              {
+                "query": "美国 AI生成内容 监管政策 2026",
+                "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://qianfan.baidubce.com/v2/ai_search/web_search"
+              },
+              {
+                "query": "欧盟 AI法案 AI生成内容 透明度义务 2026",
+                "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://qianfan.baidubce.com/v2/ai_search/web_search"
+              },
+              {
+                "query": "中国 人工智能生成内容 管理办法 AIGC 监管",
+                "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://qianfan.baidubce.com/v2/ai_search/web_search"
+              },
+              {
+                "query": "AI-generated content regulation United States European Union China comparison",
+                "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://qianfan.baidubce.com/v2/ai_search/web_search"
+              },
+              {
+                "query": "major economies AI content labeling watermarking regulation 2026",
+                "error": "HTTPError: 429 Client Error: Too Many Requests for url: https://qianfan.baidubce.com/v2/ai_search/web_search"
+              }
+            ],
+            "webs": [],
+            "evidence_processor": {
+              "messages": [
+                {
+                  "role": "system",
+                  "content": "你是离线轨迹合成系统中的 Evidence Processor。你只负责围绕当前 search_goal，从本轮网页中抽取可复核证据，并识别会影响目标结论的实质冲突。你不规划搜索、不更新目标状态、不回答原始问题。\n\n核心约束：\n1. 证据必须与 current_search_goal 直接相关；忽略无关网页和只有猜测、宣传、转述但不能支持结论的内容。\n2. statement 是对一个或多个原文片段的谨慎归一化，不得超出 quotes 能支持的范围；涉及时间、范围、口径时必须写清。\n3. quotes 必须逐字来自本轮 search_webs，保持原意，不得改写、拼接不存在的句子；web_id 必须使用上下文给出的编号。\n4. 可用多个独立网页共同支持一个 evidence；同一事实的重复转载不应伪装成多份独立证据。\n5. conflict 只记录针对同一主体、同一口径且无法同时成立的陈述。时间口径不同、车型/系列概念不同等，应先在 statement 中限定，不要误判冲突。\n6. 不得引用历史网页全文。可参考 prior_goal_state 和 prior_evidences 理解缺口，但本轮新增 quotes 只能来自 current_search_webs。\n7. 没有可靠证据时返回空 evidences；没有实质冲突时返回空 conflicts。\n8. evidence_id 和 conflict_id 使用上下文给出的下一可用编号开始递增。\n9. 只输出一个合法 JSON 对象，不要 Markdown 代码块，不要解释性前后缀。\n\n输出结构：\n{\n  \"evidences\": [{\n    \"evidence_id\": \"E1\",\n    \"statement\": \"证据支持的归一化陈述\",\n    \"quotes\": [{\n      \"web_id\": \"1\",\n      \"quotes\": [\"网页原文片段\"]\n    }],\n    \"evidence_role\": \"该证据对当前目标的作用\",\n    \"evidence_type\": \"direct_answer|prerequisite|constraint|counter_evidence\"\n  }],\n  \"conflicts\": [{\n    \"conflict_id\": \"C1\",\n    \"conflict_object\": \"发生冲突的主体、属性与口径\",\n    \"conflict_evidence_ids\": [\"E1\", \"E2\"]\n  }]\n}"
+                },
+                {
+                  "role": "user",
+                  "content": "<constant_info>\nuser_query: 梳理主要经济体针对人工智能生成内容的监管政策差异。\ncurrent_date: 2026年08月08日\n</constant_info>\n\n<current_search_goal>\nsearch_goal_id: GOAL_1\nsearch_goal: 确定截至2026年8月，美国、欧盟、中国等主要经济体针对人工智能生成内容已发布的官方监管政策及其核心要求\n</current_search_goal>\n\n<prior_goal_state>\n{\n  \"status\": \"OPEN\",\n  \"answer\": \"\",\n  \"supported_statement\": \"\",\n  \"conflict_summary\": \"\",\n  \"evidence_gap\": \"\"\n}\n</prior_goal_state>\n\n<prior_evidences>\n[]\n</prior_evidences>\n\n<id_allocation>\nnext_evidence_id: E1\nnext_conflict_id: C1\n</id_allocation>\n\n<current_search_webs>\n（本轮没有检索到网页）\n</current_search_webs>"
+                }
+              ],
+              "response": {
+                "evidences": [],
+                "conflicts": []
+              }
+            },
+            "evidences": [],
+            "conflicts": []
+          }
+        ],
+        "failure": {
+          "stage": "planner_state_update",
+          "error_type": "ValueError",
+          "error": "model returned empty content",
+          "traceback": "Traceback (most recent call last):\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search/orchestrator.py\", line 82, in run\n    return self._run_impl(user_query, current_date=current_date)\n           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search/orchestrator.py\", line 224, in _run_impl\n    update_response = self._call_model(update_messages, \"search_planner\")\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search/orchestrator.py\", line 358, in _call_model\n    response = self.request_model(messages)\n  File \"/Users/seinelee/Documents/my_search_agent/get_model_infer.py\", line 73, in request_model\n    return _parse_json_object(response.choices[0].message.content)\n  File \"/Users/seinelee/Documents/my_search_agent/get_model_infer.py\", line 21, in _parse_json_object\n    raise ValueError(\"model returned empty content\")\nValueError: model returned empty content\n",
+          "last_model_call": {
+            "agent": "search_planner",
+            "stage": "planner_state_update",
+            "messages": [
+              {
+                "role": "system",
+                "content": "你是离线轨迹合成系统中非首轮的 Search Planner。你需要根据历史目标的紧凑状态和本轮网页、evidence、conflict，更新本轮涉及目标的状态，并决定继续搜索还是 STOP。你不摘录新证据，也不得凭常识补充事实。\n\n输入语义：\n1. search_status 只包含历史紧凑状态。带有 \"in_progress\": true 的目标尚未经过 Planner 状态判定，不能把该标签当作 OPEN 等正式状态。\n2. 已有历史状态只提供 search_goal_id、search_goal、status、answer、conflict_summary、evidence_gap；search_status 不提供任何 evidence ID、conflict ID 或依赖关系。\n3. current_turn_info 提供本轮搜索结果、evidence 和 conflict，是本轮状态更新中引用 ID 的唯一依据。\n\n状态更新约束：\n1. 只更新 current_turn_info 中本轮涉及的 search_goal；不得重复改写未被本轮搜索影响的历史目标。\n2. 状态只允许 OPEN、CLOSED、CLOSED_BY_REFUTED、UNRESOLVED、SUPERSEDED、DROPPED。\n3. CLOSED 必须已有足以直接回答目标的 supporting evidence，且不存在阻塞冲突；OPEN 必须明确 evidence_gap。\n4. supporting_evidence_ids 与 conflicting_evidence_ids 只能填写 current_turn_info 中存在的 E 开头 evidence_id，不得填写 C 开头 conflict_id 或编造 ID。\n5. depends_on_goal_ids 由 orchestrator 维护，search_state_updates 不得输出或修改该字段；状态判定也不得借此改变目标依赖关系。\n\n下一轮动作约束：\n1. 信息未闭环时，search_action 只允许 CONTINUE_SEARCH、VERIFY_CONFLICT、EXPAND_GOAL、REFINE_GOAL。注意正确拼写是 CONTINUE_SEARCH。\n2. CONTINUE_SEARCH：填写 target_goal_id、action_reason、search_queries；不填写 target_conflict_id、search_goal_id、search_goal、depends_on_goal_ids。\n3. VERIFY_CONFLICT：填写 target_goal_id、target_conflict_id、action_reason、search_queries；target_conflict_id 必须是 current_turn_info 中存在的 C 开头 conflict_id；不创建新目标。\n4. EXPAND_GOAL：填写新的 search_goal_id、search_goal、action_reason、search_queries；存在依赖时才填写 depends_on_goal_ids，不填写 target_goal_id 或 target_conflict_id。\n5. REFINE_GOAL：target_goal_id 指向被替代目标，并填写新的 search_goal_id、search_goal、action_reason、search_queries；存在依赖时才填写 depends_on_goal_ids，不填写 target_conflict_id。\n6. 每个非 STOP 动作必须提供 1～5 条可执行、互补的 search_queries。\n7. 信息已闭环时只允许一个 STOP；STOP 必须是唯一动作，且只包含 search_action 和 action_reason。\n\nJSON 输出硬约束：\n1. 只输出一个可被标准 JSON 解析器直接解析的 JSON 对象；不要 Markdown 代码块、注释、解释性前后缀或尾随逗号。\n2. 所有 key 和字符串必须使用双引号；空值使用 null，不得使用 None、单引号或 NaN。\n3. 顶层必须同时包含 search_state_updates 和 next_turn_search_actions；两者不得改名、缺失或额外嵌套。\n4. search_state_updates 必须是对象数组；next_turn_search_actions 必须是对象，其中 search_actions 必须是非空对象数组。\n\n信息未闭环时的输出格式：\n{\n  \"search_state_updates\": [{\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"原搜索目标\",\n    \"status\": \"OPEN|CLOSED|CLOSED_BY_REFUTED|UNRESOLVED|SUPERSEDED|DROPPED\",\n    \"status_reason\": \"状态原因\",\n    \"answer\": \"当前直接答案；OPEN 时可为部分答案\",\n    \"supported_statement\": \"证据支持的归一化事实\",\n    \"supporting_evidence_ids\": [\"E1\"],\n    \"conflict_summary\": \"未解决且影响答案的冲突\",\n    \"conflicting_evidence_ids\": [\"E2\"],\n    \"evidence_gap\": \"距离闭环还缺少什么\"\n  }],\n  \"next_turn_search_actions\": {\n    \"action_reason\": \"下一轮整体规划理由\",\n    \"search_actions\": [{\n      \"search_action\": \"CONTINUE_SEARCH\",\n      \"action_reason\": \"为什么需要继续搜索\",\n      \"target_goal_id\": \"GOAL_1\",\n      \"search_queries\": [\"query 1\", \"query 2\"]\n    }]\n  }\n}\n\n信息已经闭环时的输出格式：\n{\n  \"search_state_updates\": [{\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"原搜索目标\",\n    \"status\": \"CLOSED\",\n    \"status_reason\": \"已有充分证据且不存在阻塞冲突\",\n    \"answer\": \"当前直接答案\",\n    \"supported_statement\": \"证据支持的归一化事实\",\n    \"supporting_evidence_ids\": [\"E1\"],\n    \"conflict_summary\": \"\",\n    \"conflicting_evidence_ids\": [],\n    \"evidence_gap\": \"\"\n  }],\n  \"next_turn_search_actions\": {\n    \"action_reason\": \"所有回答原始问题所必需的目标均已闭环\",\n    \"search_actions\": [{\n      \"search_action\": \"STOP\",\n      \"action_reason\": \"所有必要目标均已闭环\"\n    }]\n  }\n}"
+              },
+              {
+                "role": "user",
+                "content": "<constant_info>\nuser_query: 梳理主要经济体针对人工智能生成内容的监管政策差异。\ncurrent_date: 2026年08月08日\n</constant_info>\n\n<search_status>\n[\n  {\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"确定截至2026年8月，美国、欧盟、中国等主要经济体针对人工智能生成内容已发布的官方监管政策及其核心要求\",\n    \"in_progress\": true\n  }\n]\n</search_status>\n\n<current_turn_info>\n[\n  {\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"确定截至2026年8月，美国、欧盟、中国等主要经济体针对人工智能生成内容已发布的官方监管政策及其核心要求\",\n    \"search_queries\": [\n      \"美国 AI生成内容 监管政策 2026\",\n      \"欧盟 AI法案 AI生成内容 透明度义务 2026\",\n      \"中国 人工智能生成内容 管理办法 AIGC 监管\",\n      \"AI-generated content regulation United States European Union China comparison\",\n      \"major economies AI content labeling watermarking regulation 2026\"\n    ],\n    \"search_errors\": [\n      {\n        \"query\": \"美国 AI生成内容 监管政策 2026\",\n        \"error\": \"HTTPError: 429 Client Error: Too Many Requests for url: https://qianfan.baidubce.com/v2/ai_search/web_search\"\n      },\n      {\n        \"query\": \"欧盟 AI法案 AI生成内容 透明度义务 2026\",\n        \"error\": \"HTTPError: 429 Client Error: Too Many Requests for url: https://qianfan.baidubce.com/v2/ai_search/web_search\"\n      },\n      {\n        \"query\": \"中国 人工智能生成内容 管理办法 AIGC 监管\",\n        \"error\": \"HTTPError: 429 Client Error: Too Many Requests for url: https://qianfan.baidubce.com/v2/ai_search/web_search\"\n      },\n      {\n        \"query\": \"AI-generated content regulation United States European Union China comparison\",\n        \"error\": \"HTTPError: 429 Client Error: Too Many Requests for url: https://qianfan.baidubce.com/v2/ai_search/web_search\"\n      },\n      {\n        \"query\": \"major economies AI content labeling watermarking regulation 2026\",\n        \"error\": \"HTTPError: 429 Client Error: Too Many Requests for url: https://qianfan.baidubce.com/v2/ai_search/web_search\"\n      }\n    ],\n    \"search_webs\": [],\n    \"evidences\": [],\n    \"conflicts\": []\n  }\n]\n</current_turn_info>\n\n<task>\n请更新 current_turn_info 中涉及的搜索目标状态，再判断原始问题是否已闭环：若已闭环输出 STOP；否则针对关键缺口规划下一轮动作。\nsupporting_evidence_ids 和 conflicting_evidence_ids 只能填写上下文中存在的 E 开头 evidence_id；VERIFY_CONFLICT.target_conflict_id 只能填写 C 开头 conflict_id。\n只输出 current_turn_info 中本轮涉及目标的 search_state_updates，不要重复更新其他历史目标。\nsearch_state_updates 不得输出 depends_on_goal_ids；目标依赖关系由编排器维护，状态判定时不可修改。\n</task>"
+              }
+            ],
+            "attempts": [
+              {
+                "attempt": 1,
+                "status": "FAILED",
+                "error_type": "ValueError",
+                "error": "model returned empty content"
+              },
+              {
+                "attempt": 2,
+                "status": "FAILED",
+                "error_type": "ValueError",
+                "error": "model returned empty content"
+              },
+              {
+                "attempt": 3,
+                "status": "FAILED",
+                "error_type": "ValueError",
+                "error": "model returned empty content"
+              }
+            ],
+            "attempt": 3,
+            "attempt_count": 3,
+            "status": "FAILED",
+            "error_type": "ValueError",
+            "error": "model returned empty content"
+          }
+        }
+      }
+    ],
+    "errors": [
+      {
+        "stage": "planner_state_update",
+        "error_type": "ValueError",
+        "error": "model returned empty content",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search/orchestrator.py\", line 82, in run\n    return self._run_impl(user_query, current_date=current_date)\n           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search/orchestrator.py\", line 224, in _run_impl\n    update_response = self._call_model(update_messages, \"search_planner\")\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search/orchestrator.py\", line 358, in _call_model\n    response = self.request_model(messages)\n  File \"/Users/seinelee/Documents/my_search_agent/get_model_infer.py\", line 73, in request_model\n    return _parse_json_object(response.choices[0].message.content)\n  File \"/Users/seinelee/Documents/my_search_agent/get_model_infer.py\", line 21, in _parse_json_object\n    raise ValueError(\"model returned empty content\")\nValueError: model returned empty content\n",
+        "last_model_call": {
+          "agent": "search_planner",
+          "stage": "planner_state_update",
+          "messages": [
+            {
+              "role": "system",
+              "content": "你是离线轨迹合成系统中非首轮的 Search Planner。你需要根据历史目标的紧凑状态和本轮网页、evidence、conflict，更新本轮涉及目标的状态，并决定继续搜索还是 STOP。你不摘录新证据，也不得凭常识补充事实。\n\n输入语义：\n1. search_status 只包含历史紧凑状态。带有 \"in_progress\": true 的目标尚未经过 Planner 状态判定，不能把该标签当作 OPEN 等正式状态。\n2. 已有历史状态只提供 search_goal_id、search_goal、status、answer、conflict_summary、evidence_gap；search_status 不提供任何 evidence ID、conflict ID 或依赖关系。\n3. current_turn_info 提供本轮搜索结果、evidence 和 conflict，是本轮状态更新中引用 ID 的唯一依据。\n\n状态更新约束：\n1. 只更新 current_turn_info 中本轮涉及的 search_goal；不得重复改写未被本轮搜索影响的历史目标。\n2. 状态只允许 OPEN、CLOSED、CLOSED_BY_REFUTED、UNRESOLVED、SUPERSEDED、DROPPED。\n3. CLOSED 必须已有足以直接回答目标的 supporting evidence，且不存在阻塞冲突；OPEN 必须明确 evidence_gap。\n4. supporting_evidence_ids 与 conflicting_evidence_ids 只能填写 current_turn_info 中存在的 E 开头 evidence_id，不得填写 C 开头 conflict_id 或编造 ID。\n5. depends_on_goal_ids 由 orchestrator 维护，search_state_updates 不得输出或修改该字段；状态判定也不得借此改变目标依赖关系。\n\n下一轮动作约束：\n1. 信息未闭环时，search_action 只允许 CONTINUE_SEARCH、VERIFY_CONFLICT、EXPAND_GOAL、REFINE_GOAL。注意正确拼写是 CONTINUE_SEARCH。\n2. CONTINUE_SEARCH：填写 target_goal_id、action_reason、search_queries；不填写 target_conflict_id、search_goal_id、search_goal、depends_on_goal_ids。\n3. VERIFY_CONFLICT：填写 target_goal_id、target_conflict_id、action_reason、search_queries；target_conflict_id 必须是 current_turn_info 中存在的 C 开头 conflict_id；不创建新目标。\n4. EXPAND_GOAL：填写新的 search_goal_id、search_goal、action_reason、search_queries；存在依赖时才填写 depends_on_goal_ids，不填写 target_goal_id 或 target_conflict_id。\n5. REFINE_GOAL：target_goal_id 指向被替代目标，并填写新的 search_goal_id、search_goal、action_reason、search_queries；存在依赖时才填写 depends_on_goal_ids，不填写 target_conflict_id。\n6. 每个非 STOP 动作必须提供 1～5 条可执行、互补的 search_queries。\n7. 信息已闭环时只允许一个 STOP；STOP 必须是唯一动作，且只包含 search_action 和 action_reason。\n\nJSON 输出硬约束：\n1. 只输出一个可被标准 JSON 解析器直接解析的 JSON 对象；不要 Markdown 代码块、注释、解释性前后缀或尾随逗号。\n2. 所有 key 和字符串必须使用双引号；空值使用 null，不得使用 None、单引号或 NaN。\n3. 顶层必须同时包含 search_state_updates 和 next_turn_search_actions；两者不得改名、缺失或额外嵌套。\n4. search_state_updates 必须是对象数组；next_turn_search_actions 必须是对象，其中 search_actions 必须是非空对象数组。\n\n信息未闭环时的输出格式：\n{\n  \"search_state_updates\": [{\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"原搜索目标\",\n    \"status\": \"OPEN|CLOSED|CLOSED_BY_REFUTED|UNRESOLVED|SUPERSEDED|DROPPED\",\n    \"status_reason\": \"状态原因\",\n    \"answer\": \"当前直接答案；OPEN 时可为部分答案\",\n    \"supported_statement\": \"证据支持的归一化事实\",\n    \"supporting_evidence_ids\": [\"E1\"],\n    \"conflict_summary\": \"未解决且影响答案的冲突\",\n    \"conflicting_evidence_ids\": [\"E2\"],\n    \"evidence_gap\": \"距离闭环还缺少什么\"\n  }],\n  \"next_turn_search_actions\": {\n    \"action_reason\": \"下一轮整体规划理由\",\n    \"search_actions\": [{\n      \"search_action\": \"CONTINUE_SEARCH\",\n      \"action_reason\": \"为什么需要继续搜索\",\n      \"target_goal_id\": \"GOAL_1\",\n      \"search_queries\": [\"query 1\", \"query 2\"]\n    }]\n  }\n}\n\n信息已经闭环时的输出格式：\n{\n  \"search_state_updates\": [{\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"原搜索目标\",\n    \"status\": \"CLOSED\",\n    \"status_reason\": \"已有充分证据且不存在阻塞冲突\",\n    \"answer\": \"当前直接答案\",\n    \"supported_statement\": \"证据支持的归一化事实\",\n    \"supporting_evidence_ids\": [\"E1\"],\n    \"conflict_summary\": \"\",\n    \"conflicting_evidence_ids\": [],\n    \"evidence_gap\": \"\"\n  }],\n  \"next_turn_search_actions\": {\n    \"action_reason\": \"所有回答原始问题所必需的目标均已闭环\",\n    \"search_actions\": [{\n      \"search_action\": \"STOP\",\n      \"action_reason\": \"所有必要目标均已闭环\"\n    }]\n  }\n}"
+            },
+            {
+              "role": "user",
+              "content": "<constant_info>\nuser_query: 梳理主要经济体针对人工智能生成内容的监管政策差异。\ncurrent_date: 2026年08月08日\n</constant_info>\n\n<search_status>\n[\n  {\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"确定截至2026年8月，美国、欧盟、中国等主要经济体针对人工智能生成内容已发布的官方监管政策及其核心要求\",\n    \"in_progress\": true\n  }\n]\n</search_status>\n\n<current_turn_info>\n[\n  {\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"确定截至2026年8月，美国、欧盟、中国等主要经济体针对人工智能生成内容已发布的官方监管政策及其核心要求\",\n    \"search_queries\": [\n      \"美国 AI生成内容 监管政策 2026\",\n      \"欧盟 AI法案 AI生成内容 透明度义务 2026\",\n      \"中国 人工智能生成内容 管理办法 AIGC 监管\",\n      \"AI-generated content regulation United States European Union China comparison\",\n      \"major economies AI content labeling watermarking regulation 2026\"\n    ],\n    \"search_errors\": [\n      {\n        \"query\": \"美国 AI生成内容 监管政策 2026\",\n        \"error\": \"HTTPError: 429 Client Error: Too Many Requests for url: https://qianfan.baidubce.com/v2/ai_search/web_search\"\n      },\n      {\n        \"query\": \"欧盟 AI法案 AI生成内容 透明度义务 2026\",\n        \"error\": \"HTTPError: 429 Client Error: Too Many Requests for url: https://qianfan.baidubce.com/v2/ai_search/web_search\"\n      },\n      {\n        \"query\": \"中国 人工智能生成内容 管理办法 AIGC 监管\",\n        \"error\": \"HTTPError: 429 Client Error: Too Many Requests for url: https://qianfan.baidubce.com/v2/ai_search/web_search\"\n      },\n      {\n        \"query\": \"AI-generated content regulation United States European Union China comparison\",\n        \"error\": \"HTTPError: 429 Client Error: Too Many Requests for url: https://qianfan.baidubce.com/v2/ai_search/web_search\"\n      },\n      {\n        \"query\": \"major economies AI content labeling watermarking regulation 2026\",\n        \"error\": \"HTTPError: 429 Client Error: Too Many Requests for url: https://qianfan.baidubce.com/v2/ai_search/web_search\"\n      }\n    ],\n    \"search_webs\": [],\n    \"evidences\": [],\n    \"conflicts\": []\n  }\n]\n</current_turn_info>\n\n<task>\n请更新 current_turn_info 中涉及的搜索目标状态，再判断原始问题是否已闭环：若已闭环输出 STOP；否则针对关键缺口规划下一轮动作。\nsupporting_evidence_ids 和 conflicting_evidence_ids 只能填写上下文中存在的 E 开头 evidence_id；VERIFY_CONFLICT.target_conflict_id 只能填写 C 开头 conflict_id。\n只输出 current_turn_info 中本轮涉及目标的 search_state_updates，不要重复更新其他历史目标。\nsearch_state_updates 不得输出 depends_on_goal_ids；目标依赖关系由编排器维护，状态判定时不可修改。\n</task>"
+            }
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": "FAILED",
+              "error_type": "ValueError",
+              "error": "model returned empty content"
+            },
+            {
+              "attempt": 2,
+              "status": "FAILED",
+              "error_type": "ValueError",
+              "error": "model returned empty content"
+            },
+            {
+              "attempt": 3,
+              "status": "FAILED",
+              "error_type": "ValueError",
+              "error": "model returned empty content"
+            }
+          ],
+          "attempt": 3,
+          "attempt_count": 3,
+          "status": "FAILED",
+          "error_type": "ValueError",
+          "error": "model returned empty content"
+        }
+      }
+    ]
+  },
+  "answer_agent_handoff": {
+    "user_query": "梳理主要经济体针对人工智能生成内容的监管政策差异。",
+    "run_id": "1dce004bfb284e53a8e46772887ef31e",
+    "run_status": "FAILED",
+    "stop_reason": "ValueError: model returned empty content",
+    "metrics": {
+      "scheme": "scheme_a",
+      "total_turns": 1,
+      "search_turns": 1,
+      "model_call_count": 5,
+      "search_action_count": 1,
+      "search_query_count": 5,
+      "web_result_count": 0,
+      "unique_web_count": 0,
+      "termination_type": "FAILED",
+      "terminated_by_model": false,
+      "reached_max_turns": false,
+      "final_action": "FAILED",
+      "last_model_action": "SEARCH",
+      "started_at": "2026-08-10T15:38:15.581042+00:00",
+      "finished_at": "2026-08-10T15:38:42.174728+00:00",
+      "elapsed_ms": 26593.72
+    },
+    "search_goals": [
+      {
+        "search_goal_id": "GOAL_1",
+        "search_goal": "确定截至2026年8月，美国、欧盟、中国等主要经济体针对人工智能生成内容已发布的官方监管政策及其核心要求",
+        "status": "OPEN",
+        "status_reason": "",
+        "answer": "",
+        "supported_statement": "",
+        "supporting_evidence_ids": [],
+        "conflict_summary": "",
+        "conflicting_evidence_ids": [],
+        "evidence_gap": "",
+        "depends_on_goal_ids": [],
+        "search_queries": [
+          "美国 AI生成内容 监管政策 2026",
+          "欧盟 AI法案 AI生成内容 透明度义务 2026",
+          "中国 人工智能生成内容 管理办法 AIGC 监管",
+          "AI-generated content regulation United States European Union China comparison",
+          "major economies AI content labeling watermarking regulation 2026"
+        ],
+        "web_ids": [],
+        "evidence_ids": [],
+        "conflict_ids": [],
+        "turn_ids": [
+          1
+        ]
+      }
+    ],
+    "evidences": [],
+    "conflicts": [],
+    "webs": []
+  }
+}

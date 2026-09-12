@@ -1,0 +1,83 @@
+{
+  "trajectory": {
+    "user_query": "全球人形机器人量产进展如何，主要厂商的时间表是什么？",
+    "current_date": "2026-09-11",
+    "run_id": "1c1846858bf147918e141539667241b0",
+    "run_status": "FAILED",
+    "stop_reason": "APIStatusError: Error code: 402 - {'error': {'message': 'Insufficient Balance', 'type': 'unknown_error', 'param': None, 'code': 'invalid_request_error'}}",
+    "metrics": {
+      "scheme": "scheme_a",
+      "total_turns": 0,
+      "search_turns": 0,
+      "model_call_count": 1,
+      "search_action_count": 0,
+      "search_query_count": 0,
+      "web_result_count": 0,
+      "unique_web_count": 0,
+      "termination_type": "FAILED",
+      "terminated_by_model": false,
+      "reached_max_turns": false,
+      "final_action": "FAILED",
+      "last_model_action": null,
+      "started_at": "2026-09-11T15:29:06.011704+00:00",
+      "finished_at": "2026-09-11T15:29:06.514466+00:00",
+      "elapsed_ms": 502.77
+    },
+    "goals": [],
+    "evidences": [],
+    "conflicts": [],
+    "webs": [],
+    "turns": [],
+    "errors": [
+      {
+        "stage": "initial_planner",
+        "error_type": "APIStatusError",
+        "error": "Error code: 402 - {'error': {'message': 'Insufficient Balance', 'type': 'unknown_error', 'param': None, 'code': 'invalid_request_error'}}",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search/orchestrator.py\", line 82, in run\n    return self._run_impl(user_query, current_date=current_date)\n           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search/orchestrator.py\", line 159, in _run_impl\n    initial_response = self._call_model(initial_messages, \"search_planner\")\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search/orchestrator.py\", line 358, in _call_model\n    response = self.request_model(messages)\n  File \"/Users/seinelee/Documents/my_search_agent/get_model_infer.py\", line 127, in request_model\n    return request_model_stream(messages)\n  File \"/Users/seinelee/Documents/my_search_agent/get_model_infer.py\", line 100, in request_model_stream\n    response_stream = client.chat.completions.create(\n        model=os.environ.get(\"DS_MODEL\", \"deepseek-v4-flash\"),\n    ...<4 lines>...\n        extra_body={\"thinking\": {\"type\": \"enabled\"}},\n    )\n  File \"/Users/seinelee/miniconda3/envs/python314/lib/python3.14/site-packages/openai/_utils/_utils.py\", line 298, in wrapper\n    return func(*args, **kwargs)\n  File \"/Users/seinelee/miniconda3/envs/python314/lib/python3.14/site-packages/openai/resources/chat/completions/completions.py\", line 1251, in create\n    return self._post(\n           ~~~~~~~~~~^\n        \"/chat/completions\",\n        ^^^^^^^^^^^^^^^^^^^^\n    ...<52 lines>...\n        stream_cls=Stream[ChatCompletionChunk],\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/Users/seinelee/miniconda3/envs/python314/lib/python3.14/site-packages/openai/_base_client.py\", line 1332, in post\n    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))\n                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/seinelee/miniconda3/envs/python314/lib/python3.14/site-packages/openai/_base_client.py\", line 1105, in request\n    raise self._make_status_error_from_response(err.response) from None\nopenai.APIStatusError: Error code: 402 - {'error': {'message': 'Insufficient Balance', 'type': 'unknown_error', 'param': None, 'code': 'invalid_request_error'}}\n",
+        "last_model_call": {
+          "agent": "search_planner",
+          "stage": "initial_planner",
+          "messages": [
+            {
+              "role": "system",
+              "content": "# 角色\n你是离线轨迹合成系统中首次处理用户 query 的 Search Planner。本阶段只负责创建第一个持久化搜索目标并规划可由网页搜索引擎执行的 query，不更新搜索状态，不输出答案或证据。\n\n# 目标规划约束\n1. 从原始问题最基础、最明确、可检索验证的信息缺口创建一个目标，不要一次展开整个答案。\n2. 本轮必须且只能输出一个 INIT_GOAL，search_goal_id 固定为 GOAL_1。\n3. 首轮没有已有目标，因此 target_goal_id=null、target_conflict_id=null、depends_on_goal_ids=[]。\n4. search_goal 必须是单一事实目标；search_queries 提供 1～5 条互补 query，包含必要的实体、事件、时间或官方来源限定。\n\n# JSON 输出硬约束\n1. 只输出一个可被标准 JSON 解析器直接解析的 JSON 对象；不要 Markdown 代码块、注释、解释性前后缀或尾随逗号。\n2. 所有 key 和字符串必须使用双引号；空值使用 null，不得使用 None、单引号、NaN 或省略整个顶层字段。\n3. 顶层只能包含 search_actions；search_actions 必须是长度为 1 的数组，并严格使用下列字段与结构。\n\n## 首轮唯一输出格式\n请严格按照以下JSON格式输出：\n{\n  \"search_actions\": [{\n    \"search_action\": \"INIT_GOAL\",\n    \"action_reason\": \"为什么先搜索该目标\",\n    \"target_goal_id\": null,\n    \"target_conflict_id\": null,\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"首个持久化搜索目标\",\n    \"depends_on_goal_ids\": [],\n    \"search_queries\": [\"query 1\", \"query 2\"]\n  }]\n}"
+            },
+            {
+              "role": "user",
+              "content": "<constant_info>\nuser_query: 全球人形机器人量产进展如何，主要厂商的时间表是什么？\ncurrent_date: 2026-09-11\n</constant_info>\n\n<task>\n这是首轮。请从原始问题最明显、最基础的信息缺口创建第一个 INIT_GOAL，并规划搜索 query。\n</task>"
+            }
+          ],
+          "attempts": []
+        }
+      }
+    ]
+  },
+  "answer_agent_handoff": {
+    "user_query": "全球人形机器人量产进展如何，主要厂商的时间表是什么？",
+    "run_id": "1c1846858bf147918e141539667241b0",
+    "run_status": "FAILED",
+    "stop_reason": "APIStatusError: Error code: 402 - {'error': {'message': 'Insufficient Balance', 'type': 'unknown_error', 'param': None, 'code': 'invalid_request_error'}}",
+    "metrics": {
+      "scheme": "scheme_a",
+      "total_turns": 0,
+      "search_turns": 0,
+      "model_call_count": 1,
+      "search_action_count": 0,
+      "search_query_count": 0,
+      "web_result_count": 0,
+      "unique_web_count": 0,
+      "termination_type": "FAILED",
+      "terminated_by_model": false,
+      "reached_max_turns": false,
+      "final_action": "FAILED",
+      "last_model_action": null,
+      "started_at": "2026-09-11T15:29:06.011704+00:00",
+      "finished_at": "2026-09-11T15:29:06.514466+00:00",
+      "elapsed_ms": 502.77
+    },
+    "search_goals": [],
+    "evidences": [],
+    "conflicts": [],
+    "webs": []
+  }
+}

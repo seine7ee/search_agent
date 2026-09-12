@@ -1,0 +1,130 @@
+{
+  "evaluations": [
+    {
+      "point_id": "目前状态窗口",
+      "coverage": "none",
+      "coverage_score": 0,
+      "support": 0,
+      "evidence": [],
+      "source_domains": [],
+      "independent_source_count": 0,
+      "coverage_reason": "指定 answer_agent_handoff.webs 为空，没有可用网页正文。",
+      "support_reason": "指定网页数组为空，无法引出相关原文，计0分。",
+      "inference_or_gaps": [
+        "全部所需事实及可引用原文缺失。"
+      ]
+    },
+    {
+      "point_id": "主流模型集合",
+      "coverage": "none",
+      "coverage_score": 0,
+      "support": 0,
+      "evidence": [],
+      "source_domains": [],
+      "independent_source_count": 0,
+      "coverage_reason": "指定 answer_agent_handoff.webs 为空，没有可用网页正文。",
+      "support_reason": "指定网页数组为空，无法引出相关原文，计0分。",
+      "inference_or_gaps": [
+        "全部所需事实及可引用原文缺失。"
+      ]
+    },
+    {
+      "point_id": "长上下文范围",
+      "coverage": "none",
+      "coverage_score": 0,
+      "support": 0,
+      "evidence": [],
+      "source_domains": [],
+      "independent_source_count": 0,
+      "coverage_reason": "指定 answer_agent_handoff.webs 为空，没有可用网页正文。",
+      "support_reason": "指定网页数组为空，无法引出相关原文，计0分。",
+      "inference_or_gaps": [
+        "全部所需事实及可引用原文缺失。"
+      ]
+    },
+    {
+      "point_id": "公开评测限定",
+      "coverage": "none",
+      "coverage_score": 0,
+      "support": 0,
+      "evidence": [],
+      "source_domains": [],
+      "independent_source_count": 0,
+      "coverage_reason": "指定 answer_agent_handoff.webs 为空，没有可用网页正文。",
+      "support_reason": "指定网页数组为空，无法引出相关原文，计0分。",
+      "inference_or_gaps": [
+        "全部所需事实及可引用原文缺失。"
+      ]
+    },
+    {
+      "point_id": "技术路线与机制",
+      "coverage": "none",
+      "coverage_score": 0,
+      "support": 0,
+      "evidence": [],
+      "source_domains": [],
+      "independent_source_count": 0,
+      "coverage_reason": "指定 answer_agent_handoff.webs 为空，没有可用网页正文。",
+      "support_reason": "指定网页数组为空，无法引出相关原文，计0分。",
+      "inference_or_gaps": [
+        "全部所需事实及可引用原文缺失。"
+      ]
+    },
+    {
+      "point_id": "评测条件与指标",
+      "coverage": "none",
+      "coverage_score": 0,
+      "support": 0,
+      "evidence": [],
+      "source_domains": [],
+      "independent_source_count": 0,
+      "coverage_reason": "指定 answer_agent_handoff.webs 为空，没有可用网页正文。",
+      "support_reason": "指定网页数组为空，无法引出相关原文，计0分。",
+      "inference_or_gaps": [
+        "全部所需事实及可引用原文缺失。"
+      ]
+    },
+    {
+      "point_id": "逐模型公开成绩",
+      "coverage": "none",
+      "coverage_score": 0,
+      "support": 0,
+      "evidence": [],
+      "source_domains": [],
+      "independent_source_count": 0,
+      "coverage_reason": "指定 answer_agent_handoff.webs 为空，没有可用网页正文。",
+      "support_reason": "指定网页数组为空，无法引出相关原文，计0分。",
+      "inference_or_gaps": [
+        "全部所需事实及可引用原文缺失。"
+      ]
+    },
+    {
+      "point_id": "能力适用边界",
+      "coverage": "none",
+      "coverage_score": 0,
+      "support": 0,
+      "evidence": [],
+      "source_domains": [],
+      "independent_source_count": 0,
+      "coverage_reason": "指定 answer_agent_handoff.webs 为空，没有可用网页正文。",
+      "support_reason": "指定网页数组为空，无法引出相关原文，计0分。",
+      "inference_or_gaps": [
+        "全部所需事实及可引用原文缺失。"
+      ]
+    }
+  ],
+  "summary": {
+    "point_count": 8,
+    "coverage_counts": {
+      "direct": 0,
+      "inferred": 0,
+      "none": 8
+    },
+    "coverage_total": 0,
+    "coverage_average": 0.0,
+    "coverage_max": 2,
+    "support_total": 0,
+    "support_average": 0.0,
+    "support_max": 3
+  }
+}

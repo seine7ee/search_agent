@@ -1,0 +1,62 @@
+{
+  "trajectory": {
+    "user_query": "比较当前主流 AI 编程助手的功能、模型和企业部署能力。",
+    "current_date": "2026-08-09",
+    "run_id": "0f1de8af24c94d8389aab2d01ba4eebe",
+    "run_status": "FAILED",
+    "stop_reason": "RuntimeError: environment variable ds_api_key is not set",
+    "metrics": {
+      "scheme": "scheme_b_baseline",
+      "total_turns": 1,
+      "search_turns": 0,
+      "model_call_count": 1,
+      "search_action_count": 0,
+      "search_query_count": 0,
+      "web_result_count": 0,
+      "unique_web_count": 0,
+      "termination_type": "FAILED",
+      "terminated_by_model": false,
+      "reached_max_turns": false,
+      "final_action": "FAILED",
+      "last_model_action": null,
+      "started_at": "2026-08-09T12:03:15.861297+00:00",
+      "finished_at": "2026-08-09T12:03:15.861708+00:00",
+      "elapsed_ms": 0.41
+    },
+    "turns": [],
+    "webs": [],
+    "errors": [
+      {
+        "stage": "teacher_decision",
+        "error_type": "RuntimeError",
+        "error": "environment variable ds_api_key is not set",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search_baseline/orchestrator.py\", line 75, in run\n    return self._run_impl(user_query, current_date=current_date)\n           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search_baseline/orchestrator.py\", line 149, in _run_impl\n    response = self._call_model(messages)\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search_baseline/orchestrator.py\", line 222, in _call_model\n    response = self.request_model(messages)\n  File \"/Users/seinelee/Documents/my_search_agent/get_model_infer.py\", line 50, in request_model\n    raise RuntimeError(\"environment variable ds_api_key is not set\")\nRuntimeError: environment variable ds_api_key is not set\n"
+      }
+    ]
+  },
+  "answer_agent_handoff": {
+    "user_query": "比较当前主流 AI 编程助手的功能、模型和企业部署能力。",
+    "run_id": "0f1de8af24c94d8389aab2d01ba4eebe",
+    "run_status": "FAILED",
+    "stop_reason": "RuntimeError: environment variable ds_api_key is not set",
+    "metrics": {
+      "scheme": "scheme_b_baseline",
+      "total_turns": 1,
+      "search_turns": 0,
+      "model_call_count": 1,
+      "search_action_count": 0,
+      "search_query_count": 0,
+      "web_result_count": 0,
+      "unique_web_count": 0,
+      "termination_type": "FAILED",
+      "terminated_by_model": false,
+      "reached_max_turns": false,
+      "final_action": "FAILED",
+      "last_model_action": null,
+      "started_at": "2026-08-09T12:03:15.861297+00:00",
+      "finished_at": "2026-08-09T12:03:15.861708+00:00",
+      "elapsed_ms": 0.41
+    },
+    "webs": []
+  }
+}

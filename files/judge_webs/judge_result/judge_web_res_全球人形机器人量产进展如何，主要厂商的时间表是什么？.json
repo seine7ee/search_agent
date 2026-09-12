@@ -1,0 +1,133 @@
+{
+  "query": "全球人形机器人量产进展如何，主要厂商的时间表是什么？",
+  "profile": {
+    "query_type": "hybrid(closed_factual,open_ended)",
+    "domain": "技术",
+    "hop_structure": "derived_constraint",
+    "completeness": "可开展拆解，未发现必须由用户补充才能检索的条件；实体范围、术语口径和相对时间按对应具体要点解析，不预填检索结果。",
+    "complexity_tier": "complex",
+    "point_budget": 10
+  },
+  "points": [
+    {
+      "id": "全球范围",
+      "class": "constraint",
+      "statement": "需要在全球范围识别人形机器人量产活动。",
+      "source_span": "全球",
+      "depends_on": [],
+      "necessity": "must",
+      "evidence_form": "列表",
+      "satisfy_rule": "信息包含相关厂商和量产项目所在国家或地区，候选覆盖范围面向全球，不能仅以一个地区的项目清单代替。",
+      "fail_action": "依赖未满足时记为不可评估；可评估而不满足时闸门不通过，目标层与面覆盖层不计分。"
+    },
+    {
+      "id": "人形机器人限定",
+      "class": "constraint",
+      "statement": "需要确认量产对象属于人形机器人。",
+      "source_span": "人形机器人",
+      "depends_on": [],
+      "necessity": "must",
+      "evidence_form": "定义",
+      "satisfy_rule": "信息包含所述产品的机器人形态及整机属性，并说明纳入人形机器人范围的依据；零部件或非该类别产品不能当作整机量产。",
+      "fail_action": "依赖未满足时记为不可评估；可评估而不满足时闸门不通过，目标层与面覆盖层不计分。"
+    },
+    {
+      "id": "进展状态窗口",
+      "class": "constraint",
+      "statement": "需要确定截至查询日的人形机器人量产状态。",
+      "source_span": "量产进展如何",
+      "depends_on": [],
+      "necessity": "must",
+      "evidence_form": "时间",
+      "satisfy_rule": "将进展如何按现时态处理，采用查询日这一单日状态窗口；信息包含进展事件发生时间和截至该日的项目阶段，未来计划不计为已经完成的进展。",
+      "fail_action": "依赖未满足时记为不可评估；可评估而不满足时闸门不通过，目标层与面覆盖层不计分。"
+    },
+    {
+      "id": "主要厂商集合",
+      "class": "constraint",
+      "statement": "需要确定人形机器人主要厂商的范围和主体身份。",
+      "source_span": "主要厂商",
+      "depends_on": [
+        "全球范围",
+        "人形机器人限定"
+      ],
+      "necessity": "must",
+      "evidence_form": "列表",
+      "satisfy_rule": "信息包含主要厂商筛选依据、成员列表及各自整机产品或项目身份，并区分同一厂商的不同量产项目。",
+      "fail_action": "依赖未满足时记为不可评估；可评估而不满足时闸门不通过，目标层与面覆盖层不计分。"
+    },
+    {
+      "id": "量产阶段及数量口径",
+      "class": "bridge",
+      "statement": "需要定义量产阶段和反映进展的数量口径。",
+      "source_span": "量产进展",
+      "depends_on": [],
+      "necessity": "must",
+      "evidence_form": "定义",
+      "satisfy_rule": "信息说明样机、试制、量产及交付等状态的判定含义，并区分设计产能、计划产量、实际产量及交付数量；使用数量时说明整机单位、累计或期间值及对应时间。"
+    },
+    {
+      "id": "实际量产进展",
+      "class": "aspect",
+      "statement": "需要梳理主要厂商已实现的量产阶段和规模。",
+      "source_span": "量产进展如何",
+      "depends_on": [
+        "主要厂商集合",
+        "进展状态窗口",
+        "量产阶段及数量口径"
+      ],
+      "necessity": "must",
+      "evidence_form": "列表",
+      "satisfy_rule": "信息逐厂商覆盖相关产品、已发生生产或交付里程碑、当前阶段及对应时间；存在规模数字时说明实际产出还是产能计划，缺少实际规模时标记该字段缺失。",
+      "template": "现状与数据",
+      "depth_rule": "激活理由：用户显式询问量产进展。覆盖深度：逐项目给出具体已发生里程碑及状态依据，不能仅列厂商宣称进入量产或未来产能目标。"
+    },
+    {
+      "id": "厂商量产时间表",
+      "class": "target",
+      "statement": "需要获取各主要厂商量产与交付里程碑的计划时间。",
+      "source_span": "主要厂商的时间表是什么",
+      "depends_on": [
+        "主要厂商集合",
+        "量产阶段及数量口径"
+      ],
+      "necessity": "must",
+      "evidence_form": "时间",
+      "satisfy_rule": "逐厂商包含对应产品或项目、里程碑、计划日期或时间区间、计划提出或更新的时间；有产量目标时标明其适用期间。没有公开时间表的厂商记录为计划信息缺失，不能根据行业平均进度补定日期。"
+    },
+    {
+      "id": "兑现条件与延期",
+      "class": "aspect",
+      "statement": "需要了解量产时间表兑现的条件及已发生的延期。",
+      "source_span": "derived:风险与局限",
+      "depends_on": [
+        "厂商量产时间表"
+      ],
+      "necessity": "should",
+      "evidence_form": "论证",
+      "satisfy_rule": "信息包含具体项目的延期、未达到计划、量产约束或计划实施前提，并关联其受影响的里程碑；能够区分已发生延期与尚未验证的风险。",
+      "template": "风险与局限",
+      "depth_rule": "激活理由：量产现状和计划需有可执行条件的补充。覆盖深度：约束须关联具体项目及计划节点，泛称行业仍不成熟不计覆盖。"
+    }
+  ],
+  "scoring": {
+    "gate": "约束闸门包括：全球范围、人形机器人限定、进展状态窗口、主要厂商集合。逐项判定；未全部满足时，目标层与面覆盖层不计分，但继续记录无依赖关系要点的覆盖状态。",
+    "target": "闸门通过后，分别判定：厂商量产时间表。输出各项状态，以及满足项数、可评估项数、不可评估项数；集合型要点同时记录具体缺失成员或字段，不另设完整性分数。",
+    "aspect": "闸门通过后，分别按 satisfy_rule 和 depth_rule 判定：实际量产进展、兑现条件与延期。独立报告 must 与 should 项的满足数、可评估数及不可评估数。",
+    "aggregation": "按 depends_on 的拓扑顺序判定。被依赖要点不满足或不可评估时，依赖项记为不可评估，不记为不满足；缺少无法由检索确定的用户条件时注明具体条件。桥接状态、约束闸门、目标层和面覆盖层分别输出，不合并为单一标量。只汇总具体信息缺口，不评答案唯一性、来源质量或条件式作答。"
+  },
+  "self_check": {
+    "no_answer_leak": true,
+    "no_symbolic_variables": true,
+    "all_spans_traceable": true,
+    "budget_respected": true,
+    "reverse_evidence_included": true,
+    "dropped_points": [
+      "机器人性能排行榜、市场规模预测和投资价值：query 未要求。",
+      "独立时间线面：厂商时间表已由 target 承接，避免重复。",
+      "强制反向比较项：非比较 query；计划限制通过风险与局限面承接。",
+      "通用前提澄清、信息缺口、唯一可判定及条件式判定：不新增具体信息需求，不独立计分。",
+      "来源权威性、可信度、污染及误导检测：由独立模块负责。"
+    ]
+  }
+}

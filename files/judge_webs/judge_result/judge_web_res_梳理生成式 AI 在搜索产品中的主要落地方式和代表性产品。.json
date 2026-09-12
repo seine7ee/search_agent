@@ -1,0 +1,98 @@
+{
+  "query": "梳理生成式 AI 在搜索产品中的主要落地方式和代表性产品。",
+  "profile": {
+    "query_type": "open_ended",
+    "domain": "技术",
+    "hop_structure": "derived_constraint",
+    "completeness": "可开展拆解，未发现必须由用户补充才能检索的条件；实体范围、术语口径和相对时间按对应具体要点解析，不预填检索结果。",
+    "complexity_tier": "medium",
+    "point_budget": 7
+  },
+  "points": [
+    {
+      "id": "生成式技术限定",
+      "class": "constraint",
+      "statement": "需要确认所述功能实际涉及生成式 AI。",
+      "source_span": "生成式 AI",
+      "depends_on": [],
+      "necessity": "must",
+      "evidence_form": "定义",
+      "satisfy_rule": "信息说明生成式能力承担的处理或输出任务，可区分生成式功能与仅采用一般算法处理的功能。",
+      "fail_action": "依赖未满足时记为不可评估；可评估而不满足时闸门不通过，目标层与面覆盖层不计分。"
+    },
+    {
+      "id": "搜索产品限定",
+      "class": "constraint",
+      "statement": "需要将案例限定于以搜索任务为组成部分的产品。",
+      "source_span": "搜索产品",
+      "depends_on": [],
+      "necessity": "must",
+      "evidence_form": "定义",
+      "satisfy_rule": "每个案例包含用户搜索任务、信息获取对象及搜索功能位置，可判断其属于搜索产品或具有明确搜索功能的产品。",
+      "fail_action": "依赖未满足时记为不可评估；可评估而不满足时闸门不通过，目标层与面覆盖层不计分。"
+    },
+    {
+      "id": "主要落地方式",
+      "class": "aspect",
+      "statement": "需要梳理生成式 AI 在搜索中的落地方式及其工作流程。",
+      "source_span": "主要落地方式",
+      "depends_on": [
+        "生成式技术限定",
+        "搜索产品限定"
+      ],
+      "necessity": "must",
+      "evidence_form": "流程",
+      "satisfy_rule": "信息能够按用户任务或产品流程划分主要方式，每种方式均有作用环节、输入输出和用户交互说明，且说明分类及主要方式的选取依据。",
+      "template": "方案与做法",
+      "depth_rule": "激活理由：用户显式要求梳理主要落地方式。覆盖深度：各方式须说明功能如何进入搜索流程，仅列技术术语或宣传标签不计覆盖。"
+    },
+    {
+      "id": "代表产品与方式对应",
+      "class": "aspect",
+      "statement": "需要列出各落地方式的代表性产品及实际功能。",
+      "source_span": "代表性产品",
+      "depends_on": [
+        "主要落地方式"
+      ],
+      "necessity": "must",
+      "evidence_form": "列表",
+      "satisfy_rule": "每种已识别方式均有对应产品名称、相关功能、可识别的产品形态或版本状态及代表性理由；能够将产品功能映射到对应落地方式。",
+      "template": "典型案例",
+      "depth_rule": "激活理由：用户显式要求代表性产品。覆盖深度：逐产品说明具体使用场景与可观察功能表现，同一产品覆盖多种方式时分别标明，不能仅罗列品牌。"
+    },
+    {
+      "id": "适用边界",
+      "class": "aspect",
+      "statement": "需要了解不同落地方式的适用条件与功能限制。",
+      "source_span": "derived:风险与局限",
+      "depends_on": [
+        "主要落地方式"
+      ],
+      "necessity": "should",
+      "evidence_form": "论证",
+      "satisfy_rule": "信息包含与具体方式或产品关联的使用前提、任务限制或失败情形，且能说明这些限制影响哪些搜索任务。",
+      "template": "风险与局限",
+      "depth_rule": "激活理由：技术落地梳理需要补充可用范围。覆盖深度：限制须关联具体功能与场景，泛泛描述所有 AI 都可能出错不计覆盖。"
+    }
+  ],
+  "scoring": {
+    "gate": "约束闸门包括：生成式技术限定、搜索产品限定。逐项判定；未全部满足时，目标层与面覆盖层不计分，但继续记录无依赖关系要点的覆盖状态。",
+    "target": "不适用；本 query 的信息目标由面覆盖层承接。",
+    "aspect": "闸门通过后，分别按 satisfy_rule 和 depth_rule 判定：主要落地方式、代表产品与方式对应、适用边界。独立报告 must 与 should 项的满足数、可评估数及不可评估数。",
+    "aggregation": "按 depends_on 的拓扑顺序判定。被依赖要点不满足或不可评估时，依赖项记为不可评估，不记为不满足；缺少无法由检索确定的用户条件时注明具体条件。桥接状态、约束闸门、目标层和面覆盖层分别输出，不合并为单一标量。只汇总具体信息缺口，不评答案唯一性、来源质量或条件式作答。"
+  },
+  "self_check": {
+    "no_answer_leak": true,
+    "no_symbolic_variables": true,
+    "all_spans_traceable": true,
+    "budget_respected": true,
+    "reverse_evidence_included": true,
+    "dropped_points": [
+      "当前产品排名、市场份额、价格和厂商推荐：用户未要求。",
+      "通用 AI 定义和历史发展面：不能增加落地方式与代表产品之外的直接覆盖。",
+      "反向比较项：非比较类且无方向性评价措辞，不强制激活。",
+      "通用前提澄清、信息缺口、唯一可判定及条件式判定：不新增具体信息需求，不独立计分。",
+      "来源权威性、可信度、污染及误导检测：由独立模块负责。"
+    ]
+  }
+}

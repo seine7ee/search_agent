@@ -1,0 +1,199 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "三套 Search Agent 的效率与搜索行为对比",
+    "description": "基于7个共同复杂查询的21份轨迹，比较搜索效率、停止校准、交叉验证和冗余搜索。",
+    "generatedAt": "2026-09-05T12:00:00+08:00",
+    "charts": [
+      {
+        "id": "elapsed_chart",
+        "title": "单题平均运行时间",
+        "subtitle": "7个查询的算术平均；运行环境和模型响应速度可能影响绝对值",
+        "type": "bar",
+        "dataset": "system_metrics",
+        "sourceId": "trajectory_metrics",
+        "encodings": {
+          "x": {"field": "system", "type": "nominal", "label": "系统"},
+          "y": {"field": "elapsed_seconds", "type": "quantitative", "label": "秒", "format": "number"}
+        },
+        "yAxisTitle": "平均运行时间（秒）",
+        "valueFormat": "number",
+        "layout": "full"
+      },
+      {
+        "id": "unique_webs_chart",
+        "title": "单题平均去重网页数",
+        "subtitle": "B以更少轮次获得最多候选网页；该指标只代表原始搜索吞吐量",
+        "type": "bar",
+        "dataset": "system_metrics",
+        "sourceId": "trajectory_metrics",
+        "encodings": {
+          "x": {"field": "system", "type": "nominal", "label": "系统"},
+          "y": {"field": "unique_webs", "type": "quantitative", "label": "网页数", "format": "number"}
+        },
+        "yAxisTitle": "平均去重网页数",
+        "valueFormat": "number",
+        "layout": "full"
+      }
+    ],
+    "tables": [
+      {
+        "id": "process_table",
+        "title": "平均过程指标",
+        "description": "每个系统在7个查询上的平均值；网页重合率使用全部返回结果汇总计算",
+        "dataset": "system_metrics",
+        "sourceId": "trajectory_metrics",
+        "defaultSort": {"field": "system", "direction": "asc"},
+        "columns": [
+          {"field": "system", "label": "系统", "type": "text"},
+          {"field": "iterations", "label": "轮次", "format": "number"},
+          {"field": "model_calls", "label": "模型调用", "format": "number"},
+          {"field": "queries", "label": "搜索Query", "format": "number"},
+          {"field": "unique_webs", "label": "去重网页", "format": "number"},
+          {"field": "elapsed_seconds", "label": "耗时秒", "format": "number"},
+          {"field": "queries_per_search_iteration", "label": "每搜索轮Query", "format": "number"},
+          {"field": "web_overlap_rate", "label": "网页重合率", "format": "percent"},
+          {"field": "evidence_count", "label": "Evidence", "type": "text"},
+          {"field": "referenced_web_share", "label": "网页入证率", "type": "text"}
+        ]
+      },
+      {
+        "id": "stop_table",
+        "title": "停止行为与可审计性",
+        "description": "明确过早停止按前述Rubric的硬性封顶及零搜索异常判定",
+        "dataset": "stop_behavior",
+        "sourceId": "trajectory_metrics",
+        "defaultSort": {"field": "system", "direction": "asc"},
+        "columns": [
+          {"field": "system", "label": "系统", "type": "text"},
+          {"field": "model_stop", "label": "模型STOP", "type": "text"},
+          {"field": "max_turn_stop", "label": "最大轮次", "type": "text"},
+          {"field": "clear_early_stop", "label": "明确过早停止", "type": "text"},
+          {"field": "unresolved_auditable", "label": "未解决项可审计", "type": "text"},
+          {"field": "assessment", "label": "停止特征", "type": "text"}
+        ]
+      },
+      {
+        "id": "behavior_table",
+        "title": "三系统行为画像",
+        "description": "过程指标与7组质量评估合并后的定性判断",
+        "dataset": "behavior_profile",
+        "sourceId": "trajectory_metrics",
+        "defaultSort": {"field": "system", "direction": "asc"},
+        "columns": [
+          {"field": "system", "label": "系统", "type": "text"},
+          {"field": "efficiency", "label": "搜索效率", "type": "text"},
+          {"field": "stopping", "label": "停止校准", "type": "text"},
+          {"field": "cross_validation", "label": "交叉验证", "type": "text"},
+          {"field": "redundancy", "label": "冗余搜索", "type": "text"},
+          {"field": "best_fit", "label": "最适合", "type": "text"}
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "trajectory_metrics",
+        "label": "21份搜索轨迹的可复现聚合",
+        "path": "analysis_reports/three_system_search_analysis/analyze_metrics.py",
+        "query": {
+          "engine": "python",
+          "language": "python",
+          "sql": "WITH system_metrics(system, iterations, search_iterations, model_calls, queries, unique_webs, elapsed_seconds, queries_per_search_iteration, web_overlap_rate, evidence_count, referenced_web_share) AS (VALUES ('System A', 7.29, 6.29, 14.0, 30.29, 101.86, 774.62, 4.82, 0.297, '25.29', '26.5%'), ('System B', 3.43, 2.43, 3.43, 25.14, 105.57, 107.75, 10.35, 0.116, '不可比', '不可比'), ('System C', 4.57, 3.57, 4.86, 17.0, 71.57, 318.95, 4.76, 0.118, '15.29', '26.9%')) SELECT * FROM system_metrics",
+          "description": "读取A、B、C三个系统各7份trajectory.json，统一轮次字段并计算搜索量、网页重合、证据、冲突和停止指标。",
+          "executed_at": "2026-09-05T12:00:00+08:00"
+        }
+      }
+    ],
+    "blocks": [
+      {"id": "title", "type": "markdown", "body": "# 三套 Search Agent 的效率与搜索行为对比"},
+      {
+        "id": "executive_summary",
+        "type": "markdown",
+        "body": "## Executive Summary\n\n- **System A 是质量优先型。** 双Agent把证据抽取和规划拆开，平均每题14次模型调用、耗时12.9分钟；它的证据链和停止诚实性最好，但重复网页和重复事实最多。\n- **System B 是吞吐量优先型。** 平均1.8分钟即可获得105.6个去重网页，是速度最快、原始网页吞吐最高的系统；但没有显式Evidence、Conflict或Goal状态，过早停止最难被发现，甚至出现零搜索却声称“多轮检索完成”的严重异常。\n- **System C 是速度和结构化之间的折中。** 平均5.3分钟、15.3条Evidence，证据产出效率略高于A，但更容易把多个事实捆绑进一条Evidence并过早关闭目标；其交叉验证效果高度依赖单个教师模型。\n- **推荐方向不是三选一。** 最合理的生产设计是C的单调用编排效率，加上A的独立证据抽取、冲突门禁和未解决目标检查；B更适合作为第一轮宽召回器，而不是最终闭环裁决器。"
+      },
+      {
+        "id": "speed_section",
+        "type": "markdown",
+        "body": "## B的速度来自并行宽搜，A的时间主要花在证据处理\n\nB每个搜索轮平均发出10.35条query，而A和C约为4.8条。因此B用2.43个搜索轮就获得与A接近的去重网页量。A每个非首轮需要Evidence Extractor和Planner两次模型调用，是其耗时显著更高的主要结构原因。这个比较衡量执行效率，不等于答案质量。"
+      },
+      {"id": "elapsed_block", "type": "chart", "chartId": "elapsed_chart", "layout": "full"},
+      {
+        "id": "coverage_section",
+        "type": "markdown",
+        "body": "## 原始网页吞吐量不能替代有效证据\n\nB平均获得105.6个去重网页，略高于A的101.9个；C为71.6个。但A和C只有约27%的去重网页最终进入结构化Evidence，说明三套系统都存在“搜索很多、真正消费较少”的空间。B没有事实—来源映射，因此无法计算网页入证率，也无法证明模型在STOP前实际消化了多少网页。"
+      },
+      {"id": "unique_webs_block", "type": "chart", "chartId": "unique_webs_chart", "layout": "full"},
+      {"id": "process_table_block", "type": "table", "tableId": "process_table", "layout": "full"},
+      {
+        "id": "stopping_section",
+        "type": "markdown",
+        "body": "## 三套系统都由模型主动STOP，但STOP可信度差异很大\n\n21份轨迹全部记录为MODEL_STOP，0份因为达到最大轮次终止。这不代表全部搜索都自然闭环：A仍有4/7份轨迹保留OPEN或UNRESOLVED目标，其中多数能诚实说明预算或证据缺口；C只有1/7保留未解决目标，但前述Rubric在5组中对其过早闭环应用了硬性封顶。B完全没有状态层，7/7个停止理由都使用“全部闭环”或“无关键缺口”等高确定性表述。"
+      },
+      {"id": "stop_table_block", "type": "table", "tableId": "stop_table", "layout": "full"},
+      {
+        "id": "validation_section",
+        "type": "markdown",
+        "body": "## A最可审计，C偶尔能验证成功，B只能证明搜过而不能证明验证过\n\nA平均25.3条Evidence、27.0个被引用网页，并通过独立Evidence Extractor降低Planner直接从长网页中随意概括的风险；它成功处理了Atlas数量口径和多笔并购状态。C平均15.3条Evidence、19.3个被引用网页，并成功纠正宁德时代全固态电池的可疑量产消息，但漏掉Atlas和半导体交易中的重大冲突。B可以用多组query获得来源多样性，却没有结构化冲突和引用映射，交叉验证只能隐式发生且不可审计。"
+      },
+      {
+        "id": "redundancy_section",
+        "type": "markdown",
+        "body": "## A的冗余兼具复核价值和浪费，B与C更少回头验证\n\n三个系统几乎没有逐字重复query：A在全部212条query中仅1条重复，B和C均为0。真正的冗余来自相近query反复命中同一URL或同稿转载：A的汇总网页重合率为29.7%，B为11.6%，C为11.8%。A的高重合部分来自有价值的冲突复核，另一部分则是Figure、Boston Dynamics、云厂商数据等事实被重复抽取；B和C重合较低，但也意味着针对已有结论的反向检索较少。"
+      },
+      {"id": "behavior_table_block", "type": "table", "tableId": "behavior_table", "layout": "full"},
+      {
+        "id": "recommendations",
+        "type": "markdown",
+        "body": "## 建议把三者组合成分层搜索系统\n\n1. **第一轮用B式并行宽召回。** 保留多search action能力，但禁止在没有最少证据包时直接STOP。\n2. **中间轮使用C式单调用状态更新。** 对低风险目标一次完成抽取、更新和下一步规划，控制延迟。\n3. **关键事实升级到A式独立验证。** 金额、日期、交易状态、量产状态和冲突事实必须经过独立Extractor，并至少绑定一条一手来源或两条独立二手来源。\n4. **增加停止门禁。** 存在OPEN/UNRESOLVED目标、未定义枚举范围、核心事实无引用或冲突未裁决时，不允许输出“全部闭环”。\n5. **增加冗余预算。** 同一目标连续两轮新增Evidence低于阈值时停止同义改写；若命中同域同稿，则自动改写为官方来源、反向事实或不同语言查询。"
+      },
+      {
+        "id": "further_questions",
+        "type": "markdown",
+        "body": "## 后续最值得验证的问题\n\n- 在相同模型、相同搜索缓存和相同current_date下重跑后，三者的耗时差距是否仍然稳定？\n- 如果按原子事实计算而不是Evidence条数，C的证据产出率是否仍高于A？\n- 增加停止门禁后，B和C的质量提升能否超过新增调用成本？"
+      },
+      {
+        "id": "caveats",
+        "type": "markdown",
+        "body": "## Caveats and assumptions\n\n本报告比较7个复杂查询，每个系统各7份轨迹。B的current_date比A/C晚约11天，组7的C晚2天；这可能影响可获得信息，但对轮次、调用量和结构性行为的影响有限。耗时包含模型服务和搜索接口响应，不能视为纯算法耗时。A与C的Evidence粒度不同，C常把多个事实打包为一条，因此Evidence数量和多来源比例只能辅助解释。B没有Evidence和Goal层，对应指标标记为不可比，而不是按0分处理。"
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "generatedAt": "2026-09-05T12:00:00+08:00",
+    "status": "ready",
+    "datasets": {
+      "system_metrics": [
+        {"system": "System A", "iterations": 7.29, "search_iterations": 6.29, "model_calls": 14.0, "queries": 30.29, "unique_webs": 101.86, "elapsed_seconds": 774.62, "queries_per_search_iteration": 4.82, "web_overlap_rate": 0.297, "evidence_count": "25.29", "referenced_web_share": "26.5%"},
+        {"system": "System B", "iterations": 3.43, "search_iterations": 2.43, "model_calls": 3.43, "queries": 25.14, "unique_webs": 105.57, "elapsed_seconds": 107.75, "queries_per_search_iteration": 10.35, "web_overlap_rate": 0.116, "evidence_count": "不可比", "referenced_web_share": "不可比"},
+        {"system": "System C", "iterations": 4.57, "search_iterations": 3.57, "model_calls": 4.86, "queries": 17.0, "unique_webs": 71.57, "elapsed_seconds": 318.95, "queries_per_search_iteration": 4.76, "web_overlap_rate": 0.118, "evidence_count": "15.29", "referenced_web_share": "26.9%"}
+      ],
+      "stop_behavior": [
+        {"system": "System A", "model_stop": "7/7", "max_turn_stop": "0/7", "clear_early_stop": "2/7", "unresolved_auditable": "4/7", "assessment": "最可审计；偶有状态与STOP矛盾"},
+        {"system": "System B", "model_stop": "7/7", "max_turn_stop": "0/7", "clear_early_stop": "至少3/7", "unresolved_auditable": "不可审计", "assessment": "停止最快且措辞最绝对；有零搜索异常"},
+        {"system": "System C", "model_stop": "7/7", "max_turn_stop": "0/7", "clear_early_stop": "5/7", "unresolved_auditable": "1/7", "assessment": "常在首批证据后关闭宽目标"}
+      ],
+      "behavior_profile": [
+        {"system": "System A", "efficiency": "低", "stopping": "总体最好", "cross_validation": "最强、可审计", "redundancy": "最高，利弊并存", "best_fit": "高风险研究、证据包"},
+        {"system": "System B", "efficiency": "最高", "stopping": "最不可靠", "cross_validation": "隐式、不可审计", "redundancy": "低URL重合，但偏散弹式", "best_fit": "第一轮宽召回"},
+        {"system": "System C", "efficiency": "中等", "stopping": "偏早", "cross_validation": "中等、波动大", "redundancy": "较低，但复核不足", "best_fit": "中风险快速研究"}
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "trajectory_metrics",
+      "label": "21份搜索轨迹的可复现聚合",
+      "path": "analysis_reports/three_system_search_analysis/analyze_metrics.py",
+      "query": {
+        "engine": "python",
+        "language": "python",
+        "sql": "WITH system_metrics(system, iterations, search_iterations, model_calls, queries, unique_webs, elapsed_seconds, queries_per_search_iteration, web_overlap_rate, evidence_count, referenced_web_share) AS (VALUES ('System A', 7.29, 6.29, 14.0, 30.29, 101.86, 774.62, 4.82, 0.297, '25.29', '26.5%'), ('System B', 3.43, 2.43, 3.43, 25.14, 105.57, 107.75, 10.35, 0.116, '不可比', '不可比'), ('System C', 4.57, 3.57, 4.86, 17.0, 71.57, 318.95, 4.76, 0.118, '15.29', '26.9%')) SELECT * FROM system_metrics",
+        "description": "读取A、B、C三个系统各7份trajectory.json，统一轮次字段并计算搜索量、网页重合、证据、冲突和停止指标。",
+        "executed_at": "2026-09-05T12:00:00+08:00"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1724 @@
+{
+  "trajectory": {
+    "user_query": "小米发布第二款车之后的下一个大型车展上，其竞品都发布了什么车？",
+    "current_date": "2026-08-14",
+    "run_id": "12685e27289748fbbabf8deb975c8789",
+    "run_status": "FAILED",
+    "stop_reason": "ProtocolError: CLOSED goals cannot have blocking conflicts",
+    "metrics": {
+      "scheme": "scheme_a",
+      "total_turns": 1,
+      "search_turns": 1,
+      "model_call_count": 3,
+      "search_action_count": 1,
+      "search_query_count": 5,
+      "web_result_count": 22,
+      "unique_web_count": 21,
+      "termination_type": "FAILED",
+      "terminated_by_model": false,
+      "reached_max_turns": false,
+      "final_action": "FAILED",
+      "last_model_action": "SEARCH",
+      "started_at": "2026-08-13T16:20:23.833096+00:00",
+      "finished_at": "2026-08-13T16:23:16.727610+00:00",
+      "elapsed_ms": 172894.12
+    },
+    "goals": [
+      {
+        "search_goal_id": "GOAL_1",
+        "search_goal": "确定小米第二款车的车型名称及官方发布/上市日期",
+        "status": "OPEN",
+        "status_reason": "",
+        "answer": "",
+        "supported_statement": "",
+        "supporting_evidence_ids": [],
+        "conflict_summary": "",
+        "conflicting_evidence_ids": [],
+        "evidence_gap": "",
+        "depends_on_goal_ids": [],
+        "search_queries": [
+          "小米第二款车 车型 发布 上市 时间",
+          "小米汽车 第二款车 官方发布",
+          "Xiaomi second car model launch date",
+          "小米 YU7 上市时间",
+          "小米第二款车 发布日期 2025 OR 2026"
+        ],
+        "web_ids": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21"
+        ],
+        "evidence_ids": [
+          "E1",
+          "E2",
+          "E3"
+        ],
+        "conflict_ids": [
+          "C1"
+        ],
+        "turn_ids": [
+          1
+        ]
+      }
+    ],
+    "evidences": [
+      {
+        "evidence_id": "E1",
+        "statement": "小米汽车官方于2024年12月9日晚通过官方微博公布，其第二款车型为纯电动SUV，官方定名为“小米YU7”。",
+        "quotes": [
+          {
+            "web_id": "2",
+            "quotes": [
+              "小米汽车 第二款车型为SUV,定名为“小米YU7”"
+            ]
+          },
+          {
+            "web_id": "4",
+            "quotes": [
+              "小米汽车 第二款车型为SUV,定名为“小米YU7”"
+            ]
+          },
+          {
+            "web_id": "10",
+            "quotes": [
+              "O SUV, chamado YU7, será um modelo elétrico"
+            ]
+          },
+          {
+            "web_id": "11",
+            "quotes": [
+              "Xiaomi’s second car will be a pure electric sport utility vehicle"
+            ]
+          },
+          {
+            "web_id": "12",
+            "quotes": [
+              "The SUV, called YU7, will be an electric model, with a 3-meter wheelbase."
+            ]
+          }
+        ],
+        "evidence_role": "直接给出小米第二款车的官方车型名称与类别，解决目标中的车型名称部分，也是进一步核对上市日期的前提。",
+        "evidence_type": "direct_answer",
+        "search_goal_id": "GOAL_1"
+      },
+      {
+        "evidence_id": "E2",
+        "statement": "小米汽车官方公布小米YU7预计于2025年6月至7月正式上市。",
+        "quotes": [
+          {
+            "web_id": "2",
+            "quotes": [
+              "预计2025年6-7月正式上市"
+            ]
+          },
+          {
+            "web_id": "4",
+            "quotes": [
+              "预计2025年6-7月正式上市"
+            ]
+          },
+          {
+            "web_id": "10",
+            "quotes": [
+              "está programado para chegar ao mercado em junho ou julho de 2025"
+            ]
+          },
+          {
+            "web_id": "11",
+            "quotes": [
+              "It will launch in June or July 2025"
+            ]
+          },
+          {
+            "web_id": "12",
+            "quotes": [
+              "its second model, an SUV, is scheduled to hit the market in June or July 2025."
+            ]
+          },
+          {
+            "web_id": "14",
+            "quotes": [
+              "7月将正式上市。"
+            ]
+          },
+          {
+            "web_id": "17",
+            "quotes": [
+              "小米YU7预计于2025年六七月正式上市"
+            ]
+          }
+        ],
+        "evidence_role": "直接给出小米官方公布的上市时间窗口（2025年6-7月），解决目标中的发布/上市日期部分。",
+        "evidence_type": "direct_answer",
+        "search_goal_id": "GOAL_1"
+      },
+      {
+        "evidence_id": "E3",
+        "statement": "在官方正式公布前，有媒体报道援引小米内部人士消息称，小米第二款车型（内部代号MX11，纯电SUV）计划于2025年2月或3月上市，上市节奏与SU7一致；该消息未获小米官方确认。",
+        "quotes": [
+          {
+            "web_id": "1",
+            "quotes": [
+              "小米第二款车型计划于明年2、3月上市,小米第二款新车的上市安排将与此前SU7上市节奏一致。"
+            ]
+          },
+          {
+            "web_id": "3",
+            "quotes": [
+              "小米的第二款车型计划于明年2月或3月上市",
+              "可以确定的是,小米汽车的第二款车型是一款纯电SUV,代号为MX11"
+            ]
+          },
+          {
+            "web_id": "18",
+            "quotes": [
+              "小米汽车计划在2025年一季度推出其第二款车型",
+              "据了解,小米汽车的第二款车型为纯电SUV,代号为MX11"
+            ]
+          },
+          {
+            "web_id": "19",
+            "quotes": [
+              "小米第二款车型计划于明年2、3月上市"
+            ]
+          }
+        ],
+        "evidence_role": "记录官方公布前媒体援引内部人士的上市时间说法，与官方时间形成对照，用于识别时间口径冲突。",
+        "evidence_type": "counter_evidence",
+        "search_goal_id": "GOAL_1"
+      }
+    ],
+    "conflicts": [
+      {
+        "conflict_id": "C1",
+        "conflict_object": "小米第二款车型（小米YU7）的上市时间口径冲突：小米官方公布预计2025年6-7月上市，而此前媒体报道的内部消息称计划2025年2-3月上市。",
+        "conflict_evidence_ids": [
+          "E2",
+          "E3"
+        ],
+        "search_goal_id": "GOAL_1"
+      }
+    ],
+    "webs": [
+      {
+        "url": "https://www.toutiao.com/article/7439997991349518911/",
+        "title": "关注 - 小米第二款车或于2025年一季度上市 - 今日头条",
+        "content": "文:懂车帝原创 尚甜甜[懂车帝原创 行业] 日前,据财经汽车报道,小米汽车内部人士透露:小米第二款车型计划于明年2、3月上市,小米第二款新车的上市安排将与此前SU7上市节奏一致。",
+        "website": "今日头条",
+        "date": "2024-11-22T16:12:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 今日头条｜网页时间: 2024-11-22T16:12:00+08:00｜网页标题: 关注 - 小米第二款车或于2025年一季度上市 - 今日头条｜网页内容：文:懂车帝原创 尚甜甜[懂车帝原创 行业] 日前,据财经汽车报道,小米汽车内部人士透露:小米第二款车型计划于明年2、3月上市,小米第二款新车的上市安排将与此前SU7上市节奏一致。",
+        "source_id": 1,
+        "web_id": "1"
+      },
+      {
+        "url": "https://finance.eastmoney.com/a/202412093263234596.html",
+        "title": "小米汽车“二孩”将明年6月上市 “小米YU7”为SUV车型 _ 东方财富网",
+        "content": "新京报贝壳财经讯(记者陈维城)12月9日晚间,小米汽车官方微博发布动态显示, 小米汽车 第二款车型为SUV,定名为“小米YU7”,预计2025年6-7月正式上市。 小米汽车 官方 微博 内容 新京报 贝壳 财经记者从工信部官网获悉,该车型长4999mm、宽1996mm、 高1600mm,最高车速253km/h;该产品为纯电动车型,宁德时代三元锂离子电池;ABS型号:ESP10,为博世汽车部件(苏州)有限公司生产;驱动电机峰值功率:220kW/288kW。 今年上半年,小米汽车上市交付备受关注。自3月正式上市以来,小米汽车第一款轿车车型 Xiaomi SU7在产能扩张和交付执行上进展飞速。10月,小米汽车工厂单月生产量及新车交付量均破20000辆。11月,Xiaomi SU7提前完成10万台交付目标。2024全年小米汽车将冲刺13万辆交付新目标。 小米集团三季报显示,第三季度,小米智能电动汽车等创新业务收入为97亿元,正逐步向百亿规模逼近,毛利率提升至17.1%。截至2024年9月30日,小米汽车已在中国38个城市开业127家汽车销售门店。 (文章来源:新京报)",
+        "website": "东方财富网财经频道",
+        "date": "2024-12-09T23:16:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 东方财富网财经频道｜网页时间: 2024-12-09T23:16:00+08:00｜网页标题: 小米汽车“二孩”将明年6月上市 “小米YU7”为SUV车型 _ 东方财富网｜网页内容：新京报贝壳财经讯(记者陈维城)12月9日晚间,小米汽车官方微博发布动态显示, 小米汽车 第二款车型为SUV,定名为“小米YU7”,预计2025年6-7月正式上市。 小米汽车 官方 微博 内容 新京报 贝壳 财经记者从工信部官网获悉,该车型长4999mm、宽1996mm、 高1600mm,最高车速253km/h;该产品为纯电动车型,宁德时代三元锂离子电池;ABS型号:ESP10,为博世汽车部件(苏州)有限公司生产;驱动电机峰值功率:220kW/288kW。 今年上半年,小米汽车上市交付备受关注。自3月正式上市以来,小米汽车第一款轿车车型 Xiaomi SU7在产能扩张和交付执行上进展飞速。10月,小米汽车工厂单月生产量及新车交付量均破20000辆。11月,Xiaomi SU7提前完成10万台交付目标。2024全年小米汽车将冲刺13万辆交付新目标。 小米集团三季报显示,第三季度,小米智能电动汽车等创新业务收入为97亿元,正逐步向百亿规模逼近,毛利率提升至17.1%。截至2024年9月30日,小米汽车已在中国38个城市开业127家汽车销售门店。 (文章来源:新京报)",
+        "source_id": 2,
+        "web_id": "2"
+      },
+      {
+        "url": "https://k.sina.com.cn/article_1747383115_6826f34b02001peyw.html?from=auto&subch=oauto",
+        "title": "小米第二款纯电SUV车型或将于明年2、3月上市-新浪汽车",
+        "content": "近日,有媒体报道小米汽车内部人士的透露,称小米的第二款车型计划于明年2月或3月上市。这一消息引起了广泛关注,并引发了业界对小米汽车未来发展的猜测。 此外,另一位消息人士也表示,小米第二款车型的上市节奏将与小米SU7(配置 保持一致。而小米SU7的上市时间恰好是2024年3月28日,这进一步证实了小米第二款车型可能将在相近的时间段内推向市场。 然而,对于上述消息,小米集团相关负责人回应称“相关问题已超纲”,并未给出更多具体回应。这使得小米第二款车型的上市时间仍存在一定的不确定性。 尽管如此,可以确定的是,小米汽车的第二款车型是一款纯电SUV,代号为MX11。这款车型与小米SU7共享平台及部分零部件,但在设计上更具独特性。据媒体报道,小米MX11的车身侧面线条流畅,整体设计充满现代感,预计将在市场上引发一定的关注。 小米汽车作为新能源汽车市场的新势力,其首款车型SU7已经在市场上取得了一定的成绩。此次推出的第二款车型MX11,不仅延续了小米汽车一贯的高品质和创新精神,更在设计上进行了更多的尝试和突破。 随着新能源汽车市场的快速发展和竞争的加剧,小米汽车需要不断创新和提升自身实力,才能在市场上立足。小米MX11的推出,无疑将为小米汽车未来的发展注入新的活力和动力。 虽然目前小米集团相关负责人对于第二款车型的上市时间并未给出明确回应,但我们可以期待小米MX11在未来市场上的表现。同时,也希望小米汽车能够继续秉持创新精神,为消费者带来更多高品质的新能源汽车产品。",
+        "website": "新浪网",
+        "date": "2024-11-22T07:16:32+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 新浪网｜网页时间: 2024-11-22T07:16:32+08:00｜网页标题: 小米第二款纯电SUV车型或将于明年2、3月上市-新浪汽车｜网页内容：近日,有媒体报道小米汽车内部人士的透露,称小米的第二款车型计划于明年2月或3月上市。这一消息引起了广泛关注,并引发了业界对小米汽车未来发展的猜测。 此外,另一位消息人士也表示,小米第二款车型的上市节奏将与小米SU7(配置 保持一致。而小米SU7的上市时间恰好是2024年3月28日,这进一步证实了小米第二款车型可能将在相近的时间段内推向市场。 然而,对于上述消息,小米集团相关负责人回应称“相关问题已超纲”,并未给出更多具体回应。这使得小米第二款车型的上市时间仍存在一定的不确定性。 尽管如此,可以确定的是,小米汽车的第二款车型是一款纯电SUV,代号为MX11。这款车型与小米SU7共享平台及部分零部件,但在设计上更具独特性。据媒体报道,小米MX11的车身侧面线条流畅,整体设计充满现代感,预计将在市场上引发一定的关注。 小米汽车作为新能源汽车市场的新势力,其首款车型SU7已经在市场上取得了一定的成绩。此次推出的第二款车型MX11,不仅延续了小米汽车一贯的高品质和创新精神,更在设计上进行了更多的尝试和突破。 随着新能源汽车市场的快速发展和竞争的加剧,小米汽车需要不断创新和提升自身实力,才能在市场上立足。小米MX11的推出,无疑将为小米汽车未来的发展注入新的活力和动力。 虽然目前小米集团相关负责人对于第二款车型的上市时间并未给出明确回应,但我们可以期待小米MX11在未来市场上的表现。同时,也希望小米汽车能够继续秉持创新精神,为消费者带来更多高品质的新能源汽车产品。",
+        "source_id": 3,
+        "web_id": "3"
+      },
+      {
+        "url": "https://wap.eastmoney.com/a/202412093263234596.html",
+        "title": "小米汽车“二孩”将明年6月上市 “小米YU7”为SUV车型",
+        "content": "炒股第一步,先开个股票账户\n  新京报 贝壳 财经讯(记者陈维城)12月9日晚间, 小米汽车 官方 微博 发布动态显示, 小米汽车 第二款车型为SUV,定名为“小米YU7”,预计2025年6-7月正式上市。\n小米汽车 官方 微博 内容\n  新京报 贝壳 财经记者从工信部官网获悉,该车型长4999mm、宽1996mm、 高1600mm,最高车速253km/h;该产品为纯电动车型, 宁德时代 三元锂离子 电池 ;ABS型号:ESP10,为博世汽车部件(苏州)有限公司生产;驱动 电机 峰值功率:220kW/288kW。\n  今年上半年,小米汽车上市交付备受关注。自3月正式上市以来,小米汽车第一款轿车车型 Xiaomi SU7在产能扩张和交付执行上进展飞速。10月,小米汽车工厂单月生产量及新车交付量均破20000辆。11月,Xiaomi SU7提前完成10万台交付目标。2024全年小米汽车将冲刺13万辆交付新目标。\n  小米集团三季报显示,第三季度,小米智能电动汽车等创新业务收入为97亿元,正逐步向百亿规模逼近,毛利率提升至17.1%。截至2024年9月30日,小米汽车已在中国38个城市开业127家汽车销售门店。",
+        "website": "手机东方财富网",
+        "date": "2024-12-10T07:16:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 手机东方财富网｜网页时间: 2024-12-10T07:16:00+08:00｜网页标题: 小米汽车“二孩”将明年6月上市 “小米YU7”为SUV车型｜网页内容：炒股第一步,先开个股票账户\n  新京报 贝壳 财经讯(记者陈维城)12月9日晚间, 小米汽车 官方 微博 发布动态显示, 小米汽车 第二款车型为SUV,定名为“小米YU7”,预计2025年6-7月正式上市。\n小米汽车 官方 微博 内容\n  新京报 贝壳 财经记者从工信部官网获悉,该车型长4999mm、宽1996mm、 高1600mm,最高车速253km/h;该产品为纯电动车型, 宁德时代 三元锂离子 电池 ;ABS型号:ESP10,为博世汽车部件(苏州)有限公司生产;驱动 电机 峰值功率:220kW/288kW。\n  今年上半年,小米汽车上市交付备受关注。自3月正式上市以来,小米汽车第一款轿车车型 Xiaomi SU7在产能扩张和交付执行上进展飞速。10月,小米汽车工厂单月生产量及新车交付量均破20000辆。11月,Xiaomi SU7提前完成10万台交付目标。2024全年小米汽车将冲刺13万辆交付新目标。\n  小米集团三季报显示,第三季度,小米智能电动汽车等创新业务收入为97亿元,正逐步向百亿规模逼近,毛利率提升至17.1%。截至2024年9月30日,小米汽车已在中国38个城市开业127家汽车销售门店。",
+        "source_id": 4,
+        "web_id": "4"
+      },
+      {
+        "url": "https://chd.in-en.com/html/chd-2441580.shtml",
+        "title": "第二款小米汽车被曝光-新势力造车-新能源汽车--国际充换电网",
+        "content": "国际能源网获悉,2024年3月28日,小米汽车已经正式上线。同时,小米SU7的正式发布,也标志着小米「人车家全生态」战略正从“完整闭环”迈向“全面开启”的新阶段。据悉,在小米SU7正式发布后,网上就又传出了有关第二款小米汽车的消息。有汽车博主在社交媒体晒出了一张图片,其中明确显示小米的第二款车型可能为豪华中大型SUV,并且大概率为增程车型,对标理想旗舰L9。值得一提的是,雷军也对第二款车型信心满满。事实上,以小米的体量和目前小米SU7所取得的成绩来看,小米汽车正在筹备第二款车型具有很大的真实性。",
+        "website": "国际充换电网",
+        "date": "2024-03-29T00:00:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 国际充换电网｜网页时间: 2024-03-29T00:00:00+08:00｜网页标题: 第二款小米汽车被曝光-新势力造车-新能源汽车--国际充换电网｜网页内容：国际能源网获悉,2024年3月28日,小米汽车已经正式上线。同时,小米SU7的正式发布,也标志着小米「人车家全生态」战略正从“完整闭环”迈向“全面开启”的新阶段。据悉,在小米SU7正式发布后,网上就又传出了有关第二款小米汽车的消息。有汽车博主在社交媒体晒出了一张图片,其中明确显示小米的第二款车型可能为豪华中大型SUV,并且大概率为增程车型,对标理想旗舰L9。值得一提的是,雷军也对第二款车型信心满满。事实上,以小米的体量和目前小米SU7所取得的成绩来看,小米汽车正在筹备第二款车型具有很大的真实性。",
+        "source_id": 1,
+        "web_id": "5"
+      },
+      {
+        "url": "https://www.toutiao.com/article/7355812694978560523/",
+        "title": "小米汽车再度掀起风浪:第二款新车曝光! - 今日头条",
+        "content": "近日,小米汽车再度成为众人瞩目的焦点,因其第二款新车的曝光而引发了广泛关注。据悉,一辆疑似真车的中大型SUV现身小米门店,其引人注目的外观和神秘的身份令人猜测不已。 仅在上月底,小米汽车首款新车「小米SU7」正式发布,便以惊艳的外观设计、强劲的配置堆料以及亲民的起售价21.59万元,赢得了众多消费者的青睐。其销售成绩更是喜人,短短72小时内便超过了10万台的大定,锁单数量更是超过了4万台,可谓一鸣惊人。 然而,就在大家对首款车型津津乐道之际,小米第二款新车的消息突然传来,令人眼前一亮。有网友在小米门店发现了一辆神秘的伪装车,经过拍照后发布在社交平台上。从照片上可以看出,这款车型是一款中大型SUV,车身大小与问界M7相近,外观线条简洁大气,散发着浓厚的科技感。 对于这款神秘的新车,网友们纷纷猜测其可能是小米汽车的第二款产品。虽然目前尚未有官方的信息发布,但从曝光的照片来看,这款车型已经引起了广泛的关注和热议。人们对于小米汽车的下一步动向充满了期待,希望它能够延续首款车型的成功,并为消费者带来更多惊喜和选择。 总的来说,小米汽车作为一家新兴的汽车制造商,凭借其独特的视角和技术实力,正在逐步打造出一系列备受瞩目的产品。相信随着第二款新车的正式发布,小米汽车将会在市场上掀起新的一波热潮,为消费者带来更多的选择和体验。让我们拭目以待,期待小米汽车的下一个传奇!",
+        "website": "今日头条",
+        "date": "2024-04-09T18:31:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 今日头条｜网页时间: 2024-04-09T18:31:00+08:00｜网页标题: 小米汽车再度掀起风浪:第二款新车曝光! - 今日头条｜网页内容：近日,小米汽车再度成为众人瞩目的焦点,因其第二款新车的曝光而引发了广泛关注。据悉,一辆疑似真车的中大型SUV现身小米门店,其引人注目的外观和神秘的身份令人猜测不已。 仅在上月底,小米汽车首款新车「小米SU7」正式发布,便以惊艳的外观设计、强劲的配置堆料以及亲民的起售价21.59万元,赢得了众多消费者的青睐。其销售成绩更是喜人,短短72小时内便超过了10万台的大定,锁单数量更是超过了4万台,可谓一鸣惊人。 然而,就在大家对首款车型津津乐道之际,小米第二款新车的消息突然传来,令人眼前一亮。有网友在小米门店发现了一辆神秘的伪装车,经过拍照后发布在社交平台上。从照片上可以看出,这款车型是一款中大型SUV,车身大小与问界M7相近,外观线条简洁大气,散发着浓厚的科技感。 对于这款神秘的新车,网友们纷纷猜测其可能是小米汽车的第二款产品。虽然目前尚未有官方的信息发布,但从曝光的照片来看,这款车型已经引起了广泛的关注和热议。人们对于小米汽车的下一步动向充满了期待,希望它能够延续首款车型的成功,并为消费者带来更多惊喜和选择。 总的来说,小米汽车作为一家新兴的汽车制造商,凭借其独特的视角和技术实力,正在逐步打造出一系列备受瞩目的产品。相信随着第二款新车的正式发布,小米汽车将会在市场上掀起新的一波热潮,为消费者带来更多的选择和体验。让我们拭目以待,期待小米汽车的下一个传奇!",
+        "source_id": 2,
+        "web_id": "6"
+      },
+      {
+        "url": "https://www.toutiao.com/article/7301673389268517430/",
+        "title": "小米汽车揭开面纱 - 今日头条",
+        "content": "备受外界关注和期待的小米汽车,正式公布。 15日,工信部网站发布第377批《道路机动车辆生产企业及产品公告》,公布了小米汽车的两款新车信息。新车为纯电动轿车,商标名为“小米牌”,车尾logo显示为“xiaomi”,左下方标识为“北京小米”,",
+        "website": "今日头条",
+        "date": "2023-11-15T21:02:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 今日头条｜网页时间: 2023-11-15T21:02:00+08:00｜网页标题: 小米汽车揭开面纱 - 今日头条｜网页内容：备受外界关注和期待的小米汽车,正式公布。 15日,工信部网站发布第377批《道路机动车辆生产企业及产品公告》,公布了小米汽车的两款新车信息。新车为纯电动轿车,商标名为“小米牌”,车尾logo显示为“xiaomi”,左下方标识为“北京小米”,",
+        "source_id": 3,
+        "web_id": "7"
+      },
+      {
+        "url": "https://nev.ofweek.com/recommendfriends-30693689.html",
+        "title": "推荐给朋友: 雷军再出一张牌,小米汽车第二品牌官宣 - OFweek新能源汽车网",
+        "content": "维科网新能源汽车消息,今天(7月8日)早上7点30分,小米汽车官方账号发了一条简短的动态,配文“SkyNomad。天空,游牧者。一个关于空间和生活的新名字。”\n就这么一句话,正式宣告了小米汽车全新品牌",
+        "website": "OFweek新能源汽车网",
+        "date": "2025-07-16T00:00:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: OFweek新能源汽车网｜网页时间: 2025-07-16T00:00:00+08:00｜网页标题: 推荐给朋友: 雷军再出一张牌,小米汽车第二品牌官宣 - OFweek新能源汽车网｜网页内容：维科网新能源汽车消息,今天(7月8日)早上7点30分,小米汽车官方账号发了一条简短的动态,配文“SkyNomad。天空,游牧者。一个关于空间和生活的新名字。”\n就这么一句话,正式宣告了小米汽车全新品牌",
+        "source_id": 4,
+        "web_id": "8"
+      },
+      {
+        "url": "http://news.ppzw.com/Article_Print_243464.html",
+        "title": "小米第二家汽车公司来了",
+        "content": "740)this.width=740>\n图片来源:视觉中国\n11月19日,据天眼查App显示,小米汽车科技有限公司于11月18日成立,法定代表人为雷军,是小米宣布造车后成立的第二家汽车公司。\n该公司注册资本10亿元,注册地为北京,经营范围包括新能源车整车制造、汽车整车及零部件的技术研发等,由小米科技有限责任公司100%控股。后者由雷军、黎万强、洪峰、刘德四位小米重要人物联合控股,为小米系投资的主要主体之一,其中雷军占据77.8%股份,为第一大股东兼董事长。\n距离第一家小米汽车公司成立还没有过去太久。在三月底正式宣布造车后,9月1日,雷军在微博发布小米汽车正式注册的消息,公司名为小米汽车有限公司,注册资金100亿元,法人代表由雷军担任,小米通讯技术有限公司对其全资持股。\n不过,10月15日,该公司持股信息发生变更,全资股东为一家注册于香港地区的公司Xiaomi EV Limited。\n10月19日,雷军再次公开表示,小米造车目前的各项进展快于他的预期,预计2024年上半年正式量产——这与当初“三年见到小米第一台车”的言论大体一致。\n团队素来是打胜仗的重中之重,小米正在紧锣密鼓筹备当中。\n从内部来看,小米汽车注册成立当天,雷军晒出团队合影,包括他、CFO林世伟、联合创始人刘德、集团总裁王翔、联合创始人洪峰、SVP卢伟冰在内共有17人,无一不是在小米过去业务中担任重要角色的骨干,但其中仅有一位原宝马集团资深设计师具有真正的汽车行业背景。\n小米在外的“招兵买马”也在如火如荼进行中,除了雷军在微博亲自发招聘广告,为小米汽车自动驾驶部门招募自研L4级别智能驾驶能力的500名技术人员外,多个招聘平台及小米官网都可以看到小米对集结造车人才的迫切。\n据虎嗅报道,小米造车曾显现出2万人竞争300余个岗位的激烈场面,在讨论之中,传统汽车品牌技术口的研发骨干和自动驾驶领域技术方案的供应商最有意向加",
+        "website": "news.ppzw.com",
+        "date": "2025-02-07T21:10:39+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: news.ppzw.com｜网页时间: 2025-02-07T21:10:39+08:00｜网页标题: 小米第二家汽车公司来了｜网页内容：740)this.width=740>\n图片来源:视觉中国\n11月19日,据天眼查App显示,小米汽车科技有限公司于11月18日成立,法定代表人为雷军,是小米宣布造车后成立的第二家汽车公司。\n该公司注册资本10亿元,注册地为北京,经营范围包括新能源车整车制造、汽车整车及零部件的技术研发等,由小米科技有限责任公司100%控股。后者由雷军、黎万强、洪峰、刘德四位小米重要人物联合控股,为小米系投资的主要主体之一,其中雷军占据77.8%股份,为第一大股东兼董事长。\n距离第一家小米汽车公司成立还没有过去太久。在三月底正式宣布造车后,9月1日,雷军在微博发布小米汽车正式注册的消息,公司名为小米汽车有限公司,注册资金100亿元,法人代表由雷军担任,小米通讯技术有限公司对其全资持股。\n不过,10月15日,该公司持股信息发生变更,全资股东为一家注册于香港地区的公司Xiaomi EV Limited。\n10月19日,雷军再次公开表示,小米造车目前的各项进展快于他的预期,预计2024年上半年正式量产——这与当初“三年见到小米第一台车”的言论大体一致。\n团队素来是打胜仗的重中之重,小米正在紧锣密鼓筹备当中。\n从内部来看,小米汽车注册成立当天,雷军晒出团队合影,包括他、CFO林世伟、联合创始人刘德、集团总裁王翔、联合创始人洪峰、SVP卢伟冰在内共有17人,无一不是在小米过去业务中担任重要角色的骨干,但其中仅有一位原宝马集团资深设计师具有真正的汽车行业背景。\n小米在外的“招兵买马”也在如火如荼进行中,除了雷军在微博亲自发招聘广告,为小米汽车自动驾驶部门招募自研L4级别智能驾驶能力的500名技术人员外,多个招聘平台及小米官网都可以看到小米对集结造车人才的迫切。\n据虎嗅报道,小米造车曾显现出2万人竞争300余个岗位的激烈场面,在讨论之中,传统汽车品牌技术口的研发骨干和自动驾驶领域技术方案的供应商最有意向加",
+        "source_id": 5,
+        "web_id": "9"
+      },
+      {
+        "url": "http://portuguese.people.com.cn/n3/2024/1211/c309810-20252553.html",
+        "title": "Xiaomi lançará SUV em meados de 2025",
+        "content": "Xiaomi\nlançará\nSUV\nem\nmeados\nde\n2025\nA\nfabricante\nchinesa\nde\ncelulares\nXiaomi\nanunciou\nna\nnoite\nde\nsegunda-feira\n(9)\nque\nseu\nsegundo\nmodelo,\num\nSUV,\nestá\nprogramado\npara\nchegar\nao\nmercado\nem\njunho\nou\njulho\nde\n2025.\nO\nSUV,\nchamado\nYU7,\nserá\num\nmodelo\nelétrico,\ncom\ndistância\nentre\neixos\nde\n3\nmetros.\nEle\nmede\n4.999mm\nde\ncomprimento,\n1.996mm\nde\nlargura\ne\n1.600mm\nde\naltura,\nsegundo\ninformações\ndo\nMinistério\nda\nIndústria\ne\nTecnologia\nda\nInformação\n(MIIT)\nda\nChina.\nA\nXiaomi\nnão\ndeu\numa\nfaixa\nde\npreço\nnem\nrevelou\nos\nrivais\ndo\nYU7.\nRelatórios\nchineses\nsugeriram\nque\nele\npode\ncompetir\ncom\no\nModel\nY\nda\nTesla,\nque\né\num\ndos\nmodelos\nmais\npopulares\ndo\nsegmento.\nA\nXiaomi\nlançou\nseu\nprimeiro\nmodelo,\no\nSU7,\nno\nfinal\nde\nmarço\ndeste\nano.\nO\nsedã\nelétrico,\nque\nlembra\no\nTaycan\nda\nPorsche,\ntem\nsido\npopular,\ncom\ns",
+        "website": "人民网",
+        "date": "2024-12-11T00:00:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 人民网｜网页时间: 2024-12-11T00:00:00+08:00｜网页标题: Xiaomi lançará SUV em meados de 2025｜网页内容：Xiaomi\nlançará\nSUV\nem\nmeados\nde\n2025\nA\nfabricante\nchinesa\nde\ncelulares\nXiaomi\nanunciou\nna\nnoite\nde\nsegunda-feira\n(9)\nque\nseu\nsegundo\nmodelo,\num\nSUV,\nestá\nprogramado\npara\nchegar\nao\nmercado\nem\njunho\nou\njulho\nde\n2025.\nO\nSUV,\nchamado\nYU7,\nserá\num\nmodelo\nelétrico,\ncom\ndistância\nentre\neixos\nde\n3\nmetros.\nEle\nmede\n4.999mm\nde\ncomprimento,\n1.996mm\nde\nlargura\ne\n1.600mm\nde\naltura,\nsegundo\ninformações\ndo\nMinistério\nda\nIndústria\ne\nTecnologia\nda\nInformação\n(MIIT)\nda\nChina.\nA\nXiaomi\nnão\ndeu\numa\nfaixa\nde\npreço\nnem\nrevelou\nos\nrivais\ndo\nYU7.\nRelatórios\nchineses\nsugeriram\nque\nele\npode\ncompetir\ncom\no\nModel\nY\nda\nTesla,\nque\né\num\ndos\nmodelos\nmais\npopulares\ndo\nsegmento.\nA\nXiaomi\nlançou\nseu\nprimeiro\nmodelo,\no\nSU7,\nno\nfinal\nde\nmarço\ndeste\nano.\nO\nsedã\nelétrico,\nque\nlembra\no\nTaycan\nda\nPorsche,\ntem\nsido\npopular,\ncom\ns",
+        "source_id": 1,
+        "web_id": "10"
+      },
+      {
+        "url": "https://www.yicaiglobal.com/news/xiaomi-to-launch-new-pure-electric-suv-model-in-mid-2025",
+        "title": "Xiaomi to Launch Pure Electric SUV in Mid-2025",
+        "content": "(Yicai)\nDec.\n10\n--\nXiaomi’s\nsecond\ncar\nwill\nbe\na\npure\nelectric\nsport\nutility\nvehicle,\naccording\nto\nthe\nwebsite\nof\nChina’s\nindustry\nministry,\nwhile\nthe\nelectronics\ngiant’s\nchairman\nsaid\nthe\ncar\nwill\nlaunch\naround\nthe\nmiddle\nof\nnext\nyear.The\nforthcoming\nXiaomi\nYU7\nresembles\nthe\nFerrari\nPurosangue,\ninformation\non\nthe\nministry's\nwebsite\nshowed\nyesterday.\nIt\nwill\nlaunch\nin\nJune\nor\nJuly\n2025,\nLei\nJun,\nwho\nis\nalso\nthe\nBeijing-based\nXiaomi’s\nchief\nexecutive,\nsaid\non\nWeibo\nlater\nthe\nsame\nday.Xiaomi\nAuto's\nfirst\nmodel,\nthe\nSU7,\ncompetes\nwith\nTesla's\nModel\n3,\nwhile\nthe\nYU7\nwill\ntake\non\nthe\nUS\nautomaker's\nModel\nY,\none\nof\nthe\nmost\npopular\nelectric\nSUVs\nin\nthe\nmarket,\naccording\nto\nindustry\ninsiders.The\nYU7\nwill\nuse\na\nternary\nlithium-ion\nbattery\nproduced\nby\nJiangsu\nContemporary\nAmperex\nTechnology,\na\nunit",
+        "website": "www.yicaiglobal.com",
+        "date": "2026-05-27T16:10:32+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: www.yicaiglobal.com｜网页时间: 2026-05-27T16:10:32+08:00｜网页标题: Xiaomi to Launch Pure Electric SUV in Mid-2025｜网页内容：(Yicai)\nDec.\n10\n--\nXiaomi’s\nsecond\ncar\nwill\nbe\na\npure\nelectric\nsport\nutility\nvehicle,\naccording\nto\nthe\nwebsite\nof\nChina’s\nindustry\nministry,\nwhile\nthe\nelectronics\ngiant’s\nchairman\nsaid\nthe\ncar\nwill\nlaunch\naround\nthe\nmiddle\nof\nnext\nyear.The\nforthcoming\nXiaomi\nYU7\nresembles\nthe\nFerrari\nPurosangue,\ninformation\non\nthe\nministry's\nwebsite\nshowed\nyesterday.\nIt\nwill\nlaunch\nin\nJune\nor\nJuly\n2025,\nLei\nJun,\nwho\nis\nalso\nthe\nBeijing-based\nXiaomi’s\nchief\nexecutive,\nsaid\non\nWeibo\nlater\nthe\nsame\nday.Xiaomi\nAuto's\nfirst\nmodel,\nthe\nSU7,\ncompetes\nwith\nTesla's\nModel\n3,\nwhile\nthe\nYU7\nwill\ntake\non\nthe\nUS\nautomaker's\nModel\nY,\none\nof\nthe\nmost\npopular\nelectric\nSUVs\nin\nthe\nmarket,\naccording\nto\nindustry\ninsiders.The\nYU7\nwill\nuse\na\nternary\nlithium-ion\nbattery\nproduced\nby\nJiangsu\nContemporary\nAmperex\nTechnology,\na\nunit",
+        "source_id": 2,
+        "web_id": "11"
+      },
+      {
+        "url": "http://www.ecns.cn/business/2024-12-10/detail-ihekuwsr0212053.shtml",
+        "title": "Xiaomi to launch SUV in mid-2025",
+        "content": "Chinese phone maker Xiaomi announced late Monday that its second model, an SUV, is scheduled to hit the market in June or July 2025. The SUV, called YU7, will be an electric model, with a 3-meter wheelbase. It measures 4,999 mm in length, 1,996 mm in width and 1,600 mm in height, according to information from the Ministry of Industry and Information Technology. Xiaomi did not give a price range nor did it reveal the YU7's rivals. Chinese reports said it might take on Tesla's Model Y, which is one of the most popular models in the segment. Xiaomi launched its first model, the SU7, in late March this year. The electric sedan, which resembles Porsche's Taycan, has been popular, with its sales exceeding 20,000 units in November. The phone maker said it is confident that the SU7's cumulative sa",
+        "website": "Ecns.cn",
+        "date": "2024-12-10T16:53:33+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: Ecns.cn｜网页时间: 2024-12-10T16:53:33+08:00｜网页标题: Xiaomi to launch SUV in mid-2025｜网页内容：Chinese phone maker Xiaomi announced late Monday that its second model, an SUV, is scheduled to hit the market in June or July 2025. The SUV, called YU7, will be an electric model, with a 3-meter wheelbase. It measures 4,999 mm in length, 1,996 mm in width and 1,600 mm in height, according to information from the Ministry of Industry and Information Technology. Xiaomi did not give a price range nor did it reveal the YU7's rivals. Chinese reports said it might take on Tesla's Model Y, which is one of the most popular models in the segment. Xiaomi launched its first model, the SU7, in late March this year. The electric sedan, which resembles Porsche's Taycan, has been popular, with its sales exceeding 20,000 units in November. The phone maker said it is confident that the SU7's cumulative sa",
+        "source_id": 3,
+        "web_id": "12"
+      },
+      {
+        "url": "https://www.sohu.com/a/834839407_121798711",
+        "title": "小米YU7路测启动,六七月上市将引发行业关注_智能_技术_产品",
+        "content": "12月10日,小米创办人兼CEO雷军在微博上宣布,小米YU7正在进行大规模路测,预计将在2024年六七月正式上市。这一消息引发了市场的广泛关注,作为小米最新推出的智能设备之一,YU7将承载着小米在智能技术及产品设计上的新思考和探索。 小米YU7是一款集多种先进技术于一体的智能设备,具体的产品功能和规格细节尚未公布,但雷军提到的路测活动已经预示着该产品正在向实用化和市场化迈进。作为小米的一员,YU7可能在智能家居和物联网生态中,将发挥重要作用。而在小米的产品矩阵中,YU7也将与目前市场上的其他智能设备展开竞争,尤其是当今越来越流行的AI技术。 在当今智能设备的市场中,AI技术的应用正成为核心竞争力之一。从语音助手到智能图像识别,AI在提升用户体验方面的贡献不容小觑。小米YU7是否会搭载先进的AI功能,如智能语音识别、场景识别等,将直接影响其市场表现。基于小米在AI领域的深厚积累,许多消费者对YU7将如何整合这些技术充满期待。 随着小米YU7的路测推进,许多技术爱好者国内外均开始讨论这款产品可能的特性和用途。如果YU7具备强大的处理器、高分辨率的显示屏以及出色的摄像头质量,它将在日常使用、游戏及影音娱乐方面带来优秀的表现。想象一下,在日常生活中,用户通过YU7实现高效的家居控制、智能监控,甚至是丰富多彩的移动娱乐体验,这无疑会提升用户的生活质量。 在智能硬件的竞争中,产品的续航能力同样是重要指标。小米以往的产品在续航方面表现不俗,而消费者对于未来展现的YU7期待能够在这一点上继续保持优势。此外,与同类产品的比较也至关重要,通过分析竞争对手的特性与价格策略,小米可塑造出更具市场竞争力的产品。 值得一提的是,除了硬件上的技术提升,小米也积极推动AI技术的应用,最近几年AI绘画、AI写作等相关工具层出不穷。这样的趋势表明,AI不仅在加速设备智能化进程,也为用户提供了更多创作的可能。小",
+        "website": "搜狐",
+        "date": "2024-12-10T11:04:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 搜狐｜网页时间: 2024-12-10T11:04:00+08:00｜网页标题: 小米YU7路测启动,六七月上市将引发行业关注_智能_技术_产品｜网页内容：12月10日,小米创办人兼CEO雷军在微博上宣布,小米YU7正在进行大规模路测,预计将在2024年六七月正式上市。这一消息引发了市场的广泛关注,作为小米最新推出的智能设备之一,YU7将承载着小米在智能技术及产品设计上的新思考和探索。 小米YU7是一款集多种先进技术于一体的智能设备,具体的产品功能和规格细节尚未公布,但雷军提到的路测活动已经预示着该产品正在向实用化和市场化迈进。作为小米的一员,YU7可能在智能家居和物联网生态中,将发挥重要作用。而在小米的产品矩阵中,YU7也将与目前市场上的其他智能设备展开竞争,尤其是当今越来越流行的AI技术。 在当今智能设备的市场中,AI技术的应用正成为核心竞争力之一。从语音助手到智能图像识别,AI在提升用户体验方面的贡献不容小觑。小米YU7是否会搭载先进的AI功能,如智能语音识别、场景识别等,将直接影响其市场表现。基于小米在AI领域的深厚积累,许多消费者对YU7将如何整合这些技术充满期待。 随着小米YU7的路测推进,许多技术爱好者国内外均开始讨论这款产品可能的特性和用途。如果YU7具备强大的处理器、高分辨率的显示屏以及出色的摄像头质量,它将在日常使用、游戏及影音娱乐方面带来优秀的表现。想象一下,在日常生活中,用户通过YU7实现高效的家居控制、智能监控,甚至是丰富多彩的移动娱乐体验,这无疑会提升用户的生活质量。 在智能硬件的竞争中,产品的续航能力同样是重要指标。小米以往的产品在续航方面表现不俗,而消费者对于未来展现的YU7期待能够在这一点上继续保持优势。此外,与同类产品的比较也至关重要,通过分析竞争对手的特性与价格策略,小米可塑造出更具市场竞争力的产品。 值得一提的是,除了硬件上的技术提升,小米也积极推动AI技术的应用,最近几年AI绘画、AI写作等相关工具层出不穷。这样的趋势表明,AI不仅在加速设备智能化进程,也为用户提供了更多创作的可能。小",
+        "source_id": 1,
+        "web_id": "13"
+      },
+      {
+        "url": "https://news.qq.com/rain/a/20250523A07VT000",
+        "title": "7月正式上市,小米YU7正式发布_腾讯新闻",
+        "content": "小米YU7内饰发布,配备Xiaomi\nHyperVision天际屏和升级版辅助驾驶系统,7月将正式上市。",
+        "website": "腾讯网",
+        "date": "2025-05-23T18:02:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 腾讯网｜网页时间: 2025-05-23T18:02:00+08:00｜网页标题: 7月正式上市,小米YU7正式发布_腾讯新闻｜网页内容：小米YU7内饰发布,配备Xiaomi\nHyperVision天际屏和升级版辅助驾驶系统,7月将正式上市。",
+        "source_id": 2,
+        "web_id": "14"
+      },
+      {
+        "url": "https://jingxuan.douyin.com/m/video/7446597919320624434",
+        "title": "小米YU7发布",
+        "content": "小米YU7发布,于2024年12月10日上线。抖音精选为您提供高清视频,画面清晰、播放流畅,看丰富、高质量视频就上抖音精选。",
+        "website": "抖音",
+        "date": "2024-12-10T08:00:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 抖音｜网页时间: 2024-12-10T08:00:00+08:00｜网页标题: 小米YU7发布｜网页内容：小米YU7发布,于2024年12月10日上线。抖音精选为您提供高清视频,画面清晰、播放流畅,看丰富、高质量视频就上抖音精选。",
+        "source_id": 3,
+        "web_id": "15"
+      },
+      {
+        "url": "https://new.qq.com/rain/a/20250523A07VT000",
+        "title": "7月正式上市,小米YU7正式发布",
+        "content": "小米YU7内饰发布,配备Xiaomi HyperVision天际屏和升级版辅助驾驶系统,7月将正式上市。",
+        "website": "腾讯网",
+        "date": "2025-05-23T18:02:28+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 腾讯网｜网页时间: 2025-05-23T18:02:28+08:00｜网页标题: 7月正式上市,小米YU7正式发布｜网页内容：小米YU7内饰发布,配备Xiaomi HyperVision天际屏和升级版辅助驾驶系统,7月将正式上市。",
+        "source_id": 4,
+        "web_id": "16"
+      },
+      {
+        "url": "https://www.toutiao.com/zixun/7534963212819646490/",
+        "title": "小米yo7什么时候上市 - 今日头条",
+        "content": "据小米汽车官微消息,小米YU7预计于2025年六七月正式上市。小米董事长雷军透露,目前该款车型正在进行大规模路测。来源:澎湃财讯(本文来自澎湃新闻,更多原创资讯请下载“澎湃新闻”APP)",
+        "website": "今日头条",
+        "date": "2025-08-05T13:05:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 今日头条｜网页时间: 2025-08-05T13:05:00+08:00｜网页标题: 小米yo7什么时候上市 - 今日头条｜网页内容：据小米汽车官微消息,小米YU7预计于2025年六七月正式上市。小米董事长雷军透露,目前该款车型正在进行大规模路测。来源:澎湃财讯(本文来自澎湃新闻,更多原创资讯请下载“澎湃新闻”APP)",
+        "source_id": 5,
+        "web_id": "17"
+      },
+      {
+        "url": "https://www.autohome.com.cn/ask/12503800.html",
+        "title": "【重磅】小米第二款车或于明年一季度上市,",
+        "content": "据 独家消息 ,小米汽车计划在2025年一季度推出其第二款车型。随着小米首款车型SU7顺利下线并提前完成10万辆新车的生产,第二款新车的上市日期也被提上日程。\n一位内部人士透露,小米第二款车型计划在明年2、3月上市,这与雷军此前表示的“小米SU7 Ultra量产版将于2025年3月正式发布”的信息一致。另一位消息人士也指出,小米第二款新车的上市时间将与SU7保持一致,SU7的上市时间是2024年3月28日。然而,小米集团相关负责人表示,他们无法对这一问题作出更多回应。\n据了解,小米汽车的第二款车型为纯电SUV,代号为MX11。该车将与小米SU7共享平台和部分零部件,但拥有独特的设计和流畅的车身侧面线条。业内猜测,这款新车将直接与特斯拉Model Y竞争。\n小米SU7\n指导价: 21.59-29.99万\n值得一提的是,特斯拉虽然在纯电市场中占有先发优势,但2024年以来也面临着巨大压力。以Model Y为例,2024年前十个月在中国市场的销量为44.8万辆,同比下滑14.9%。这主要是由于价格战和大量新车涌入市场所致。",
+        "website": "汽车之家",
+        "date": "2025-03-02T08:00:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 汽车之家｜网页时间: 2025-03-02T08:00:00+08:00｜网页标题: 【重磅】小米第二款车或于明年一季度上市,｜网页内容：据 独家消息 ,小米汽车计划在2025年一季度推出其第二款车型。随着小米首款车型SU7顺利下线并提前完成10万辆新车的生产,第二款新车的上市日期也被提上日程。\n一位内部人士透露,小米第二款车型计划在明年2、3月上市,这与雷军此前表示的“小米SU7 Ultra量产版将于2025年3月正式发布”的信息一致。另一位消息人士也指出,小米第二款新车的上市时间将与SU7保持一致,SU7的上市时间是2024年3月28日。然而,小米集团相关负责人表示,他们无法对这一问题作出更多回应。\n据了解,小米汽车的第二款车型为纯电SUV,代号为MX11。该车将与小米SU7共享平台和部分零部件,但拥有独特的设计和流畅的车身侧面线条。业内猜测,这款新车将直接与特斯拉Model Y竞争。\n小米SU7\n指导价: 21.59-29.99万\n值得一提的是,特斯拉虽然在纯电市场中占有先发优势,但2024年以来也面临着巨大压力。以Model Y为例,2024年前十个月在中国市场的销量为44.8万辆,同比下滑14.9%。这主要是由于价格战和大量新车涌入市场所致。",
+        "source_id": 1,
+        "web_id": "18"
+      },
+      {
+        "url": "http://tjztwyjc.com/index.php?/appsoft/news/8321881752_20250216?scm=12080",
+        "title": "天美影视传媒有限公司小米第二款车或于2025年一季度上市_天美影视传媒有限公司ZAKER新闻",
+        "content": "小米第二款车或于2025年一季度上市_天美影视传媒有限公司ZAKER新闻\n  <strong><span>要持续紧盯“七个有之”问题</span></strong><span>,把严惩政商勾连腐败作为攻坚战重中之重,严肃查处带有公安特点的行业性、系统性、地域性新型腐败和隐性腐败,</span><strong><span>决不允许腐败在公安机关有藏身之地。</span></strong>\n 定位纯电 SUV,或与小米 SU7 Ultra 量产版同步上市文|宋立伟编辑 | 赵成随着产能爬坡,小米旗下首款车型 SU7 已经提前完成 10 万辆新车的下线,在其冲击全年销量 13 万辆的同时,第二款新车的上市也将排上日程。据小米汽车内部人士透露:\" 小米第二款车型计划于明年 2、3 月上市。\" 这与小米集团创始人、董事长雷军此前透露的 \" 小米 SU7 Ultra 量产版将于 2025 年 3 月正式发布 \" 的信息,在时间上不谋而合。另一位接近小米汽车的消息人士也告诉我们,小米第二款新车的上市安排将与此前 SU7 上市节奏一致。而 SU7 的上市时间恰好是 2024 年 3 月 28 日。不过,小米集团相关负责人对此只表示 \" 相关问题已超纲 \",他无法作出更多回应。可以确定的是,小米汽车的第二款车为纯电 SUV,该车内部代号为 MX11。据媒体报道,这款车将与小米 SU7 共享平台和部分零部件,但拥有独特的设计,车身侧面线条流畅。业界猜测,该车将定位为特斯拉 Model Y 的直接竞争对手。值得一提的是,即便在纯电市场占有先发优势的特斯拉,2024 年以来也倍感压力。以 Model Y 为例,2024 年前十个月,该车在中国累计销量 44.8 万辆,同比下滑 14.9%。究其原因,在于价格战和大量的新车扎堆上市。Model Y 图源:IC据相关机构统计,截至目前,2024 年上市",
+        "website": "tjztwyjc.com",
+        "date": "2025-02-17T10:55:56+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: tjztwyjc.com｜网页时间: 2025-02-17T10:55:56+08:00｜网页标题: 天美影视传媒有限公司小米第二款车或于2025年一季度上市_天美影视传媒有限公司ZAKER新闻｜网页内容：小米第二款车或于2025年一季度上市_天美影视传媒有限公司ZAKER新闻\n  <strong><span>要持续紧盯“七个有之”问题</span></strong><span>,把严惩政商勾连腐败作为攻坚战重中之重,严肃查处带有公安特点的行业性、系统性、地域性新型腐败和隐性腐败,</span><strong><span>决不允许腐败在公安机关有藏身之地。</span></strong>\n 定位纯电 SUV,或与小米 SU7 Ultra 量产版同步上市文|宋立伟编辑 | 赵成随着产能爬坡,小米旗下首款车型 SU7 已经提前完成 10 万辆新车的下线,在其冲击全年销量 13 万辆的同时,第二款新车的上市也将排上日程。据小米汽车内部人士透露:\" 小米第二款车型计划于明年 2、3 月上市。\" 这与小米集团创始人、董事长雷军此前透露的 \" 小米 SU7 Ultra 量产版将于 2025 年 3 月正式发布 \" 的信息,在时间上不谋而合。另一位接近小米汽车的消息人士也告诉我们,小米第二款新车的上市安排将与此前 SU7 上市节奏一致。而 SU7 的上市时间恰好是 2024 年 3 月 28 日。不过,小米集团相关负责人对此只表示 \" 相关问题已超纲 \",他无法作出更多回应。可以确定的是,小米汽车的第二款车为纯电 SUV,该车内部代号为 MX11。据媒体报道,这款车将与小米 SU7 共享平台和部分零部件,但拥有独特的设计,车身侧面线条流畅。业界猜测,该车将定位为特斯拉 Model Y 的直接竞争对手。值得一提的是,即便在纯电市场占有先发优势的特斯拉,2024 年以来也倍感压力。以 Model Y 为例,2024 年前十个月,该车在中国累计销量 44.8 万辆,同比下滑 14.9%。究其原因,在于价格战和大量的新车扎堆上市。Model Y 图源:IC据相关机构统计,截至目前,2024 年上市",
+        "source_id": 2,
+        "web_id": "19"
+      },
+      {
+        "url": "https://www.kotler.com.cn/appsoft/article/53206836?zz20250103VknoH.ppt",
+        "title": "教育焦点-\"&#0;\"-小米第二款车或mofosفىلىم.明年一季度上市_ZAKER新闻",
+        "content": "小米第二款车或mofosفىلىم.明年一季度上市_ZAKER新闻 责任编辑:张熠 据小米汽车内部人士透露:\" 小米第二款车型计划于明年 2、3 月上市。\" 这与小米集团创始人、董事长雷军此前透露的 \" 小米 SU7 Ultra 量产版将于 2025 年3月正式发布 \" 的信息,在时间上不谋而合。另一位接近小米汽车的消息人士也表示,小米第二款新车的上市安排将与此前 SU7 上市节奏一致。而SU7 的上市时间恰好是 2024 年3月28 日。不过,小米集团相关负责人对此只表示 \" 相关问题已超纲 \",他无法作出更多回应。(财经) koa12jJid0DL9adK+CJ1DK2K393LKASDad 编辑:张成基 TOP1热点:车主利好!国内油价或将“四连跌” 公司与海南鑫金仓签署的《广东榕泰实业股份有限公司和萍乡东方金鼎企业咨询中心(有限合伙)关于能通科技股份有限公司之。 (十)依法保护民营企业产权和企业家权益。防止和纠正利用行政或刑事手段干预经济纠纷,以及执法司法中的地方保护主义。进一步规范涉产权强制性措施,避免超权限、超范围、超数额、超时限查封扣押冻结财产。对不宜查封扣押冻结的经营性涉案财物,在保证侦查活动正常进行的同时,可以允许有关当事人继续合理使用,并采取必要的保值保管措施,最大限度减少侦查办案对正常办公和合法生产经营的影响。完善涉企案件申诉、再审等机制,健全冤错案件有效防范和常态化纠正机制。 TOP2热点:北斗系统今后可在全球民航通用 融资融券数据显示该股近3个月融资净流入7224.6万,融资余额增加;融券净流入0.0,融券余额增加。根据近五年财报数据,证券之星估值分析工具显示,华安鑫创(300928)行业内竞争力的护城河较差,盈利能力一般,营收成长性较差。可能有财务风险,存在隐忧的财务指标包括:应收账款/利润率、应收账款/利润率近3年增幅、存货/营收率增幅",
+        "website": "www.kotler.com.cn",
+        "date": "2025-01-06T16:26:02+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: www.kotler.com.cn｜网页时间: 2025-01-06T16:26:02+08:00｜网页标题: 教育焦点-\"&#0;\"-小米第二款车或mofosفىلىم.明年一季度上市_ZAKER新闻｜网页内容：小米第二款车或mofosفىلىم.明年一季度上市_ZAKER新闻 责任编辑:张熠 据小米汽车内部人士透露:\" 小米第二款车型计划于明年 2、3 月上市。\" 这与小米集团创始人、董事长雷军此前透露的 \" 小米 SU7 Ultra 量产版将于 2025 年3月正式发布 \" 的信息,在时间上不谋而合。另一位接近小米汽车的消息人士也表示,小米第二款新车的上市安排将与此前 SU7 上市节奏一致。而SU7 的上市时间恰好是 2024 年3月28 日。不过,小米集团相关负责人对此只表示 \" 相关问题已超纲 \",他无法作出更多回应。(财经) koa12jJid0DL9adK+CJ1DK2K393LKASDad 编辑:张成基 TOP1热点:车主利好!国内油价或将“四连跌” 公司与海南鑫金仓签署的《广东榕泰实业股份有限公司和萍乡东方金鼎企业咨询中心(有限合伙)关于能通科技股份有限公司之。 (十)依法保护民营企业产权和企业家权益。防止和纠正利用行政或刑事手段干预经济纠纷,以及执法司法中的地方保护主义。进一步规范涉产权强制性措施,避免超权限、超范围、超数额、超时限查封扣押冻结财产。对不宜查封扣押冻结的经营性涉案财物,在保证侦查活动正常进行的同时,可以允许有关当事人继续合理使用,并采取必要的保值保管措施,最大限度减少侦查办案对正常办公和合法生产经营的影响。完善涉企案件申诉、再审等机制,健全冤错案件有效防范和常态化纠正机制。 TOP2热点:北斗系统今后可在全球民航通用 融资融券数据显示该股近3个月融资净流入7224.6万,融资余额增加;融券净流入0.0,融券余额增加。根据近五年财报数据,证券之星估值分析工具显示,华安鑫创(300928)行业内竞争力的护城河较差,盈利能力一般,营收成长性较差。可能有财务风险,存在隐忧的财务指标包括:应收账款/利润率、应收账款/利润率近3年增幅、存货/营收率增幅",
+        "source_id": 3,
+        "web_id": "20"
+      },
+      {
+        "url": "http://baa.m.yiche.com/xiaomiSU7/thread-52103668.html",
+        "title": "小米汽车 第一款：SU7，2024年发布，24年量产在售 第二款：YU7，6-7",
+        "content": "小米汽车 第一款:SU7,2024年发布,24年量产在售 第二款:YU7,6-7月份发布,估计等到12月份可以拿到车 第三款:N3-代码,预计在2026年推出,明年增程车圈大地震 第四款:网友图,纯电,   型  ?这   给  字辈,迪字辈留活  啊 。。。",
+        "website": "易车汽车社区",
+        "date": "2025-02-14T02:46:26+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 易车汽车社区｜网页时间: 2025-02-14T02:46:26+08:00｜网页标题: 小米汽车 第一款：SU7，2024年发布，24年量产在售 第二款：YU7，6-7｜网页内容：小米汽车 第一款:SU7,2024年发布,24年量产在售 第二款:YU7,6-7月份发布,估计等到12月份可以拿到车 第三款:N3-代码,预计在2026年推出,明年增程车圈大地震 第四款:网友图,纯电,   型  ?这   给  字辈,迪字辈留活  啊 。。。",
+        "source_id": 4,
+        "web_id": "21"
+      }
+    ],
+    "turns": [
+      {
+        "turn_id": 1,
+        "planner_input": {
+          "messages": [
+            {
+              "role": "system",
+              "content": "# 角色\n你是离线轨迹合成系统中首次处理用户 query 的 Search Planner。本阶段只负责创建第一个持久化搜索目标并规划可由网页搜索引擎执行的 query，不更新搜索状态，不输出答案或证据。\n\n# 目标规划约束\n1. 从原始问题最基础、最明确、可检索验证的信息缺口创建一个目标，不要一次展开整个答案。\n2. 本轮必须且只能输出一个 INIT_GOAL，search_goal_id 固定为 GOAL_1。\n3. 首轮没有已有目标，因此 target_goal_id=null、target_conflict_id=null、depends_on_goal_ids=[]。\n4. search_goal 必须是单一事实目标；search_queries 提供 1～5 条互补 query，包含必要的实体、事件、时间或官方来源限定。\n\n# JSON 输出硬约束\n1. 只输出一个可被标准 JSON 解析器直接解析的 JSON 对象；不要 Markdown 代码块、注释、解释性前后缀或尾随逗号。\n2. 所有 key 和字符串必须使用双引号；空值使用 null，不得使用 None、单引号、NaN 或省略整个顶层字段。\n3. 顶层只能包含 search_actions；search_actions 必须是长度为 1 的数组，并严格使用下列字段与结构。\n\n## 首轮唯一输出格式\n请严格按照以下JSON格式输出：\n{\n  \"search_actions\": [{\n    \"search_action\": \"INIT_GOAL\",\n    \"action_reason\": \"为什么先搜索该目标\",\n    \"target_goal_id\": null,\n    \"target_conflict_id\": null,\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"首个持久化搜索目标\",\n    \"depends_on_goal_ids\": [],\n    \"search_queries\": [\"query 1\", \"query 2\"]\n  }]\n}"
+            },
+            {
+              "role": "user",
+              "content": "<constant_info>\nuser_query: 小米发布第二款车之后的下一个大型车展上，其竞品都发布了什么车？\ncurrent_date: 2026-08-14\n</constant_info>\n\n<task>\n这是首轮。请从原始问题最明显、最基础的信息缺口创建第一个 INIT_GOAL，并规划搜索 query。\n</task>"
+            }
+          ],
+          "response": {
+            "search_actions": [
+              {
+                "search_action": "INIT_GOAL",
+                "action_reason": "原始问题需要先确定小米第二款车的具体车型和发布/上市时间，才能定位其后的首个大型车展并进一步查找竞品发布情况，因此首轮先建立这一基础事实目标。",
+                "target_goal_id": null,
+                "target_conflict_id": null,
+                "search_goal_id": "GOAL_1",
+                "search_goal": "确定小米第二款车的车型名称及官方发布/上市日期",
+                "depends_on_goal_ids": [],
+                "search_queries": [
+                  "小米第二款车 车型 发布 上市 时间",
+                  "小米汽车 第二款车 官方发布",
+                  "Xiaomi second car model launch date",
+                  "小米 YU7 上市时间",
+                  "小米第二款车 发布日期 2025 OR 2026"
+                ]
+              }
+            ]
+          },
+          "phase": "initial_plan"
+        },
+        "search_actions": [
+          {
+            "search_action": "INIT_GOAL",
+            "action_reason": "原始问题需要先确定小米第二款车的具体车型和发布/上市时间，才能定位其后的首个大型车展并进一步查找竞品发布情况，因此首轮先建立这一基础事实目标。",
+            "target_goal_id": null,
+            "target_conflict_id": null,
+            "search_goal_id": "GOAL_1",
+            "search_goal": "确定小米第二款车的车型名称及官方发布/上市日期",
+            "depends_on_goal_ids": [],
+            "search_queries": [
+              "小米第二款车 车型 发布 上市 时间",
+              "小米汽车 第二款车 官方发布",
+              "Xiaomi second car model launch date",
+              "小米 YU7 上市时间",
+              "小米第二款车 发布日期 2025 OR 2026"
+            ]
+          }
+        ],
+        "executions": [
+          {
+            "search_action": {
+              "search_action": "INIT_GOAL",
+              "action_reason": "原始问题需要先确定小米第二款车的具体车型和发布/上市时间，才能定位其后的首个大型车展并进一步查找竞品发布情况，因此首轮先建立这一基础事实目标。",
+              "target_goal_id": null,
+              "target_conflict_id": null,
+              "search_goal_id": "GOAL_1",
+              "search_goal": "确定小米第二款车的车型名称及官方发布/上市日期",
+              "depends_on_goal_ids": [],
+              "search_queries": [
+                "小米第二款车 车型 发布 上市 时间",
+                "小米汽车 第二款车 官方发布",
+                "Xiaomi second car model launch date",
+                "小米 YU7 上市时间",
+                "小米第二款车 发布日期 2025 OR 2026"
+              ]
+            },
+            "search_goal_id": "GOAL_1",
+            "search_queries": [
+              "小米第二款车 车型 发布 上市 时间",
+              "小米汽车 第二款车 官方发布",
+              "Xiaomi second car model launch date",
+              "小米 YU7 上市时间",
+              "小米第二款车 发布日期 2025 OR 2026"
+            ],
+            "search_calls": [
+              {
+                "query": "小米第二款车 车型 发布 上市 时间",
+                "web_ids": [
+                  "1",
+                  "2",
+                  "3",
+                  "4"
+                ]
+              },
+              {
+                "query": "小米汽车 第二款车 官方发布",
+                "web_ids": [
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9"
+                ]
+              },
+              {
+                "query": "Xiaomi second car model launch date",
+                "web_ids": [
+                  "10",
+                  "11",
+                  "12",
+                  "4"
+                ]
+              },
+              {
+                "query": "小米 YU7 上市时间",
+                "web_ids": [
+                  "13",
+                  "14",
+                  "15",
+                  "16",
+                  "17"
+                ]
+              },
+              {
+                "query": "小米第二款车 发布日期 2025 OR 2026",
+                "web_ids": [
+                  "18",
+                  "19",
+                  "20",
+                  "21"
+                ]
+              }
+            ],
+            "search_errors": [],
+            "webs": [
+              {
+                "url": "https://www.toutiao.com/article/7439997991349518911/",
+                "title": "关注 - 小米第二款车或于2025年一季度上市 - 今日头条",
+                "content": "文:懂车帝原创 尚甜甜[懂车帝原创 行业] 日前,据财经汽车报道,小米汽车内部人士透露:小米第二款车型计划于明年2、3月上市,小米第二款新车的上市安排将与此前SU7上市节奏一致。",
+                "website": "今日头条",
+                "date": "2024-11-22T16:12:00+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 今日头条｜网页时间: 2024-11-22T16:12:00+08:00｜网页标题: 关注 - 小米第二款车或于2025年一季度上市 - 今日头条｜网页内容：文:懂车帝原创 尚甜甜[懂车帝原创 行业] 日前,据财经汽车报道,小米汽车内部人士透露:小米第二款车型计划于明年2、3月上市,小米第二款新车的上市安排将与此前SU7上市节奏一致。",
+                "source_id": 1,
+                "web_id": "1"
+              },
+              {
+                "url": "https://finance.eastmoney.com/a/202412093263234596.html",
+                "title": "小米汽车“二孩”将明年6月上市 “小米YU7”为SUV车型 _ 东方财富网",
+                "content": "新京报贝壳财经讯(记者陈维城)12月9日晚间,小米汽车官方微博发布动态显示, 小米汽车 第二款车型为SUV,定名为“小米YU7”,预计2025年6-7月正式上市。 小米汽车 官方 微博 内容 新京报 贝壳 财经记者从工信部官网获悉,该车型长4999mm、宽1996mm、 高1600mm,最高车速253km/h;该产品为纯电动车型,宁德时代三元锂离子电池;ABS型号:ESP10,为博世汽车部件(苏州)有限公司生产;驱动电机峰值功率:220kW/288kW。 今年上半年,小米汽车上市交付备受关注。自3月正式上市以来,小米汽车第一款轿车车型 Xiaomi SU7在产能扩张和交付执行上进展飞速。10月,小米汽车工厂单月生产量及新车交付量均破20000辆。11月,Xiaomi SU7提前完成10万台交付目标。2024全年小米汽车将冲刺13万辆交付新目标。 小米集团三季报显示,第三季度,小米智能电动汽车等创新业务收入为97亿元,正逐步向百亿规模逼近,毛利率提升至17.1%。截至2024年9月30日,小米汽车已在中国38个城市开业127家汽车销售门店。 (文章来源:新京报)",
+                "website": "东方财富网财经频道",
+                "date": "2024-12-09T23:16:00+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 东方财富网财经频道｜网页时间: 2024-12-09T23:16:00+08:00｜网页标题: 小米汽车“二孩”将明年6月上市 “小米YU7”为SUV车型 _ 东方财富网｜网页内容：新京报贝壳财经讯(记者陈维城)12月9日晚间,小米汽车官方微博发布动态显示, 小米汽车 第二款车型为SUV,定名为“小米YU7”,预计2025年6-7月正式上市。 小米汽车 官方 微博 内容 新京报 贝壳 财经记者从工信部官网获悉,该车型长4999mm、宽1996mm、 高1600mm,最高车速253km/h;该产品为纯电动车型,宁德时代三元锂离子电池;ABS型号:ESP10,为博世汽车部件(苏州)有限公司生产;驱动电机峰值功率:220kW/288kW。 今年上半年,小米汽车上市交付备受关注。自3月正式上市以来,小米汽车第一款轿车车型 Xiaomi SU7在产能扩张和交付执行上进展飞速。10月,小米汽车工厂单月生产量及新车交付量均破20000辆。11月,Xiaomi SU7提前完成10万台交付目标。2024全年小米汽车将冲刺13万辆交付新目标。 小米集团三季报显示,第三季度,小米智能电动汽车等创新业务收入为97亿元,正逐步向百亿规模逼近,毛利率提升至17.1%。截至2024年9月30日,小米汽车已在中国38个城市开业127家汽车销售门店。 (文章来源:新京报)",
+                "source_id": 2,
+                "web_id": "2"
+              },
+              {
+                "url": "https://k.sina.com.cn/article_1747383115_6826f34b02001peyw.html?from=auto&subch=oauto",
+                "title": "小米第二款纯电SUV车型或将于明年2、3月上市-新浪汽车",
+                "content": "近日,有媒体报道小米汽车内部人士的透露,称小米的第二款车型计划于明年2月或3月上市。这一消息引起了广泛关注,并引发了业界对小米汽车未来发展的猜测。 此外,另一位消息人士也表示,小米第二款车型的上市节奏将与小米SU7(配置 保持一致。而小米SU7的上市时间恰好是2024年3月28日,这进一步证实了小米第二款车型可能将在相近的时间段内推向市场。 然而,对于上述消息,小米集团相关负责人回应称“相关问题已超纲”,并未给出更多具体回应。这使得小米第二款车型的上市时间仍存在一定的不确定性。 尽管如此,可以确定的是,小米汽车的第二款车型是一款纯电SUV,代号为MX11。这款车型与小米SU7共享平台及部分零部件,但在设计上更具独特性。据媒体报道,小米MX11的车身侧面线条流畅,整体设计充满现代感,预计将在市场上引发一定的关注。 小米汽车作为新能源汽车市场的新势力,其首款车型SU7已经在市场上取得了一定的成绩。此次推出的第二款车型MX11,不仅延续了小米汽车一贯的高品质和创新精神,更在设计上进行了更多的尝试和突破。 随着新能源汽车市场的快速发展和竞争的加剧,小米汽车需要不断创新和提升自身实力,才能在市场上立足。小米MX11的推出,无疑将为小米汽车未来的发展注入新的活力和动力。 虽然目前小米集团相关负责人对于第二款车型的上市时间并未给出明确回应,但我们可以期待小米MX11在未来市场上的表现。同时,也希望小米汽车能够继续秉持创新精神,为消费者带来更多高品质的新能源汽车产品。",
+                "website": "新浪网",
+                "date": "2024-11-22T07:16:32+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 新浪网｜网页时间: 2024-11-22T07:16:32+08:00｜网页标题: 小米第二款纯电SUV车型或将于明年2、3月上市-新浪汽车｜网页内容：近日,有媒体报道小米汽车内部人士的透露,称小米的第二款车型计划于明年2月或3月上市。这一消息引起了广泛关注,并引发了业界对小米汽车未来发展的猜测。 此外,另一位消息人士也表示,小米第二款车型的上市节奏将与小米SU7(配置 保持一致。而小米SU7的上市时间恰好是2024年3月28日,这进一步证实了小米第二款车型可能将在相近的时间段内推向市场。 然而,对于上述消息,小米集团相关负责人回应称“相关问题已超纲”,并未给出更多具体回应。这使得小米第二款车型的上市时间仍存在一定的不确定性。 尽管如此,可以确定的是,小米汽车的第二款车型是一款纯电SUV,代号为MX11。这款车型与小米SU7共享平台及部分零部件,但在设计上更具独特性。据媒体报道,小米MX11的车身侧面线条流畅,整体设计充满现代感,预计将在市场上引发一定的关注。 小米汽车作为新能源汽车市场的新势力,其首款车型SU7已经在市场上取得了一定的成绩。此次推出的第二款车型MX11,不仅延续了小米汽车一贯的高品质和创新精神,更在设计上进行了更多的尝试和突破。 随着新能源汽车市场的快速发展和竞争的加剧,小米汽车需要不断创新和提升自身实力,才能在市场上立足。小米MX11的推出,无疑将为小米汽车未来的发展注入新的活力和动力。 虽然目前小米集团相关负责人对于第二款车型的上市时间并未给出明确回应,但我们可以期待小米MX11在未来市场上的表现。同时,也希望小米汽车能够继续秉持创新精神,为消费者带来更多高品质的新能源汽车产品。",
+                "source_id": 3,
+                "web_id": "3"
+              },
+              {
+                "url": "https://wap.eastmoney.com/a/202412093263234596.html",
+                "title": "小米汽车“二孩”将明年6月上市 “小米YU7”为SUV车型",
+                "content": "炒股第一步,先开个股票账户\n  新京报 贝壳 财经讯(记者陈维城)12月9日晚间, 小米汽车 官方 微博 发布动态显示, 小米汽车 第二款车型为SUV,定名为“小米YU7”,预计2025年6-7月正式上市。\n小米汽车 官方 微博 内容\n  新京报 贝壳 财经记者从工信部官网获悉,该车型长4999mm、宽1996mm、 高1600mm,最高车速253km/h;该产品为纯电动车型, 宁德时代 三元锂离子 电池 ;ABS型号:ESP10,为博世汽车部件(苏州)有限公司生产;驱动 电机 峰值功率:220kW/288kW。\n  今年上半年,小米汽车上市交付备受关注。自3月正式上市以来,小米汽车第一款轿车车型 Xiaomi SU7在产能扩张和交付执行上进展飞速。10月,小米汽车工厂单月生产量及新车交付量均破20000辆。11月,Xiaomi SU7提前完成10万台交付目标。2024全年小米汽车将冲刺13万辆交付新目标。\n  小米集团三季报显示,第三季度,小米智能电动汽车等创新业务收入为97亿元,正逐步向百亿规模逼近,毛利率提升至17.1%。截至2024年9月30日,小米汽车已在中国38个城市开业127家汽车销售门店。",
+                "website": "手机东方财富网",
+                "date": "2024-12-10T07:16:00+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 手机东方财富网｜网页时间: 2024-12-10T07:16:00+08:00｜网页标题: 小米汽车“二孩”将明年6月上市 “小米YU7”为SUV车型｜网页内容：炒股第一步,先开个股票账户\n  新京报 贝壳 财经讯(记者陈维城)12月9日晚间, 小米汽车 官方 微博 发布动态显示, 小米汽车 第二款车型为SUV,定名为“小米YU7”,预计2025年6-7月正式上市。\n小米汽车 官方 微博 内容\n  新京报 贝壳 财经记者从工信部官网获悉,该车型长4999mm、宽1996mm、 高1600mm,最高车速253km/h;该产品为纯电动车型, 宁德时代 三元锂离子 电池 ;ABS型号:ESP10,为博世汽车部件(苏州)有限公司生产;驱动 电机 峰值功率:220kW/288kW。\n  今年上半年,小米汽车上市交付备受关注。自3月正式上市以来,小米汽车第一款轿车车型 Xiaomi SU7在产能扩张和交付执行上进展飞速。10月,小米汽车工厂单月生产量及新车交付量均破20000辆。11月,Xiaomi SU7提前完成10万台交付目标。2024全年小米汽车将冲刺13万辆交付新目标。\n  小米集团三季报显示,第三季度,小米智能电动汽车等创新业务收入为97亿元,正逐步向百亿规模逼近,毛利率提升至17.1%。截至2024年9月30日,小米汽车已在中国38个城市开业127家汽车销售门店。",
+                "source_id": 4,
+                "web_id": "4"
+              },
+              {
+                "url": "https://chd.in-en.com/html/chd-2441580.shtml",
+                "title": "第二款小米汽车被曝光-新势力造车-新能源汽车--国际充换电网",
+                "content": "国际能源网获悉,2024年3月28日,小米汽车已经正式上线。同时,小米SU7的正式发布,也标志着小米「人车家全生态」战略正从“完整闭环”迈向“全面开启”的新阶段。据悉,在小米SU7正式发布后,网上就又传出了有关第二款小米汽车的消息。有汽车博主在社交媒体晒出了一张图片,其中明确显示小米的第二款车型可能为豪华中大型SUV,并且大概率为增程车型,对标理想旗舰L9。值得一提的是,雷军也对第二款车型信心满满。事实上,以小米的体量和目前小米SU7所取得的成绩来看,小米汽车正在筹备第二款车型具有很大的真实性。",
+                "website": "国际充换电网",
+                "date": "2024-03-29T00:00:00+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 国际充换电网｜网页时间: 2024-03-29T00:00:00+08:00｜网页标题: 第二款小米汽车被曝光-新势力造车-新能源汽车--国际充换电网｜网页内容：国际能源网获悉,2024年3月28日,小米汽车已经正式上线。同时,小米SU7的正式发布,也标志着小米「人车家全生态」战略正从“完整闭环”迈向“全面开启”的新阶段。据悉,在小米SU7正式发布后,网上就又传出了有关第二款小米汽车的消息。有汽车博主在社交媒体晒出了一张图片,其中明确显示小米的第二款车型可能为豪华中大型SUV,并且大概率为增程车型,对标理想旗舰L9。值得一提的是,雷军也对第二款车型信心满满。事实上,以小米的体量和目前小米SU7所取得的成绩来看,小米汽车正在筹备第二款车型具有很大的真实性。",
+                "source_id": 1,
+                "web_id": "5"
+              },
+              {
+                "url": "https://www.toutiao.com/article/7355812694978560523/",
+                "title": "小米汽车再度掀起风浪:第二款新车曝光! - 今日头条",
+                "content": "近日,小米汽车再度成为众人瞩目的焦点,因其第二款新车的曝光而引发了广泛关注。据悉,一辆疑似真车的中大型SUV现身小米门店,其引人注目的外观和神秘的身份令人猜测不已。 仅在上月底,小米汽车首款新车「小米SU7」正式发布,便以惊艳的外观设计、强劲的配置堆料以及亲民的起售价21.59万元,赢得了众多消费者的青睐。其销售成绩更是喜人,短短72小时内便超过了10万台的大定,锁单数量更是超过了4万台,可谓一鸣惊人。 然而,就在大家对首款车型津津乐道之际,小米第二款新车的消息突然传来,令人眼前一亮。有网友在小米门店发现了一辆神秘的伪装车,经过拍照后发布在社交平台上。从照片上可以看出,这款车型是一款中大型SUV,车身大小与问界M7相近,外观线条简洁大气,散发着浓厚的科技感。 对于这款神秘的新车,网友们纷纷猜测其可能是小米汽车的第二款产品。虽然目前尚未有官方的信息发布,但从曝光的照片来看,这款车型已经引起了广泛的关注和热议。人们对于小米汽车的下一步动向充满了期待,希望它能够延续首款车型的成功,并为消费者带来更多惊喜和选择。 总的来说,小米汽车作为一家新兴的汽车制造商,凭借其独特的视角和技术实力,正在逐步打造出一系列备受瞩目的产品。相信随着第二款新车的正式发布,小米汽车将会在市场上掀起新的一波热潮,为消费者带来更多的选择和体验。让我们拭目以待,期待小米汽车的下一个传奇!",
+                "website": "今日头条",
+                "date": "2024-04-09T18:31:00+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 今日头条｜网页时间: 2024-04-09T18:31:00+08:00｜网页标题: 小米汽车再度掀起风浪:第二款新车曝光! - 今日头条｜网页内容：近日,小米汽车再度成为众人瞩目的焦点,因其第二款新车的曝光而引发了广泛关注。据悉,一辆疑似真车的中大型SUV现身小米门店,其引人注目的外观和神秘的身份令人猜测不已。 仅在上月底,小米汽车首款新车「小米SU7」正式发布,便以惊艳的外观设计、强劲的配置堆料以及亲民的起售价21.59万元,赢得了众多消费者的青睐。其销售成绩更是喜人,短短72小时内便超过了10万台的大定,锁单数量更是超过了4万台,可谓一鸣惊人。 然而,就在大家对首款车型津津乐道之际,小米第二款新车的消息突然传来,令人眼前一亮。有网友在小米门店发现了一辆神秘的伪装车,经过拍照后发布在社交平台上。从照片上可以看出,这款车型是一款中大型SUV,车身大小与问界M7相近,外观线条简洁大气,散发着浓厚的科技感。 对于这款神秘的新车,网友们纷纷猜测其可能是小米汽车的第二款产品。虽然目前尚未有官方的信息发布,但从曝光的照片来看,这款车型已经引起了广泛的关注和热议。人们对于小米汽车的下一步动向充满了期待,希望它能够延续首款车型的成功,并为消费者带来更多惊喜和选择。 总的来说,小米汽车作为一家新兴的汽车制造商,凭借其独特的视角和技术实力,正在逐步打造出一系列备受瞩目的产品。相信随着第二款新车的正式发布,小米汽车将会在市场上掀起新的一波热潮,为消费者带来更多的选择和体验。让我们拭目以待,期待小米汽车的下一个传奇!",
+                "source_id": 2,
+                "web_id": "6"
+              },
+              {
+                "url": "https://www.toutiao.com/article/7301673389268517430/",
+                "title": "小米汽车揭开面纱 - 今日头条",
+                "content": "备受外界关注和期待的小米汽车,正式公布。 15日,工信部网站发布第377批《道路机动车辆生产企业及产品公告》,公布了小米汽车的两款新车信息。新车为纯电动轿车,商标名为“小米牌”,车尾logo显示为“xiaomi”,左下方标识为“北京小米”,",
+                "website": "今日头条",
+                "date": "2023-11-15T21:02:00+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 今日头条｜网页时间: 2023-11-15T21:02:00+08:00｜网页标题: 小米汽车揭开面纱 - 今日头条｜网页内容：备受外界关注和期待的小米汽车,正式公布。 15日,工信部网站发布第377批《道路机动车辆生产企业及产品公告》,公布了小米汽车的两款新车信息。新车为纯电动轿车,商标名为“小米牌”,车尾logo显示为“xiaomi”,左下方标识为“北京小米”,",
+                "source_id": 3,
+                "web_id": "7"
+              },
+              {
+                "url": "https://nev.ofweek.com/recommendfriends-30693689.html",
+                "title": "推荐给朋友: 雷军再出一张牌,小米汽车第二品牌官宣 - OFweek新能源汽车网",
+                "content": "维科网新能源汽车消息,今天(7月8日)早上7点30分,小米汽车官方账号发了一条简短的动态,配文“SkyNomad。天空,游牧者。一个关于空间和生活的新名字。”\n就这么一句话,正式宣告了小米汽车全新品牌",
+                "website": "OFweek新能源汽车网",
+                "date": "2025-07-16T00:00:00+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: OFweek新能源汽车网｜网页时间: 2025-07-16T00:00:00+08:00｜网页标题: 推荐给朋友: 雷军再出一张牌,小米汽车第二品牌官宣 - OFweek新能源汽车网｜网页内容：维科网新能源汽车消息,今天(7月8日)早上7点30分,小米汽车官方账号发了一条简短的动态,配文“SkyNomad。天空,游牧者。一个关于空间和生活的新名字。”\n就这么一句话,正式宣告了小米汽车全新品牌",
+                "source_id": 4,
+                "web_id": "8"
+              },
+              {
+                "url": "http://news.ppzw.com/Article_Print_243464.html",
+                "title": "小米第二家汽车公司来了",
+                "content": "740)this.width=740>\n图片来源:视觉中国\n11月19日,据天眼查App显示,小米汽车科技有限公司于11月18日成立,法定代表人为雷军,是小米宣布造车后成立的第二家汽车公司。\n该公司注册资本10亿元,注册地为北京,经营范围包括新能源车整车制造、汽车整车及零部件的技术研发等,由小米科技有限责任公司100%控股。后者由雷军、黎万强、洪峰、刘德四位小米重要人物联合控股,为小米系投资的主要主体之一,其中雷军占据77.8%股份,为第一大股东兼董事长。\n距离第一家小米汽车公司成立还没有过去太久。在三月底正式宣布造车后,9月1日,雷军在微博发布小米汽车正式注册的消息,公司名为小米汽车有限公司,注册资金100亿元,法人代表由雷军担任,小米通讯技术有限公司对其全资持股。\n不过,10月15日,该公司持股信息发生变更,全资股东为一家注册于香港地区的公司Xiaomi EV Limited。\n10月19日,雷军再次公开表示,小米造车目前的各项进展快于他的预期,预计2024年上半年正式量产——这与当初“三年见到小米第一台车”的言论大体一致。\n团队素来是打胜仗的重中之重,小米正在紧锣密鼓筹备当中。\n从内部来看,小米汽车注册成立当天,雷军晒出团队合影,包括他、CFO林世伟、联合创始人刘德、集团总裁王翔、联合创始人洪峰、SVP卢伟冰在内共有17人,无一不是在小米过去业务中担任重要角色的骨干,但其中仅有一位原宝马集团资深设计师具有真正的汽车行业背景。\n小米在外的“招兵买马”也在如火如荼进行中,除了雷军在微博亲自发招聘广告,为小米汽车自动驾驶部门招募自研L4级别智能驾驶能力的500名技术人员外,多个招聘平台及小米官网都可以看到小米对集结造车人才的迫切。\n据虎嗅报道,小米造车曾显现出2万人竞争300余个岗位的激烈场面,在讨论之中,传统汽车品牌技术口的研发骨干和自动驾驶领域技术方案的供应商最有意向加",
+                "website": "news.ppzw.com",
+                "date": "2025-02-07T21:10:39+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: news.ppzw.com｜网页时间: 2025-02-07T21:10:39+08:00｜网页标题: 小米第二家汽车公司来了｜网页内容：740)this.width=740>\n图片来源:视觉中国\n11月19日,据天眼查App显示,小米汽车科技有限公司于11月18日成立,法定代表人为雷军,是小米宣布造车后成立的第二家汽车公司。\n该公司注册资本10亿元,注册地为北京,经营范围包括新能源车整车制造、汽车整车及零部件的技术研发等,由小米科技有限责任公司100%控股。后者由雷军、黎万强、洪峰、刘德四位小米重要人物联合控股,为小米系投资的主要主体之一,其中雷军占据77.8%股份,为第一大股东兼董事长。\n距离第一家小米汽车公司成立还没有过去太久。在三月底正式宣布造车后,9月1日,雷军在微博发布小米汽车正式注册的消息,公司名为小米汽车有限公司,注册资金100亿元,法人代表由雷军担任,小米通讯技术有限公司对其全资持股。\n不过,10月15日,该公司持股信息发生变更,全资股东为一家注册于香港地区的公司Xiaomi EV Limited。\n10月19日,雷军再次公开表示,小米造车目前的各项进展快于他的预期,预计2024年上半年正式量产——这与当初“三年见到小米第一台车”的言论大体一致。\n团队素来是打胜仗的重中之重,小米正在紧锣密鼓筹备当中。\n从内部来看,小米汽车注册成立当天,雷军晒出团队合影,包括他、CFO林世伟、联合创始人刘德、集团总裁王翔、联合创始人洪峰、SVP卢伟冰在内共有17人,无一不是在小米过去业务中担任重要角色的骨干,但其中仅有一位原宝马集团资深设计师具有真正的汽车行业背景。\n小米在外的“招兵买马”也在如火如荼进行中,除了雷军在微博亲自发招聘广告,为小米汽车自动驾驶部门招募自研L4级别智能驾驶能力的500名技术人员外,多个招聘平台及小米官网都可以看到小米对集结造车人才的迫切。\n据虎嗅报道,小米造车曾显现出2万人竞争300余个岗位的激烈场面,在讨论之中,传统汽车品牌技术口的研发骨干和自动驾驶领域技术方案的供应商最有意向加",
+                "source_id": 5,
+                "web_id": "9"
+              },
+              {
+                "url": "http://portuguese.people.com.cn/n3/2024/1211/c309810-20252553.html",
+                "title": "Xiaomi lançará SUV em meados de 2025",
+                "content": "Xiaomi\nlançará\nSUV\nem\nmeados\nde\n2025\nA\nfabricante\nchinesa\nde\ncelulares\nXiaomi\nanunciou\nna\nnoite\nde\nsegunda-feira\n(9)\nque\nseu\nsegundo\nmodelo,\num\nSUV,\nestá\nprogramado\npara\nchegar\nao\nmercado\nem\njunho\nou\njulho\nde\n2025.\nO\nSUV,\nchamado\nYU7,\nserá\num\nmodelo\nelétrico,\ncom\ndistância\nentre\neixos\nde\n3\nmetros.\nEle\nmede\n4.999mm\nde\ncomprimento,\n1.996mm\nde\nlargura\ne\n1.600mm\nde\naltura,\nsegundo\ninformações\ndo\nMinistério\nda\nIndústria\ne\nTecnologia\nda\nInformação\n(MIIT)\nda\nChina.\nA\nXiaomi\nnão\ndeu\numa\nfaixa\nde\npreço\nnem\nrevelou\nos\nrivais\ndo\nYU7.\nRelatórios\nchineses\nsugeriram\nque\nele\npode\ncompetir\ncom\no\nModel\nY\nda\nTesla,\nque\né\num\ndos\nmodelos\nmais\npopulares\ndo\nsegmento.\nA\nXiaomi\nlançou\nseu\nprimeiro\nmodelo,\no\nSU7,\nno\nfinal\nde\nmarço\ndeste\nano.\nO\nsedã\nelétrico,\nque\nlembra\no\nTaycan\nda\nPorsche,\ntem\nsido\npopular,\ncom\ns",
+                "website": "人民网",
+                "date": "2024-12-11T00:00:00+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 人民网｜网页时间: 2024-12-11T00:00:00+08:00｜网页标题: Xiaomi lançará SUV em meados de 2025｜网页内容：Xiaomi\nlançará\nSUV\nem\nmeados\nde\n2025\nA\nfabricante\nchinesa\nde\ncelulares\nXiaomi\nanunciou\nna\nnoite\nde\nsegunda-feira\n(9)\nque\nseu\nsegundo\nmodelo,\num\nSUV,\nestá\nprogramado\npara\nchegar\nao\nmercado\nem\njunho\nou\njulho\nde\n2025.\nO\nSUV,\nchamado\nYU7,\nserá\num\nmodelo\nelétrico,\ncom\ndistância\nentre\neixos\nde\n3\nmetros.\nEle\nmede\n4.999mm\nde\ncomprimento,\n1.996mm\nde\nlargura\ne\n1.600mm\nde\naltura,\nsegundo\ninformações\ndo\nMinistério\nda\nIndústria\ne\nTecnologia\nda\nInformação\n(MIIT)\nda\nChina.\nA\nXiaomi\nnão\ndeu\numa\nfaixa\nde\npreço\nnem\nrevelou\nos\nrivais\ndo\nYU7.\nRelatórios\nchineses\nsugeriram\nque\nele\npode\ncompetir\ncom\no\nModel\nY\nda\nTesla,\nque\né\num\ndos\nmodelos\nmais\npopulares\ndo\nsegmento.\nA\nXiaomi\nlançou\nseu\nprimeiro\nmodelo,\no\nSU7,\nno\nfinal\nde\nmarço\ndeste\nano.\nO\nsedã\nelétrico,\nque\nlembra\no\nTaycan\nda\nPorsche,\ntem\nsido\npopular,\ncom\ns",
+                "source_id": 1,
+                "web_id": "10"
+              },
+              {
+                "url": "https://www.yicaiglobal.com/news/xiaomi-to-launch-new-pure-electric-suv-model-in-mid-2025",
+                "title": "Xiaomi to Launch Pure Electric SUV in Mid-2025",
+                "content": "(Yicai)\nDec.\n10\n--\nXiaomi’s\nsecond\ncar\nwill\nbe\na\npure\nelectric\nsport\nutility\nvehicle,\naccording\nto\nthe\nwebsite\nof\nChina’s\nindustry\nministry,\nwhile\nthe\nelectronics\ngiant’s\nchairman\nsaid\nthe\ncar\nwill\nlaunch\naround\nthe\nmiddle\nof\nnext\nyear.The\nforthcoming\nXiaomi\nYU7\nresembles\nthe\nFerrari\nPurosangue,\ninformation\non\nthe\nministry's\nwebsite\nshowed\nyesterday.\nIt\nwill\nlaunch\nin\nJune\nor\nJuly\n2025,\nLei\nJun,\nwho\nis\nalso\nthe\nBeijing-based\nXiaomi’s\nchief\nexecutive,\nsaid\non\nWeibo\nlater\nthe\nsame\nday.Xiaomi\nAuto's\nfirst\nmodel,\nthe\nSU7,\ncompetes\nwith\nTesla's\nModel\n3,\nwhile\nthe\nYU7\nwill\ntake\non\nthe\nUS\nautomaker's\nModel\nY,\none\nof\nthe\nmost\npopular\nelectric\nSUVs\nin\nthe\nmarket,\naccording\nto\nindustry\ninsiders.The\nYU7\nwill\nuse\na\nternary\nlithium-ion\nbattery\nproduced\nby\nJiangsu\nContemporary\nAmperex\nTechnology,\na\nunit",
+                "website": "www.yicaiglobal.com",
+                "date": "2026-05-27T16:10:32+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: www.yicaiglobal.com｜网页时间: 2026-05-27T16:10:32+08:00｜网页标题: Xiaomi to Launch Pure Electric SUV in Mid-2025｜网页内容：(Yicai)\nDec.\n10\n--\nXiaomi’s\nsecond\ncar\nwill\nbe\na\npure\nelectric\nsport\nutility\nvehicle,\naccording\nto\nthe\nwebsite\nof\nChina’s\nindustry\nministry,\nwhile\nthe\nelectronics\ngiant’s\nchairman\nsaid\nthe\ncar\nwill\nlaunch\naround\nthe\nmiddle\nof\nnext\nyear.The\nforthcoming\nXiaomi\nYU7\nresembles\nthe\nFerrari\nPurosangue,\ninformation\non\nthe\nministry's\nwebsite\nshowed\nyesterday.\nIt\nwill\nlaunch\nin\nJune\nor\nJuly\n2025,\nLei\nJun,\nwho\nis\nalso\nthe\nBeijing-based\nXiaomi’s\nchief\nexecutive,\nsaid\non\nWeibo\nlater\nthe\nsame\nday.Xiaomi\nAuto's\nfirst\nmodel,\nthe\nSU7,\ncompetes\nwith\nTesla's\nModel\n3,\nwhile\nthe\nYU7\nwill\ntake\non\nthe\nUS\nautomaker's\nModel\nY,\none\nof\nthe\nmost\npopular\nelectric\nSUVs\nin\nthe\nmarket,\naccording\nto\nindustry\ninsiders.The\nYU7\nwill\nuse\na\nternary\nlithium-ion\nbattery\nproduced\nby\nJiangsu\nContemporary\nAmperex\nTechnology,\na\nunit",
+                "source_id": 2,
+                "web_id": "11"
+              },
+              {
+                "url": "http://www.ecns.cn/business/2024-12-10/detail-ihekuwsr0212053.shtml",
+                "title": "Xiaomi to launch SUV in mid-2025",
+                "content": "Chinese phone maker Xiaomi announced late Monday that its second model, an SUV, is scheduled to hit the market in June or July 2025. The SUV, called YU7, will be an electric model, with a 3-meter wheelbase. It measures 4,999 mm in length, 1,996 mm in width and 1,600 mm in height, according to information from the Ministry of Industry and Information Technology. Xiaomi did not give a price range nor did it reveal the YU7's rivals. Chinese reports said it might take on Tesla's Model Y, which is one of the most popular models in the segment. Xiaomi launched its first model, the SU7, in late March this year. The electric sedan, which resembles Porsche's Taycan, has been popular, with its sales exceeding 20,000 units in November. The phone maker said it is confident that the SU7's cumulative sa",
+                "website": "Ecns.cn",
+                "date": "2024-12-10T16:53:33+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: Ecns.cn｜网页时间: 2024-12-10T16:53:33+08:00｜网页标题: Xiaomi to launch SUV in mid-2025｜网页内容：Chinese phone maker Xiaomi announced late Monday that its second model, an SUV, is scheduled to hit the market in June or July 2025. The SUV, called YU7, will be an electric model, with a 3-meter wheelbase. It measures 4,999 mm in length, 1,996 mm in width and 1,600 mm in height, according to information from the Ministry of Industry and Information Technology. Xiaomi did not give a price range nor did it reveal the YU7's rivals. Chinese reports said it might take on Tesla's Model Y, which is one of the most popular models in the segment. Xiaomi launched its first model, the SU7, in late March this year. The electric sedan, which resembles Porsche's Taycan, has been popular, with its sales exceeding 20,000 units in November. The phone maker said it is confident that the SU7's cumulative sa",
+                "source_id": 3,
+                "web_id": "12"
+              },
+              {
+                "url": "https://www.sohu.com/a/834839407_121798711",
+                "title": "小米YU7路测启动,六七月上市将引发行业关注_智能_技术_产品",
+                "content": "12月10日,小米创办人兼CEO雷军在微博上宣布,小米YU7正在进行大规模路测,预计将在2024年六七月正式上市。这一消息引发了市场的广泛关注,作为小米最新推出的智能设备之一,YU7将承载着小米在智能技术及产品设计上的新思考和探索。 小米YU7是一款集多种先进技术于一体的智能设备,具体的产品功能和规格细节尚未公布,但雷军提到的路测活动已经预示着该产品正在向实用化和市场化迈进。作为小米的一员,YU7可能在智能家居和物联网生态中,将发挥重要作用。而在小米的产品矩阵中,YU7也将与目前市场上的其他智能设备展开竞争,尤其是当今越来越流行的AI技术。 在当今智能设备的市场中,AI技术的应用正成为核心竞争力之一。从语音助手到智能图像识别,AI在提升用户体验方面的贡献不容小觑。小米YU7是否会搭载先进的AI功能,如智能语音识别、场景识别等,将直接影响其市场表现。基于小米在AI领域的深厚积累,许多消费者对YU7将如何整合这些技术充满期待。 随着小米YU7的路测推进,许多技术爱好者国内外均开始讨论这款产品可能的特性和用途。如果YU7具备强大的处理器、高分辨率的显示屏以及出色的摄像头质量,它将在日常使用、游戏及影音娱乐方面带来优秀的表现。想象一下,在日常生活中,用户通过YU7实现高效的家居控制、智能监控,甚至是丰富多彩的移动娱乐体验,这无疑会提升用户的生活质量。 在智能硬件的竞争中,产品的续航能力同样是重要指标。小米以往的产品在续航方面表现不俗,而消费者对于未来展现的YU7期待能够在这一点上继续保持优势。此外,与同类产品的比较也至关重要,通过分析竞争对手的特性与价格策略,小米可塑造出更具市场竞争力的产品。 值得一提的是,除了硬件上的技术提升,小米也积极推动AI技术的应用,最近几年AI绘画、AI写作等相关工具层出不穷。这样的趋势表明,AI不仅在加速设备智能化进程,也为用户提供了更多创作的可能。小",
+                "website": "搜狐",
+                "date": "2024-12-10T11:04:00+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 搜狐｜网页时间: 2024-12-10T11:04:00+08:00｜网页标题: 小米YU7路测启动,六七月上市将引发行业关注_智能_技术_产品｜网页内容：12月10日,小米创办人兼CEO雷军在微博上宣布,小米YU7正在进行大规模路测,预计将在2024年六七月正式上市。这一消息引发了市场的广泛关注,作为小米最新推出的智能设备之一,YU7将承载着小米在智能技术及产品设计上的新思考和探索。 小米YU7是一款集多种先进技术于一体的智能设备,具体的产品功能和规格细节尚未公布,但雷军提到的路测活动已经预示着该产品正在向实用化和市场化迈进。作为小米的一员,YU7可能在智能家居和物联网生态中,将发挥重要作用。而在小米的产品矩阵中,YU7也将与目前市场上的其他智能设备展开竞争,尤其是当今越来越流行的AI技术。 在当今智能设备的市场中,AI技术的应用正成为核心竞争力之一。从语音助手到智能图像识别,AI在提升用户体验方面的贡献不容小觑。小米YU7是否会搭载先进的AI功能,如智能语音识别、场景识别等,将直接影响其市场表现。基于小米在AI领域的深厚积累,许多消费者对YU7将如何整合这些技术充满期待。 随着小米YU7的路测推进,许多技术爱好者国内外均开始讨论这款产品可能的特性和用途。如果YU7具备强大的处理器、高分辨率的显示屏以及出色的摄像头质量,它将在日常使用、游戏及影音娱乐方面带来优秀的表现。想象一下,在日常生活中,用户通过YU7实现高效的家居控制、智能监控,甚至是丰富多彩的移动娱乐体验,这无疑会提升用户的生活质量。 在智能硬件的竞争中,产品的续航能力同样是重要指标。小米以往的产品在续航方面表现不俗,而消费者对于未来展现的YU7期待能够在这一点上继续保持优势。此外,与同类产品的比较也至关重要,通过分析竞争对手的特性与价格策略,小米可塑造出更具市场竞争力的产品。 值得一提的是,除了硬件上的技术提升,小米也积极推动AI技术的应用,最近几年AI绘画、AI写作等相关工具层出不穷。这样的趋势表明,AI不仅在加速设备智能化进程,也为用户提供了更多创作的可能。小",
+                "source_id": 1,
+                "web_id": "13"
+              },
+              {
+                "url": "https://news.qq.com/rain/a/20250523A07VT000",
+                "title": "7月正式上市,小米YU7正式发布_腾讯新闻",
+                "content": "小米YU7内饰发布,配备Xiaomi\nHyperVision天际屏和升级版辅助驾驶系统,7月将正式上市。",
+                "website": "腾讯网",
+                "date": "2025-05-23T18:02:00+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 腾讯网｜网页时间: 2025-05-23T18:02:00+08:00｜网页标题: 7月正式上市,小米YU7正式发布_腾讯新闻｜网页内容：小米YU7内饰发布,配备Xiaomi\nHyperVision天际屏和升级版辅助驾驶系统,7月将正式上市。",
+                "source_id": 2,
+                "web_id": "14"
+              },
+              {
+                "url": "https://jingxuan.douyin.com/m/video/7446597919320624434",
+                "title": "小米YU7发布",
+                "content": "小米YU7发布,于2024年12月10日上线。抖音精选为您提供高清视频,画面清晰、播放流畅,看丰富、高质量视频就上抖音精选。",
+                "website": "抖音",
+                "date": "2024-12-10T08:00:00+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 抖音｜网页时间: 2024-12-10T08:00:00+08:00｜网页标题: 小米YU7发布｜网页内容：小米YU7发布,于2024年12月10日上线。抖音精选为您提供高清视频,画面清晰、播放流畅,看丰富、高质量视频就上抖音精选。",
+                "source_id": 3,
+                "web_id": "15"
+              },
+              {
+                "url": "https://new.qq.com/rain/a/20250523A07VT000",
+                "title": "7月正式上市,小米YU7正式发布",
+                "content": "小米YU7内饰发布,配备Xiaomi HyperVision天际屏和升级版辅助驾驶系统,7月将正式上市。",
+                "website": "腾讯网",
+                "date": "2025-05-23T18:02:28+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 腾讯网｜网页时间: 2025-05-23T18:02:28+08:00｜网页标题: 7月正式上市,小米YU7正式发布｜网页内容：小米YU7内饰发布,配备Xiaomi HyperVision天际屏和升级版辅助驾驶系统,7月将正式上市。",
+                "source_id": 4,
+                "web_id": "16"
+              },
+              {
+                "url": "https://www.toutiao.com/zixun/7534963212819646490/",
+                "title": "小米yo7什么时候上市 - 今日头条",
+                "content": "据小米汽车官微消息,小米YU7预计于2025年六七月正式上市。小米董事长雷军透露,目前该款车型正在进行大规模路测。来源:澎湃财讯(本文来自澎湃新闻,更多原创资讯请下载“澎湃新闻”APP)",
+                "website": "今日头条",
+                "date": "2025-08-05T13:05:00+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 今日头条｜网页时间: 2025-08-05T13:05:00+08:00｜网页标题: 小米yo7什么时候上市 - 今日头条｜网页内容：据小米汽车官微消息,小米YU7预计于2025年六七月正式上市。小米董事长雷军透露,目前该款车型正在进行大规模路测。来源:澎湃财讯(本文来自澎湃新闻,更多原创资讯请下载“澎湃新闻”APP)",
+                "source_id": 5,
+                "web_id": "17"
+              },
+              {
+                "url": "https://www.autohome.com.cn/ask/12503800.html",
+                "title": "【重磅】小米第二款车或于明年一季度上市,",
+                "content": "据 独家消息 ,小米汽车计划在2025年一季度推出其第二款车型。随着小米首款车型SU7顺利下线并提前完成10万辆新车的生产,第二款新车的上市日期也被提上日程。\n一位内部人士透露,小米第二款车型计划在明年2、3月上市,这与雷军此前表示的“小米SU7 Ultra量产版将于2025年3月正式发布”的信息一致。另一位消息人士也指出,小米第二款新车的上市时间将与SU7保持一致,SU7的上市时间是2024年3月28日。然而,小米集团相关负责人表示,他们无法对这一问题作出更多回应。\n据了解,小米汽车的第二款车型为纯电SUV,代号为MX11。该车将与小米SU7共享平台和部分零部件,但拥有独特的设计和流畅的车身侧面线条。业内猜测,这款新车将直接与特斯拉Model Y竞争。\n小米SU7\n指导价: 21.59-29.99万\n值得一提的是,特斯拉虽然在纯电市场中占有先发优势,但2024年以来也面临着巨大压力。以Model Y为例,2024年前十个月在中国市场的销量为44.8万辆,同比下滑14.9%。这主要是由于价格战和大量新车涌入市场所致。",
+                "website": "汽车之家",
+                "date": "2025-03-02T08:00:00+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 汽车之家｜网页时间: 2025-03-02T08:00:00+08:00｜网页标题: 【重磅】小米第二款车或于明年一季度上市,｜网页内容：据 独家消息 ,小米汽车计划在2025年一季度推出其第二款车型。随着小米首款车型SU7顺利下线并提前完成10万辆新车的生产,第二款新车的上市日期也被提上日程。\n一位内部人士透露,小米第二款车型计划在明年2、3月上市,这与雷军此前表示的“小米SU7 Ultra量产版将于2025年3月正式发布”的信息一致。另一位消息人士也指出,小米第二款新车的上市时间将与SU7保持一致,SU7的上市时间是2024年3月28日。然而,小米集团相关负责人表示,他们无法对这一问题作出更多回应。\n据了解,小米汽车的第二款车型为纯电SUV,代号为MX11。该车将与小米SU7共享平台和部分零部件,但拥有独特的设计和流畅的车身侧面线条。业内猜测,这款新车将直接与特斯拉Model Y竞争。\n小米SU7\n指导价: 21.59-29.99万\n值得一提的是,特斯拉虽然在纯电市场中占有先发优势,但2024年以来也面临着巨大压力。以Model Y为例,2024年前十个月在中国市场的销量为44.8万辆,同比下滑14.9%。这主要是由于价格战和大量新车涌入市场所致。",
+                "source_id": 1,
+                "web_id": "18"
+              },
+              {
+                "url": "http://tjztwyjc.com/index.php?/appsoft/news/8321881752_20250216?scm=12080",
+                "title": "天美影视传媒有限公司小米第二款车或于2025年一季度上市_天美影视传媒有限公司ZAKER新闻",
+                "content": "小米第二款车或于2025年一季度上市_天美影视传媒有限公司ZAKER新闻\n  <strong><span>要持续紧盯“七个有之”问题</span></strong><span>,把严惩政商勾连腐败作为攻坚战重中之重,严肃查处带有公安特点的行业性、系统性、地域性新型腐败和隐性腐败,</span><strong><span>决不允许腐败在公安机关有藏身之地。</span></strong>\n 定位纯电 SUV,或与小米 SU7 Ultra 量产版同步上市文|宋立伟编辑 | 赵成随着产能爬坡,小米旗下首款车型 SU7 已经提前完成 10 万辆新车的下线,在其冲击全年销量 13 万辆的同时,第二款新车的上市也将排上日程。据小米汽车内部人士透露:\" 小米第二款车型计划于明年 2、3 月上市。\" 这与小米集团创始人、董事长雷军此前透露的 \" 小米 SU7 Ultra 量产版将于 2025 年 3 月正式发布 \" 的信息,在时间上不谋而合。另一位接近小米汽车的消息人士也告诉我们,小米第二款新车的上市安排将与此前 SU7 上市节奏一致。而 SU7 的上市时间恰好是 2024 年 3 月 28 日。不过,小米集团相关负责人对此只表示 \" 相关问题已超纲 \",他无法作出更多回应。可以确定的是,小米汽车的第二款车为纯电 SUV,该车内部代号为 MX11。据媒体报道,这款车将与小米 SU7 共享平台和部分零部件,但拥有独特的设计,车身侧面线条流畅。业界猜测,该车将定位为特斯拉 Model Y 的直接竞争对手。值得一提的是,即便在纯电市场占有先发优势的特斯拉,2024 年以来也倍感压力。以 Model Y 为例,2024 年前十个月,该车在中国累计销量 44.8 万辆,同比下滑 14.9%。究其原因,在于价格战和大量的新车扎堆上市。Model Y 图源:IC据相关机构统计,截至目前,2024 年上市",
+                "website": "tjztwyjc.com",
+                "date": "2025-02-17T10:55:56+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: tjztwyjc.com｜网页时间: 2025-02-17T10:55:56+08:00｜网页标题: 天美影视传媒有限公司小米第二款车或于2025年一季度上市_天美影视传媒有限公司ZAKER新闻｜网页内容：小米第二款车或于2025年一季度上市_天美影视传媒有限公司ZAKER新闻\n  <strong><span>要持续紧盯“七个有之”问题</span></strong><span>,把严惩政商勾连腐败作为攻坚战重中之重,严肃查处带有公安特点的行业性、系统性、地域性新型腐败和隐性腐败,</span><strong><span>决不允许腐败在公安机关有藏身之地。</span></strong>\n 定位纯电 SUV,或与小米 SU7 Ultra 量产版同步上市文|宋立伟编辑 | 赵成随着产能爬坡,小米旗下首款车型 SU7 已经提前完成 10 万辆新车的下线,在其冲击全年销量 13 万辆的同时,第二款新车的上市也将排上日程。据小米汽车内部人士透露:\" 小米第二款车型计划于明年 2、3 月上市。\" 这与小米集团创始人、董事长雷军此前透露的 \" 小米 SU7 Ultra 量产版将于 2025 年 3 月正式发布 \" 的信息,在时间上不谋而合。另一位接近小米汽车的消息人士也告诉我们,小米第二款新车的上市安排将与此前 SU7 上市节奏一致。而 SU7 的上市时间恰好是 2024 年 3 月 28 日。不过,小米集团相关负责人对此只表示 \" 相关问题已超纲 \",他无法作出更多回应。可以确定的是,小米汽车的第二款车为纯电 SUV,该车内部代号为 MX11。据媒体报道,这款车将与小米 SU7 共享平台和部分零部件,但拥有独特的设计,车身侧面线条流畅。业界猜测,该车将定位为特斯拉 Model Y 的直接竞争对手。值得一提的是,即便在纯电市场占有先发优势的特斯拉,2024 年以来也倍感压力。以 Model Y 为例,2024 年前十个月,该车在中国累计销量 44.8 万辆,同比下滑 14.9%。究其原因,在于价格战和大量的新车扎堆上市。Model Y 图源:IC据相关机构统计,截至目前,2024 年上市",
+                "source_id": 2,
+                "web_id": "19"
+              },
+              {
+                "url": "https://www.kotler.com.cn/appsoft/article/53206836?zz20250103VknoH.ppt",
+                "title": "教育焦点-\"&#0;\"-小米第二款车或mofosفىلىم.明年一季度上市_ZAKER新闻",
+                "content": "小米第二款车或mofosفىلىم.明年一季度上市_ZAKER新闻 责任编辑:张熠 据小米汽车内部人士透露:\" 小米第二款车型计划于明年 2、3 月上市。\" 这与小米集团创始人、董事长雷军此前透露的 \" 小米 SU7 Ultra 量产版将于 2025 年3月正式发布 \" 的信息,在时间上不谋而合。另一位接近小米汽车的消息人士也表示,小米第二款新车的上市安排将与此前 SU7 上市节奏一致。而SU7 的上市时间恰好是 2024 年3月28 日。不过,小米集团相关负责人对此只表示 \" 相关问题已超纲 \",他无法作出更多回应。(财经) koa12jJid0DL9adK+CJ1DK2K393LKASDad 编辑:张成基 TOP1热点:车主利好!国内油价或将“四连跌” 公司与海南鑫金仓签署的《广东榕泰实业股份有限公司和萍乡东方金鼎企业咨询中心(有限合伙)关于能通科技股份有限公司之。 (十)依法保护民营企业产权和企业家权益。防止和纠正利用行政或刑事手段干预经济纠纷,以及执法司法中的地方保护主义。进一步规范涉产权强制性措施,避免超权限、超范围、超数额、超时限查封扣押冻结财产。对不宜查封扣押冻结的经营性涉案财物,在保证侦查活动正常进行的同时,可以允许有关当事人继续合理使用,并采取必要的保值保管措施,最大限度减少侦查办案对正常办公和合法生产经营的影响。完善涉企案件申诉、再审等机制,健全冤错案件有效防范和常态化纠正机制。 TOP2热点:北斗系统今后可在全球民航通用 融资融券数据显示该股近3个月融资净流入7224.6万,融资余额增加;融券净流入0.0,融券余额增加。根据近五年财报数据,证券之星估值分析工具显示,华安鑫创(300928)行业内竞争力的护城河较差,盈利能力一般,营收成长性较差。可能有财务风险,存在隐忧的财务指标包括:应收账款/利润率、应收账款/利润率近3年增幅、存货/营收率增幅",
+                "website": "www.kotler.com.cn",
+                "date": "2025-01-06T16:26:02+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: www.kotler.com.cn｜网页时间: 2025-01-06T16:26:02+08:00｜网页标题: 教育焦点-\"&#0;\"-小米第二款车或mofosفىلىم.明年一季度上市_ZAKER新闻｜网页内容：小米第二款车或mofosفىلىم.明年一季度上市_ZAKER新闻 责任编辑:张熠 据小米汽车内部人士透露:\" 小米第二款车型计划于明年 2、3 月上市。\" 这与小米集团创始人、董事长雷军此前透露的 \" 小米 SU7 Ultra 量产版将于 2025 年3月正式发布 \" 的信息,在时间上不谋而合。另一位接近小米汽车的消息人士也表示,小米第二款新车的上市安排将与此前 SU7 上市节奏一致。而SU7 的上市时间恰好是 2024 年3月28 日。不过,小米集团相关负责人对此只表示 \" 相关问题已超纲 \",他无法作出更多回应。(财经) koa12jJid0DL9adK+CJ1DK2K393LKASDad 编辑:张成基 TOP1热点:车主利好!国内油价或将“四连跌” 公司与海南鑫金仓签署的《广东榕泰实业股份有限公司和萍乡东方金鼎企业咨询中心(有限合伙)关于能通科技股份有限公司之。 (十)依法保护民营企业产权和企业家权益。防止和纠正利用行政或刑事手段干预经济纠纷,以及执法司法中的地方保护主义。进一步规范涉产权强制性措施,避免超权限、超范围、超数额、超时限查封扣押冻结财产。对不宜查封扣押冻结的经营性涉案财物,在保证侦查活动正常进行的同时,可以允许有关当事人继续合理使用,并采取必要的保值保管措施,最大限度减少侦查办案对正常办公和合法生产经营的影响。完善涉企案件申诉、再审等机制,健全冤错案件有效防范和常态化纠正机制。 TOP2热点:北斗系统今后可在全球民航通用 融资融券数据显示该股近3个月融资净流入7224.6万,融资余额增加;融券净流入0.0,融券余额增加。根据近五年财报数据,证券之星估值分析工具显示,华安鑫创(300928)行业内竞争力的护城河较差,盈利能力一般,营收成长性较差。可能有财务风险,存在隐忧的财务指标包括:应收账款/利润率、应收账款/利润率近3年增幅、存货/营收率增幅",
+                "source_id": 3,
+                "web_id": "20"
+              },
+              {
+                "url": "http://baa.m.yiche.com/xiaomiSU7/thread-52103668.html",
+                "title": "小米汽车 第一款：SU7，2024年发布，24年量产在售 第二款：YU7，6-7",
+                "content": "小米汽车 第一款:SU7,2024年发布,24年量产在售 第二款:YU7,6-7月份发布,估计等到12月份可以拿到车 第三款:N3-代码,预计在2026年推出,明年增程车圈大地震 第四款:网友图,纯电,   型  ?这   给  字辈,迪字辈留活  啊 。。。",
+                "website": "易车汽车社区",
+                "date": "2025-02-14T02:46:26+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 易车汽车社区｜网页时间: 2025-02-14T02:46:26+08:00｜网页标题: 小米汽车 第一款：SU7，2024年发布，24年量产在售 第二款：YU7，6-7｜网页内容：小米汽车 第一款:SU7,2024年发布,24年量产在售 第二款:YU7,6-7月份发布,估计等到12月份可以拿到车 第三款:N3-代码,预计在2026年推出,明年增程车圈大地震 第四款:网友图,纯电,   型  ?这   给  字辈,迪字辈留活  啊 。。。",
+                "source_id": 4,
+                "web_id": "21"
+              }
+            ],
+            "evidence_processor": {
+              "messages": [
+                {
+                  "role": "system",
+                  "content": "你是离线轨迹合成系统中的 Evidence Processor。你只负责围绕当前 search_goal，从本轮网页中抽取可复核证据，并识别会影响目标结论的实质冲突。你不规划搜索、不更新目标状态、不回答原始问题。\n\n核心约束：\n1. 证据必须与 current_search_goal 直接相关；忽略无关网页和只有猜测、宣传、转述但不能支持结论的内容。\n2. statement 是对一个或多个原文片段的谨慎归一化，不得超出 quotes 能支持的范围；涉及时间、范围、口径时必须写清。\n3. quotes 必须逐字来自本轮 search_webs，保持原意，不得改写、拼接不存在的句子；web_id 必须使用上下文给出的编号。\n4. 可用多个独立网页共同支持一个 evidence；同一事实的重复转载不应伪装成多份独立证据。\n5. conflict 只记录针对同一主体、同一口径且无法同时成立的陈述。时间口径不同、车型/系列概念不同等，应先在 statement 中限定，不要误判冲突。\n6. 不得引用历史网页全文。可参考 prior_goal_state 和 prior_evidences 理解缺口，但本轮新增 quotes 只能来自 current_search_webs。\n7. 没有可靠证据时返回空 evidences；没有实质冲突时返回空 conflicts。\n8. evidence_id 和 conflict_id 使用上下文给出的下一可用编号开始递增。\n9. 只输出一个合法 JSON 对象，不要 Markdown 代码块，不要解释性前后缀。\n\n输出结构：\n{\n  \"evidences\": [{\n    \"evidence_id\": \"E1\",\n    \"statement\": \"证据支持的归一化陈述\",\n    \"quotes\": [{\n      \"web_id\": \"1\",\n      \"quotes\": [\"网页原文片段\"]\n    }],\n    \"evidence_role\": \"该证据对当前目标的作用\",\n    \"evidence_type\": \"direct_answer|prerequisite|constraint|counter_evidence\"\n  }],\n  \"conflicts\": [{\n    \"conflict_id\": \"C1\",\n    \"conflict_object\": \"发生冲突的主体、属性与口径\",\n    \"conflict_evidence_ids\": [\"E1\", \"E2\"]\n  }]\n}"
+                },
+                {
+                  "role": "user",
+                  "content": "<constant_info>\nuser_query: 小米发布第二款车之后的下一个大型车展上，其竞品都发布了什么车？\ncurrent_date: 2026-08-14\n</constant_info>\n\n<current_search_goal>\nsearch_goal_id: GOAL_1\nsearch_goal: 确定小米第二款车的车型名称及官方发布/上市日期\n</current_search_goal>\n\n<prior_goal_state>\n{\n  \"status\": \"OPEN\",\n  \"answer\": \"\",\n  \"supported_statement\": \"\",\n  \"conflict_summary\": \"\",\n  \"evidence_gap\": \"\"\n}\n</prior_goal_state>\n\n<prior_evidences>\n[]\n</prior_evidences>\n\n<id_allocation>\nnext_evidence_id: E1\nnext_conflict_id: C1\n</id_allocation>\n\n<current_search_webs>\n[1]网页来源: 今日头条｜网页时间: 2024-11-22T16:12:00+08:00｜网页标题: 关注 - 小米第二款车或于2025年一季度上市 - 今日头条｜网页内容：文:懂车帝原创 尚甜甜[懂车帝原创 行业] 日前,据财经汽车报道,小米汽车内部人士透露:小米第二款车型计划于明年2、3月上市,小米第二款新车的上市安排将与此前SU7上市节奏一致。\n\n[2]网页来源: 东方财富网财经频道｜网页时间: 2024-12-09T23:16:00+08:00｜网页标题: 小米汽车“二孩”将明年6月上市 “小米YU7”为SUV车型 _ 东方财富网｜网页内容：新京报贝壳财经讯(记者陈维城)12月9日晚间,小米汽车官方微博发布动态显示, 小米汽车 第二款车型为SUV,定名为“小米YU7”,预计2025年6-7月正式上市。 小米汽车 官方 微博 内容 新京报 贝壳 财经记者从工信部官网获悉,该车型长4999mm、宽1996mm、 高1600mm,最高车速253km/h;该产品为纯电动车型,宁德时代三元锂离子电池;ABS型号:ESP10,为博世汽车部件(苏州)有限公司生产;驱动电机峰值功率:220kW/288kW。 今年上半年,小米汽车上市交付备受关注。自3月正式上市以来,小米汽车第一款轿车车型 Xiaomi SU7在产能扩张和交付执行上进展飞速。10月,小米汽车工厂单月生产量及新车交付量均破20000辆。11月,Xiaomi SU7提前完成10万台交付目标。2024全年小米汽车将冲刺13万辆交付新目标。 小米集团三季报显示,第三季度,小米智能电动汽车等创新业务收入为97亿元,正逐步向百亿规模逼近,毛利率提升至17.1%。截至2024年9月30日,小米汽车已在中国38个城市开业127家汽车销售门店。 (文章来源:新京报)\n\n[3]网页来源: 新浪网｜网页时间: 2024-11-22T07:16:32+08:00｜网页标题: 小米第二款纯电SUV车型或将于明年2、3月上市-新浪汽车｜网页内容：近日,有媒体报道小米汽车内部人士的透露,称小米的第二款车型计划于明年2月或3月上市。这一消息引起了广泛关注,并引发了业界对小米汽车未来发展的猜测。 此外,另一位消息人士也表示,小米第二款车型的上市节奏将与小米SU7(配置 保持一致。而小米SU7的上市时间恰好是2024年3月28日,这进一步证实了小米第二款车型可能将在相近的时间段内推向市场。 然而,对于上述消息,小米集团相关负责人回应称“相关问题已超纲”,并未给出更多具体回应。这使得小米第二款车型的上市时间仍存在一定的不确定性。 尽管如此,可以确定的是,小米汽车的第二款车型是一款纯电SUV,代号为MX11。这款车型与小米SU7共享平台及部分零部件,但在设计上更具独特性。据媒体报道,小米MX11的车身侧面线条流畅,整体设计充满现代感,预计将在市场上引发一定的关注。 小米汽车作为新能源汽车市场的新势力,其首款车型SU7已经在市场上取得了一定的成绩。此次推出的第二款车型MX11,不仅延续了小米汽车一贯的高品质和创新精神,更在设计上进行了更多的尝试和突破。 随着新能源汽车市场的快速发展和竞争的加剧,小米汽车需要不断创新和提升自身实力,才能在市场上立足。小米MX11的推出,无疑将为小米汽车未来的发展注入新的活力和动力。 虽然目前小米集团相关负责人对于第二款车型的上市时间并未给出明确回应,但我们可以期待小米MX11在未来市场上的表现。同时,也希望小米汽车能够继续秉持创新精神,为消费者带来更多高品质的新能源汽车产品。\n\n[4]网页来源: 手机东方财富网｜网页时间: 2024-12-10T07:16:00+08:00｜网页标题: 小米汽车“二孩”将明年6月上市 “小米YU7”为SUV车型｜网页内容：炒股第一步,先开个股票账户\n  新京报 贝壳 财经讯(记者陈维城)12月9日晚间, 小米汽车 官方 微博 发布动态显示, 小米汽车 第二款车型为SUV,定名为“小米YU7”,预计2025年6-7月正式上市。\n小米汽车 官方 微博 内容\n  新京报 贝壳 财经记者从工信部官网获悉,该车型长4999mm、宽1996mm、 高1600mm,最高车速253km/h;该产品为纯电动车型, 宁德时代 三元锂离子 电池 ;ABS型号:ESP10,为博世汽车部件(苏州)有限公司生产;驱动 电机 峰值功率:220kW/288kW。\n  今年上半年,小米汽车上市交付备受关注。自3月正式上市以来,小米汽车第一款轿车车型 Xiaomi SU7在产能扩张和交付执行上进展飞速。10月,小米汽车工厂单月生产量及新车交付量均破20000辆。11月,Xiaomi SU7提前完成10万台交付目标。2024全年小米汽车将冲刺13万辆交付新目标。\n  小米集团三季报显示,第三季度,小米智能电动汽车等创新业务收入为97亿元,正逐步向百亿规模逼近,毛利率提升至17.1%。截至2024年9月30日,小米汽车已在中国38个城市开业127家汽车销售门店。\n\n[5]网页来源: 国际充换电网｜网页时间: 2024-03-29T00:00:00+08:00｜网页标题: 第二款小米汽车被曝光-新势力造车-新能源汽车--国际充换电网｜网页内容：国际能源网获悉,2024年3月28日,小米汽车已经正式上线。同时,小米SU7的正式发布,也标志着小米「人车家全生态」战略正从“完整闭环”迈向“全面开启”的新阶段。据悉,在小米SU7正式发布后,网上就又传出了有关第二款小米汽车的消息。有汽车博主在社交媒体晒出了一张图片,其中明确显示小米的第二款车型可能为豪华中大型SUV,并且大概率为增程车型,对标理想旗舰L9。值得一提的是,雷军也对第二款车型信心满满。事实上,以小米的体量和目前小米SU7所取得的成绩来看,小米汽车正在筹备第二款车型具有很大的真实性。\n\n[6]网页来源: 今日头条｜网页时间: 2024-04-09T18:31:00+08:00｜网页标题: 小米汽车再度掀起风浪:第二款新车曝光! - 今日头条｜网页内容：近日,小米汽车再度成为众人瞩目的焦点,因其第二款新车的曝光而引发了广泛关注。据悉,一辆疑似真车的中大型SUV现身小米门店,其引人注目的外观和神秘的身份令人猜测不已。 仅在上月底,小米汽车首款新车「小米SU7」正式发布,便以惊艳的外观设计、强劲的配置堆料以及亲民的起售价21.59万元,赢得了众多消费者的青睐。其销售成绩更是喜人,短短72小时内便超过了10万台的大定,锁单数量更是超过了4万台,可谓一鸣惊人。 然而,就在大家对首款车型津津乐道之际,小米第二款新车的消息突然传来,令人眼前一亮。有网友在小米门店发现了一辆神秘的伪装车,经过拍照后发布在社交平台上。从照片上可以看出,这款车型是一款中大型SUV,车身大小与问界M7相近,外观线条简洁大气,散发着浓厚的科技感。 对于这款神秘的新车,网友们纷纷猜测其可能是小米汽车的第二款产品。虽然目前尚未有官方的信息发布,但从曝光的照片来看,这款车型已经引起了广泛的关注和热议。人们对于小米汽车的下一步动向充满了期待,希望它能够延续首款车型的成功,并为消费者带来更多惊喜和选择。 总的来说,小米汽车作为一家新兴的汽车制造商,凭借其独特的视角和技术实力,正在逐步打造出一系列备受瞩目的产品。相信随着第二款新车的正式发布,小米汽车将会在市场上掀起新的一波热潮,为消费者带来更多的选择和体验。让我们拭目以待,期待小米汽车的下一个传奇!\n\n[7]网页来源: 今日头条｜网页时间: 2023-11-15T21:02:00+08:00｜网页标题: 小米汽车揭开面纱 - 今日头条｜网页内容：备受外界关注和期待的小米汽车,正式公布。 15日,工信部网站发布第377批《道路机动车辆生产企业及产品公告》,公布了小米汽车的两款新车信息。新车为纯电动轿车,商标名为“小米牌”,车尾logo显示为“xiaomi”,左下方标识为“北京小米”,\n\n[8]网页来源: OFweek新能源汽车网｜网页时间: 2025-07-16T00:00:00+08:00｜网页标题: 推荐给朋友: 雷军再出一张牌,小米汽车第二品牌官宣 - OFweek新能源汽车网｜网页内容：维科网新能源汽车消息,今天(7月8日)早上7点30分,小米汽车官方账号发了一条简短的动态,配文“SkyNomad。天空,游牧者。一个关于空间和生活的新名字。”\n就这么一句话,正式宣告了小米汽车全新品牌\n\n[9]网页来源: news.ppzw.com｜网页时间: 2025-02-07T21:10:39+08:00｜网页标题: 小米第二家汽车公司来了｜网页内容：740)this.width=740>\n图片来源:视觉中国\n11月19日,据天眼查App显示,小米汽车科技有限公司于11月18日成立,法定代表人为雷军,是小米宣布造车后成立的第二家汽车公司。\n该公司注册资本10亿元,注册地为北京,经营范围包括新能源车整车制造、汽车整车及零部件的技术研发等,由小米科技有限责任公司100%控股。后者由雷军、黎万强、洪峰、刘德四位小米重要人物联合控股,为小米系投资的主要主体之一,其中雷军占据77.8%股份,为第一大股东兼董事长。\n距离第一家小米汽车公司成立还没有过去太久。在三月底正式宣布造车后,9月1日,雷军在微博发布小米汽车正式注册的消息,公司名为小米汽车有限公司,注册资金100亿元,法人代表由雷军担任,小米通讯技术有限公司对其全资持股。\n不过,10月15日,该公司持股信息发生变更,全资股东为一家注册于香港地区的公司Xiaomi EV Limited。\n10月19日,雷军再次公开表示,小米造车目前的各项进展快于他的预期,预计2024年上半年正式量产——这与当初“三年见到小米第一台车”的言论大体一致。\n团队素来是打胜仗的重中之重,小米正在紧锣密鼓筹备当中。\n从内部来看,小米汽车注册成立当天,雷军晒出团队合影,包括他、CFO林世伟、联合创始人刘德、集团总裁王翔、联合创始人洪峰、SVP卢伟冰在内共有17人,无一不是在小米过去业务中担任重要角色的骨干,但其中仅有一位原宝马集团资深设计师具有真正的汽车行业背景。\n小米在外的“招兵买马”也在如火如荼进行中,除了雷军在微博亲自发招聘广告,为小米汽车自动驾驶部门招募自研L4级别智能驾驶能力的500名技术人员外,多个招聘平台及小米官网都可以看到小米对集结造车人才的迫切。\n据虎嗅报道,小米造车曾显现出2万人竞争300余个岗位的激烈场面,在讨论之中,传统汽车品牌技术口的研发骨干和自动驾驶领域技术方案的供应商最有意向加\n\n[10]网页来源: 人民网｜网页时间: 2024-12-11T00:00:00+08:00｜网页标题: Xiaomi lançará SUV em meados de 2025｜网页内容：Xiaomi\nlançará\nSUV\nem\nmeados\nde\n2025\nA\nfabricante\nchinesa\nde\ncelulares\nXiaomi\nanunciou\nna\nnoite\nde\nsegunda-feira\n(9)\nque\nseu\nsegundo\nmodelo,\num\nSUV,\nestá\nprogramado\npara\nchegar\nao\nmercado\nem\njunho\nou\njulho\nde\n2025.\nO\nSUV,\nchamado\nYU7,\nserá\num\nmodelo\nelétrico,\ncom\ndistância\nentre\neixos\nde\n3\nmetros.\nEle\nmede\n4.999mm\nde\ncomprimento,\n1.996mm\nde\nlargura\ne\n1.600mm\nde\naltura,\nsegundo\ninformações\ndo\nMinistério\nda\nIndústria\ne\nTecnologia\nda\nInformação\n(MIIT)\nda\nChina.\nA\nXiaomi\nnão\ndeu\numa\nfaixa\nde\npreço\nnem\nrevelou\nos\nrivais\ndo\nYU7.\nRelatórios\nchineses\nsugeriram\nque\nele\npode\ncompetir\ncom\no\nModel\nY\nda\nTesla,\nque\né\num\ndos\nmodelos\nmais\npopulares\ndo\nsegmento.\nA\nXiaomi\nlançou\nseu\nprimeiro\nmodelo,\no\nSU7,\nno\nfinal\nde\nmarço\ndeste\nano.\nO\nsedã\nelétrico,\nque\nlembra\no\nTaycan\nda\nPorsche,\ntem\nsido\npopular,\ncom\ns\n\n[11]网页来源: www.yicaiglobal.com｜网页时间: 2026-05-27T16:10:32+08:00｜网页标题: Xiaomi to Launch Pure Electric SUV in Mid-2025｜网页内容：(Yicai)\nDec.\n10\n--\nXiaomi’s\nsecond\ncar\nwill\nbe\na\npure\nelectric\nsport\nutility\nvehicle,\naccording\nto\nthe\nwebsite\nof\nChina’s\nindustry\nministry,\nwhile\nthe\nelectronics\ngiant’s\nchairman\nsaid\nthe\ncar\nwill\nlaunch\naround\nthe\nmiddle\nof\nnext\nyear.The\nforthcoming\nXiaomi\nYU7\nresembles\nthe\nFerrari\nPurosangue,\ninformation\non\nthe\nministry's\nwebsite\nshowed\nyesterday.\nIt\nwill\nlaunch\nin\nJune\nor\nJuly\n2025,\nLei\nJun,\nwho\nis\nalso\nthe\nBeijing-based\nXiaomi’s\nchief\nexecutive,\nsaid\non\nWeibo\nlater\nthe\nsame\nday.Xiaomi\nAuto's\nfirst\nmodel,\nthe\nSU7,\ncompetes\nwith\nTesla's\nModel\n3,\nwhile\nthe\nYU7\nwill\ntake\non\nthe\nUS\nautomaker's\nModel\nY,\none\nof\nthe\nmost\npopular\nelectric\nSUVs\nin\nthe\nmarket,\naccording\nto\nindustry\ninsiders.The\nYU7\nwill\nuse\na\nternary\nlithium-ion\nbattery\nproduced\nby\nJiangsu\nContemporary\nAmperex\nTechnology,\na\nunit\n\n[12]网页来源: Ecns.cn｜网页时间: 2024-12-10T16:53:33+08:00｜网页标题: Xiaomi to launch SUV in mid-2025｜网页内容：Chinese phone maker Xiaomi announced late Monday that its second model, an SUV, is scheduled to hit the market in June or July 2025. The SUV, called YU7, will be an electric model, with a 3-meter wheelbase. It measures 4,999 mm in length, 1,996 mm in width and 1,600 mm in height, according to information from the Ministry of Industry and Information Technology. Xiaomi did not give a price range nor did it reveal the YU7's rivals. Chinese reports said it might take on Tesla's Model Y, which is one of the most popular models in the segment. Xiaomi launched its first model, the SU7, in late March this year. The electric sedan, which resembles Porsche's Taycan, has been popular, with its sales exceeding 20,000 units in November. The phone maker said it is confident that the SU7's cumulative sa\n\n[13]网页来源: 搜狐｜网页时间: 2024-12-10T11:04:00+08:00｜网页标题: 小米YU7路测启动,六七月上市将引发行业关注_智能_技术_产品｜网页内容：12月10日,小米创办人兼CEO雷军在微博上宣布,小米YU7正在进行大规模路测,预计将在2024年六七月正式上市。这一消息引发了市场的广泛关注,作为小米最新推出的智能设备之一,YU7将承载着小米在智能技术及产品设计上的新思考和探索。 小米YU7是一款集多种先进技术于一体的智能设备,具体的产品功能和规格细节尚未公布,但雷军提到的路测活动已经预示着该产品正在向实用化和市场化迈进。作为小米的一员,YU7可能在智能家居和物联网生态中,将发挥重要作用。而在小米的产品矩阵中,YU7也将与目前市场上的其他智能设备展开竞争,尤其是当今越来越流行的AI技术。 在当今智能设备的市场中,AI技术的应用正成为核心竞争力之一。从语音助手到智能图像识别,AI在提升用户体验方面的贡献不容小觑。小米YU7是否会搭载先进的AI功能,如智能语音识别、场景识别等,将直接影响其市场表现。基于小米在AI领域的深厚积累,许多消费者对YU7将如何整合这些技术充满期待。 随着小米YU7的路测推进,许多技术爱好者国内外均开始讨论这款产品可能的特性和用途。如果YU7具备强大的处理器、高分辨率的显示屏以及出色的摄像头质量,它将在日常使用、游戏及影音娱乐方面带来优秀的表现。想象一下,在日常生活中,用户通过YU7实现高效的家居控制、智能监控,甚至是丰富多彩的移动娱乐体验,这无疑会提升用户的生活质量。 在智能硬件的竞争中,产品的续航能力同样是重要指标。小米以往的产品在续航方面表现不俗,而消费者对于未来展现的YU7期待能够在这一点上继续保持优势。此外,与同类产品的比较也至关重要,通过分析竞争对手的特性与价格策略,小米可塑造出更具市场竞争力的产品。 值得一提的是,除了硬件上的技术提升,小米也积极推动AI技术的应用,最近几年AI绘画、AI写作等相关工具层出不穷。这样的趋势表明,AI不仅在加速设备智能化进程,也为用户提供了更多创作的可能。小\n\n[14]网页来源: 腾讯网｜网页时间: 2025-05-23T18:02:00+08:00｜网页标题: 7月正式上市,小米YU7正式发布_腾讯新闻｜网页内容：小米YU7内饰发布,配备Xiaomi\nHyperVision天际屏和升级版辅助驾驶系统,7月将正式上市。\n\n[15]网页来源: 抖音｜网页时间: 2024-12-10T08:00:00+08:00｜网页标题: 小米YU7发布｜网页内容：小米YU7发布,于2024年12月10日上线。抖音精选为您提供高清视频,画面清晰、播放流畅,看丰富、高质量视频就上抖音精选。\n\n[16]网页来源: 腾讯网｜网页时间: 2025-05-23T18:02:28+08:00｜网页标题: 7月正式上市,小米YU7正式发布｜网页内容：小米YU7内饰发布,配备Xiaomi HyperVision天际屏和升级版辅助驾驶系统,7月将正式上市。\n\n[17]网页来源: 今日头条｜网页时间: 2025-08-05T13:05:00+08:00｜网页标题: 小米yo7什么时候上市 - 今日头条｜网页内容：据小米汽车官微消息,小米YU7预计于2025年六七月正式上市。小米董事长雷军透露,目前该款车型正在进行大规模路测。来源:澎湃财讯(本文来自澎湃新闻,更多原创资讯请下载“澎湃新闻”APP)\n\n[18]网页来源: 汽车之家｜网页时间: 2025-03-02T08:00:00+08:00｜网页标题: 【重磅】小米第二款车或于明年一季度上市,｜网页内容：据 独家消息 ,小米汽车计划在2025年一季度推出其第二款车型。随着小米首款车型SU7顺利下线并提前完成10万辆新车的生产,第二款新车的上市日期也被提上日程。\n一位内部人士透露,小米第二款车型计划在明年2、3月上市,这与雷军此前表示的“小米SU7 Ultra量产版将于2025年3月正式发布”的信息一致。另一位消息人士也指出,小米第二款新车的上市时间将与SU7保持一致,SU7的上市时间是2024年3月28日。然而,小米集团相关负责人表示,他们无法对这一问题作出更多回应。\n据了解,小米汽车的第二款车型为纯电SUV,代号为MX11。该车将与小米SU7共享平台和部分零部件,但拥有独特的设计和流畅的车身侧面线条。业内猜测,这款新车将直接与特斯拉Model Y竞争。\n小米SU7\n指导价: 21.59-29.99万\n值得一提的是,特斯拉虽然在纯电市场中占有先发优势,但2024年以来也面临着巨大压力。以Model Y为例,2024年前十个月在中国市场的销量为44.8万辆,同比下滑14.9%。这主要是由于价格战和大量新车涌入市场所致。\n\n[19]网页来源: tjztwyjc.com｜网页时间: 2025-02-17T10:55:56+08:00｜网页标题: 天美影视传媒有限公司小米第二款车或于2025年一季度上市_天美影视传媒有限公司ZAKER新闻｜网页内容：小米第二款车或于2025年一季度上市_天美影视传媒有限公司ZAKER新闻\n  <strong><span>要持续紧盯“七个有之”问题</span></strong><span>,把严惩政商勾连腐败作为攻坚战重中之重,严肃查处带有公安特点的行业性、系统性、地域性新型腐败和隐性腐败,</span><strong><span>决不允许腐败在公安机关有藏身之地。</span></strong>\n 定位纯电 SUV,或与小米 SU7 Ultra 量产版同步上市文|宋立伟编辑 | 赵成随着产能爬坡,小米旗下首款车型 SU7 已经提前完成 10 万辆新车的下线,在其冲击全年销量 13 万辆的同时,第二款新车的上市也将排上日程。据小米汽车内部人士透露:\" 小米第二款车型计划于明年 2、3 月上市。\" 这与小米集团创始人、董事长雷军此前透露的 \" 小米 SU7 Ultra 量产版将于 2025 年 3 月正式发布 \" 的信息,在时间上不谋而合。另一位接近小米汽车的消息人士也告诉我们,小米第二款新车的上市安排将与此前 SU7 上市节奏一致。而 SU7 的上市时间恰好是 2024 年 3 月 28 日。不过,小米集团相关负责人对此只表示 \" 相关问题已超纲 \",他无法作出更多回应。可以确定的是,小米汽车的第二款车为纯电 SUV,该车内部代号为 MX11。据媒体报道,这款车将与小米 SU7 共享平台和部分零部件,但拥有独特的设计,车身侧面线条流畅。业界猜测,该车将定位为特斯拉 Model Y 的直接竞争对手。值得一提的是,即便在纯电市场占有先发优势的特斯拉,2024 年以来也倍感压力。以 Model Y 为例,2024 年前十个月,该车在中国累计销量 44.8 万辆,同比下滑 14.9%。究其原因,在于价格战和大量的新车扎堆上市。Model Y 图源:IC据相关机构统计,截至目前,2024 年上市\n\n[20]网页来源: www.kotler.com.cn｜网页时间: 2025-01-06T16:26:02+08:00｜网页标题: 教育焦点-\"&#0;\"-小米第二款车或mofosفىلىم.明年一季度上市_ZAKER新闻｜网页内容：小米第二款车或mofosفىلىم.明年一季度上市_ZAKER新闻 责任编辑:张熠 据小米汽车内部人士透露:\" 小米第二款车型计划于明年 2、3 月上市。\" 这与小米集团创始人、董事长雷军此前透露的 \" 小米 SU7 Ultra 量产版将于 2025 年3月正式发布 \" 的信息,在时间上不谋而合。另一位接近小米汽车的消息人士也表示,小米第二款新车的上市安排将与此前 SU7 上市节奏一致。而SU7 的上市时间恰好是 2024 年3月28 日。不过,小米集团相关负责人对此只表示 \" 相关问题已超纲 \",他无法作出更多回应。(财经) koa12jJid0DL9adK+CJ1DK2K393LKASDad 编辑:张成基 TOP1热点:车主利好!国内油价或将“四连跌” 公司与海南鑫金仓签署的《广东榕泰实业股份有限公司和萍乡东方金鼎企业咨询中心(有限合伙)关于能通科技股份有限公司之。 (十)依法保护民营企业产权和企业家权益。防止和纠正利用行政或刑事手段干预经济纠纷,以及执法司法中的地方保护主义。进一步规范涉产权强制性措施,避免超权限、超范围、超数额、超时限查封扣押冻结财产。对不宜查封扣押冻结的经营性涉案财物,在保证侦查活动正常进行的同时,可以允许有关当事人继续合理使用,并采取必要的保值保管措施,最大限度减少侦查办案对正常办公和合法生产经营的影响。完善涉企案件申诉、再审等机制,健全冤错案件有效防范和常态化纠正机制。 TOP2热点:北斗系统今后可在全球民航通用 融资融券数据显示该股近3个月融资净流入7224.6万,融资余额增加;融券净流入0.0,融券余额增加。根据近五年财报数据,证券之星估值分析工具显示,华安鑫创(300928)行业内竞争力的护城河较差,盈利能力一般,营收成长性较差。可能有财务风险,存在隐忧的财务指标包括:应收账款/利润率、应收账款/利润率近3年增幅、存货/营收率增幅\n\n[21]网页来源: 易车汽车社区｜网页时间: 2025-02-14T02:46:26+08:00｜网页标题: 小米汽车 第一款：SU7，2024年发布，24年量产在售 第二款：YU7，6-7｜网页内容：小米汽车 第一款:SU7,2024年发布,24年量产在售 第二款:YU7,6-7月份发布,估计等到12月份可以拿到车 第三款:N3-代码,预计在2026年推出,明年增程车圈大地震 第四款:网友图,纯电,   型  ?这   给  字辈,迪字辈留活  啊 。。。\n</current_search_webs>"
+                }
+              ],
+              "response": {
+                "evidences": [
+                  {
+                    "evidence_id": "E1",
+                    "statement": "小米汽车官方于2024年12月9日晚通过官方微博公布，其第二款车型为纯电动SUV，官方定名为“小米YU7”。",
+                    "quotes": [
+                      {
+                        "web_id": "2",
+                        "quotes": [
+                          "小米汽车 第二款车型为SUV,定名为“小米YU7”"
+                        ]
+                      },
+                      {
+                        "web_id": "4",
+                        "quotes": [
+                          "小米汽车 第二款车型为SUV,定名为“小米YU7”"
+                        ]
+                      },
+                      {
+                        "web_id": "10",
+                        "quotes": [
+                          "O SUV, chamado YU7, será um modelo elétrico"
+                        ]
+                      },
+                      {
+                        "web_id": "11",
+                        "quotes": [
+                          "Xiaomi’s second car will be a pure electric sport utility vehicle"
+                        ]
+                      },
+                      {
+                        "web_id": "12",
+                        "quotes": [
+                          "The SUV, called YU7, will be an electric model, with a 3-meter wheelbase."
+                        ]
+                      }
+                    ],
+                    "evidence_role": "直接给出小米第二款车的官方车型名称与类别，解决目标中的车型名称部分，也是进一步核对上市日期的前提。",
+                    "evidence_type": "direct_answer"
+                  },
+                  {
+                    "evidence_id": "E2",
+                    "statement": "小米汽车官方公布小米YU7预计于2025年6月至7月正式上市。",
+                    "quotes": [
+                      {
+                        "web_id": "2",
+                        "quotes": [
+                          "预计2025年6-7月正式上市"
+                        ]
+                      },
+                      {
+                        "web_id": "4",
+                        "quotes": [
+                          "预计2025年6-7月正式上市"
+                        ]
+                      },
+                      {
+                        "web_id": "10",
+                        "quotes": [
+                          "está programado para chegar ao mercado em junho ou julho de 2025"
+                        ]
+                      },
+                      {
+                        "web_id": "11",
+                        "quotes": [
+                          "It will launch in June or July 2025"
+                        ]
+                      },
+                      {
+                        "web_id": "12",
+                        "quotes": [
+                          "its second model, an SUV, is scheduled to hit the market in June or July 2025."
+                        ]
+                      },
+                      {
+                        "web_id": "14",
+                        "quotes": [
+                          "7月将正式上市。"
+                        ]
+                      },
+                      {
+                        "web_id": "17",
+                        "quotes": [
+                          "小米YU7预计于2025年六七月正式上市"
+                        ]
+                      }
+                    ],
+                    "evidence_role": "直接给出小米官方公布的上市时间窗口（2025年6-7月），解决目标中的发布/上市日期部分。",
+                    "evidence_type": "direct_answer"
+                  },
+                  {
+                    "evidence_id": "E3",
+                    "statement": "在官方正式公布前，有媒体报道援引小米内部人士消息称，小米第二款车型（内部代号MX11，纯电SUV）计划于2025年2月或3月上市，上市节奏与SU7一致；该消息未获小米官方确认。",
+                    "quotes": [
+                      {
+                        "web_id": "1",
+                        "quotes": [
+                          "小米第二款车型计划于明年2、3月上市,小米第二款新车的上市安排将与此前SU7上市节奏一致。"
+                        ]
+                      },
+                      {
+                        "web_id": "3",
+                        "quotes": [
+                          "小米的第二款车型计划于明年2月或3月上市",
+                          "可以确定的是,小米汽车的第二款车型是一款纯电SUV,代号为MX11"
+                        ]
+                      },
+                      {
+                        "web_id": "18",
+                        "quotes": [
+                          "小米汽车计划在2025年一季度推出其第二款车型",
+                          "据了解,小米汽车的第二款车型为纯电SUV,代号为MX11"
+                        ]
+                      },
+                      {
+                        "web_id": "19",
+                        "quotes": [
+                          "小米第二款车型计划于明年2、3月上市"
+                        ]
+                      }
+                    ],
+                    "evidence_role": "记录官方公布前媒体援引内部人士的上市时间说法，与官方时间形成对照，用于识别时间口径冲突。",
+                    "evidence_type": "counter_evidence"
+                  }
+                ],
+                "conflicts": [
+                  {
+                    "conflict_id": "C1",
+                    "conflict_object": "小米第二款车型（小米YU7）的上市时间口径冲突：小米官方公布预计2025年6-7月上市，而此前媒体报道的内部消息称计划2025年2-3月上市。",
+                    "conflict_evidence_ids": [
+                      "E2",
+                      "E3"
+                    ]
+                  }
+                ]
+              }
+            },
+            "evidences": [
+              {
+                "evidence_id": "E1",
+                "statement": "小米汽车官方于2024年12月9日晚通过官方微博公布，其第二款车型为纯电动SUV，官方定名为“小米YU7”。",
+                "quotes": [
+                  {
+                    "web_id": "2",
+                    "quotes": [
+                      "小米汽车 第二款车型为SUV,定名为“小米YU7”"
+                    ]
+                  },
+                  {
+                    "web_id": "4",
+                    "quotes": [
+                      "小米汽车 第二款车型为SUV,定名为“小米YU7”"
+                    ]
+                  },
+                  {
+                    "web_id": "10",
+                    "quotes": [
+                      "O SUV, chamado YU7, será um modelo elétrico"
+                    ]
+                  },
+                  {
+                    "web_id": "11",
+                    "quotes": [
+                      "Xiaomi’s second car will be a pure electric sport utility vehicle"
+                    ]
+                  },
+                  {
+                    "web_id": "12",
+                    "quotes": [
+                      "The SUV, called YU7, will be an electric model, with a 3-meter wheelbase."
+                    ]
+                  }
+                ],
+                "evidence_role": "直接给出小米第二款车的官方车型名称与类别，解决目标中的车型名称部分，也是进一步核对上市日期的前提。",
+                "evidence_type": "direct_answer",
+                "search_goal_id": "GOAL_1"
+              },
+              {
+                "evidence_id": "E2",
+                "statement": "小米汽车官方公布小米YU7预计于2025年6月至7月正式上市。",
+                "quotes": [
+                  {
+                    "web_id": "2",
+                    "quotes": [
+                      "预计2025年6-7月正式上市"
+                    ]
+                  },
+                  {
+                    "web_id": "4",
+                    "quotes": [
+                      "预计2025年6-7月正式上市"
+                    ]
+                  },
+                  {
+                    "web_id": "10",
+                    "quotes": [
+                      "está programado para chegar ao mercado em junho ou julho de 2025"
+                    ]
+                  },
+                  {
+                    "web_id": "11",
+                    "quotes": [
+                      "It will launch in June or July 2025"
+                    ]
+                  },
+                  {
+                    "web_id": "12",
+                    "quotes": [
+                      "its second model, an SUV, is scheduled to hit the market in June or July 2025."
+                    ]
+                  },
+                  {
+                    "web_id": "14",
+                    "quotes": [
+                      "7月将正式上市。"
+                    ]
+                  },
+                  {
+                    "web_id": "17",
+                    "quotes": [
+                      "小米YU7预计于2025年六七月正式上市"
+                    ]
+                  }
+                ],
+                "evidence_role": "直接给出小米官方公布的上市时间窗口（2025年6-7月），解决目标中的发布/上市日期部分。",
+                "evidence_type": "direct_answer",
+                "search_goal_id": "GOAL_1"
+              },
+              {
+                "evidence_id": "E3",
+                "statement": "在官方正式公布前，有媒体报道援引小米内部人士消息称，小米第二款车型（内部代号MX11，纯电SUV）计划于2025年2月或3月上市，上市节奏与SU7一致；该消息未获小米官方确认。",
+                "quotes": [
+                  {
+                    "web_id": "1",
+                    "quotes": [
+                      "小米第二款车型计划于明年2、3月上市,小米第二款新车的上市安排将与此前SU7上市节奏一致。"
+                    ]
+                  },
+                  {
+                    "web_id": "3",
+                    "quotes": [
+                      "小米的第二款车型计划于明年2月或3月上市",
+                      "可以确定的是,小米汽车的第二款车型是一款纯电SUV,代号为MX11"
+                    ]
+                  },
+                  {
+                    "web_id": "18",
+                    "quotes": [
+                      "小米汽车计划在2025年一季度推出其第二款车型",
+                      "据了解,小米汽车的第二款车型为纯电SUV,代号为MX11"
+                    ]
+                  },
+                  {
+                    "web_id": "19",
+                    "quotes": [
+                      "小米第二款车型计划于明年2、3月上市"
+                    ]
+                  }
+                ],
+                "evidence_role": "记录官方公布前媒体援引内部人士的上市时间说法，与官方时间形成对照，用于识别时间口径冲突。",
+                "evidence_type": "counter_evidence",
+                "search_goal_id": "GOAL_1"
+              }
+            ],
+            "conflicts": [
+              {
+                "conflict_id": "C1",
+                "conflict_object": "小米第二款车型（小米YU7）的上市时间口径冲突：小米官方公布预计2025年6-7月上市，而此前媒体报道的内部消息称计划2025年2-3月上市。",
+                "conflict_evidence_ids": [
+                  "E2",
+                  "E3"
+                ],
+                "search_goal_id": "GOAL_1"
+              }
+            ]
+          }
+        ],
+        "failure": {
+          "stage": "planner_state_update",
+          "error_type": "ProtocolError",
+          "error": "CLOSED goals cannot have blocking conflicts",
+          "traceback": "Traceback (most recent call last):\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search/orchestrator.py\", line 82, in run\n    return self._run_impl(user_query, current_date=current_date)\n           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search/orchestrator.py\", line 265, in _run_impl\n    self._apply_state_updates(state_updates, state)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search/orchestrator.py\", line 964, in _apply_state_updates\n    raise ProtocolError(\"CLOSED goals cannot have blocking conflicts\")\ndeep_search.orchestrator.ProtocolError: CLOSED goals cannot have blocking conflicts\n",
+          "last_model_call": {
+            "agent": "search_planner",
+            "stage": "planner_state_update",
+            "messages": [
+              {
+                "role": "system",
+                "content": "# 角色\n你是离线轨迹合成系统中非首轮的 Search Planner。你需要根据历史目标的紧凑状态和本轮网页、evidence、conflict，更新本轮涉及目标的状态，并决定继续搜索还是 STOP。你不摘录新证据，也不得凭常识补充事实。\n\n# 输入语义\n1. search_history 按轮次提供已经执行过的 search_goal、搜索动机、query 和网页，用于重建历史搜索行为、避免重复检索；它不代表本轮新证据。\n2. search_status 只包含历史紧凑状态。带有 \"in_progress\": true 的目标尚未经过 Planner 状态判定，不能把该标签当作 OPEN 等正式状态。\n3. 已有历史状态只提供 search_goal_id、search_goal、status、answer、conflict_summary、evidence_gap；search_status 不提供任何 evidence ID、conflict ID 或依赖关系。\n4. current_turn_info 提供本轮搜索结果、evidence 和 conflict，是本轮状态更新中引用 ID 的唯一依据。\n\n# 状态更新约束\n1. 只更新 current_turn_info 中本轮涉及的 search_goal；不得重复改写未被本轮搜索影响的历史目标。\n2. 状态只允许 OPEN、CLOSED、CLOSED_BY_REFUTED、UNRESOLVED、SUPERSEDED、DROPPED。\n3. CLOSED 必须已有足以直接回答目标的 supporting evidence，且不存在阻塞冲突；OPEN 必须明确 evidence_gap。\n4. supporting_evidence_ids 与 conflicting_evidence_ids 只能填写 current_turn_info 中存在的 E 开头 evidence_id，不得填写 C 开头 conflict_id 或编造 ID。\n5. depends_on_goal_ids 由 orchestrator 维护，search_state_updates 不得输出或修改该字段；状态判定也不得借此改变目标依赖关系。\n\n# 下一轮动作约束\n1. 信息未闭环时，search_action 只允许 CONTINUE_SEARCH、VERIFY_CONFLICT、EXPAND_GOAL、REFINE_GOAL。注意正确拼写是 CONTINUE_SEARCH。\n2. CONTINUE_SEARCH：填写 target_goal_id、action_reason、search_queries；不填写 target_conflict_id、search_goal_id、search_goal、depends_on_goal_ids。\n3. VERIFY_CONFLICT：填写 target_goal_id、target_conflict_id、action_reason、search_queries；target_conflict_id 必须是 current_turn_info 中存在的 C 开头 conflict_id；不创建新目标。\n4. EXPAND_GOAL：填写新的 search_goal_id、search_goal、action_reason、search_queries；存在依赖时才填写 depends_on_goal_ids，不填写 target_goal_id 或 target_conflict_id。\n5. REFINE_GOAL：target_goal_id 指向被替代目标，并填写新的 search_goal_id、search_goal、action_reason、search_queries；存在依赖时才填写 depends_on_goal_ids，不填写 target_conflict_id。\n6. 每个非 STOP 动作必须提供 1～5 条可执行、互补的 search_queries。\n7. 信息已闭环时只允许一个 STOP；STOP 必须是唯一动作，且只包含 search_action 和 action_reason。\n\n# JSON 输出硬约束\n1. 只输出一个可被标准 JSON 解析器直接解析的 JSON 对象；不要 Markdown 代码块、注释、解释性前后缀或尾随逗号。\n2. 所有 key 和字符串必须使用双引号；空值使用 null，不得使用 None、单引号或 NaN。\n3. 顶层必须同时包含 search_state_updates 和 next_turn_search_actions；两者不得改名、缺失或额外嵌套。\n4. search_state_updates 必须是对象数组；next_turn_search_actions 必须是对象，其中 search_actions 必须是非空对象数组。\n\n## 信息未闭环时的输出格式\n{\n  \"search_state_updates\": [{\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"原搜索目标\",\n    \"status\": \"OPEN|CLOSED|CLOSED_BY_REFUTED|UNRESOLVED|SUPERSEDED|DROPPED\",\n    \"status_reason\": \"状态原因\",\n    \"answer\": \"当前直接答案；OPEN 时可为部分答案\",\n    \"supported_statement\": \"证据支持的归一化事实\",\n    \"supporting_evidence_ids\": [\"E1\"],\n    \"conflict_summary\": \"未解决且影响答案的冲突\",\n    \"conflicting_evidence_ids\": [\"E2\"],\n    \"evidence_gap\": \"距离闭环还缺少什么\"\n  }],\n  \"next_turn_search_actions\": {\n    \"action_reason\": \"下一轮整体规划理由\",\n    \"search_actions\": [{\n      \"search_action\": \"CONTINUE_SEARCH\",\n      \"action_reason\": \"为什么需要继续搜索\",\n      \"target_goal_id\": \"GOAL_1\",\n      \"search_queries\": [\"query 1\", \"query 2\"]\n    }]\n  }\n}\n\n## 信息已经闭环时的输出格式\n{\n  \"search_state_updates\": [{\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"原搜索目标\",\n    \"status\": \"CLOSED\",\n    \"status_reason\": \"已有充分证据且不存在阻塞冲突\",\n    \"answer\": \"当前直接答案\",\n    \"supported_statement\": \"证据支持的归一化事实\",\n    \"supporting_evidence_ids\": [\"E1\"],\n    \"conflict_summary\": \"\",\n    \"conflicting_evidence_ids\": [],\n    \"evidence_gap\": \"\"\n  }],\n  \"next_turn_search_actions\": {\n    \"action_reason\": \"所有回答原始问题所必需的目标均已闭环\",\n    \"search_actions\": [{\n      \"search_action\": \"STOP\",\n      \"action_reason\": \"所有必要目标均已闭环\"\n    }]\n  }\n}"
+              },
+              {
+                "role": "user",
+                "content": "<constant_info>\nuser_query: 小米发布第二款车之后的下一个大型车展上，其竞品都发布了什么车？\ncurrent_date: 2026-08-14\n</constant_info>\n\n<search_history>\n（暂无历史搜索轨迹）\n</search_history>\n\n<search_status>\n[\n  {\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"确定小米第二款车的车型名称及官方发布/上市日期\",\n    \"in_progress\": true\n  }\n]\n</search_status>\n\n<current_turn_info>\n[\n  {\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"确定小米第二款车的车型名称及官方发布/上市日期\",\n    \"search_queries\": [\n      \"小米第二款车 车型 发布 上市 时间\",\n      \"小米汽车 第二款车 官方发布\",\n      \"Xiaomi second car model launch date\",\n      \"小米 YU7 上市时间\",\n      \"小米第二款车 发布日期 2025 OR 2026\"\n    ],\n    \"search_errors\": [],\n    \"search_webs\": [\n      \"[1]网页来源: 今日头条｜网页时间: 2024-11-22T16:12:00+08:00｜网页标题: 关注 - 小米第二款车或于2025年一季度上市 - 今日头条｜网页内容：文:懂车帝原创 尚甜甜[懂车帝原创 行业] 日前,据财经汽车报道,小米汽车内部人士透露:小米第二款车型计划于明年2、3月上市,小米第二款新车的上市安排将与此前SU7上市节奏一致。\",\n      \"[2]网页来源: 东方财富网财经频道｜网页时间: 2024-12-09T23:16:00+08:00｜网页标题: 小米汽车“二孩”将明年6月上市 “小米YU7”为SUV车型 _ 东方财富网｜网页内容：新京报贝壳财经讯(记者陈维城)12月9日晚间,小米汽车官方微博发布动态显示, 小米汽车 第二款车型为SUV,定名为“小米YU7”,预计2025年6-7月正式上市。 小米汽车 官方 微博 内容 新京报 贝壳 财经记者从工信部官网获悉,该车型长4999mm、宽1996mm、 高1600mm,最高车速253km/h;该产品为纯电动车型,宁德时代三元锂离子电池;ABS型号:ESP10,为博世汽车部件(苏州)有限公司生产;驱动电机峰值功率:220kW/288kW。 今年上半年,小米汽车上市交付备受关注。自3月正式上市以来,小米汽车第一款轿车车型 Xiaomi SU7在产能扩张和交付执行上进展飞速。10月,小米汽车工厂单月生产量及新车交付量均破20000辆。11月,Xiaomi SU7提前完成10万台交付目标。2024全年小米汽车将冲刺13万辆交付新目标。 小米集团三季报显示,第三季度,小米智能电动汽车等创新业务收入为97亿元,正逐步向百亿规模逼近,毛利率提升至17.1%。截至2024年9月30日,小米汽车已在中国38个城市开业127家汽车销售门店。 (文章来源:新京报)\",\n      \"[3]网页来源: 新浪网｜网页时间: 2024-11-22T07:16:32+08:00｜网页标题: 小米第二款纯电SUV车型或将于明年2、3月上市-新浪汽车｜网页内容：近日,有媒体报道小米汽车内部人士的透露,称小米的第二款车型计划于明年2月或3月上市。这一消息引起了广泛关注,并引发了业界对小米汽车未来发展的猜测。 此外,另一位消息人士也表示,小米第二款车型的上市节奏将与小米SU7(配置 保持一致。而小米SU7的上市时间恰好是2024年3月28日,这进一步证实了小米第二款车型可能将在相近的时间段内推向市场。 然而,对于上述消息,小米集团相关负责人回应称“相关问题已超纲”,并未给出更多具体回应。这使得小米第二款车型的上市时间仍存在一定的不确定性。 尽管如此,可以确定的是,小米汽车的第二款车型是一款纯电SUV,代号为MX11。这款车型与小米SU7共享平台及部分零部件,但在设计上更具独特性。据媒体报道,小米MX11的车身侧面线条流畅,整体设计充满现代感,预计将在市场上引发一定的关注。 小米汽车作为新能源汽车市场的新势力,其首款车型SU7已经在市场上取得了一定的成绩。此次推出的第二款车型MX11,不仅延续了小米汽车一贯的高品质和创新精神,更在设计上进行了更多的尝试和突破。 随着新能源汽车市场的快速发展和竞争的加剧,小米汽车需要不断创新和提升自身实力,才能在市场上立足。小米MX11的推出,无疑将为小米汽车未来的发展注入新的活力和动力。 虽然目前小米集团相关负责人对于第二款车型的上市时间并未给出明确回应,但我们可以期待小米MX11在未来市场上的表现。同时,也希望小米汽车能够继续秉持创新精神,为消费者带来更多高品质的新能源汽车产品。\",\n      \"[4]网页来源: 手机东方财富网｜网页时间: 2024-12-10T07:16:00+08:00｜网页标题: 小米汽车“二孩”将明年6月上市 “小米YU7”为SUV车型｜网页内容：炒股第一步,先开个股票账户\\n  新京报 贝壳 财经讯(记者陈维城)12月9日晚间, 小米汽车 官方 微博 发布动态显示, 小米汽车 第二款车型为SUV,定名为“小米YU7”,预计2025年6-7月正式上市。\\n小米汽车 官方 微博 内容\\n  新京报 贝壳 财经记者从工信部官网获悉,该车型长4999mm、宽1996mm、 高1600mm,最高车速253km/h;该产品为纯电动车型, 宁德时代 三元锂离子 电池 ;ABS型号:ESP10,为博世汽车部件(苏州)有限公司生产;驱动 电机 峰值功率:220kW/288kW。\\n  今年上半年,小米汽车上市交付备受关注。自3月正式上市以来,小米汽车第一款轿车车型 Xiaomi SU7在产能扩张和交付执行上进展飞速。10月,小米汽车工厂单月生产量及新车交付量均破20000辆。11月,Xiaomi SU7提前完成10万台交付目标。2024全年小米汽车将冲刺13万辆交付新目标。\\n  小米集团三季报显示,第三季度,小米智能电动汽车等创新业务收入为97亿元,正逐步向百亿规模逼近,毛利率提升至17.1%。截至2024年9月30日,小米汽车已在中国38个城市开业127家汽车销售门店。\",\n      \"[5]网页来源: 国际充换电网｜网页时间: 2024-03-29T00:00:00+08:00｜网页标题: 第二款小米汽车被曝光-新势力造车-新能源汽车--国际充换电网｜网页内容：国际能源网获悉,2024年3月28日,小米汽车已经正式上线。同时,小米SU7的正式发布,也标志着小米「人车家全生态」战略正从“完整闭环”迈向“全面开启”的新阶段。据悉,在小米SU7正式发布后,网上就又传出了有关第二款小米汽车的消息。有汽车博主在社交媒体晒出了一张图片,其中明确显示小米的第二款车型可能为豪华中大型SUV,并且大概率为增程车型,对标理想旗舰L9。值得一提的是,雷军也对第二款车型信心满满。事实上,以小米的体量和目前小米SU7所取得的成绩来看,小米汽车正在筹备第二款车型具有很大的真实性。\",\n      \"[6]网页来源: 今日头条｜网页时间: 2024-04-09T18:31:00+08:00｜网页标题: 小米汽车再度掀起风浪:第二款新车曝光! - 今日头条｜网页内容：近日,小米汽车再度成为众人瞩目的焦点,因其第二款新车的曝光而引发了广泛关注。据悉,一辆疑似真车的中大型SUV现身小米门店,其引人注目的外观和神秘的身份令人猜测不已。 仅在上月底,小米汽车首款新车「小米SU7」正式发布,便以惊艳的外观设计、强劲的配置堆料以及亲民的起售价21.59万元,赢得了众多消费者的青睐。其销售成绩更是喜人,短短72小时内便超过了10万台的大定,锁单数量更是超过了4万台,可谓一鸣惊人。 然而,就在大家对首款车型津津乐道之际,小米第二款新车的消息突然传来,令人眼前一亮。有网友在小米门店发现了一辆神秘的伪装车,经过拍照后发布在社交平台上。从照片上可以看出,这款车型是一款中大型SUV,车身大小与问界M7相近,外观线条简洁大气,散发着浓厚的科技感。 对于这款神秘的新车,网友们纷纷猜测其可能是小米汽车的第二款产品。虽然目前尚未有官方的信息发布,但从曝光的照片来看,这款车型已经引起了广泛的关注和热议。人们对于小米汽车的下一步动向充满了期待,希望它能够延续首款车型的成功,并为消费者带来更多惊喜和选择。 总的来说,小米汽车作为一家新兴的汽车制造商,凭借其独特的视角和技术实力,正在逐步打造出一系列备受瞩目的产品。相信随着第二款新车的正式发布,小米汽车将会在市场上掀起新的一波热潮,为消费者带来更多的选择和体验。让我们拭目以待,期待小米汽车的下一个传奇!\",\n      \"[7]网页来源: 今日头条｜网页时间: 2023-11-15T21:02:00+08:00｜网页标题: 小米汽车揭开面纱 - 今日头条｜网页内容：备受外界关注和期待的小米汽车,正式公布。 15日,工信部网站发布第377批《道路机动车辆生产企业及产品公告》,公布了小米汽车的两款新车信息。新车为纯电动轿车,商标名为“小米牌”,车尾logo显示为“xiaomi”,左下方标识为“北京小米”,\",\n      \"[8]网页来源: OFweek新能源汽车网｜网页时间: 2025-07-16T00:00:00+08:00｜网页标题: 推荐给朋友: 雷军再出一张牌,小米汽车第二品牌官宣 - OFweek新能源汽车网｜网页内容：维科网新能源汽车消息,今天(7月8日)早上7点30分,小米汽车官方账号发了一条简短的动态,配文“SkyNomad。天空,游牧者。一个关于空间和生活的新名字。”\\n就这么一句话,正式宣告了小米汽车全新品牌\",\n      \"[9]网页来源: news.ppzw.com｜网页时间: 2025-02-07T21:10:39+08:00｜网页标题: 小米第二家汽车公司来了｜网页内容：740)this.width=740>\\n图片来源:视觉中国\\n11月19日,据天眼查App显示,小米汽车科技有限公司于11月18日成立,法定代表人为雷军,是小米宣布造车后成立的第二家汽车公司。\\n该公司注册资本10亿元,注册地为北京,经营范围包括新能源车整车制造、汽车整车及零部件的技术研发等,由小米科技有限责任公司100%控股。后者由雷军、黎万强、洪峰、刘德四位小米重要人物联合控股,为小米系投资的主要主体之一,其中雷军占据77.8%股份,为第一大股东兼董事长。\\n距离第一家小米汽车公司成立还没有过去太久。在三月底正式宣布造车后,9月1日,雷军在微博发布小米汽车正式注册的消息,公司名为小米汽车有限公司,注册资金100亿元,法人代表由雷军担任,小米通讯技术有限公司对其全资持股。\\n不过,10月15日,该公司持股信息发生变更,全资股东为一家注册于香港地区的公司Xiaomi EV Limited。\\n10月19日,雷军再次公开表示,小米造车目前的各项进展快于他的预期,预计2024年上半年正式量产——这与当初“三年见到小米第一台车”的言论大体一致。\\n团队素来是打胜仗的重中之重,小米正在紧锣密鼓筹备当中。\\n从内部来看,小米汽车注册成立当天,雷军晒出团队合影,包括他、CFO林世伟、联合创始人刘德、集团总裁王翔、联合创始人洪峰、SVP卢伟冰在内共有17人,无一不是在小米过去业务中担任重要角色的骨干,但其中仅有一位原宝马集团资深设计师具有真正的汽车行业背景。\\n小米在外的“招兵买马”也在如火如荼进行中,除了雷军在微博亲自发招聘广告,为小米汽车自动驾驶部门招募自研L4级别智能驾驶能力的500名技术人员外,多个招聘平台及小米官网都可以看到小米对集结造车人才的迫切。\\n据虎嗅报道,小米造车曾显现出2万人竞争300余个岗位的激烈场面,在讨论之中,传统汽车品牌技术口的研发骨干和自动驾驶领域技术方案的供应商最有意向加\",\n      \"[10]网页来源: 人民网｜网页时间: 2024-12-11T00:00:00+08:00｜网页标题: Xiaomi lançará SUV em meados de 2025｜网页内容：Xiaomi\\nlançará\\nSUV\\nem\\nmeados\\nde\\n2025\\nA\\nfabricante\\nchinesa\\nde\\ncelulares\\nXiaomi\\nanunciou\\nna\\nnoite\\nde\\nsegunda-feira\\n(9)\\nque\\nseu\\nsegundo\\nmodelo,\\num\\nSUV,\\nestá\\nprogramado\\npara\\nchegar\\nao\\nmercado\\nem\\njunho\\nou\\njulho\\nde\\n2025.\\nO\\nSUV,\\nchamado\\nYU7,\\nserá\\num\\nmodelo\\nelétrico,\\ncom\\ndistância\\nentre\\neixos\\nde\\n3\\nmetros.\\nEle\\nmede\\n4.999mm\\nde\\ncomprimento,\\n1.996mm\\nde\\nlargura\\ne\\n1.600mm\\nde\\naltura,\\nsegundo\\ninformações\\ndo\\nMinistério\\nda\\nIndústria\\ne\\nTecnologia\\nda\\nInformação\\n(MIIT)\\nda\\nChina.\\nA\\nXiaomi\\nnão\\ndeu\\numa\\nfaixa\\nde\\npreço\\nnem\\nrevelou\\nos\\nrivais\\ndo\\nYU7.\\nRelatórios\\nchineses\\nsugeriram\\nque\\nele\\npode\\ncompetir\\ncom\\no\\nModel\\nY\\nda\\nTesla,\\nque\\né\\num\\ndos\\nmodelos\\nmais\\npopulares\\ndo\\nsegmento.\\nA\\nXiaomi\\nlançou\\nseu\\nprimeiro\\nmodelo,\\no\\nSU7,\\nno\\nfinal\\nde\\nmarço\\ndeste\\nano.\\nO\\nsedã\\nelétrico,\\nque\\nlembra\\no\\nTaycan\\nda\\nPorsche,\\ntem\\nsido\\npopular,\\ncom\\ns\",\n      \"[11]网页来源: www.yicaiglobal.com｜网页时间: 2026-05-27T16:10:32+08:00｜网页标题: Xiaomi to Launch Pure Electric SUV in Mid-2025｜网页内容：(Yicai)\\nDec.\\n10\\n--\\nXiaomi’s\\nsecond\\ncar\\nwill\\nbe\\na\\npure\\nelectric\\nsport\\nutility\\nvehicle,\\naccording\\nto\\nthe\\nwebsite\\nof\\nChina’s\\nindustry\\nministry,\\nwhile\\nthe\\nelectronics\\ngiant’s\\nchairman\\nsaid\\nthe\\ncar\\nwill\\nlaunch\\naround\\nthe\\nmiddle\\nof\\nnext\\nyear.The\\nforthcoming\\nXiaomi\\nYU7\\nresembles\\nthe\\nFerrari\\nPurosangue,\\ninformation\\non\\nthe\\nministry's\\nwebsite\\nshowed\\nyesterday.\\nIt\\nwill\\nlaunch\\nin\\nJune\\nor\\nJuly\\n2025,\\nLei\\nJun,\\nwho\\nis\\nalso\\nthe\\nBeijing-based\\nXiaomi’s\\nchief\\nexecutive,\\nsaid\\non\\nWeibo\\nlater\\nthe\\nsame\\nday.Xiaomi\\nAuto's\\nfirst\\nmodel,\\nthe\\nSU7,\\ncompetes\\nwith\\nTesla's\\nModel\\n3,\\nwhile\\nthe\\nYU7\\nwill\\ntake\\non\\nthe\\nUS\\nautomaker's\\nModel\\nY,\\none\\nof\\nthe\\nmost\\npopular\\nelectric\\nSUVs\\nin\\nthe\\nmarket,\\naccording\\nto\\nindustry\\ninsiders.The\\nYU7\\nwill\\nuse\\na\\nternary\\nlithium-ion\\nbattery\\nproduced\\nby\\nJiangsu\\nContemporary\\nAmperex\\nTechnology,\\na\\nunit\",\n      \"[12]网页来源: Ecns.cn｜网页时间: 2024-12-10T16:53:33+08:00｜网页标题: Xiaomi to launch SUV in mid-2025｜网页内容：Chinese phone maker Xiaomi announced late Monday that its second model, an SUV, is scheduled to hit the market in June or July 2025. The SUV, called YU7, will be an electric model, with a 3-meter wheelbase. It measures 4,999 mm in length, 1,996 mm in width and 1,600 mm in height, according to information from the Ministry of Industry and Information Technology. Xiaomi did not give a price range nor did it reveal the YU7's rivals. Chinese reports said it might take on Tesla's Model Y, which is one of the most popular models in the segment. Xiaomi launched its first model, the SU7, in late March this year. The electric sedan, which resembles Porsche's Taycan, has been popular, with its sales exceeding 20,000 units in November. The phone maker said it is confident that the SU7's cumulative sa\",\n      \"[13]网页来源: 搜狐｜网页时间: 2024-12-10T11:04:00+08:00｜网页标题: 小米YU7路测启动,六七月上市将引发行业关注_智能_技术_产品｜网页内容：12月10日,小米创办人兼CEO雷军在微博上宣布,小米YU7正在进行大规模路测,预计将在2024年六七月正式上市。这一消息引发了市场的广泛关注,作为小米最新推出的智能设备之一,YU7将承载着小米在智能技术及产品设计上的新思考和探索。 小米YU7是一款集多种先进技术于一体的智能设备,具体的产品功能和规格细节尚未公布,但雷军提到的路测活动已经预示着该产品正在向实用化和市场化迈进。作为小米的一员,YU7可能在智能家居和物联网生态中,将发挥重要作用。而在小米的产品矩阵中,YU7也将与目前市场上的其他智能设备展开竞争,尤其是当今越来越流行的AI技术。 在当今智能设备的市场中,AI技术的应用正成为核心竞争力之一。从语音助手到智能图像识别,AI在提升用户体验方面的贡献不容小觑。小米YU7是否会搭载先进的AI功能,如智能语音识别、场景识别等,将直接影响其市场表现。基于小米在AI领域的深厚积累,许多消费者对YU7将如何整合这些技术充满期待。 随着小米YU7的路测推进,许多技术爱好者国内外均开始讨论这款产品可能的特性和用途。如果YU7具备强大的处理器、高分辨率的显示屏以及出色的摄像头质量,它将在日常使用、游戏及影音娱乐方面带来优秀的表现。想象一下,在日常生活中,用户通过YU7实现高效的家居控制、智能监控,甚至是丰富多彩的移动娱乐体验,这无疑会提升用户的生活质量。 在智能硬件的竞争中,产品的续航能力同样是重要指标。小米以往的产品在续航方面表现不俗,而消费者对于未来展现的YU7期待能够在这一点上继续保持优势。此外,与同类产品的比较也至关重要,通过分析竞争对手的特性与价格策略,小米可塑造出更具市场竞争力的产品。 值得一提的是,除了硬件上的技术提升,小米也积极推动AI技术的应用,最近几年AI绘画、AI写作等相关工具层出不穷。这样的趋势表明,AI不仅在加速设备智能化进程,也为用户提供了更多创作的可能。小\",\n      \"[14]网页来源: 腾讯网｜网页时间: 2025-05-23T18:02:00+08:00｜网页标题: 7月正式上市,小米YU7正式发布_腾讯新闻｜网页内容：小米YU7内饰发布,配备Xiaomi\\nHyperVision天际屏和升级版辅助驾驶系统,7月将正式上市。\",\n      \"[15]网页来源: 抖音｜网页时间: 2024-12-10T08:00:00+08:00｜网页标题: 小米YU7发布｜网页内容：小米YU7发布,于2024年12月10日上线。抖音精选为您提供高清视频,画面清晰、播放流畅,看丰富、高质量视频就上抖音精选。\",\n      \"[16]网页来源: 腾讯网｜网页时间: 2025-05-23T18:02:28+08:00｜网页标题: 7月正式上市,小米YU7正式发布｜网页内容：小米YU7内饰发布,配备Xiaomi HyperVision天际屏和升级版辅助驾驶系统,7月将正式上市。\",\n      \"[17]网页来源: 今日头条｜网页时间: 2025-08-05T13:05:00+08:00｜网页标题: 小米yo7什么时候上市 - 今日头条｜网页内容：据小米汽车官微消息,小米YU7预计于2025年六七月正式上市。小米董事长雷军透露,目前该款车型正在进行大规模路测。来源:澎湃财讯(本文来自澎湃新闻,更多原创资讯请下载“澎湃新闻”APP)\",\n      \"[18]网页来源: 汽车之家｜网页时间: 2025-03-02T08:00:00+08:00｜网页标题: 【重磅】小米第二款车或于明年一季度上市,｜网页内容：据 独家消息 ,小米汽车计划在2025年一季度推出其第二款车型。随着小米首款车型SU7顺利下线并提前完成10万辆新车的生产,第二款新车的上市日期也被提上日程。\\n一位内部人士透露,小米第二款车型计划在明年2、3月上市,这与雷军此前表示的“小米SU7 Ultra量产版将于2025年3月正式发布”的信息一致。另一位消息人士也指出,小米第二款新车的上市时间将与SU7保持一致,SU7的上市时间是2024年3月28日。然而,小米集团相关负责人表示,他们无法对这一问题作出更多回应。\\n据了解,小米汽车的第二款车型为纯电SUV,代号为MX11。该车将与小米SU7共享平台和部分零部件,但拥有独特的设计和流畅的车身侧面线条。业内猜测,这款新车将直接与特斯拉Model Y竞争。\\n小米SU7\\n指导价: 21.59-29.99万\\n值得一提的是,特斯拉虽然在纯电市场中占有先发优势,但2024年以来也面临着巨大压力。以Model Y为例,2024年前十个月在中国市场的销量为44.8万辆,同比下滑14.9%。这主要是由于价格战和大量新车涌入市场所致。\",\n      \"[19]网页来源: tjztwyjc.com｜网页时间: 2025-02-17T10:55:56+08:00｜网页标题: 天美影视传媒有限公司小米第二款车或于2025年一季度上市_天美影视传媒有限公司ZAKER新闻｜网页内容：小米第二款车或于2025年一季度上市_天美影视传媒有限公司ZAKER新闻\\n  <strong><span>要持续紧盯“七个有之”问题</span></strong><span>,把严惩政商勾连腐败作为攻坚战重中之重,严肃查处带有公安特点的行业性、系统性、地域性新型腐败和隐性腐败,</span><strong><span>决不允许腐败在公安机关有藏身之地。</span></strong>\\n 定位纯电 SUV,或与小米 SU7 Ultra 量产版同步上市文|宋立伟编辑 | 赵成随着产能爬坡,小米旗下首款车型 SU7 已经提前完成 10 万辆新车的下线,在其冲击全年销量 13 万辆的同时,第二款新车的上市也将排上日程。据小米汽车内部人士透露:\\\" 小米第二款车型计划于明年 2、3 月上市。\\\" 这与小米集团创始人、董事长雷军此前透露的 \\\" 小米 SU7 Ultra 量产版将于 2025 年 3 月正式发布 \\\" 的信息,在时间上不谋而合。另一位接近小米汽车的消息人士也告诉我们,小米第二款新车的上市安排将与此前 SU7 上市节奏一致。而 SU7 的上市时间恰好是 2024 年 3 月 28 日。不过,小米集团相关负责人对此只表示 \\\" 相关问题已超纲 \\\",他无法作出更多回应。可以确定的是,小米汽车的第二款车为纯电 SUV,该车内部代号为 MX11。据媒体报道,这款车将与小米 SU7 共享平台和部分零部件,但拥有独特的设计,车身侧面线条流畅。业界猜测,该车将定位为特斯拉 Model Y 的直接竞争对手。值得一提的是,即便在纯电市场占有先发优势的特斯拉,2024 年以来也倍感压力。以 Model Y 为例,2024 年前十个月,该车在中国累计销量 44.8 万辆,同比下滑 14.9%。究其原因,在于价格战和大量的新车扎堆上市。Model Y 图源:IC据相关机构统计,截至目前,2024 年上市\",\n      \"[20]网页来源: www.kotler.com.cn｜网页时间: 2025-01-06T16:26:02+08:00｜网页标题: 教育焦点-\\\"&#0;\\\"-小米第二款车或mofosفىلىم.明年一季度上市_ZAKER新闻｜网页内容：小米第二款车或mofosفىلىم.明年一季度上市_ZAKER新闻 责任编辑:张熠 据小米汽车内部人士透露:\\\" 小米第二款车型计划于明年 2、3 月上市。\\\" 这与小米集团创始人、董事长雷军此前透露的 \\\" 小米 SU7 Ultra 量产版将于 2025 年3月正式发布 \\\" 的信息,在时间上不谋而合。另一位接近小米汽车的消息人士也表示,小米第二款新车的上市安排将与此前 SU7 上市节奏一致。而SU7 的上市时间恰好是 2024 年3月28 日。不过,小米集团相关负责人对此只表示 \\\" 相关问题已超纲 \\\",他无法作出更多回应。(财经) koa12jJid0DL9adK+CJ1DK2K393LKASDad 编辑:张成基 TOP1热点:车主利好!国内油价或将“四连跌” 公司与海南鑫金仓签署的《广东榕泰实业股份有限公司和萍乡东方金鼎企业咨询中心(有限合伙)关于能通科技股份有限公司之。 (十)依法保护民营企业产权和企业家权益。防止和纠正利用行政或刑事手段干预经济纠纷,以及执法司法中的地方保护主义。进一步规范涉产权强制性措施,避免超权限、超范围、超数额、超时限查封扣押冻结财产。对不宜查封扣押冻结的经营性涉案财物,在保证侦查活动正常进行的同时,可以允许有关当事人继续合理使用,并采取必要的保值保管措施,最大限度减少侦查办案对正常办公和合法生产经营的影响。完善涉企案件申诉、再审等机制,健全冤错案件有效防范和常态化纠正机制。 TOP2热点:北斗系统今后可在全球民航通用 融资融券数据显示该股近3个月融资净流入7224.6万,融资余额增加;融券净流入0.0,融券余额增加。根据近五年财报数据,证券之星估值分析工具显示,华安鑫创(300928)行业内竞争力的护城河较差,盈利能力一般,营收成长性较差。可能有财务风险,存在隐忧的财务指标包括:应收账款/利润率、应收账款/利润率近3年增幅、存货/营收率增幅\",\n      \"[21]网页来源: 易车汽车社区｜网页时间: 2025-02-14T02:46:26+08:00｜网页标题: 小米汽车 第一款：SU7，2024年发布，24年量产在售 第二款：YU7，6-7｜网页内容：小米汽车 第一款:SU7,2024年发布,24年量产在售 第二款:YU7,6-7月份发布,估计等到12月份可以拿到车 第三款:N3-代码,预计在2026年推出,明年增程车圈大地震 第四款:网友图,纯电,   型  ?这   给  字辈,迪字辈留活  啊 。。。\"\n    ],\n    \"evidences\": [\n      {\n        \"evidence_id\": \"E1\",\n        \"statement\": \"小米汽车官方于2024年12月9日晚通过官方微博公布，其第二款车型为纯电动SUV，官方定名为“小米YU7”。\",\n        \"quotes\": [\n          {\n            \"web_id\": \"2\",\n            \"quotes\": [\n              \"小米汽车 第二款车型为SUV,定名为“小米YU7”\"\n            ]\n          },\n          {\n            \"web_id\": \"4\",\n            \"quotes\": [\n              \"小米汽车 第二款车型为SUV,定名为“小米YU7”\"\n            ]\n          },\n          {\n            \"web_id\": \"10\",\n            \"quotes\": [\n              \"O SUV, chamado YU7, será um modelo elétrico\"\n            ]\n          },\n          {\n            \"web_id\": \"11\",\n            \"quotes\": [\n              \"Xiaomi’s second car will be a pure electric sport utility vehicle\"\n            ]\n          },\n          {\n            \"web_id\": \"12\",\n            \"quotes\": [\n              \"The SUV, called YU7, will be an electric model, with a 3-meter wheelbase.\"\n            ]\n          }\n        ],\n        \"evidence_role\": \"直接给出小米第二款车的官方车型名称与类别，解决目标中的车型名称部分，也是进一步核对上市日期的前提。\",\n        \"evidence_type\": \"direct_answer\",\n        \"search_goal_id\": \"GOAL_1\"\n      },\n      {\n        \"evidence_id\": \"E2\",\n        \"statement\": \"小米汽车官方公布小米YU7预计于2025年6月至7月正式上市。\",\n        \"quotes\": [\n          {\n            \"web_id\": \"2\",\n            \"quotes\": [\n              \"预计2025年6-7月正式上市\"\n            ]\n          },\n          {\n            \"web_id\": \"4\",\n            \"quotes\": [\n              \"预计2025年6-7月正式上市\"\n            ]\n          },\n          {\n            \"web_id\": \"10\",\n            \"quotes\": [\n              \"está programado para chegar ao mercado em junho ou julho de 2025\"\n            ]\n          },\n          {\n            \"web_id\": \"11\",\n            \"quotes\": [\n              \"It will launch in June or July 2025\"\n            ]\n          },\n          {\n            \"web_id\": \"12\",\n            \"quotes\": [\n              \"its second model, an SUV, is scheduled to hit the market in June or July 2025.\"\n            ]\n          },\n          {\n            \"web_id\": \"14\",\n            \"quotes\": [\n              \"7月将正式上市。\"\n            ]\n          },\n          {\n            \"web_id\": \"17\",\n            \"quotes\": [\n              \"小米YU7预计于2025年六七月正式上市\"\n            ]\n          }\n        ],\n        \"evidence_role\": \"直接给出小米官方公布的上市时间窗口（2025年6-7月），解决目标中的发布/上市日期部分。\",\n        \"evidence_type\": \"direct_answer\",\n        \"search_goal_id\": \"GOAL_1\"\n      },\n      {\n        \"evidence_id\": \"E3\",\n        \"statement\": \"在官方正式公布前，有媒体报道援引小米内部人士消息称，小米第二款车型（内部代号MX11，纯电SUV）计划于2025年2月或3月上市，上市节奏与SU7一致；该消息未获小米官方确认。\",\n        \"quotes\": [\n          {\n            \"web_id\": \"1\",\n            \"quotes\": [\n              \"小米第二款车型计划于明年2、3月上市,小米第二款新车的上市安排将与此前SU7上市节奏一致。\"\n            ]\n          },\n          {\n            \"web_id\": \"3\",\n            \"quotes\": [\n              \"小米的第二款车型计划于明年2月或3月上市\",\n              \"可以确定的是,小米汽车的第二款车型是一款纯电SUV,代号为MX11\"\n            ]\n          },\n          {\n            \"web_id\": \"18\",\n            \"quotes\": [\n              \"小米汽车计划在2025年一季度推出其第二款车型\",\n              \"据了解,小米汽车的第二款车型为纯电SUV,代号为MX11\"\n            ]\n          },\n          {\n            \"web_id\": \"19\",\n            \"quotes\": [\n              \"小米第二款车型计划于明年2、3月上市\"\n            ]\n          }\n        ],\n        \"evidence_role\": \"记录官方公布前媒体援引内部人士的上市时间说法，与官方时间形成对照，用于识别时间口径冲突。\",\n        \"evidence_type\": \"counter_evidence\",\n        \"search_goal_id\": \"GOAL_1\"\n      }\n    ],\n    \"conflicts\": [\n      {\n        \"conflict_id\": \"C1\",\n        \"conflict_object\": \"小米第二款车型（小米YU7）的上市时间口径冲突：小米官方公布预计2025年6-7月上市，而此前媒体报道的内部消息称计划2025年2-3月上市。\",\n        \"conflict_evidence_ids\": [\n          \"E2\",\n          \"E3\"\n        ],\n        \"search_goal_id\": \"GOAL_1\"\n      }\n    ]\n  }\n]\n</current_turn_info>\n\n<task>\n请更新 current_turn_info 中涉及的搜索目标状态，再判断原始问题是否已闭环：若已闭环输出 STOP；否则针对关键缺口规划下一轮动作。\nsupporting_evidence_ids 和 conflicting_evidence_ids 只能填写上下文中存在的 E 开头 evidence_id；VERIFY_CONFLICT.target_conflict_id 只能填写 C 开头 conflict_id。\n只输出 current_turn_info 中本轮涉及目标的 search_state_updates，不要重复更新其他历史目标。\nsearch_state_updates 不得输出 depends_on_goal_ids；目标依赖关系由编排器维护，状态判定时不可修改。\n\n# 请严格按照以下格式输出\n## JSON 输出硬约束\n1. 只输出一个可被标准 JSON 解析器直接解析的 JSON 对象；不要 Markdown 代码块、注释、解释性前后缀或尾随逗号。\n2. 所有 key 和字符串必须使用双引号；空值使用 null，不得使用 None、单引号或 NaN。\n3. 顶层必须同时包含 search_state_updates 和 next_turn_search_actions；两者不得改名、缺失或额外嵌套。\n4. search_state_updates 必须是对象数组；next_turn_search_actions 必须是对象，其中 search_actions 必须是非空对象数组。\n\n### 信息未闭环时的输出格式\n{\n  \"search_state_updates\": [{\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"原搜索目标\",\n    \"status\": \"OPEN|CLOSED|CLOSED_BY_REFUTED|UNRESOLVED|SUPERSEDED|DROPPED\",\n    \"status_reason\": \"状态原因\",\n    \"answer\": \"当前直接答案；OPEN 时可为部分答案\",\n    \"supported_statement\": \"证据支持的归一化事实\",\n    \"supporting_evidence_ids\": [\"E1\"],\n    \"conflict_summary\": \"未解决且影响答案的冲突\",\n    \"conflicting_evidence_ids\": [\"E2\"],\n    \"evidence_gap\": \"距离闭环还缺少什么\"\n  }],\n  \"next_turn_search_actions\": {\n    \"action_reason\": \"下一轮整体规划理由\",\n    \"search_actions\": [{\n      \"search_action\": \"CONTINUE_SEARCH\",\n      \"action_reason\": \"为什么需要继续搜索\",\n      \"target_goal_id\": \"GOAL_1\",\n      \"search_queries\": [\"query 1\", \"query 2\"]\n    }]\n  }\n}\n\n### 信息已经闭环时的输出格式\n{\n  \"search_state_updates\": [{\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"原搜索目标\",\n    \"status\": \"CLOSED\",\n    \"status_reason\": \"已有充分证据且不存在阻塞冲突\",\n    \"answer\": \"当前直接答案\",\n    \"supported_statement\": \"证据支持的归一化事实\",\n    \"supporting_evidence_ids\": [\"E1\"],\n    \"conflict_summary\": \"\",\n    \"conflicting_evidence_ids\": [],\n    \"evidence_gap\": \"\"\n  }],\n  \"next_turn_search_actions\": {\n    \"action_reason\": \"所有回答原始问题所必需的目标均已闭环\",\n    \"search_actions\": [{\n      \"search_action\": \"STOP\",\n      \"action_reason\": \"所有必要目标均已闭环\"\n    }]\n  }\n}\n</task>"
+              }
+            ],
+            "attempts": [
+              {
+                "attempt": 1,
+                "status": "SUCCEEDED"
+              }
+            ],
+            "attempt": 1,
+            "attempt_count": 1,
+            "status": "SUCCEEDED",
+            "response": {
+              "search_state_updates": [
+                {
+                  "search_goal_id": "GOAL_1",
+                  "search_goal": "确定小米第二款车的车型名称及官方发布/上市日期",
+                  "status": "CLOSED",
+                  "status_reason": "已有官方证据确定第二款车为小米YU7（纯电SUV），并公布官方预计上市时间为2025年6-7月；虽然存在此前内部消息的上市时间差异，但不是官方口径，且不影响官方结论。",
+                  "answer": "小米第二款车为小米YU7，纯电动SUV，官方预计2025年6-7月正式上市。",
+                  "supported_statement": "小米汽车官方公布，第二款车型为纯电动SUV“小米YU7”，预计于2025年6-7月正式上市。",
+                  "supporting_evidence_ids": [
+                    "E1",
+                    "E2"
+                  ],
+                  "conflict_summary": "官方公布前媒体援引内部人士称2025年2-3月上市，但未获官方确认；官方公告口径为2025年6-7月，因此该冲突不阻塞结论。",
+                  "conflicting_evidence_ids": [
+                    "E3"
+                  ],
+                  "evidence_gap": ""
+                }
+              ],
+              "next_turn_search_actions": {
+                "action_reason": "已有证据确定小米第二款车为YU7及官方上市时间窗口为2025年6-7月，但原始问题还需要进一步定位上市后的下一场大型车展及该车展上竞品发布的新车。",
+                "search_actions": [
+                  {
+                    "search_action": "EXPAND_GOAL",
+                    "action_reason": "需要确定小米YU7正式上市/交付后的下一场大型车展，作为竞品发布新车的场景。",
+                    "search_goal_id": "GOAL_2",
+                    "search_goal": "确定小米YU7正式上市/交付后，下一场大型车展（如成都、广州、北京或上海国际车展等）的名称和举办时间",
+                    "search_queries": [
+                      "2025年7月之后 大型车展 2025成都车展 时间",
+                      "2025年下半年 中国 大型车展 时间表",
+                      "2025广州车展 举办时间 11月",
+                      "小米YU7上市后 下一场大型车展"
+                    ]
+                  },
+                  {
+                    "search_action": "EXPAND_GOAL",
+                    "action_reason": "需要确定在小米YU7上市后的下一场大型车展上，小米直接竞品发布了哪些新车型或重大改款。",
+                    "search_goal_id": "GOAL_3",
+                    "search_goal": "查找在小米YU7上市之后的下一场大型车展上，小米的直接竞品（如特斯拉、理想、蔚来、小鹏、问界、极氪等）发布的新车型或重大改款",
+                    "search_queries": [
+                      "2025成都车展 新车发布 新能源 SUV 特斯拉 理想 问界",
+                      "2025成都车展 竞品 新车 发布会",
+                      "特斯拉 Model Y 改款 成都车展 2025",
+                      "2025成都车展 理想 L6 问界 M8 蔚来 乐道 极氪 新车"
+                    ],
+                    "depends_on_goal_ids": [
+                      "GOAL_2"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    ],
+    "errors": [
+      {
+        "stage": "planner_state_update",
+        "error_type": "ProtocolError",
+        "error": "CLOSED goals cannot have blocking conflicts",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search/orchestrator.py\", line 82, in run\n    return self._run_impl(user_query, current_date=current_date)\n           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search/orchestrator.py\", line 265, in _run_impl\n    self._apply_state_updates(state_updates, state)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search/orchestrator.py\", line 964, in _apply_state_updates\n    raise ProtocolError(\"CLOSED goals cannot have blocking conflicts\")\ndeep_search.orchestrator.ProtocolError: CLOSED goals cannot have blocking conflicts\n",
+        "last_model_call": {
+          "agent": "search_planner",
+          "stage": "planner_state_update",
+          "messages": [
+            {
+              "role": "system",
+              "content": "# 角色\n你是离线轨迹合成系统中非首轮的 Search Planner。你需要根据历史目标的紧凑状态和本轮网页、evidence、conflict，更新本轮涉及目标的状态，并决定继续搜索还是 STOP。你不摘录新证据，也不得凭常识补充事实。\n\n# 输入语义\n1. search_history 按轮次提供已经执行过的 search_goal、搜索动机、query 和网页，用于重建历史搜索行为、避免重复检索；它不代表本轮新证据。\n2. search_status 只包含历史紧凑状态。带有 \"in_progress\": true 的目标尚未经过 Planner 状态判定，不能把该标签当作 OPEN 等正式状态。\n3. 已有历史状态只提供 search_goal_id、search_goal、status、answer、conflict_summary、evidence_gap；search_status 不提供任何 evidence ID、conflict ID 或依赖关系。\n4. current_turn_info 提供本轮搜索结果、evidence 和 conflict，是本轮状态更新中引用 ID 的唯一依据。\n\n# 状态更新约束\n1. 只更新 current_turn_info 中本轮涉及的 search_goal；不得重复改写未被本轮搜索影响的历史目标。\n2. 状态只允许 OPEN、CLOSED、CLOSED_BY_REFUTED、UNRESOLVED、SUPERSEDED、DROPPED。\n3. CLOSED 必须已有足以直接回答目标的 supporting evidence，且不存在阻塞冲突；OPEN 必须明确 evidence_gap。\n4. supporting_evidence_ids 与 conflicting_evidence_ids 只能填写 current_turn_info 中存在的 E 开头 evidence_id，不得填写 C 开头 conflict_id 或编造 ID。\n5. depends_on_goal_ids 由 orchestrator 维护，search_state_updates 不得输出或修改该字段；状态判定也不得借此改变目标依赖关系。\n\n# 下一轮动作约束\n1. 信息未闭环时，search_action 只允许 CONTINUE_SEARCH、VERIFY_CONFLICT、EXPAND_GOAL、REFINE_GOAL。注意正确拼写是 CONTINUE_SEARCH。\n2. CONTINUE_SEARCH：填写 target_goal_id、action_reason、search_queries；不填写 target_conflict_id、search_goal_id、search_goal、depends_on_goal_ids。\n3. VERIFY_CONFLICT：填写 target_goal_id、target_conflict_id、action_reason、search_queries；target_conflict_id 必须是 current_turn_info 中存在的 C 开头 conflict_id；不创建新目标。\n4. EXPAND_GOAL：填写新的 search_goal_id、search_goal、action_reason、search_queries；存在依赖时才填写 depends_on_goal_ids，不填写 target_goal_id 或 target_conflict_id。\n5. REFINE_GOAL：target_goal_id 指向被替代目标，并填写新的 search_goal_id、search_goal、action_reason、search_queries；存在依赖时才填写 depends_on_goal_ids，不填写 target_conflict_id。\n6. 每个非 STOP 动作必须提供 1～5 条可执行、互补的 search_queries。\n7. 信息已闭环时只允许一个 STOP；STOP 必须是唯一动作，且只包含 search_action 和 action_reason。\n\n# JSON 输出硬约束\n1. 只输出一个可被标准 JSON 解析器直接解析的 JSON 对象；不要 Markdown 代码块、注释、解释性前后缀或尾随逗号。\n2. 所有 key 和字符串必须使用双引号；空值使用 null，不得使用 None、单引号或 NaN。\n3. 顶层必须同时包含 search_state_updates 和 next_turn_search_actions；两者不得改名、缺失或额外嵌套。\n4. search_state_updates 必须是对象数组；next_turn_search_actions 必须是对象，其中 search_actions 必须是非空对象数组。\n\n## 信息未闭环时的输出格式\n{\n  \"search_state_updates\": [{\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"原搜索目标\",\n    \"status\": \"OPEN|CLOSED|CLOSED_BY_REFUTED|UNRESOLVED|SUPERSEDED|DROPPED\",\n    \"status_reason\": \"状态原因\",\n    \"answer\": \"当前直接答案；OPEN 时可为部分答案\",\n    \"supported_statement\": \"证据支持的归一化事实\",\n    \"supporting_evidence_ids\": [\"E1\"],\n    \"conflict_summary\": \"未解决且影响答案的冲突\",\n    \"conflicting_evidence_ids\": [\"E2\"],\n    \"evidence_gap\": \"距离闭环还缺少什么\"\n  }],\n  \"next_turn_search_actions\": {\n    \"action_reason\": \"下一轮整体规划理由\",\n    \"search_actions\": [{\n      \"search_action\": \"CONTINUE_SEARCH\",\n      \"action_reason\": \"为什么需要继续搜索\",\n      \"target_goal_id\": \"GOAL_1\",\n      \"search_queries\": [\"query 1\", \"query 2\"]\n    }]\n  }\n}\n\n## 信息已经闭环时的输出格式\n{\n  \"search_state_updates\": [{\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"原搜索目标\",\n    \"status\": \"CLOSED\",\n    \"status_reason\": \"已有充分证据且不存在阻塞冲突\",\n    \"answer\": \"当前直接答案\",\n    \"supported_statement\": \"证据支持的归一化事实\",\n    \"supporting_evidence_ids\": [\"E1\"],\n    \"conflict_summary\": \"\",\n    \"conflicting_evidence_ids\": [],\n    \"evidence_gap\": \"\"\n  }],\n  \"next_turn_search_actions\": {\n    \"action_reason\": \"所有回答原始问题所必需的目标均已闭环\",\n    \"search_actions\": [{\n      \"search_action\": \"STOP\",\n      \"action_reason\": \"所有必要目标均已闭环\"\n    }]\n  }\n}"
+            },
+            {
+              "role": "user",
+              "content": "<constant_info>\nuser_query: 小米发布第二款车之后的下一个大型车展上，其竞品都发布了什么车？\ncurrent_date: 2026-08-14\n</constant_info>\n\n<search_history>\n（暂无历史搜索轨迹）\n</search_history>\n\n<search_status>\n[\n  {\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"确定小米第二款车的车型名称及官方发布/上市日期\",\n    \"in_progress\": true\n  }\n]\n</search_status>\n\n<current_turn_info>\n[\n  {\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"确定小米第二款车的车型名称及官方发布/上市日期\",\n    \"search_queries\": [\n      \"小米第二款车 车型 发布 上市 时间\",\n      \"小米汽车 第二款车 官方发布\",\n      \"Xiaomi second car model launch date\",\n      \"小米 YU7 上市时间\",\n      \"小米第二款车 发布日期 2025 OR 2026\"\n    ],\n    \"search_errors\": [],\n    \"search_webs\": [\n      \"[1]网页来源: 今日头条｜网页时间: 2024-11-22T16:12:00+08:00｜网页标题: 关注 - 小米第二款车或于2025年一季度上市 - 今日头条｜网页内容：文:懂车帝原创 尚甜甜[懂车帝原创 行业] 日前,据财经汽车报道,小米汽车内部人士透露:小米第二款车型计划于明年2、3月上市,小米第二款新车的上市安排将与此前SU7上市节奏一致。\",\n      \"[2]网页来源: 东方财富网财经频道｜网页时间: 2024-12-09T23:16:00+08:00｜网页标题: 小米汽车“二孩”将明年6月上市 “小米YU7”为SUV车型 _ 东方财富网｜网页内容：新京报贝壳财经讯(记者陈维城)12月9日晚间,小米汽车官方微博发布动态显示, 小米汽车 第二款车型为SUV,定名为“小米YU7”,预计2025年6-7月正式上市。 小米汽车 官方 微博 内容 新京报 贝壳 财经记者从工信部官网获悉,该车型长4999mm、宽1996mm、 高1600mm,最高车速253km/h;该产品为纯电动车型,宁德时代三元锂离子电池;ABS型号:ESP10,为博世汽车部件(苏州)有限公司生产;驱动电机峰值功率:220kW/288kW。 今年上半年,小米汽车上市交付备受关注。自3月正式上市以来,小米汽车第一款轿车车型 Xiaomi SU7在产能扩张和交付执行上进展飞速。10月,小米汽车工厂单月生产量及新车交付量均破20000辆。11月,Xiaomi SU7提前完成10万台交付目标。2024全年小米汽车将冲刺13万辆交付新目标。 小米集团三季报显示,第三季度,小米智能电动汽车等创新业务收入为97亿元,正逐步向百亿规模逼近,毛利率提升至17.1%。截至2024年9月30日,小米汽车已在中国38个城市开业127家汽车销售门店。 (文章来源:新京报)\",\n      \"[3]网页来源: 新浪网｜网页时间: 2024-11-22T07:16:32+08:00｜网页标题: 小米第二款纯电SUV车型或将于明年2、3月上市-新浪汽车｜网页内容：近日,有媒体报道小米汽车内部人士的透露,称小米的第二款车型计划于明年2月或3月上市。这一消息引起了广泛关注,并引发了业界对小米汽车未来发展的猜测。 此外,另一位消息人士也表示,小米第二款车型的上市节奏将与小米SU7(配置 保持一致。而小米SU7的上市时间恰好是2024年3月28日,这进一步证实了小米第二款车型可能将在相近的时间段内推向市场。 然而,对于上述消息,小米集团相关负责人回应称“相关问题已超纲”,并未给出更多具体回应。这使得小米第二款车型的上市时间仍存在一定的不确定性。 尽管如此,可以确定的是,小米汽车的第二款车型是一款纯电SUV,代号为MX11。这款车型与小米SU7共享平台及部分零部件,但在设计上更具独特性。据媒体报道,小米MX11的车身侧面线条流畅,整体设计充满现代感,预计将在市场上引发一定的关注。 小米汽车作为新能源汽车市场的新势力,其首款车型SU7已经在市场上取得了一定的成绩。此次推出的第二款车型MX11,不仅延续了小米汽车一贯的高品质和创新精神,更在设计上进行了更多的尝试和突破。 随着新能源汽车市场的快速发展和竞争的加剧,小米汽车需要不断创新和提升自身实力,才能在市场上立足。小米MX11的推出,无疑将为小米汽车未来的发展注入新的活力和动力。 虽然目前小米集团相关负责人对于第二款车型的上市时间并未给出明确回应,但我们可以期待小米MX11在未来市场上的表现。同时,也希望小米汽车能够继续秉持创新精神,为消费者带来更多高品质的新能源汽车产品。\",\n      \"[4]网页来源: 手机东方财富网｜网页时间: 2024-12-10T07:16:00+08:00｜网页标题: 小米汽车“二孩”将明年6月上市 “小米YU7”为SUV车型｜网页内容：炒股第一步,先开个股票账户\\n  新京报 贝壳 财经讯(记者陈维城)12月9日晚间, 小米汽车 官方 微博 发布动态显示, 小米汽车 第二款车型为SUV,定名为“小米YU7”,预计2025年6-7月正式上市。\\n小米汽车 官方 微博 内容\\n  新京报 贝壳 财经记者从工信部官网获悉,该车型长4999mm、宽1996mm、 高1600mm,最高车速253km/h;该产品为纯电动车型, 宁德时代 三元锂离子 电池 ;ABS型号:ESP10,为博世汽车部件(苏州)有限公司生产;驱动 电机 峰值功率:220kW/288kW。\\n  今年上半年,小米汽车上市交付备受关注。自3月正式上市以来,小米汽车第一款轿车车型 Xiaomi SU7在产能扩张和交付执行上进展飞速。10月,小米汽车工厂单月生产量及新车交付量均破20000辆。11月,Xiaomi SU7提前完成10万台交付目标。2024全年小米汽车将冲刺13万辆交付新目标。\\n  小米集团三季报显示,第三季度,小米智能电动汽车等创新业务收入为97亿元,正逐步向百亿规模逼近,毛利率提升至17.1%。截至2024年9月30日,小米汽车已在中国38个城市开业127家汽车销售门店。\",\n      \"[5]网页来源: 国际充换电网｜网页时间: 2024-03-29T00:00:00+08:00｜网页标题: 第二款小米汽车被曝光-新势力造车-新能源汽车--国际充换电网｜网页内容：国际能源网获悉,2024年3月28日,小米汽车已经正式上线。同时,小米SU7的正式发布,也标志着小米「人车家全生态」战略正从“完整闭环”迈向“全面开启”的新阶段。据悉,在小米SU7正式发布后,网上就又传出了有关第二款小米汽车的消息。有汽车博主在社交媒体晒出了一张图片,其中明确显示小米的第二款车型可能为豪华中大型SUV,并且大概率为增程车型,对标理想旗舰L9。值得一提的是,雷军也对第二款车型信心满满。事实上,以小米的体量和目前小米SU7所取得的成绩来看,小米汽车正在筹备第二款车型具有很大的真实性。\",\n      \"[6]网页来源: 今日头条｜网页时间: 2024-04-09T18:31:00+08:00｜网页标题: 小米汽车再度掀起风浪:第二款新车曝光! - 今日头条｜网页内容：近日,小米汽车再度成为众人瞩目的焦点,因其第二款新车的曝光而引发了广泛关注。据悉,一辆疑似真车的中大型SUV现身小米门店,其引人注目的外观和神秘的身份令人猜测不已。 仅在上月底,小米汽车首款新车「小米SU7」正式发布,便以惊艳的外观设计、强劲的配置堆料以及亲民的起售价21.59万元,赢得了众多消费者的青睐。其销售成绩更是喜人,短短72小时内便超过了10万台的大定,锁单数量更是超过了4万台,可谓一鸣惊人。 然而,就在大家对首款车型津津乐道之际,小米第二款新车的消息突然传来,令人眼前一亮。有网友在小米门店发现了一辆神秘的伪装车,经过拍照后发布在社交平台上。从照片上可以看出,这款车型是一款中大型SUV,车身大小与问界M7相近,外观线条简洁大气,散发着浓厚的科技感。 对于这款神秘的新车,网友们纷纷猜测其可能是小米汽车的第二款产品。虽然目前尚未有官方的信息发布,但从曝光的照片来看,这款车型已经引起了广泛的关注和热议。人们对于小米汽车的下一步动向充满了期待,希望它能够延续首款车型的成功,并为消费者带来更多惊喜和选择。 总的来说,小米汽车作为一家新兴的汽车制造商,凭借其独特的视角和技术实力,正在逐步打造出一系列备受瞩目的产品。相信随着第二款新车的正式发布,小米汽车将会在市场上掀起新的一波热潮,为消费者带来更多的选择和体验。让我们拭目以待,期待小米汽车的下一个传奇!\",\n      \"[7]网页来源: 今日头条｜网页时间: 2023-11-15T21:02:00+08:00｜网页标题: 小米汽车揭开面纱 - 今日头条｜网页内容：备受外界关注和期待的小米汽车,正式公布。 15日,工信部网站发布第377批《道路机动车辆生产企业及产品公告》,公布了小米汽车的两款新车信息。新车为纯电动轿车,商标名为“小米牌”,车尾logo显示为“xiaomi”,左下方标识为“北京小米”,\",\n      \"[8]网页来源: OFweek新能源汽车网｜网页时间: 2025-07-16T00:00:00+08:00｜网页标题: 推荐给朋友: 雷军再出一张牌,小米汽车第二品牌官宣 - OFweek新能源汽车网｜网页内容：维科网新能源汽车消息,今天(7月8日)早上7点30分,小米汽车官方账号发了一条简短的动态,配文“SkyNomad。天空,游牧者。一个关于空间和生活的新名字。”\\n就这么一句话,正式宣告了小米汽车全新品牌\",\n      \"[9]网页来源: news.ppzw.com｜网页时间: 2025-02-07T21:10:39+08:00｜网页标题: 小米第二家汽车公司来了｜网页内容：740)this.width=740>\\n图片来源:视觉中国\\n11月19日,据天眼查App显示,小米汽车科技有限公司于11月18日成立,法定代表人为雷军,是小米宣布造车后成立的第二家汽车公司。\\n该公司注册资本10亿元,注册地为北京,经营范围包括新能源车整车制造、汽车整车及零部件的技术研发等,由小米科技有限责任公司100%控股。后者由雷军、黎万强、洪峰、刘德四位小米重要人物联合控股,为小米系投资的主要主体之一,其中雷军占据77.8%股份,为第一大股东兼董事长。\\n距离第一家小米汽车公司成立还没有过去太久。在三月底正式宣布造车后,9月1日,雷军在微博发布小米汽车正式注册的消息,公司名为小米汽车有限公司,注册资金100亿元,法人代表由雷军担任,小米通讯技术有限公司对其全资持股。\\n不过,10月15日,该公司持股信息发生变更,全资股东为一家注册于香港地区的公司Xiaomi EV Limited。\\n10月19日,雷军再次公开表示,小米造车目前的各项进展快于他的预期,预计2024年上半年正式量产——这与当初“三年见到小米第一台车”的言论大体一致。\\n团队素来是打胜仗的重中之重,小米正在紧锣密鼓筹备当中。\\n从内部来看,小米汽车注册成立当天,雷军晒出团队合影,包括他、CFO林世伟、联合创始人刘德、集团总裁王翔、联合创始人洪峰、SVP卢伟冰在内共有17人,无一不是在小米过去业务中担任重要角色的骨干,但其中仅有一位原宝马集团资深设计师具有真正的汽车行业背景。\\n小米在外的“招兵买马”也在如火如荼进行中,除了雷军在微博亲自发招聘广告,为小米汽车自动驾驶部门招募自研L4级别智能驾驶能力的500名技术人员外,多个招聘平台及小米官网都可以看到小米对集结造车人才的迫切。\\n据虎嗅报道,小米造车曾显现出2万人竞争300余个岗位的激烈场面,在讨论之中,传统汽车品牌技术口的研发骨干和自动驾驶领域技术方案的供应商最有意向加\",\n      \"[10]网页来源: 人民网｜网页时间: 2024-12-11T00:00:00+08:00｜网页标题: Xiaomi lançará SUV em meados de 2025｜网页内容：Xiaomi\\nlançará\\nSUV\\nem\\nmeados\\nde\\n2025\\nA\\nfabricante\\nchinesa\\nde\\ncelulares\\nXiaomi\\nanunciou\\nna\\nnoite\\nde\\nsegunda-feira\\n(9)\\nque\\nseu\\nsegundo\\nmodelo,\\num\\nSUV,\\nestá\\nprogramado\\npara\\nchegar\\nao\\nmercado\\nem\\njunho\\nou\\njulho\\nde\\n2025.\\nO\\nSUV,\\nchamado\\nYU7,\\nserá\\num\\nmodelo\\nelétrico,\\ncom\\ndistância\\nentre\\neixos\\nde\\n3\\nmetros.\\nEle\\nmede\\n4.999mm\\nde\\ncomprimento,\\n1.996mm\\nde\\nlargura\\ne\\n1.600mm\\nde\\naltura,\\nsegundo\\ninformações\\ndo\\nMinistério\\nda\\nIndústria\\ne\\nTecnologia\\nda\\nInformação\\n(MIIT)\\nda\\nChina.\\nA\\nXiaomi\\nnão\\ndeu\\numa\\nfaixa\\nde\\npreço\\nnem\\nrevelou\\nos\\nrivais\\ndo\\nYU7.\\nRelatórios\\nchineses\\nsugeriram\\nque\\nele\\npode\\ncompetir\\ncom\\no\\nModel\\nY\\nda\\nTesla,\\nque\\né\\num\\ndos\\nmodelos\\nmais\\npopulares\\ndo\\nsegmento.\\nA\\nXiaomi\\nlançou\\nseu\\nprimeiro\\nmodelo,\\no\\nSU7,\\nno\\nfinal\\nde\\nmarço\\ndeste\\nano.\\nO\\nsedã\\nelétrico,\\nque\\nlembra\\no\\nTaycan\\nda\\nPorsche,\\ntem\\nsido\\npopular,\\ncom\\ns\",\n      \"[11]网页来源: www.yicaiglobal.com｜网页时间: 2026-05-27T16:10:32+08:00｜网页标题: Xiaomi to Launch Pure Electric SUV in Mid-2025｜网页内容：(Yicai)\\nDec.\\n10\\n--\\nXiaomi’s\\nsecond\\ncar\\nwill\\nbe\\na\\npure\\nelectric\\nsport\\nutility\\nvehicle,\\naccording\\nto\\nthe\\nwebsite\\nof\\nChina’s\\nindustry\\nministry,\\nwhile\\nthe\\nelectronics\\ngiant’s\\nchairman\\nsaid\\nthe\\ncar\\nwill\\nlaunch\\naround\\nthe\\nmiddle\\nof\\nnext\\nyear.The\\nforthcoming\\nXiaomi\\nYU7\\nresembles\\nthe\\nFerrari\\nPurosangue,\\ninformation\\non\\nthe\\nministry's\\nwebsite\\nshowed\\nyesterday.\\nIt\\nwill\\nlaunch\\nin\\nJune\\nor\\nJuly\\n2025,\\nLei\\nJun,\\nwho\\nis\\nalso\\nthe\\nBeijing-based\\nXiaomi’s\\nchief\\nexecutive,\\nsaid\\non\\nWeibo\\nlater\\nthe\\nsame\\nday.Xiaomi\\nAuto's\\nfirst\\nmodel,\\nthe\\nSU7,\\ncompetes\\nwith\\nTesla's\\nModel\\n3,\\nwhile\\nthe\\nYU7\\nwill\\ntake\\non\\nthe\\nUS\\nautomaker's\\nModel\\nY,\\none\\nof\\nthe\\nmost\\npopular\\nelectric\\nSUVs\\nin\\nthe\\nmarket,\\naccording\\nto\\nindustry\\ninsiders.The\\nYU7\\nwill\\nuse\\na\\nternary\\nlithium-ion\\nbattery\\nproduced\\nby\\nJiangsu\\nContemporary\\nAmperex\\nTechnology,\\na\\nunit\",\n      \"[12]网页来源: Ecns.cn｜网页时间: 2024-12-10T16:53:33+08:00｜网页标题: Xiaomi to launch SUV in mid-2025｜网页内容：Chinese phone maker Xiaomi announced late Monday that its second model, an SUV, is scheduled to hit the market in June or July 2025. The SUV, called YU7, will be an electric model, with a 3-meter wheelbase. It measures 4,999 mm in length, 1,996 mm in width and 1,600 mm in height, according to information from the Ministry of Industry and Information Technology. Xiaomi did not give a price range nor did it reveal the YU7's rivals. Chinese reports said it might take on Tesla's Model Y, which is one of the most popular models in the segment. Xiaomi launched its first model, the SU7, in late March this year. The electric sedan, which resembles Porsche's Taycan, has been popular, with its sales exceeding 20,000 units in November. The phone maker said it is confident that the SU7's cumulative sa\",\n      \"[13]网页来源: 搜狐｜网页时间: 2024-12-10T11:04:00+08:00｜网页标题: 小米YU7路测启动,六七月上市将引发行业关注_智能_技术_产品｜网页内容：12月10日,小米创办人兼CEO雷军在微博上宣布,小米YU7正在进行大规模路测,预计将在2024年六七月正式上市。这一消息引发了市场的广泛关注,作为小米最新推出的智能设备之一,YU7将承载着小米在智能技术及产品设计上的新思考和探索。 小米YU7是一款集多种先进技术于一体的智能设备,具体的产品功能和规格细节尚未公布,但雷军提到的路测活动已经预示着该产品正在向实用化和市场化迈进。作为小米的一员,YU7可能在智能家居和物联网生态中,将发挥重要作用。而在小米的产品矩阵中,YU7也将与目前市场上的其他智能设备展开竞争,尤其是当今越来越流行的AI技术。 在当今智能设备的市场中,AI技术的应用正成为核心竞争力之一。从语音助手到智能图像识别,AI在提升用户体验方面的贡献不容小觑。小米YU7是否会搭载先进的AI功能,如智能语音识别、场景识别等,将直接影响其市场表现。基于小米在AI领域的深厚积累,许多消费者对YU7将如何整合这些技术充满期待。 随着小米YU7的路测推进,许多技术爱好者国内外均开始讨论这款产品可能的特性和用途。如果YU7具备强大的处理器、高分辨率的显示屏以及出色的摄像头质量,它将在日常使用、游戏及影音娱乐方面带来优秀的表现。想象一下,在日常生活中,用户通过YU7实现高效的家居控制、智能监控,甚至是丰富多彩的移动娱乐体验,这无疑会提升用户的生活质量。 在智能硬件的竞争中,产品的续航能力同样是重要指标。小米以往的产品在续航方面表现不俗,而消费者对于未来展现的YU7期待能够在这一点上继续保持优势。此外,与同类产品的比较也至关重要,通过分析竞争对手的特性与价格策略,小米可塑造出更具市场竞争力的产品。 值得一提的是,除了硬件上的技术提升,小米也积极推动AI技术的应用,最近几年AI绘画、AI写作等相关工具层出不穷。这样的趋势表明,AI不仅在加速设备智能化进程,也为用户提供了更多创作的可能。小\",\n      \"[14]网页来源: 腾讯网｜网页时间: 2025-05-23T18:02:00+08:00｜网页标题: 7月正式上市,小米YU7正式发布_腾讯新闻｜网页内容：小米YU7内饰发布,配备Xiaomi\\nHyperVision天际屏和升级版辅助驾驶系统,7月将正式上市。\",\n      \"[15]网页来源: 抖音｜网页时间: 2024-12-10T08:00:00+08:00｜网页标题: 小米YU7发布｜网页内容：小米YU7发布,于2024年12月10日上线。抖音精选为您提供高清视频,画面清晰、播放流畅,看丰富、高质量视频就上抖音精选。\",\n      \"[16]网页来源: 腾讯网｜网页时间: 2025-05-23T18:02:28+08:00｜网页标题: 7月正式上市,小米YU7正式发布｜网页内容：小米YU7内饰发布,配备Xiaomi HyperVision天际屏和升级版辅助驾驶系统,7月将正式上市。\",\n      \"[17]网页来源: 今日头条｜网页时间: 2025-08-05T13:05:00+08:00｜网页标题: 小米yo7什么时候上市 - 今日头条｜网页内容：据小米汽车官微消息,小米YU7预计于2025年六七月正式上市。小米董事长雷军透露,目前该款车型正在进行大规模路测。来源:澎湃财讯(本文来自澎湃新闻,更多原创资讯请下载“澎湃新闻”APP)\",\n      \"[18]网页来源: 汽车之家｜网页时间: 2025-03-02T08:00:00+08:00｜网页标题: 【重磅】小米第二款车或于明年一季度上市,｜网页内容：据 独家消息 ,小米汽车计划在2025年一季度推出其第二款车型。随着小米首款车型SU7顺利下线并提前完成10万辆新车的生产,第二款新车的上市日期也被提上日程。\\n一位内部人士透露,小米第二款车型计划在明年2、3月上市,这与雷军此前表示的“小米SU7 Ultra量产版将于2025年3月正式发布”的信息一致。另一位消息人士也指出,小米第二款新车的上市时间将与SU7保持一致,SU7的上市时间是2024年3月28日。然而,小米集团相关负责人表示,他们无法对这一问题作出更多回应。\\n据了解,小米汽车的第二款车型为纯电SUV,代号为MX11。该车将与小米SU7共享平台和部分零部件,但拥有独特的设计和流畅的车身侧面线条。业内猜测,这款新车将直接与特斯拉Model Y竞争。\\n小米SU7\\n指导价: 21.59-29.99万\\n值得一提的是,特斯拉虽然在纯电市场中占有先发优势,但2024年以来也面临着巨大压力。以Model Y为例,2024年前十个月在中国市场的销量为44.8万辆,同比下滑14.9%。这主要是由于价格战和大量新车涌入市场所致。\",\n      \"[19]网页来源: tjztwyjc.com｜网页时间: 2025-02-17T10:55:56+08:00｜网页标题: 天美影视传媒有限公司小米第二款车或于2025年一季度上市_天美影视传媒有限公司ZAKER新闻｜网页内容：小米第二款车或于2025年一季度上市_天美影视传媒有限公司ZAKER新闻\\n  <strong><span>要持续紧盯“七个有之”问题</span></strong><span>,把严惩政商勾连腐败作为攻坚战重中之重,严肃查处带有公安特点的行业性、系统性、地域性新型腐败和隐性腐败,</span><strong><span>决不允许腐败在公安机关有藏身之地。</span></strong>\\n 定位纯电 SUV,或与小米 SU7 Ultra 量产版同步上市文|宋立伟编辑 | 赵成随着产能爬坡,小米旗下首款车型 SU7 已经提前完成 10 万辆新车的下线,在其冲击全年销量 13 万辆的同时,第二款新车的上市也将排上日程。据小米汽车内部人士透露:\\\" 小米第二款车型计划于明年 2、3 月上市。\\\" 这与小米集团创始人、董事长雷军此前透露的 \\\" 小米 SU7 Ultra 量产版将于 2025 年 3 月正式发布 \\\" 的信息,在时间上不谋而合。另一位接近小米汽车的消息人士也告诉我们,小米第二款新车的上市安排将与此前 SU7 上市节奏一致。而 SU7 的上市时间恰好是 2024 年 3 月 28 日。不过,小米集团相关负责人对此只表示 \\\" 相关问题已超纲 \\\",他无法作出更多回应。可以确定的是,小米汽车的第二款车为纯电 SUV,该车内部代号为 MX11。据媒体报道,这款车将与小米 SU7 共享平台和部分零部件,但拥有独特的设计,车身侧面线条流畅。业界猜测,该车将定位为特斯拉 Model Y 的直接竞争对手。值得一提的是,即便在纯电市场占有先发优势的特斯拉,2024 年以来也倍感压力。以 Model Y 为例,2024 年前十个月,该车在中国累计销量 44.8 万辆,同比下滑 14.9%。究其原因,在于价格战和大量的新车扎堆上市。Model Y 图源:IC据相关机构统计,截至目前,2024 年上市\",\n      \"[20]网页来源: www.kotler.com.cn｜网页时间: 2025-01-06T16:26:02+08:00｜网页标题: 教育焦点-\\\"&#0;\\\"-小米第二款车或mofosفىلىم.明年一季度上市_ZAKER新闻｜网页内容：小米第二款车或mofosفىلىم.明年一季度上市_ZAKER新闻 责任编辑:张熠 据小米汽车内部人士透露:\\\" 小米第二款车型计划于明年 2、3 月上市。\\\" 这与小米集团创始人、董事长雷军此前透露的 \\\" 小米 SU7 Ultra 量产版将于 2025 年3月正式发布 \\\" 的信息,在时间上不谋而合。另一位接近小米汽车的消息人士也表示,小米第二款新车的上市安排将与此前 SU7 上市节奏一致。而SU7 的上市时间恰好是 2024 年3月28 日。不过,小米集团相关负责人对此只表示 \\\" 相关问题已超纲 \\\",他无法作出更多回应。(财经) koa12jJid0DL9adK+CJ1DK2K393LKASDad 编辑:张成基 TOP1热点:车主利好!国内油价或将“四连跌” 公司与海南鑫金仓签署的《广东榕泰实业股份有限公司和萍乡东方金鼎企业咨询中心(有限合伙)关于能通科技股份有限公司之。 (十)依法保护民营企业产权和企业家权益。防止和纠正利用行政或刑事手段干预经济纠纷,以及执法司法中的地方保护主义。进一步规范涉产权强制性措施,避免超权限、超范围、超数额、超时限查封扣押冻结财产。对不宜查封扣押冻结的经营性涉案财物,在保证侦查活动正常进行的同时,可以允许有关当事人继续合理使用,并采取必要的保值保管措施,最大限度减少侦查办案对正常办公和合法生产经营的影响。完善涉企案件申诉、再审等机制,健全冤错案件有效防范和常态化纠正机制。 TOP2热点:北斗系统今后可在全球民航通用 融资融券数据显示该股近3个月融资净流入7224.6万,融资余额增加;融券净流入0.0,融券余额增加。根据近五年财报数据,证券之星估值分析工具显示,华安鑫创(300928)行业内竞争力的护城河较差,盈利能力一般,营收成长性较差。可能有财务风险,存在隐忧的财务指标包括:应收账款/利润率、应收账款/利润率近3年增幅、存货/营收率增幅\",\n      \"[21]网页来源: 易车汽车社区｜网页时间: 2025-02-14T02:46:26+08:00｜网页标题: 小米汽车 第一款：SU7，2024年发布，24年量产在售 第二款：YU7，6-7｜网页内容：小米汽车 第一款:SU7,2024年发布,24年量产在售 第二款:YU7,6-7月份发布,估计等到12月份可以拿到车 第三款:N3-代码,预计在2026年推出,明年增程车圈大地震 第四款:网友图,纯电,   型  ?这   给  字辈,迪字辈留活  啊 。。。\"\n    ],\n    \"evidences\": [\n      {\n        \"evidence_id\": \"E1\",\n        \"statement\": \"小米汽车官方于2024年12月9日晚通过官方微博公布，其第二款车型为纯电动SUV，官方定名为“小米YU7”。\",\n        \"quotes\": [\n          {\n            \"web_id\": \"2\",\n            \"quotes\": [\n              \"小米汽车 第二款车型为SUV,定名为“小米YU7”\"\n            ]\n          },\n          {\n            \"web_id\": \"4\",\n            \"quotes\": [\n              \"小米汽车 第二款车型为SUV,定名为“小米YU7”\"\n            ]\n          },\n          {\n            \"web_id\": \"10\",\n            \"quotes\": [\n              \"O SUV, chamado YU7, será um modelo elétrico\"\n            ]\n          },\n          {\n            \"web_id\": \"11\",\n            \"quotes\": [\n              \"Xiaomi’s second car will be a pure electric sport utility vehicle\"\n            ]\n          },\n          {\n            \"web_id\": \"12\",\n            \"quotes\": [\n              \"The SUV, called YU7, will be an electric model, with a 3-meter wheelbase.\"\n            ]\n          }\n        ],\n        \"evidence_role\": \"直接给出小米第二款车的官方车型名称与类别，解决目标中的车型名称部分，也是进一步核对上市日期的前提。\",\n        \"evidence_type\": \"direct_answer\",\n        \"search_goal_id\": \"GOAL_1\"\n      },\n      {\n        \"evidence_id\": \"E2\",\n        \"statement\": \"小米汽车官方公布小米YU7预计于2025年6月至7月正式上市。\",\n        \"quotes\": [\n          {\n            \"web_id\": \"2\",\n            \"quotes\": [\n              \"预计2025年6-7月正式上市\"\n            ]\n          },\n          {\n            \"web_id\": \"4\",\n            \"quotes\": [\n              \"预计2025年6-7月正式上市\"\n            ]\n          },\n          {\n            \"web_id\": \"10\",\n            \"quotes\": [\n              \"está programado para chegar ao mercado em junho ou julho de 2025\"\n            ]\n          },\n          {\n            \"web_id\": \"11\",\n            \"quotes\": [\n              \"It will launch in June or July 2025\"\n            ]\n          },\n          {\n            \"web_id\": \"12\",\n            \"quotes\": [\n              \"its second model, an SUV, is scheduled to hit the market in June or July 2025.\"\n            ]\n          },\n          {\n            \"web_id\": \"14\",\n            \"quotes\": [\n              \"7月将正式上市。\"\n            ]\n          },\n          {\n            \"web_id\": \"17\",\n            \"quotes\": [\n              \"小米YU7预计于2025年六七月正式上市\"\n            ]\n          }\n        ],\n        \"evidence_role\": \"直接给出小米官方公布的上市时间窗口（2025年6-7月），解决目标中的发布/上市日期部分。\",\n        \"evidence_type\": \"direct_answer\",\n        \"search_goal_id\": \"GOAL_1\"\n      },\n      {\n        \"evidence_id\": \"E3\",\n        \"statement\": \"在官方正式公布前，有媒体报道援引小米内部人士消息称，小米第二款车型（内部代号MX11，纯电SUV）计划于2025年2月或3月上市，上市节奏与SU7一致；该消息未获小米官方确认。\",\n        \"quotes\": [\n          {\n            \"web_id\": \"1\",\n            \"quotes\": [\n              \"小米第二款车型计划于明年2、3月上市,小米第二款新车的上市安排将与此前SU7上市节奏一致。\"\n            ]\n          },\n          {\n            \"web_id\": \"3\",\n            \"quotes\": [\n              \"小米的第二款车型计划于明年2月或3月上市\",\n              \"可以确定的是,小米汽车的第二款车型是一款纯电SUV,代号为MX11\"\n            ]\n          },\n          {\n            \"web_id\": \"18\",\n            \"quotes\": [\n              \"小米汽车计划在2025年一季度推出其第二款车型\",\n              \"据了解,小米汽车的第二款车型为纯电SUV,代号为MX11\"\n            ]\n          },\n          {\n            \"web_id\": \"19\",\n            \"quotes\": [\n              \"小米第二款车型计划于明年2、3月上市\"\n            ]\n          }\n        ],\n        \"evidence_role\": \"记录官方公布前媒体援引内部人士的上市时间说法，与官方时间形成对照，用于识别时间口径冲突。\",\n        \"evidence_type\": \"counter_evidence\",\n        \"search_goal_id\": \"GOAL_1\"\n      }\n    ],\n    \"conflicts\": [\n      {\n        \"conflict_id\": \"C1\",\n        \"conflict_object\": \"小米第二款车型（小米YU7）的上市时间口径冲突：小米官方公布预计2025年6-7月上市，而此前媒体报道的内部消息称计划2025年2-3月上市。\",\n        \"conflict_evidence_ids\": [\n          \"E2\",\n          \"E3\"\n        ],\n        \"search_goal_id\": \"GOAL_1\"\n      }\n    ]\n  }\n]\n</current_turn_info>\n\n<task>\n请更新 current_turn_info 中涉及的搜索目标状态，再判断原始问题是否已闭环：若已闭环输出 STOP；否则针对关键缺口规划下一轮动作。\nsupporting_evidence_ids 和 conflicting_evidence_ids 只能填写上下文中存在的 E 开头 evidence_id；VERIFY_CONFLICT.target_conflict_id 只能填写 C 开头 conflict_id。\n只输出 current_turn_info 中本轮涉及目标的 search_state_updates，不要重复更新其他历史目标。\nsearch_state_updates 不得输出 depends_on_goal_ids；目标依赖关系由编排器维护，状态判定时不可修改。\n\n# 请严格按照以下格式输出\n## JSON 输出硬约束\n1. 只输出一个可被标准 JSON 解析器直接解析的 JSON 对象；不要 Markdown 代码块、注释、解释性前后缀或尾随逗号。\n2. 所有 key 和字符串必须使用双引号；空值使用 null，不得使用 None、单引号或 NaN。\n3. 顶层必须同时包含 search_state_updates 和 next_turn_search_actions；两者不得改名、缺失或额外嵌套。\n4. search_state_updates 必须是对象数组；next_turn_search_actions 必须是对象，其中 search_actions 必须是非空对象数组。\n\n### 信息未闭环时的输出格式\n{\n  \"search_state_updates\": [{\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"原搜索目标\",\n    \"status\": \"OPEN|CLOSED|CLOSED_BY_REFUTED|UNRESOLVED|SUPERSEDED|DROPPED\",\n    \"status_reason\": \"状态原因\",\n    \"answer\": \"当前直接答案；OPEN 时可为部分答案\",\n    \"supported_statement\": \"证据支持的归一化事实\",\n    \"supporting_evidence_ids\": [\"E1\"],\n    \"conflict_summary\": \"未解决且影响答案的冲突\",\n    \"conflicting_evidence_ids\": [\"E2\"],\n    \"evidence_gap\": \"距离闭环还缺少什么\"\n  }],\n  \"next_turn_search_actions\": {\n    \"action_reason\": \"下一轮整体规划理由\",\n    \"search_actions\": [{\n      \"search_action\": \"CONTINUE_SEARCH\",\n      \"action_reason\": \"为什么需要继续搜索\",\n      \"target_goal_id\": \"GOAL_1\",\n      \"search_queries\": [\"query 1\", \"query 2\"]\n    }]\n  }\n}\n\n### 信息已经闭环时的输出格式\n{\n  \"search_state_updates\": [{\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"原搜索目标\",\n    \"status\": \"CLOSED\",\n    \"status_reason\": \"已有充分证据且不存在阻塞冲突\",\n    \"answer\": \"当前直接答案\",\n    \"supported_statement\": \"证据支持的归一化事实\",\n    \"supporting_evidence_ids\": [\"E1\"],\n    \"conflict_summary\": \"\",\n    \"conflicting_evidence_ids\": [],\n    \"evidence_gap\": \"\"\n  }],\n  \"next_turn_search_actions\": {\n    \"action_reason\": \"所有回答原始问题所必需的目标均已闭环\",\n    \"search_actions\": [{\n      \"search_action\": \"STOP\",\n      \"action_reason\": \"所有必要目标均已闭环\"\n    }]\n  }\n}\n</task>"
+            }
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": "SUCCEEDED"
+            }
+          ],
+          "attempt": 1,
+          "attempt_count": 1,
+          "status": "SUCCEEDED",
+          "response": {
+            "search_state_updates": [
+              {
+                "search_goal_id": "GOAL_1",
+                "search_goal": "确定小米第二款车的车型名称及官方发布/上市日期",
+                "status": "CLOSED",
+                "status_reason": "已有官方证据确定第二款车为小米YU7（纯电SUV），并公布官方预计上市时间为2025年6-7月；虽然存在此前内部消息的上市时间差异，但不是官方口径，且不影响官方结论。",
+                "answer": "小米第二款车为小米YU7，纯电动SUV，官方预计2025年6-7月正式上市。",
+                "supported_statement": "小米汽车官方公布，第二款车型为纯电动SUV“小米YU7”，预计于2025年6-7月正式上市。",
+                "supporting_evidence_ids": [
+                  "E1",
+                  "E2"
+                ],
+                "conflict_summary": "官方公布前媒体援引内部人士称2025年2-3月上市，但未获官方确认；官方公告口径为2025年6-7月，因此该冲突不阻塞结论。",
+                "conflicting_evidence_ids": [
+                  "E3"
+                ],
+                "evidence_gap": ""
+              }
+            ],
+            "next_turn_search_actions": {
+              "action_reason": "已有证据确定小米第二款车为YU7及官方上市时间窗口为2025年6-7月，但原始问题还需要进一步定位上市后的下一场大型车展及该车展上竞品发布的新车。",
+              "search_actions": [
+                {
+                  "search_action": "EXPAND_GOAL",
+                  "action_reason": "需要确定小米YU7正式上市/交付后的下一场大型车展，作为竞品发布新车的场景。",
+                  "search_goal_id": "GOAL_2",
+                  "search_goal": "确定小米YU7正式上市/交付后，下一场大型车展（如成都、广州、北京或上海国际车展等）的名称和举办时间",
+                  "search_queries": [
+                    "2025年7月之后 大型车展 2025成都车展 时间",
+                    "2025年下半年 中国 大型车展 时间表",
+                    "2025广州车展 举办时间 11月",
+                    "小米YU7上市后 下一场大型车展"
+                  ]
+                },
+                {
+                  "search_action": "EXPAND_GOAL",
+                  "action_reason": "需要确定在小米YU7上市后的下一场大型车展上，小米直接竞品发布了哪些新车型或重大改款。",
+                  "search_goal_id": "GOAL_3",
+                  "search_goal": "查找在小米YU7上市之后的下一场大型车展上，小米的直接竞品（如特斯拉、理想、蔚来、小鹏、问界、极氪等）发布的新车型或重大改款",
+                  "search_queries": [
+                    "2025成都车展 新车发布 新能源 SUV 特斯拉 理想 问界",
+                    "2025成都车展 竞品 新车 发布会",
+                    "特斯拉 Model Y 改款 成都车展 2025",
+                    "2025成都车展 理想 L6 问界 M8 蔚来 乐道 极氪 新车"
+                  ],
+                  "depends_on_goal_ids": [
+                    "GOAL_2"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  },
+  "answer_agent_handoff": {
+    "user_query": "小米发布第二款车之后的下一个大型车展上，其竞品都发布了什么车？",
+    "run_id": "12685e27289748fbbabf8deb975c8789",
+    "run_status": "FAILED",
+    "stop_reason": "ProtocolError: CLOSED goals cannot have blocking conflicts",
+    "metrics": {
+      "scheme": "scheme_a",
+      "total_turns": 1,
+      "search_turns": 1,
+      "model_call_count": 3,
+      "search_action_count": 1,
+      "search_query_count": 5,
+      "web_result_count": 22,
+      "unique_web_count": 21,
+      "termination_type": "FAILED",
+      "terminated_by_model": false,
+      "reached_max_turns": false,
+      "final_action": "FAILED",
+      "last_model_action": "SEARCH",
+      "started_at": "2026-08-13T16:20:23.833096+00:00",
+      "finished_at": "2026-08-13T16:23:16.727610+00:00",
+      "elapsed_ms": 172894.12
+    },
+    "search_goals": [
+      {
+        "search_goal_id": "GOAL_1",
+        "search_goal": "确定小米第二款车的车型名称及官方发布/上市日期",
+        "status": "OPEN",
+        "status_reason": "",
+        "answer": "",
+        "supported_statement": "",
+        "supporting_evidence_ids": [],
+        "conflict_summary": "",
+        "conflicting_evidence_ids": [],
+        "evidence_gap": "",
+        "depends_on_goal_ids": [],
+        "search_queries": [
+          "小米第二款车 车型 发布 上市 时间",
+          "小米汽车 第二款车 官方发布",
+          "Xiaomi second car model launch date",
+          "小米 YU7 上市时间",
+          "小米第二款车 发布日期 2025 OR 2026"
+        ],
+        "web_ids": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21"
+        ],
+        "evidence_ids": [
+          "E1",
+          "E2",
+          "E3"
+        ],
+        "conflict_ids": [
+          "C1"
+        ],
+        "turn_ids": [
+          1
+        ]
+      }
+    ],
+    "evidences": [
+      {
+        "evidence_id": "E1",
+        "statement": "小米汽车官方于2024年12月9日晚通过官方微博公布，其第二款车型为纯电动SUV，官方定名为“小米YU7”。",
+        "quotes": [
+          {
+            "web_id": "2",
+            "quotes": [
+              "小米汽车 第二款车型为SUV,定名为“小米YU7”"
+            ]
+          },
+          {
+            "web_id": "4",
+            "quotes": [
+              "小米汽车 第二款车型为SUV,定名为“小米YU7”"
+            ]
+          },
+          {
+            "web_id": "10",
+            "quotes": [
+              "O SUV, chamado YU7, será um modelo elétrico"
+            ]
+          },
+          {
+            "web_id": "11",
+            "quotes": [
+              "Xiaomi’s second car will be a pure electric sport utility vehicle"
+            ]
+          },
+          {
+            "web_id": "12",
+            "quotes": [
+              "The SUV, called YU7, will be an electric model, with a 3-meter wheelbase."
+            ]
+          }
+        ],
+        "evidence_role": "直接给出小米第二款车的官方车型名称与类别，解决目标中的车型名称部分，也是进一步核对上市日期的前提。",
+        "evidence_type": "direct_answer",
+        "search_goal_id": "GOAL_1"
+      },
+      {
+        "evidence_id": "E2",
+        "statement": "小米汽车官方公布小米YU7预计于2025年6月至7月正式上市。",
+        "quotes": [
+          {
+            "web_id": "2",
+            "quotes": [
+              "预计2025年6-7月正式上市"
+            ]
+          },
+          {
+            "web_id": "4",
+            "quotes": [
+              "预计2025年6-7月正式上市"
+            ]
+          },
+          {
+            "web_id": "10",
+            "quotes": [
+              "está programado para chegar ao mercado em junho ou julho de 2025"
+            ]
+          },
+          {
+            "web_id": "11",
+            "quotes": [
+              "It will launch in June or July 2025"
+            ]
+          },
+          {
+            "web_id": "12",
+            "quotes": [
+              "its second model, an SUV, is scheduled to hit the market in June or July 2025."
+            ]
+          },
+          {
+            "web_id": "14",
+            "quotes": [
+              "7月将正式上市。"
+            ]
+          },
+          {
+            "web_id": "17",
+            "quotes": [
+              "小米YU7预计于2025年六七月正式上市"
+            ]
+          }
+        ],
+        "evidence_role": "直接给出小米官方公布的上市时间窗口（2025年6-7月），解决目标中的发布/上市日期部分。",
+        "evidence_type": "direct_answer",
+        "search_goal_id": "GOAL_1"
+      },
+      {
+        "evidence_id": "E3",
+        "statement": "在官方正式公布前，有媒体报道援引小米内部人士消息称，小米第二款车型（内部代号MX11，纯电SUV）计划于2025年2月或3月上市，上市节奏与SU7一致；该消息未获小米官方确认。",
+        "quotes": [
+          {
+            "web_id": "1",
+            "quotes": [
+              "小米第二款车型计划于明年2、3月上市,小米第二款新车的上市安排将与此前SU7上市节奏一致。"
+            ]
+          },
+          {
+            "web_id": "3",
+            "quotes": [
+              "小米的第二款车型计划于明年2月或3月上市",
+              "可以确定的是,小米汽车的第二款车型是一款纯电SUV,代号为MX11"
+            ]
+          },
+          {
+            "web_id": "18",
+            "quotes": [
+              "小米汽车计划在2025年一季度推出其第二款车型",
+              "据了解,小米汽车的第二款车型为纯电SUV,代号为MX11"
+            ]
+          },
+          {
+            "web_id": "19",
+            "quotes": [
+              "小米第二款车型计划于明年2、3月上市"
+            ]
+          }
+        ],
+        "evidence_role": "记录官方公布前媒体援引内部人士的上市时间说法，与官方时间形成对照，用于识别时间口径冲突。",
+        "evidence_type": "counter_evidence",
+        "search_goal_id": "GOAL_1"
+      }
+    ],
+    "conflicts": [
+      {
+        "conflict_id": "C1",
+        "conflict_object": "小米第二款车型（小米YU7）的上市时间口径冲突：小米官方公布预计2025年6-7月上市，而此前媒体报道的内部消息称计划2025年2-3月上市。",
+        "conflict_evidence_ids": [
+          "E2",
+          "E3"
+        ],
+        "search_goal_id": "GOAL_1"
+      }
+    ],
+    "webs": [
+      {
+        "url": "https://www.toutiao.com/article/7439997991349518911/",
+        "title": "关注 - 小米第二款车或于2025年一季度上市 - 今日头条",
+        "content": "文:懂车帝原创 尚甜甜[懂车帝原创 行业] 日前,据财经汽车报道,小米汽车内部人士透露:小米第二款车型计划于明年2、3月上市,小米第二款新车的上市安排将与此前SU7上市节奏一致。",
+        "website": "今日头条",
+        "date": "2024-11-22T16:12:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 今日头条｜网页时间: 2024-11-22T16:12:00+08:00｜网页标题: 关注 - 小米第二款车或于2025年一季度上市 - 今日头条｜网页内容：文:懂车帝原创 尚甜甜[懂车帝原创 行业] 日前,据财经汽车报道,小米汽车内部人士透露:小米第二款车型计划于明年2、3月上市,小米第二款新车的上市安排将与此前SU7上市节奏一致。",
+        "source_id": 1,
+        "web_id": "1"
+      },
+      {
+        "url": "https://finance.eastmoney.com/a/202412093263234596.html",
+        "title": "小米汽车“二孩”将明年6月上市 “小米YU7”为SUV车型 _ 东方财富网",
+        "content": "新京报贝壳财经讯(记者陈维城)12月9日晚间,小米汽车官方微博发布动态显示, 小米汽车 第二款车型为SUV,定名为“小米YU7”,预计2025年6-7月正式上市。 小米汽车 官方 微博 内容 新京报 贝壳 财经记者从工信部官网获悉,该车型长4999mm、宽1996mm、 高1600mm,最高车速253km/h;该产品为纯电动车型,宁德时代三元锂离子电池;ABS型号:ESP10,为博世汽车部件(苏州)有限公司生产;驱动电机峰值功率:220kW/288kW。 今年上半年,小米汽车上市交付备受关注。自3月正式上市以来,小米汽车第一款轿车车型 Xiaomi SU7在产能扩张和交付执行上进展飞速。10月,小米汽车工厂单月生产量及新车交付量均破20000辆。11月,Xiaomi SU7提前完成10万台交付目标。2024全年小米汽车将冲刺13万辆交付新目标。 小米集团三季报显示,第三季度,小米智能电动汽车等创新业务收入为97亿元,正逐步向百亿规模逼近,毛利率提升至17.1%。截至2024年9月30日,小米汽车已在中国38个城市开业127家汽车销售门店。 (文章来源:新京报)",
+        "website": "东方财富网财经频道",
+        "date": "2024-12-09T23:16:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 东方财富网财经频道｜网页时间: 2024-12-09T23:16:00+08:00｜网页标题: 小米汽车“二孩”将明年6月上市 “小米YU7”为SUV车型 _ 东方财富网｜网页内容：新京报贝壳财经讯(记者陈维城)12月9日晚间,小米汽车官方微博发布动态显示, 小米汽车 第二款车型为SUV,定名为“小米YU7”,预计2025年6-7月正式上市。 小米汽车 官方 微博 内容 新京报 贝壳 财经记者从工信部官网获悉,该车型长4999mm、宽1996mm、 高1600mm,最高车速253km/h;该产品为纯电动车型,宁德时代三元锂离子电池;ABS型号:ESP10,为博世汽车部件(苏州)有限公司生产;驱动电机峰值功率:220kW/288kW。 今年上半年,小米汽车上市交付备受关注。自3月正式上市以来,小米汽车第一款轿车车型 Xiaomi SU7在产能扩张和交付执行上进展飞速。10月,小米汽车工厂单月生产量及新车交付量均破20000辆。11月,Xiaomi SU7提前完成10万台交付目标。2024全年小米汽车将冲刺13万辆交付新目标。 小米集团三季报显示,第三季度,小米智能电动汽车等创新业务收入为97亿元,正逐步向百亿规模逼近,毛利率提升至17.1%。截至2024年9月30日,小米汽车已在中国38个城市开业127家汽车销售门店。 (文章来源:新京报)",
+        "source_id": 2,
+        "web_id": "2"
+      },
+      {
+        "url": "https://k.sina.com.cn/article_1747383115_6826f34b02001peyw.html?from=auto&subch=oauto",
+        "title": "小米第二款纯电SUV车型或将于明年2、3月上市-新浪汽车",
+        "content": "近日,有媒体报道小米汽车内部人士的透露,称小米的第二款车型计划于明年2月或3月上市。这一消息引起了广泛关注,并引发了业界对小米汽车未来发展的猜测。 此外,另一位消息人士也表示,小米第二款车型的上市节奏将与小米SU7(配置 保持一致。而小米SU7的上市时间恰好是2024年3月28日,这进一步证实了小米第二款车型可能将在相近的时间段内推向市场。 然而,对于上述消息,小米集团相关负责人回应称“相关问题已超纲”,并未给出更多具体回应。这使得小米第二款车型的上市时间仍存在一定的不确定性。 尽管如此,可以确定的是,小米汽车的第二款车型是一款纯电SUV,代号为MX11。这款车型与小米SU7共享平台及部分零部件,但在设计上更具独特性。据媒体报道,小米MX11的车身侧面线条流畅,整体设计充满现代感,预计将在市场上引发一定的关注。 小米汽车作为新能源汽车市场的新势力,其首款车型SU7已经在市场上取得了一定的成绩。此次推出的第二款车型MX11,不仅延续了小米汽车一贯的高品质和创新精神,更在设计上进行了更多的尝试和突破。 随着新能源汽车市场的快速发展和竞争的加剧,小米汽车需要不断创新和提升自身实力,才能在市场上立足。小米MX11的推出,无疑将为小米汽车未来的发展注入新的活力和动力。 虽然目前小米集团相关负责人对于第二款车型的上市时间并未给出明确回应,但我们可以期待小米MX11在未来市场上的表现。同时,也希望小米汽车能够继续秉持创新精神,为消费者带来更多高品质的新能源汽车产品。",
+        "website": "新浪网",
+        "date": "2024-11-22T07:16:32+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 新浪网｜网页时间: 2024-11-22T07:16:32+08:00｜网页标题: 小米第二款纯电SUV车型或将于明年2、3月上市-新浪汽车｜网页内容：近日,有媒体报道小米汽车内部人士的透露,称小米的第二款车型计划于明年2月或3月上市。这一消息引起了广泛关注,并引发了业界对小米汽车未来发展的猜测。 此外,另一位消息人士也表示,小米第二款车型的上市节奏将与小米SU7(配置 保持一致。而小米SU7的上市时间恰好是2024年3月28日,这进一步证实了小米第二款车型可能将在相近的时间段内推向市场。 然而,对于上述消息,小米集团相关负责人回应称“相关问题已超纲”,并未给出更多具体回应。这使得小米第二款车型的上市时间仍存在一定的不确定性。 尽管如此,可以确定的是,小米汽车的第二款车型是一款纯电SUV,代号为MX11。这款车型与小米SU7共享平台及部分零部件,但在设计上更具独特性。据媒体报道,小米MX11的车身侧面线条流畅,整体设计充满现代感,预计将在市场上引发一定的关注。 小米汽车作为新能源汽车市场的新势力,其首款车型SU7已经在市场上取得了一定的成绩。此次推出的第二款车型MX11,不仅延续了小米汽车一贯的高品质和创新精神,更在设计上进行了更多的尝试和突破。 随着新能源汽车市场的快速发展和竞争的加剧,小米汽车需要不断创新和提升自身实力,才能在市场上立足。小米MX11的推出,无疑将为小米汽车未来的发展注入新的活力和动力。 虽然目前小米集团相关负责人对于第二款车型的上市时间并未给出明确回应,但我们可以期待小米MX11在未来市场上的表现。同时,也希望小米汽车能够继续秉持创新精神,为消费者带来更多高品质的新能源汽车产品。",
+        "source_id": 3,
+        "web_id": "3"
+      },
+      {
+        "url": "https://wap.eastmoney.com/a/202412093263234596.html",
+        "title": "小米汽车“二孩”将明年6月上市 “小米YU7”为SUV车型",
+        "content": "炒股第一步,先开个股票账户\n  新京报 贝壳 财经讯(记者陈维城)12月9日晚间, 小米汽车 官方 微博 发布动态显示, 小米汽车 第二款车型为SUV,定名为“小米YU7”,预计2025年6-7月正式上市。\n小米汽车 官方 微博 内容\n  新京报 贝壳 财经记者从工信部官网获悉,该车型长4999mm、宽1996mm、 高1600mm,最高车速253km/h;该产品为纯电动车型, 宁德时代 三元锂离子 电池 ;ABS型号:ESP10,为博世汽车部件(苏州)有限公司生产;驱动 电机 峰值功率:220kW/288kW。\n  今年上半年,小米汽车上市交付备受关注。自3月正式上市以来,小米汽车第一款轿车车型 Xiaomi SU7在产能扩张和交付执行上进展飞速。10月,小米汽车工厂单月生产量及新车交付量均破20000辆。11月,Xiaomi SU7提前完成10万台交付目标。2024全年小米汽车将冲刺13万辆交付新目标。\n  小米集团三季报显示,第三季度,小米智能电动汽车等创新业务收入为97亿元,正逐步向百亿规模逼近,毛利率提升至17.1%。截至2024年9月30日,小米汽车已在中国38个城市开业127家汽车销售门店。",
+        "website": "手机东方财富网",
+        "date": "2024-12-10T07:16:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 手机东方财富网｜网页时间: 2024-12-10T07:16:00+08:00｜网页标题: 小米汽车“二孩”将明年6月上市 “小米YU7”为SUV车型｜网页内容：炒股第一步,先开个股票账户\n  新京报 贝壳 财经讯(记者陈维城)12月9日晚间, 小米汽车 官方 微博 发布动态显示, 小米汽车 第二款车型为SUV,定名为“小米YU7”,预计2025年6-7月正式上市。\n小米汽车 官方 微博 内容\n  新京报 贝壳 财经记者从工信部官网获悉,该车型长4999mm、宽1996mm、 高1600mm,最高车速253km/h;该产品为纯电动车型, 宁德时代 三元锂离子 电池 ;ABS型号:ESP10,为博世汽车部件(苏州)有限公司生产;驱动 电机 峰值功率:220kW/288kW。\n  今年上半年,小米汽车上市交付备受关注。自3月正式上市以来,小米汽车第一款轿车车型 Xiaomi SU7在产能扩张和交付执行上进展飞速。10月,小米汽车工厂单月生产量及新车交付量均破20000辆。11月,Xiaomi SU7提前完成10万台交付目标。2024全年小米汽车将冲刺13万辆交付新目标。\n  小米集团三季报显示,第三季度,小米智能电动汽车等创新业务收入为97亿元,正逐步向百亿规模逼近,毛利率提升至17.1%。截至2024年9月30日,小米汽车已在中国38个城市开业127家汽车销售门店。",
+        "source_id": 4,
+        "web_id": "4"
+      },
+      {
+        "url": "https://chd.in-en.com/html/chd-2441580.shtml",
+        "title": "第二款小米汽车被曝光-新势力造车-新能源汽车--国际充换电网",
+        "content": "国际能源网获悉,2024年3月28日,小米汽车已经正式上线。同时,小米SU7的正式发布,也标志着小米「人车家全生态」战略正从“完整闭环”迈向“全面开启”的新阶段。据悉,在小米SU7正式发布后,网上就又传出了有关第二款小米汽车的消息。有汽车博主在社交媒体晒出了一张图片,其中明确显示小米的第二款车型可能为豪华中大型SUV,并且大概率为增程车型,对标理想旗舰L9。值得一提的是,雷军也对第二款车型信心满满。事实上,以小米的体量和目前小米SU7所取得的成绩来看,小米汽车正在筹备第二款车型具有很大的真实性。",
+        "website": "国际充换电网",
+        "date": "2024-03-29T00:00:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 国际充换电网｜网页时间: 2024-03-29T00:00:00+08:00｜网页标题: 第二款小米汽车被曝光-新势力造车-新能源汽车--国际充换电网｜网页内容：国际能源网获悉,2024年3月28日,小米汽车已经正式上线。同时,小米SU7的正式发布,也标志着小米「人车家全生态」战略正从“完整闭环”迈向“全面开启”的新阶段。据悉,在小米SU7正式发布后,网上就又传出了有关第二款小米汽车的消息。有汽车博主在社交媒体晒出了一张图片,其中明确显示小米的第二款车型可能为豪华中大型SUV,并且大概率为增程车型,对标理想旗舰L9。值得一提的是,雷军也对第二款车型信心满满。事实上,以小米的体量和目前小米SU7所取得的成绩来看,小米汽车正在筹备第二款车型具有很大的真实性。",
+        "source_id": 1,
+        "web_id": "5"
+      },
+      {
+        "url": "https://www.toutiao.com/article/7355812694978560523/",
+        "title": "小米汽车再度掀起风浪:第二款新车曝光! - 今日头条",
+        "content": "近日,小米汽车再度成为众人瞩目的焦点,因其第二款新车的曝光而引发了广泛关注。据悉,一辆疑似真车的中大型SUV现身小米门店,其引人注目的外观和神秘的身份令人猜测不已。 仅在上月底,小米汽车首款新车「小米SU7」正式发布,便以惊艳的外观设计、强劲的配置堆料以及亲民的起售价21.59万元,赢得了众多消费者的青睐。其销售成绩更是喜人,短短72小时内便超过了10万台的大定,锁单数量更是超过了4万台,可谓一鸣惊人。 然而,就在大家对首款车型津津乐道之际,小米第二款新车的消息突然传来,令人眼前一亮。有网友在小米门店发现了一辆神秘的伪装车,经过拍照后发布在社交平台上。从照片上可以看出,这款车型是一款中大型SUV,车身大小与问界M7相近,外观线条简洁大气,散发着浓厚的科技感。 对于这款神秘的新车,网友们纷纷猜测其可能是小米汽车的第二款产品。虽然目前尚未有官方的信息发布,但从曝光的照片来看,这款车型已经引起了广泛的关注和热议。人们对于小米汽车的下一步动向充满了期待,希望它能够延续首款车型的成功,并为消费者带来更多惊喜和选择。 总的来说,小米汽车作为一家新兴的汽车制造商,凭借其独特的视角和技术实力,正在逐步打造出一系列备受瞩目的产品。相信随着第二款新车的正式发布,小米汽车将会在市场上掀起新的一波热潮,为消费者带来更多的选择和体验。让我们拭目以待,期待小米汽车的下一个传奇!",
+        "website": "今日头条",
+        "date": "2024-04-09T18:31:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 今日头条｜网页时间: 2024-04-09T18:31:00+08:00｜网页标题: 小米汽车再度掀起风浪:第二款新车曝光! - 今日头条｜网页内容：近日,小米汽车再度成为众人瞩目的焦点,因其第二款新车的曝光而引发了广泛关注。据悉,一辆疑似真车的中大型SUV现身小米门店,其引人注目的外观和神秘的身份令人猜测不已。 仅在上月底,小米汽车首款新车「小米SU7」正式发布,便以惊艳的外观设计、强劲的配置堆料以及亲民的起售价21.59万元,赢得了众多消费者的青睐。其销售成绩更是喜人,短短72小时内便超过了10万台的大定,锁单数量更是超过了4万台,可谓一鸣惊人。 然而,就在大家对首款车型津津乐道之际,小米第二款新车的消息突然传来,令人眼前一亮。有网友在小米门店发现了一辆神秘的伪装车,经过拍照后发布在社交平台上。从照片上可以看出,这款车型是一款中大型SUV,车身大小与问界M7相近,外观线条简洁大气,散发着浓厚的科技感。 对于这款神秘的新车,网友们纷纷猜测其可能是小米汽车的第二款产品。虽然目前尚未有官方的信息发布,但从曝光的照片来看,这款车型已经引起了广泛的关注和热议。人们对于小米汽车的下一步动向充满了期待,希望它能够延续首款车型的成功,并为消费者带来更多惊喜和选择。 总的来说,小米汽车作为一家新兴的汽车制造商,凭借其独特的视角和技术实力,正在逐步打造出一系列备受瞩目的产品。相信随着第二款新车的正式发布,小米汽车将会在市场上掀起新的一波热潮,为消费者带来更多的选择和体验。让我们拭目以待,期待小米汽车的下一个传奇!",
+        "source_id": 2,
+        "web_id": "6"
+      },
+      {
+        "url": "https://www.toutiao.com/article/7301673389268517430/",
+        "title": "小米汽车揭开面纱 - 今日头条",
+        "content": "备受外界关注和期待的小米汽车,正式公布。 15日,工信部网站发布第377批《道路机动车辆生产企业及产品公告》,公布了小米汽车的两款新车信息。新车为纯电动轿车,商标名为“小米牌”,车尾logo显示为“xiaomi”,左下方标识为“北京小米”,",
+        "website": "今日头条",
+        "date": "2023-11-15T21:02:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 今日头条｜网页时间: 2023-11-15T21:02:00+08:00｜网页标题: 小米汽车揭开面纱 - 今日头条｜网页内容：备受外界关注和期待的小米汽车,正式公布。 15日,工信部网站发布第377批《道路机动车辆生产企业及产品公告》,公布了小米汽车的两款新车信息。新车为纯电动轿车,商标名为“小米牌”,车尾logo显示为“xiaomi”,左下方标识为“北京小米”,",
+        "source_id": 3,
+        "web_id": "7"
+      },
+      {
+        "url": "https://nev.ofweek.com/recommendfriends-30693689.html",
+        "title": "推荐给朋友: 雷军再出一张牌,小米汽车第二品牌官宣 - OFweek新能源汽车网",
+        "content": "维科网新能源汽车消息,今天(7月8日)早上7点30分,小米汽车官方账号发了一条简短的动态,配文“SkyNomad。天空,游牧者。一个关于空间和生活的新名字。”\n就这么一句话,正式宣告了小米汽车全新品牌",
+        "website": "OFweek新能源汽车网",
+        "date": "2025-07-16T00:00:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: OFweek新能源汽车网｜网页时间: 2025-07-16T00:00:00+08:00｜网页标题: 推荐给朋友: 雷军再出一张牌,小米汽车第二品牌官宣 - OFweek新能源汽车网｜网页内容：维科网新能源汽车消息,今天(7月8日)早上7点30分,小米汽车官方账号发了一条简短的动态,配文“SkyNomad。天空,游牧者。一个关于空间和生活的新名字。”\n就这么一句话,正式宣告了小米汽车全新品牌",
+        "source_id": 4,
+        "web_id": "8"
+      },
+      {
+        "url": "http://news.ppzw.com/Article_Print_243464.html",
+        "title": "小米第二家汽车公司来了",
+        "content": "740)this.width=740>\n图片来源:视觉中国\n11月19日,据天眼查App显示,小米汽车科技有限公司于11月18日成立,法定代表人为雷军,是小米宣布造车后成立的第二家汽车公司。\n该公司注册资本10亿元,注册地为北京,经营范围包括新能源车整车制造、汽车整车及零部件的技术研发等,由小米科技有限责任公司100%控股。后者由雷军、黎万强、洪峰、刘德四位小米重要人物联合控股,为小米系投资的主要主体之一,其中雷军占据77.8%股份,为第一大股东兼董事长。\n距离第一家小米汽车公司成立还没有过去太久。在三月底正式宣布造车后,9月1日,雷军在微博发布小米汽车正式注册的消息,公司名为小米汽车有限公司,注册资金100亿元,法人代表由雷军担任,小米通讯技术有限公司对其全资持股。\n不过,10月15日,该公司持股信息发生变更,全资股东为一家注册于香港地区的公司Xiaomi EV Limited。\n10月19日,雷军再次公开表示,小米造车目前的各项进展快于他的预期,预计2024年上半年正式量产——这与当初“三年见到小米第一台车”的言论大体一致。\n团队素来是打胜仗的重中之重,小米正在紧锣密鼓筹备当中。\n从内部来看,小米汽车注册成立当天,雷军晒出团队合影,包括他、CFO林世伟、联合创始人刘德、集团总裁王翔、联合创始人洪峰、SVP卢伟冰在内共有17人,无一不是在小米过去业务中担任重要角色的骨干,但其中仅有一位原宝马集团资深设计师具有真正的汽车行业背景。\n小米在外的“招兵买马”也在如火如荼进行中,除了雷军在微博亲自发招聘广告,为小米汽车自动驾驶部门招募自研L4级别智能驾驶能力的500名技术人员外,多个招聘平台及小米官网都可以看到小米对集结造车人才的迫切。\n据虎嗅报道,小米造车曾显现出2万人竞争300余个岗位的激烈场面,在讨论之中,传统汽车品牌技术口的研发骨干和自动驾驶领域技术方案的供应商最有意向加",
+        "website": "news.ppzw.com",
+        "date": "2025-02-07T21:10:39+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: news.ppzw.com｜网页时间: 2025-02-07T21:10:39+08:00｜网页标题: 小米第二家汽车公司来了｜网页内容：740)this.width=740>\n图片来源:视觉中国\n11月19日,据天眼查App显示,小米汽车科技有限公司于11月18日成立,法定代表人为雷军,是小米宣布造车后成立的第二家汽车公司。\n该公司注册资本10亿元,注册地为北京,经营范围包括新能源车整车制造、汽车整车及零部件的技术研发等,由小米科技有限责任公司100%控股。后者由雷军、黎万强、洪峰、刘德四位小米重要人物联合控股,为小米系投资的主要主体之一,其中雷军占据77.8%股份,为第一大股东兼董事长。\n距离第一家小米汽车公司成立还没有过去太久。在三月底正式宣布造车后,9月1日,雷军在微博发布小米汽车正式注册的消息,公司名为小米汽车有限公司,注册资金100亿元,法人代表由雷军担任,小米通讯技术有限公司对其全资持股。\n不过,10月15日,该公司持股信息发生变更,全资股东为一家注册于香港地区的公司Xiaomi EV Limited。\n10月19日,雷军再次公开表示,小米造车目前的各项进展快于他的预期,预计2024年上半年正式量产——这与当初“三年见到小米第一台车”的言论大体一致。\n团队素来是打胜仗的重中之重,小米正在紧锣密鼓筹备当中。\n从内部来看,小米汽车注册成立当天,雷军晒出团队合影,包括他、CFO林世伟、联合创始人刘德、集团总裁王翔、联合创始人洪峰、SVP卢伟冰在内共有17人,无一不是在小米过去业务中担任重要角色的骨干,但其中仅有一位原宝马集团资深设计师具有真正的汽车行业背景。\n小米在外的“招兵买马”也在如火如荼进行中,除了雷军在微博亲自发招聘广告,为小米汽车自动驾驶部门招募自研L4级别智能驾驶能力的500名技术人员外,多个招聘平台及小米官网都可以看到小米对集结造车人才的迫切。\n据虎嗅报道,小米造车曾显现出2万人竞争300余个岗位的激烈场面,在讨论之中,传统汽车品牌技术口的研发骨干和自动驾驶领域技术方案的供应商最有意向加",
+        "source_id": 5,
+        "web_id": "9"
+      },
+      {
+        "url": "http://portuguese.people.com.cn/n3/2024/1211/c309810-20252553.html",
+        "title": "Xiaomi lançará SUV em meados de 2025",
+        "content": "Xiaomi\nlançará\nSUV\nem\nmeados\nde\n2025\nA\nfabricante\nchinesa\nde\ncelulares\nXiaomi\nanunciou\nna\nnoite\nde\nsegunda-feira\n(9)\nque\nseu\nsegundo\nmodelo,\num\nSUV,\nestá\nprogramado\npara\nchegar\nao\nmercado\nem\njunho\nou\njulho\nde\n2025.\nO\nSUV,\nchamado\nYU7,\nserá\num\nmodelo\nelétrico,\ncom\ndistância\nentre\neixos\nde\n3\nmetros.\nEle\nmede\n4.999mm\nde\ncomprimento,\n1.996mm\nde\nlargura\ne\n1.600mm\nde\naltura,\nsegundo\ninformações\ndo\nMinistério\nda\nIndústria\ne\nTecnologia\nda\nInformação\n(MIIT)\nda\nChina.\nA\nXiaomi\nnão\ndeu\numa\nfaixa\nde\npreço\nnem\nrevelou\nos\nrivais\ndo\nYU7.\nRelatórios\nchineses\nsugeriram\nque\nele\npode\ncompetir\ncom\no\nModel\nY\nda\nTesla,\nque\né\num\ndos\nmodelos\nmais\npopulares\ndo\nsegmento.\nA\nXiaomi\nlançou\nseu\nprimeiro\nmodelo,\no\nSU7,\nno\nfinal\nde\nmarço\ndeste\nano.\nO\nsedã\nelétrico,\nque\nlembra\no\nTaycan\nda\nPorsche,\ntem\nsido\npopular,\ncom\ns",
+        "website": "人民网",
+        "date": "2024-12-11T00:00:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 人民网｜网页时间: 2024-12-11T00:00:00+08:00｜网页标题: Xiaomi lançará SUV em meados de 2025｜网页内容：Xiaomi\nlançará\nSUV\nem\nmeados\nde\n2025\nA\nfabricante\nchinesa\nde\ncelulares\nXiaomi\nanunciou\nna\nnoite\nde\nsegunda-feira\n(9)\nque\nseu\nsegundo\nmodelo,\num\nSUV,\nestá\nprogramado\npara\nchegar\nao\nmercado\nem\njunho\nou\njulho\nde\n2025.\nO\nSUV,\nchamado\nYU7,\nserá\num\nmodelo\nelétrico,\ncom\ndistância\nentre\neixos\nde\n3\nmetros.\nEle\nmede\n4.999mm\nde\ncomprimento,\n1.996mm\nde\nlargura\ne\n1.600mm\nde\naltura,\nsegundo\ninformações\ndo\nMinistério\nda\nIndústria\ne\nTecnologia\nda\nInformação\n(MIIT)\nda\nChina.\nA\nXiaomi\nnão\ndeu\numa\nfaixa\nde\npreço\nnem\nrevelou\nos\nrivais\ndo\nYU7.\nRelatórios\nchineses\nsugeriram\nque\nele\npode\ncompetir\ncom\no\nModel\nY\nda\nTesla,\nque\né\num\ndos\nmodelos\nmais\npopulares\ndo\nsegmento.\nA\nXiaomi\nlançou\nseu\nprimeiro\nmodelo,\no\nSU7,\nno\nfinal\nde\nmarço\ndeste\nano.\nO\nsedã\nelétrico,\nque\nlembra\no\nTaycan\nda\nPorsche,\ntem\nsido\npopular,\ncom\ns",
+        "source_id": 1,
+        "web_id": "10"
+      },
+      {
+        "url": "https://www.yicaiglobal.com/news/xiaomi-to-launch-new-pure-electric-suv-model-in-mid-2025",
+        "title": "Xiaomi to Launch Pure Electric SUV in Mid-2025",
+        "content": "(Yicai)\nDec.\n10\n--\nXiaomi’s\nsecond\ncar\nwill\nbe\na\npure\nelectric\nsport\nutility\nvehicle,\naccording\nto\nthe\nwebsite\nof\nChina’s\nindustry\nministry,\nwhile\nthe\nelectronics\ngiant’s\nchairman\nsaid\nthe\ncar\nwill\nlaunch\naround\nthe\nmiddle\nof\nnext\nyear.The\nforthcoming\nXiaomi\nYU7\nresembles\nthe\nFerrari\nPurosangue,\ninformation\non\nthe\nministry's\nwebsite\nshowed\nyesterday.\nIt\nwill\nlaunch\nin\nJune\nor\nJuly\n2025,\nLei\nJun,\nwho\nis\nalso\nthe\nBeijing-based\nXiaomi’s\nchief\nexecutive,\nsaid\non\nWeibo\nlater\nthe\nsame\nday.Xiaomi\nAuto's\nfirst\nmodel,\nthe\nSU7,\ncompetes\nwith\nTesla's\nModel\n3,\nwhile\nthe\nYU7\nwill\ntake\non\nthe\nUS\nautomaker's\nModel\nY,\none\nof\nthe\nmost\npopular\nelectric\nSUVs\nin\nthe\nmarket,\naccording\nto\nindustry\ninsiders.The\nYU7\nwill\nuse\na\nternary\nlithium-ion\nbattery\nproduced\nby\nJiangsu\nContemporary\nAmperex\nTechnology,\na\nunit",
+        "website": "www.yicaiglobal.com",
+        "date": "2026-05-27T16:10:32+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: www.yicaiglobal.com｜网页时间: 2026-05-27T16:10:32+08:00｜网页标题: Xiaomi to Launch Pure Electric SUV in Mid-2025｜网页内容：(Yicai)\nDec.\n10\n--\nXiaomi’s\nsecond\ncar\nwill\nbe\na\npure\nelectric\nsport\nutility\nvehicle,\naccording\nto\nthe\nwebsite\nof\nChina’s\nindustry\nministry,\nwhile\nthe\nelectronics\ngiant’s\nchairman\nsaid\nthe\ncar\nwill\nlaunch\naround\nthe\nmiddle\nof\nnext\nyear.The\nforthcoming\nXiaomi\nYU7\nresembles\nthe\nFerrari\nPurosangue,\ninformation\non\nthe\nministry's\nwebsite\nshowed\nyesterday.\nIt\nwill\nlaunch\nin\nJune\nor\nJuly\n2025,\nLei\nJun,\nwho\nis\nalso\nthe\nBeijing-based\nXiaomi’s\nchief\nexecutive,\nsaid\non\nWeibo\nlater\nthe\nsame\nday.Xiaomi\nAuto's\nfirst\nmodel,\nthe\nSU7,\ncompetes\nwith\nTesla's\nModel\n3,\nwhile\nthe\nYU7\nwill\ntake\non\nthe\nUS\nautomaker's\nModel\nY,\none\nof\nthe\nmost\npopular\nelectric\nSUVs\nin\nthe\nmarket,\naccording\nto\nindustry\ninsiders.The\nYU7\nwill\nuse\na\nternary\nlithium-ion\nbattery\nproduced\nby\nJiangsu\nContemporary\nAmperex\nTechnology,\na\nunit",
+        "source_id": 2,
+        "web_id": "11"
+      },
+      {
+        "url": "http://www.ecns.cn/business/2024-12-10/detail-ihekuwsr0212053.shtml",
+        "title": "Xiaomi to launch SUV in mid-2025",
+        "content": "Chinese phone maker Xiaomi announced late Monday that its second model, an SUV, is scheduled to hit the market in June or July 2025. The SUV, called YU7, will be an electric model, with a 3-meter wheelbase. It measures 4,999 mm in length, 1,996 mm in width and 1,600 mm in height, according to information from the Ministry of Industry and Information Technology. Xiaomi did not give a price range nor did it reveal the YU7's rivals. Chinese reports said it might take on Tesla's Model Y, which is one of the most popular models in the segment. Xiaomi launched its first model, the SU7, in late March this year. The electric sedan, which resembles Porsche's Taycan, has been popular, with its sales exceeding 20,000 units in November. The phone maker said it is confident that the SU7's cumulative sa",
+        "website": "Ecns.cn",
+        "date": "2024-12-10T16:53:33+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: Ecns.cn｜网页时间: 2024-12-10T16:53:33+08:00｜网页标题: Xiaomi to launch SUV in mid-2025｜网页内容：Chinese phone maker Xiaomi announced late Monday that its second model, an SUV, is scheduled to hit the market in June or July 2025. The SUV, called YU7, will be an electric model, with a 3-meter wheelbase. It measures 4,999 mm in length, 1,996 mm in width and 1,600 mm in height, according to information from the Ministry of Industry and Information Technology. Xiaomi did not give a price range nor did it reveal the YU7's rivals. Chinese reports said it might take on Tesla's Model Y, which is one of the most popular models in the segment. Xiaomi launched its first model, the SU7, in late March this year. The electric sedan, which resembles Porsche's Taycan, has been popular, with its sales exceeding 20,000 units in November. The phone maker said it is confident that the SU7's cumulative sa",
+        "source_id": 3,
+        "web_id": "12"
+      },
+      {
+        "url": "https://www.sohu.com/a/834839407_121798711",
+        "title": "小米YU7路测启动,六七月上市将引发行业关注_智能_技术_产品",
+        "content": "12月10日,小米创办人兼CEO雷军在微博上宣布,小米YU7正在进行大规模路测,预计将在2024年六七月正式上市。这一消息引发了市场的广泛关注,作为小米最新推出的智能设备之一,YU7将承载着小米在智能技术及产品设计上的新思考和探索。 小米YU7是一款集多种先进技术于一体的智能设备,具体的产品功能和规格细节尚未公布,但雷军提到的路测活动已经预示着该产品正在向实用化和市场化迈进。作为小米的一员,YU7可能在智能家居和物联网生态中,将发挥重要作用。而在小米的产品矩阵中,YU7也将与目前市场上的其他智能设备展开竞争,尤其是当今越来越流行的AI技术。 在当今智能设备的市场中,AI技术的应用正成为核心竞争力之一。从语音助手到智能图像识别,AI在提升用户体验方面的贡献不容小觑。小米YU7是否会搭载先进的AI功能,如智能语音识别、场景识别等,将直接影响其市场表现。基于小米在AI领域的深厚积累,许多消费者对YU7将如何整合这些技术充满期待。 随着小米YU7的路测推进,许多技术爱好者国内外均开始讨论这款产品可能的特性和用途。如果YU7具备强大的处理器、高分辨率的显示屏以及出色的摄像头质量,它将在日常使用、游戏及影音娱乐方面带来优秀的表现。想象一下,在日常生活中,用户通过YU7实现高效的家居控制、智能监控,甚至是丰富多彩的移动娱乐体验,这无疑会提升用户的生活质量。 在智能硬件的竞争中,产品的续航能力同样是重要指标。小米以往的产品在续航方面表现不俗,而消费者对于未来展现的YU7期待能够在这一点上继续保持优势。此外,与同类产品的比较也至关重要,通过分析竞争对手的特性与价格策略,小米可塑造出更具市场竞争力的产品。 值得一提的是,除了硬件上的技术提升,小米也积极推动AI技术的应用,最近几年AI绘画、AI写作等相关工具层出不穷。这样的趋势表明,AI不仅在加速设备智能化进程,也为用户提供了更多创作的可能。小",
+        "website": "搜狐",
+        "date": "2024-12-10T11:04:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 搜狐｜网页时间: 2024-12-10T11:04:00+08:00｜网页标题: 小米YU7路测启动,六七月上市将引发行业关注_智能_技术_产品｜网页内容：12月10日,小米创办人兼CEO雷军在微博上宣布,小米YU7正在进行大规模路测,预计将在2024年六七月正式上市。这一消息引发了市场的广泛关注,作为小米最新推出的智能设备之一,YU7将承载着小米在智能技术及产品设计上的新思考和探索。 小米YU7是一款集多种先进技术于一体的智能设备,具体的产品功能和规格细节尚未公布,但雷军提到的路测活动已经预示着该产品正在向实用化和市场化迈进。作为小米的一员,YU7可能在智能家居和物联网生态中,将发挥重要作用。而在小米的产品矩阵中,YU7也将与目前市场上的其他智能设备展开竞争,尤其是当今越来越流行的AI技术。 在当今智能设备的市场中,AI技术的应用正成为核心竞争力之一。从语音助手到智能图像识别,AI在提升用户体验方面的贡献不容小觑。小米YU7是否会搭载先进的AI功能,如智能语音识别、场景识别等,将直接影响其市场表现。基于小米在AI领域的深厚积累,许多消费者对YU7将如何整合这些技术充满期待。 随着小米YU7的路测推进,许多技术爱好者国内外均开始讨论这款产品可能的特性和用途。如果YU7具备强大的处理器、高分辨率的显示屏以及出色的摄像头质量,它将在日常使用、游戏及影音娱乐方面带来优秀的表现。想象一下,在日常生活中,用户通过YU7实现高效的家居控制、智能监控,甚至是丰富多彩的移动娱乐体验,这无疑会提升用户的生活质量。 在智能硬件的竞争中,产品的续航能力同样是重要指标。小米以往的产品在续航方面表现不俗,而消费者对于未来展现的YU7期待能够在这一点上继续保持优势。此外,与同类产品的比较也至关重要,通过分析竞争对手的特性与价格策略,小米可塑造出更具市场竞争力的产品。 值得一提的是,除了硬件上的技术提升,小米也积极推动AI技术的应用,最近几年AI绘画、AI写作等相关工具层出不穷。这样的趋势表明,AI不仅在加速设备智能化进程,也为用户提供了更多创作的可能。小",
+        "source_id": 1,
+        "web_id": "13"
+      },
+      {
+        "url": "https://news.qq.com/rain/a/20250523A07VT000",
+        "title": "7月正式上市,小米YU7正式发布_腾讯新闻",
+        "content": "小米YU7内饰发布,配备Xiaomi\nHyperVision天际屏和升级版辅助驾驶系统,7月将正式上市。",
+        "website": "腾讯网",
+        "date": "2025-05-23T18:02:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 腾讯网｜网页时间: 2025-05-23T18:02:00+08:00｜网页标题: 7月正式上市,小米YU7正式发布_腾讯新闻｜网页内容：小米YU7内饰发布,配备Xiaomi\nHyperVision天际屏和升级版辅助驾驶系统,7月将正式上市。",
+        "source_id": 2,
+        "web_id": "14"
+      },
+      {
+        "url": "https://jingxuan.douyin.com/m/video/7446597919320624434",
+        "title": "小米YU7发布",
+        "content": "小米YU7发布,于2024年12月10日上线。抖音精选为您提供高清视频,画面清晰、播放流畅,看丰富、高质量视频就上抖音精选。",
+        "website": "抖音",
+        "date": "2024-12-10T08:00:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 抖音｜网页时间: 2024-12-10T08:00:00+08:00｜网页标题: 小米YU7发布｜网页内容：小米YU7发布,于2024年12月10日上线。抖音精选为您提供高清视频,画面清晰、播放流畅,看丰富、高质量视频就上抖音精选。",
+        "source_id": 3,
+        "web_id": "15"
+      },
+      {
+        "url": "https://new.qq.com/rain/a/20250523A07VT000",
+        "title": "7月正式上市,小米YU7正式发布",
+        "content": "小米YU7内饰发布,配备Xiaomi HyperVision天际屏和升级版辅助驾驶系统,7月将正式上市。",
+        "website": "腾讯网",
+        "date": "2025-05-23T18:02:28+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 腾讯网｜网页时间: 2025-05-23T18:02:28+08:00｜网页标题: 7月正式上市,小米YU7正式发布｜网页内容：小米YU7内饰发布,配备Xiaomi HyperVision天际屏和升级版辅助驾驶系统,7月将正式上市。",
+        "source_id": 4,
+        "web_id": "16"
+      },
+      {
+        "url": "https://www.toutiao.com/zixun/7534963212819646490/",
+        "title": "小米yo7什么时候上市 - 今日头条",
+        "content": "据小米汽车官微消息,小米YU7预计于2025年六七月正式上市。小米董事长雷军透露,目前该款车型正在进行大规模路测。来源:澎湃财讯(本文来自澎湃新闻,更多原创资讯请下载“澎湃新闻”APP)",
+        "website": "今日头条",
+        "date": "2025-08-05T13:05:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 今日头条｜网页时间: 2025-08-05T13:05:00+08:00｜网页标题: 小米yo7什么时候上市 - 今日头条｜网页内容：据小米汽车官微消息,小米YU7预计于2025年六七月正式上市。小米董事长雷军透露,目前该款车型正在进行大规模路测。来源:澎湃财讯(本文来自澎湃新闻,更多原创资讯请下载“澎湃新闻”APP)",
+        "source_id": 5,
+        "web_id": "17"
+      },
+      {
+        "url": "https://www.autohome.com.cn/ask/12503800.html",
+        "title": "【重磅】小米第二款车或于明年一季度上市,",
+        "content": "据 独家消息 ,小米汽车计划在2025年一季度推出其第二款车型。随着小米首款车型SU7顺利下线并提前完成10万辆新车的生产,第二款新车的上市日期也被提上日程。\n一位内部人士透露,小米第二款车型计划在明年2、3月上市,这与雷军此前表示的“小米SU7 Ultra量产版将于2025年3月正式发布”的信息一致。另一位消息人士也指出,小米第二款新车的上市时间将与SU7保持一致,SU7的上市时间是2024年3月28日。然而,小米集团相关负责人表示,他们无法对这一问题作出更多回应。\n据了解,小米汽车的第二款车型为纯电SUV,代号为MX11。该车将与小米SU7共享平台和部分零部件,但拥有独特的设计和流畅的车身侧面线条。业内猜测,这款新车将直接与特斯拉Model Y竞争。\n小米SU7\n指导价: 21.59-29.99万\n值得一提的是,特斯拉虽然在纯电市场中占有先发优势,但2024年以来也面临着巨大压力。以Model Y为例,2024年前十个月在中国市场的销量为44.8万辆,同比下滑14.9%。这主要是由于价格战和大量新车涌入市场所致。",
+        "website": "汽车之家",
+        "date": "2025-03-02T08:00:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 汽车之家｜网页时间: 2025-03-02T08:00:00+08:00｜网页标题: 【重磅】小米第二款车或于明年一季度上市,｜网页内容：据 独家消息 ,小米汽车计划在2025年一季度推出其第二款车型。随着小米首款车型SU7顺利下线并提前完成10万辆新车的生产,第二款新车的上市日期也被提上日程。\n一位内部人士透露,小米第二款车型计划在明年2、3月上市,这与雷军此前表示的“小米SU7 Ultra量产版将于2025年3月正式发布”的信息一致。另一位消息人士也指出,小米第二款新车的上市时间将与SU7保持一致,SU7的上市时间是2024年3月28日。然而,小米集团相关负责人表示,他们无法对这一问题作出更多回应。\n据了解,小米汽车的第二款车型为纯电SUV,代号为MX11。该车将与小米SU7共享平台和部分零部件,但拥有独特的设计和流畅的车身侧面线条。业内猜测,这款新车将直接与特斯拉Model Y竞争。\n小米SU7\n指导价: 21.59-29.99万\n值得一提的是,特斯拉虽然在纯电市场中占有先发优势,但2024年以来也面临着巨大压力。以Model Y为例,2024年前十个月在中国市场的销量为44.8万辆,同比下滑14.9%。这主要是由于价格战和大量新车涌入市场所致。",
+        "source_id": 1,
+        "web_id": "18"
+      },
+      {
+        "url": "http://tjztwyjc.com/index.php?/appsoft/news/8321881752_20250216?scm=12080",
+        "title": "天美影视传媒有限公司小米第二款车或于2025年一季度上市_天美影视传媒有限公司ZAKER新闻",
+        "content": "小米第二款车或于2025年一季度上市_天美影视传媒有限公司ZAKER新闻\n  <strong><span>要持续紧盯“七个有之”问题</span></strong><span>,把严惩政商勾连腐败作为攻坚战重中之重,严肃查处带有公安特点的行业性、系统性、地域性新型腐败和隐性腐败,</span><strong><span>决不允许腐败在公安机关有藏身之地。</span></strong>\n 定位纯电 SUV,或与小米 SU7 Ultra 量产版同步上市文|宋立伟编辑 | 赵成随着产能爬坡,小米旗下首款车型 SU7 已经提前完成 10 万辆新车的下线,在其冲击全年销量 13 万辆的同时,第二款新车的上市也将排上日程。据小米汽车内部人士透露:\" 小米第二款车型计划于明年 2、3 月上市。\" 这与小米集团创始人、董事长雷军此前透露的 \" 小米 SU7 Ultra 量产版将于 2025 年 3 月正式发布 \" 的信息,在时间上不谋而合。另一位接近小米汽车的消息人士也告诉我们,小米第二款新车的上市安排将与此前 SU7 上市节奏一致。而 SU7 的上市时间恰好是 2024 年 3 月 28 日。不过,小米集团相关负责人对此只表示 \" 相关问题已超纲 \",他无法作出更多回应。可以确定的是,小米汽车的第二款车为纯电 SUV,该车内部代号为 MX11。据媒体报道,这款车将与小米 SU7 共享平台和部分零部件,但拥有独特的设计,车身侧面线条流畅。业界猜测,该车将定位为特斯拉 Model Y 的直接竞争对手。值得一提的是,即便在纯电市场占有先发优势的特斯拉,2024 年以来也倍感压力。以 Model Y 为例,2024 年前十个月,该车在中国累计销量 44.8 万辆,同比下滑 14.9%。究其原因,在于价格战和大量的新车扎堆上市。Model Y 图源:IC据相关机构统计,截至目前,2024 年上市",
+        "website": "tjztwyjc.com",
+        "date": "2025-02-17T10:55:56+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: tjztwyjc.com｜网页时间: 2025-02-17T10:55:56+08:00｜网页标题: 天美影视传媒有限公司小米第二款车或于2025年一季度上市_天美影视传媒有限公司ZAKER新闻｜网页内容：小米第二款车或于2025年一季度上市_天美影视传媒有限公司ZAKER新闻\n  <strong><span>要持续紧盯“七个有之”问题</span></strong><span>,把严惩政商勾连腐败作为攻坚战重中之重,严肃查处带有公安特点的行业性、系统性、地域性新型腐败和隐性腐败,</span><strong><span>决不允许腐败在公安机关有藏身之地。</span></strong>\n 定位纯电 SUV,或与小米 SU7 Ultra 量产版同步上市文|宋立伟编辑 | 赵成随着产能爬坡,小米旗下首款车型 SU7 已经提前完成 10 万辆新车的下线,在其冲击全年销量 13 万辆的同时,第二款新车的上市也将排上日程。据小米汽车内部人士透露:\" 小米第二款车型计划于明年 2、3 月上市。\" 这与小米集团创始人、董事长雷军此前透露的 \" 小米 SU7 Ultra 量产版将于 2025 年 3 月正式发布 \" 的信息,在时间上不谋而合。另一位接近小米汽车的消息人士也告诉我们,小米第二款新车的上市安排将与此前 SU7 上市节奏一致。而 SU7 的上市时间恰好是 2024 年 3 月 28 日。不过,小米集团相关负责人对此只表示 \" 相关问题已超纲 \",他无法作出更多回应。可以确定的是,小米汽车的第二款车为纯电 SUV,该车内部代号为 MX11。据媒体报道,这款车将与小米 SU7 共享平台和部分零部件,但拥有独特的设计,车身侧面线条流畅。业界猜测,该车将定位为特斯拉 Model Y 的直接竞争对手。值得一提的是,即便在纯电市场占有先发优势的特斯拉,2024 年以来也倍感压力。以 Model Y 为例,2024 年前十个月,该车在中国累计销量 44.8 万辆,同比下滑 14.9%。究其原因,在于价格战和大量的新车扎堆上市。Model Y 图源:IC据相关机构统计,截至目前,2024 年上市",
+        "source_id": 2,
+        "web_id": "19"
+      },
+      {
+        "url": "https://www.kotler.com.cn/appsoft/article/53206836?zz20250103VknoH.ppt",
+        "title": "教育焦点-\"&#0;\"-小米第二款车或mofosفىلىم.明年一季度上市_ZAKER新闻",
+        "content": "小米第二款车或mofosفىلىم.明年一季度上市_ZAKER新闻 责任编辑:张熠 据小米汽车内部人士透露:\" 小米第二款车型计划于明年 2、3 月上市。\" 这与小米集团创始人、董事长雷军此前透露的 \" 小米 SU7 Ultra 量产版将于 2025 年3月正式发布 \" 的信息,在时间上不谋而合。另一位接近小米汽车的消息人士也表示,小米第二款新车的上市安排将与此前 SU7 上市节奏一致。而SU7 的上市时间恰好是 2024 年3月28 日。不过,小米集团相关负责人对此只表示 \" 相关问题已超纲 \",他无法作出更多回应。(财经) koa12jJid0DL9adK+CJ1DK2K393LKASDad 编辑:张成基 TOP1热点:车主利好!国内油价或将“四连跌” 公司与海南鑫金仓签署的《广东榕泰实业股份有限公司和萍乡东方金鼎企业咨询中心(有限合伙)关于能通科技股份有限公司之。 (十)依法保护民营企业产权和企业家权益。防止和纠正利用行政或刑事手段干预经济纠纷,以及执法司法中的地方保护主义。进一步规范涉产权强制性措施,避免超权限、超范围、超数额、超时限查封扣押冻结财产。对不宜查封扣押冻结的经营性涉案财物,在保证侦查活动正常进行的同时,可以允许有关当事人继续合理使用,并采取必要的保值保管措施,最大限度减少侦查办案对正常办公和合法生产经营的影响。完善涉企案件申诉、再审等机制,健全冤错案件有效防范和常态化纠正机制。 TOP2热点:北斗系统今后可在全球民航通用 融资融券数据显示该股近3个月融资净流入7224.6万,融资余额增加;融券净流入0.0,融券余额增加。根据近五年财报数据,证券之星估值分析工具显示,华安鑫创(300928)行业内竞争力的护城河较差,盈利能力一般,营收成长性较差。可能有财务风险,存在隐忧的财务指标包括:应收账款/利润率、应收账款/利润率近3年增幅、存货/营收率增幅",
+        "website": "www.kotler.com.cn",
+        "date": "2025-01-06T16:26:02+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: www.kotler.com.cn｜网页时间: 2025-01-06T16:26:02+08:00｜网页标题: 教育焦点-\"&#0;\"-小米第二款车或mofosفىلىم.明年一季度上市_ZAKER新闻｜网页内容：小米第二款车或mofosفىلىم.明年一季度上市_ZAKER新闻 责任编辑:张熠 据小米汽车内部人士透露:\" 小米第二款车型计划于明年 2、3 月上市。\" 这与小米集团创始人、董事长雷军此前透露的 \" 小米 SU7 Ultra 量产版将于 2025 年3月正式发布 \" 的信息,在时间上不谋而合。另一位接近小米汽车的消息人士也表示,小米第二款新车的上市安排将与此前 SU7 上市节奏一致。而SU7 的上市时间恰好是 2024 年3月28 日。不过,小米集团相关负责人对此只表示 \" 相关问题已超纲 \",他无法作出更多回应。(财经) koa12jJid0DL9adK+CJ1DK2K393LKASDad 编辑:张成基 TOP1热点:车主利好!国内油价或将“四连跌” 公司与海南鑫金仓签署的《广东榕泰实业股份有限公司和萍乡东方金鼎企业咨询中心(有限合伙)关于能通科技股份有限公司之。 (十)依法保护民营企业产权和企业家权益。防止和纠正利用行政或刑事手段干预经济纠纷,以及执法司法中的地方保护主义。进一步规范涉产权强制性措施,避免超权限、超范围、超数额、超时限查封扣押冻结财产。对不宜查封扣押冻结的经营性涉案财物,在保证侦查活动正常进行的同时,可以允许有关当事人继续合理使用,并采取必要的保值保管措施,最大限度减少侦查办案对正常办公和合法生产经营的影响。完善涉企案件申诉、再审等机制,健全冤错案件有效防范和常态化纠正机制。 TOP2热点:北斗系统今后可在全球民航通用 融资融券数据显示该股近3个月融资净流入7224.6万,融资余额增加;融券净流入0.0,融券余额增加。根据近五年财报数据,证券之星估值分析工具显示,华安鑫创(300928)行业内竞争力的护城河较差,盈利能力一般,营收成长性较差。可能有财务风险,存在隐忧的财务指标包括:应收账款/利润率、应收账款/利润率近3年增幅、存货/营收率增幅",
+        "source_id": 3,
+        "web_id": "20"
+      },
+      {
+        "url": "http://baa.m.yiche.com/xiaomiSU7/thread-52103668.html",
+        "title": "小米汽车 第一款：SU7，2024年发布，24年量产在售 第二款：YU7，6-7",
+        "content": "小米汽车 第一款:SU7,2024年发布,24年量产在售 第二款:YU7,6-7月份发布,估计等到12月份可以拿到车 第三款:N3-代码,预计在2026年推出,明年增程车圈大地震 第四款:网友图,纯电,   型  ?这   给  字辈,迪字辈留活  啊 。。。",
+        "website": "易车汽车社区",
+        "date": "2025-02-14T02:46:26+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 易车汽车社区｜网页时间: 2025-02-14T02:46:26+08:00｜网页标题: 小米汽车 第一款：SU7，2024年发布，24年量产在售 第二款：YU7，6-7｜网页内容：小米汽车 第一款:SU7,2024年发布,24年量产在售 第二款:YU7,6-7月份发布,估计等到12月份可以拿到车 第三款:N3-代码,预计在2026年推出,明年增程车圈大地震 第四款:网友图,纯电,   型  ?这   给  字辈,迪字辈留活  啊 。。。",
+        "source_id": 4,
+        "web_id": "21"
+      }
+    ]
+  }
+}

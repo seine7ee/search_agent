@@ -1,0 +1,315 @@
+{
+  "evaluations": [
+    {
+      "point_id": "五年范围",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "15",
+          "url": "https://caifuhao.eastmoney.com/news/20240203213617004024600?from=guba&gubaurl=aHR0cDovLzQzLjI1NC4xNDcuODcvbGlzdCx1c2ludGMuaHRtbA==&name=6Iux54m55bCU5ZCn",
+          "domain": "eastmoney.com",
+          "quote": "据TechInsights统计,截至2023年第三季度末,半导体公司之间的并购合同价值为32亿美元,由于此后没有发生大规模并购,因此半导体公司的合同价值为32亿美元。为 2008 年以来的最高水平。目前看来已经有所下降。\n该并购金额包括半导体相关公司的收购、部分业务和产品收购、部分制造工厂收购、IP收购等,并在合同公告时计算,而不是在收购完成时计算。",
+          "supports": "五年范围的局部事实：据TechInsights统计,截至2023年第三季度末,半导体公司之间的并购合同价值为32亿美元,由于此后没有发生大规模并购,因此半导体公司的合同价值为32亿美元。"
+        },
+        {
+          "web_id": "39",
+          "url": "https://news.qq.com/rain/a/20250717A0A7VH00",
+          "domain": "qq.com",
+          "quote": "继北京时间2025年7月14日,中国市场监督管理总局宣布附加限制性条件批准全球EDA及半导体IP大厂新思科技公司(Synopsys)收购工业软件大厂安似科技公司(ANSYS)股权案之后,北京时间7月17日晚间,新思科技(Synopsys)正式宣布,已经完成对Ansys的收购。该交易于2024年1月16日宣布(相关文章《官宣!350亿美元!新思科技收购Ansys!》),根据该收购协议条款,Ansys股东将以每股Ansys股票换取197.00美元现金和0.3450股新思科技普通股,按2023年12月21日新思科技普通股的收盘价(559.96美元/股)计算,该收购总价值约为350亿美元。",
+          "supports": "五年范围的局部事实：该交易于2024年1月16日宣布(相关文章《官宣!350亿美元!新思科技收购Ansys!》),根据该收购协议条款,Ansys股东将以每股Ansys股票换取197.00美元现金和0.3450股新思科技普通股,按2023年12月21日新思科技普通股的收盘价(559.96美元/股)计算,该收购总价值约为350亿美元。"
+        },
+        {
+          "web_id": "80",
+          "url": "https://m.eepw.com.cn/article/202512/477029.html",
+          "domain": "eepw.com.cn",
+          "quote": "半导体和电子设计自动化(EDA)行业在2025年经历了重大整合,主要由向下一代耗电量大的AI数据中心芯片转型推动。Synopsys完成了350亿美元收购Ansys的物理建模交易,特别是芯片组建模,而Marvell则收购了Celestial\nAI,负责芯片间光互连。在年底,英伟达宣布将收购人工智能公司Groq的技术,将本地语言处理带入其图形处理单元(GPU)。最大的一笔交易无疑是Synopsys于7月完成收购Ansys物理建模工具,这一举措曾被英国、欧洲和中国的监管机构拖延超过一年。",
+          "supports": "五年范围的局部事实：最大的一笔交易无疑是Synopsys于7月完成收购Ansys物理建模工具,这一举措曾被英国、欧洲和中国的监管机构拖延超过一年。"
+        }
+      ],
+      "source_domains": [
+        "eastmoney.com",
+        "eepw.com.cn",
+        "qq.com"
+      ],
+      "independent_source_count": 3,
+      "coverage_reason": "部分年度按公告计数，其他采用完成时间，缺统一五年起止。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有3个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需统一窗口和事件纳入口径。"
+      ]
+    },
+    {
+      "point_id": "全球范围",
+      "coverage": "direct",
+      "coverage_score": 2,
+      "support": 3,
+      "evidence": [
+        {
+          "web_id": "5",
+          "url": "https://www.lawback.com/news/newsDetails/479",
+          "domain": "lawback.com",
+          "quote": "期间 4 笔大型交易受关注,包括辉达斥资 400 亿美元收购硅智财权公司 ARM、AMD 以350 亿美元收购 FPGA 龙头赛灵思、Marvell 完成收购 Inphi 的100 亿美元案,以及英特尔宣佈 90 亿美元出售中国 NAND Flash 业务和 12 吋晶圆厂给南韩记忆体大厂 SK 海力士。",
+          "supports": "全球范围的直接事实：期间 4 笔大型交易受关注,包括辉达斥资 400 亿美元收购硅智财权公司 ARM、AMD 以350 亿美元收购 FPGA 龙头赛灵思、Marvell 完成收购 Inphi 的100 亿美元案,以及英特尔宣佈 90 亿美元出售中国 NAND Flash 业务和 12 吋晶圆厂给南韩记忆体大厂 SK 海力士。"
+        },
+        {
+          "web_id": "15",
+          "url": "https://caifuhao.eastmoney.com/news/20240203213617004024600?from=guba&gubaurl=aHR0cDovLzQzLjI1NC4xNDcuODcvbGlzdCx1c2ludGMuaHRtbA==&name=6Iux54m55bCU5ZCn",
+          "domain": "eastmoney.com",
+          "quote": "2023年最大的并购交易是6月将英特尔全资子公司Austrian IMS Nanofabrication 20%的股权出售给美国贝恩资本。9月份向台积电出售该公司10%股份的交易金额排名第四。英特尔于2009年首次投资IMS,并于2015年将其收购,使其成为子公司。IMS是EUV光刻机必不可少的掩膜刻录机制造商,但英特尔已经放弃了其30%的股份。\n第二大并购交易是英飞凌科技公司 (Infineon Technologies) 三月份收购加拿大氮化镓系统公司 (Canadian GaN Systems)。英飞凌还于 10 月份收购了瑞士的 3db Access,该公司生产超宽带 (UWB) 低功耗芯片。",
+          "supports": "全球范围的直接事实：第二大并购交易是英飞凌科技公司 (Infineon Technologies) 三月份收购加拿大氮化镓系统公司 (Canadian GaN Systems)。"
+        },
+        {
+          "web_id": "80",
+          "url": "https://m.eepw.com.cn/article/202512/477029.html",
+          "domain": "eepw.com.cn",
+          "quote": "日本企业集团软银也加大了半导体业务。收购CPU设计商Ampere\nComputing将与Graphcore的AI加速芯片并行,为服务器制造商提供完整的系统,这是Graphcore在其定制POD系统中未能实现的一步。这将与AMD的x86和MI350\nAI显卡,以及Nvidia的Rubin显卡和带NVlink互连的定制Intel\nx86芯片展开竞争。软银还于10月以53.7亿美元收购了瑞士工程公司ABB(ABB)的机器人部门,这一比例略高于其收入的两倍多。",
+          "supports": "全球范围的直接事实：Computing将与Graphcore的AI加速芯片并行,为服务器制造商提供完整的系统,这是Graphcore在其定制POD系统中未能实现的一步。"
+        }
+      ],
+      "source_domains": [
+        "eastmoney.com",
+        "eepw.com.cn",
+        "lawback.com"
+      ],
+      "independent_source_count": 3,
+      "coverage_reason": "中国、韩国、日本、瑞士和加拿大等地域的标的与参与方均明确。",
+      "support_reason": "逐字引文直接支撑该项要求；按主域名和稿件去重后有3个独立来源。",
+      "inference_or_gaps": []
+    },
+    {
+      "point_id": "半导体产业链归属",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "15",
+          "url": "https://caifuhao.eastmoney.com/news/20240203213617004024600?from=guba&gubaurl=aHR0cDovLzQzLjI1NC4xNDcuODcvbGlzdCx1c2ludGMuaHRtbA==&name=6Iux54m55bCU5ZCn",
+          "domain": "eastmoney.com",
+          "quote": "2023年最大的并购交易是6月将英特尔全资子公司Austrian IMS Nanofabrication 20%的股权出售给美国贝恩资本。9月份向台积电出售该公司10%股份的交易金额排名第四。英特尔于2009年首次投资IMS,并于2015年将其收购,使其成为子公司。IMS是EUV光刻机必不可少的掩膜刻录机制造商,但英特尔已经放弃了其30%的股份。\n第二大并购交易是英飞凌科技公司 (Infineon Technologies) 三月份收购加拿大氮化镓系统公司 (Canadian GaN Systems)。英飞凌还于 10 月份收购了瑞士的 3db Access,该公司生产超宽带 (UWB) 低功耗芯片。第三大并购合同是半导体贸易公司Ryoyo Electro和Ryosan的业务整合。",
+          "supports": "半导体产业链归属的局部事实：第二大并购交易是英飞凌科技公司 (Infineon Technologies) 三月份收购加拿大氮化镓系统公司 (Canadian GaN Systems)。"
+        },
+        {
+          "web_id": "80",
+          "url": "https://m.eepw.com.cn/article/202512/477029.html",
+          "domain": "eepw.com.cn",
+          "quote": "Synopsys完成了350亿美元收购Ansys的物理建模交易,特别是芯片组建模,而Marvell则收购了Celestial\nAI,负责芯片间光互连。在年底,英伟达宣布将收购人工智能公司Groq的技术,将本地语言处理带入其图形处理单元(GPU)。最大的一笔交易无疑是Synopsys于7月完成收购Ansys物理建模工具,这一举措曾被英国、欧洲和中国的监管机构拖延超过一年。Keysight\nTechnologies因此成为最大赢家,他们与Ansys的PowerArtist工具和Synopsys的Optical\nSolutions\nGroup竞争。PowerArtist\n用于半导体设计中的早期功耗分析和减小,并且与\nKeysight\nPathWave\n工具套件非常契合。日本企业集团软银也加大了半导体业务。收购CPU设计商Ampere\nComputing将与Graphcore的AI加速芯片并行,为服务器制造商提供完整的系统,这是Graphcore在其定制POD系统中未能实现的一步。这将与AMD的x86和MI350\nAI显卡,以及Nvidia的Rubin显卡和带NVlink互连的定制Intel\nx86芯片展开竞争。软银还于10月以53.7亿美元收购了瑞士工程公司ABB(ABB)的机器人部门,这一比例略高于其收入的两倍多。",
+          "supports": "半导体产业链归属的局部事实：Computing将与Graphcore的AI加速芯片并行,为服务器制造商提供完整的系统,这是Graphcore在其定制POD系统中未能实现的一步。"
+        }
+      ],
+      "source_domains": [
+        "eastmoney.com",
+        "eepw.com.cn"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "芯片、光刻相关设备和EDA用途明确，但盘点也混入机器人业务，全部标的半导体关联未逐项说明。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有2个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补逐标的产业链归属，不能以买方做芯片而自动纳入。"
+      ]
+    },
+    {
+      "point_id": "并购性质",
+      "coverage": "direct",
+      "coverage_score": 2,
+      "support": 3,
+      "evidence": [
+        {
+          "web_id": "39",
+          "url": "https://news.qq.com/rain/a/20250717A0A7VH00",
+          "domain": "qq.com",
+          "quote": "继北京时间2025年7月14日,中国市场监督管理总局宣布附加限制性条件批准全球EDA及半导体IP大厂新思科技公司(Synopsys)收购工业软件大厂安似科技公司(ANSYS)股权案之后,北京时间7月17日晚间,新思科技(Synopsys)正式宣布,已经完成对Ansys的收购。该交易于2024年1月16日宣布(相关文章《官宣!350亿美元!新思科技收购Ansys!》),根据该收购协议条款,Ansys股东将以每股Ansys股票换取197.00美元现金和0.3450股新思科技普通股,按2023年12月21日新思科技普通股的收盘价(559.96美元/股)计算,该收购总价值约为350亿美元。为了完成这笔巨额收购,新思科技计划通过现金和债务融资相结合的方式为190亿美元的现金对价提供资金。",
+          "supports": "并购性质的直接事实：该交易于2024年1月16日宣布(相关文章《官宣!350亿美元!新思科技收购Ansys!》),根据该收购协议条款,Ansys股东将以每股Ansys股票换取197.00美元现金和0.3450股新思科技普通股,按2023年12月21日新思科技普通股的收盘价(559.96美元/股)计算,该收购总价值约为350亿美元。"
+        },
+        {
+          "web_id": "15",
+          "url": "https://caifuhao.eastmoney.com/news/20240203213617004024600?from=guba&gubaurl=aHR0cDovLzQzLjI1NC4xNDcuODcvbGlzdCx1c2ludGMuaHRtbA==&name=6Iux54m55bCU5ZCn",
+          "domain": "eastmoney.com",
+          "quote": "2023年最大的并购交易是6月将英特尔全资子公司Austrian IMS Nanofabrication 20%的股权出售给美国贝恩资本。9月份向台积电出售该公司10%股份的交易金额排名第四。英特尔于2009年首次投资IMS,并于2015年将其收购,使其成为子公司。IMS是EUV光刻机必不可少的掩膜刻录机制造商,但英特尔已经放弃了其30%的股份。",
+          "supports": "并购性质的直接事实：2023年最大的并购交易是6月将英特尔全资子公司Austrian IMS Nanofabrication 20%的股权出售给美国贝恩资本。"
+        },
+        {
+          "web_id": "29",
+          "url": "https://fastonetech.com/newszblog/post/15899.html",
+          "domain": "fastonetech.com",
+          "quote": "” NVIDIA 和SBG 宣布已达成最终协议,根据该协议,NVIDIA 将于 2020 年9 月13 日从软银收购 Arm。根据协议条款,软银将保留 NVIDIA 预付的 12.5 亿美元,其中将在第四季度入账,英伟达将保留其 20 年的 Arm 许可证。",
+          "supports": "并购性质的直接事实：根据协议条款,软银将保留 NVIDIA 预付的 12.5 亿美元,其中将在第四季度入账,英伟达将保留其 20 年的 Arm 许可证。"
+        }
+      ],
+      "source_domains": [
+        "eastmoney.com",
+        "fastonetech.com",
+        "qq.com"
+      ],
+      "independent_source_count": 3,
+      "coverage_reason": "股份对价、股权出售和交易终止安排直接说明对象与权益变化。",
+      "support_reason": "逐字引文直接支撑该项要求；按主域名和稿件去重后有3个独立来源。",
+      "inference_or_gaps": []
+    },
+    {
+      "point_id": "关键交易筛选",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "54",
+          "url": "https://view.inews.qq.com/k/20241231A02D0M00",
+          "domain": "qq.com",
+          "quote": "从2024年电子与半导体行业并购来看,晶圆代工、封装制造占比较大,面板领域并购也较为突出。并购和投资金额以10亿-100亿区间为主,政策的回暖给了企业足够的信心进行投资和并购。今天我们就来具体分析2024年以来,投资金额在10亿以上的8家电子与半导体企业,以便大家对电子与半导体并购重组趋势有足够的跟踪和认识。",
+          "supports": "关键交易筛选的局部事实：今天我们就来具体分析2024年以来,投资金额在10亿以上的8家电子与半导体企业,以便大家对电子与半导体并购重组趋势有足够的跟踪和认识。"
+        },
+        {
+          "web_id": "80",
+          "url": "https://m.eepw.com.cn/article/202512/477029.html",
+          "domain": "eepw.com.cn",
+          "quote": "半导体和电子设计自动化(EDA)行业在2025年经历了重大整合,主要由向下一代耗电量大的AI数据中心芯片转型推动。Synopsys完成了350亿美元收购Ansys的物理建模交易,特别是芯片组建模,而Marvell则收购了Celestial\nAI,负责芯片间光互连。在年底,英伟达宣布将收购人工智能公司Groq的技术,将本地语言处理带入其图形处理单元(GPU)。最大的一笔交易无疑是Synopsys于7月完成收购Ansys物理建模工具,这一举措曾被英国、欧洲和中国的监管机构拖延超过一年。",
+          "supports": "关键交易筛选的局部事实：最大的一笔交易无疑是Synopsys于7月完成收购Ansys物理建模工具,这一举措曾被英国、欧洲和中国的监管机构拖延超过一年。"
+        },
+        {
+          "web_id": "5",
+          "url": "https://www.lawback.com/news/newsDetails/479",
+          "domain": "lawback.com",
+          "quote": "期间 4 笔大型交易受关注,包括辉达斥资 400 亿美元收购硅智财权公司 ARM、AMD 以350 亿美元收购 FPGA 龙头赛灵思、Marvell 完成收购 Inphi 的100 亿美元案,以及英特尔宣佈 90 亿美元出售中国 NAND Flash 业务和 12 吋晶圆厂给南韩记忆体大厂 SK 海力士。",
+          "supports": "关键交易筛选的局部事实：期间 4 笔大型交易受关注,包括辉达斥资 400 亿美元收购硅智财权公司 ARM、AMD 以350 亿美元收购 FPGA 龙头赛灵思、Marvell 完成收购 Inphi 的100 亿美元案,以及英特尔宣佈 90 亿美元出售中国 NAND Flash 业务和 12 吋晶圆厂给南韩记忆体大厂 SK 海力士。"
+        }
+      ],
+      "source_domains": [
+        "eepw.com.cn",
+        "lawback.com",
+        "qq.com"
+      ],
+      "independent_source_count": 3,
+      "coverage_reason": "有金额门槛与产业转型依据，但跨年清单未形成逐笔一致的关键性筛选。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有3个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补每笔入选交易的关键性事实与共同筛选口径。"
+      ]
+    },
+    {
+      "point_id": "交易事实与进度",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "39",
+          "url": "https://news.qq.com/rain/a/20250717A0A7VH00",
+          "domain": "qq.com",
+          "quote": "继北京时间2025年7月14日,中国市场监督管理总局宣布附加限制性条件批准全球EDA及半导体IP大厂新思科技公司(Synopsys)收购工业软件大厂安似科技公司(ANSYS)股权案之后,北京时间7月17日晚间,新思科技(Synopsys)正式宣布,已经完成对Ansys的收购。该交易于2024年1月16日宣布(相关文章《官宣!350亿美元!新思科技收购Ansys!》),根据该收购协议条款,Ansys股东将以每股Ansys股票换取197.00美元现金和0.3450股新思科技普通股,按2023年12月21日新思科技普通股的收盘价(559.96美元/股)计算,该收购总价值约为350亿美元。为了完成这笔巨额收购,新思科技计划通过现金和债务融资相结合的方式为190亿美元的现金对价提供资金。",
+          "supports": "交易事实与进度的局部事实：该交易于2024年1月16日宣布(相关文章《官宣!350亿美元!新思科技收购Ansys!》),根据该收购协议条款,Ansys股东将以每股Ansys股票换取197.00美元现金和0.3450股新思科技普通股,按2023年12月21日新思科技普通股的收盘价(559.96美元/股)计算,该收购总价值约为350亿美元。"
+        },
+        {
+          "web_id": "72",
+          "url": "https://www.mr-wu.cn/news/page/5/",
+          "domain": "mr-wu.cn",
+          "quote": "今日,也即2024年8月1日,瑞萨官方网站发文宣布瑞萨电子成功完成对 Altium 的收购!瑞萨收购 Altium 的协议最初于2024 年 2 月 15 日宣布,期间经过多轮的信息披露和听证会(ht […]",
+          "supports": "交易事实与进度的局部事实：今日,也即2024年8月1日,瑞萨官方网站发文宣布瑞萨电子成功完成对 Altium 的收购!瑞萨收购 Altium 的协议最初于2024 年 2 月 15 日宣布,期间经过多轮的信息披露和听证会(ht […]"
+        },
+        {
+          "web_id": "80",
+          "url": "https://m.eepw.com.cn/article/202512/477029.html",
+          "domain": "eepw.com.cn",
+          "quote": "日本企业集团软银也加大了半导体业务。收购CPU设计商Ampere\nComputing将与Graphcore的AI加速芯片并行,为服务器制造商提供完整的系统,这是Graphcore在其定制POD系统中未能实现的一步。这将与AMD的x86和MI350\nAI显卡,以及Nvidia的Rubin显卡和带NVlink互连的定制Intel\nx86芯片展开竞争。软银还于10月以53.7亿美元收购了瑞士工程公司ABB(ABB)的机器人部门,这一比例略高于其收入的两倍多。",
+          "supports": "交易事实与进度的局部事实：Computing将与Graphcore的AI加速芯片并行,为服务器制造商提供完整的系统,这是Graphcore在其定制POD系统中未能实现的一步。"
+        }
+      ],
+      "source_domains": [
+        "eepw.com.cn",
+        "mr-wu.cn",
+        "qq.com"
+      ],
+      "independent_source_count": 3,
+      "coverage_reason": "新思和瑞萨有完成记录，但较长盘点缺多笔日期与金额口径，不能支持每笔完整事实。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有3个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补其余入选交易的时间、金额或未披露状态及最终进度。"
+      ]
+    },
+    {
+      "point_id": "产业影响及作用机制",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "80",
+          "url": "https://m.eepw.com.cn/article/202512/477029.html",
+          "domain": "eepw.com.cn",
+          "quote": "最大的一笔交易无疑是Synopsys于7月完成收购Ansys物理建模工具,这一举措曾被英国、欧洲和中国的监管机构拖延超过一年。Keysight\nTechnologies因此成为最大赢家,他们与Ansys的PowerArtist工具和Synopsys的Optical\nSolutions\nGroup竞争。PowerArtist\n用于半导体设计中的早期功耗分析和减小,并且与\nKeysight\nPathWave\n工具套件非常契合。日本企业集团软银也加大了半导体业务。收购CPU设计商Ampere\nComputing将与Graphcore的AI加速芯片并行,为服务器制造商提供完整的系统,这是Graphcore在其定制POD系统中未能实现的一步。这将与AMD的x86和MI350\nAI显卡,以及Nvidia的Rubin显卡和带NVlink互连的定制Intel\nx86芯片展开竞争。",
+          "supports": "产业影响及作用机制的局部事实：Computing将与Graphcore的AI加速芯片并行,为服务器制造商提供完整的系统,这是Graphcore在其定制POD系统中未能实现的一步。"
+        },
+        {
+          "web_id": "39",
+          "url": "https://news.qq.com/rain/a/20250717A0A7VH00",
+          "domain": "qq.com",
+          "quote": "此外,为了使得收购Ansys的交易能够获得监管机构的批准,新思科技在2024年5月6日宣布,将打包出售旗下SIG(Software\nIntegrity)业务给私募股权公司Francisco\nPartners及Clearlake\nCapital,交易金额大约在21亿美元左右。随后,在2024年9月19日,新思科技又宣布,已就将其光学解决方案集团(OSG)出售给领先的设计、仿真和测试解决方案提供商是德科技(Keysight\nTechnologies)。另外,根据2025年7月14日,中国市场监督管理总局批准新思科技收购Ansys附加限制性条款,新思科技需要剥离光学解决方案相关业务(即新思科技整个光学和光子器件仿真业务)以及剥离功耗分析软件有关业务(即安似科技功耗分析软件相关的研发、分销、许可、销售等业务)。随着新思科技正式完成对Ansys的收购,前Ansys总裁、首席执行官兼董事会成员Ajei\nGopal和前Ansys董事会成员Ravi\nVijayaraghavan将加入新思科技董事会,立即生效。",
+          "supports": "产业影响及作用机制的局部事实：另外,根据2025年7月14日,中国市场监督管理总局批准新思科技收购Ansys附加限制性条款,新思科技需要剥离光学解决方案相关业务(即新思科技整个光学和光子器件仿真业务)以及剥离功耗分析软件有关业务(即安似科技功耗分析软件相关的研发、分销、许可、销售等业务)。"
+        }
+      ],
+      "source_domains": [
+        "eepw.com.cn",
+        "qq.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "有工具补足、剥离与董事会变化，但未逐笔给出实际产业效果及预期区分。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有2个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补其余交易资源变化和产业结果之间的具体机制。"
+      ]
+    },
+    {
+      "point_id": "影响限制与不利结果",
+      "coverage": "direct",
+      "coverage_score": 2,
+      "support": 3,
+      "evidence": [
+        {
+          "web_id": "29",
+          "url": "https://fastonetech.com/newszblog/post/15899.html",
+          "domain": "fastonetech.com",
+          "quote": "英伟达官宣:终止收购Arm NVIDIA 和SoftBank Group Corp.(“SBG”或“SoftBank”)今天宣布,终止先前宣布的 NVIDIA 将收购来自软银的 Arm Limited的交易。他们表示,尽管双方做出了善意的努力,但由于监管方面的重大挑战阻碍了交易的完成,双方同意终止协议,并且Arm从现在将开始准备公开募股。",
+          "supports": "影响限制与不利结果的直接事实：英伟达官宣:终止收购Arm NVIDIA 和SoftBank Group Corp.(“SBG”或“SoftBank”)今天宣布,终止先前宣布的 NVIDIA 将收购来自软银的 Arm Limited的交易。"
+        },
+        {
+          "web_id": "29",
+          "url": "https://fastonetech.com/newszblog/post/15899.html",
+          "domain": "fastonetech.com",
+          "quote": "” NVIDIA 和SBG 宣布已达成最终协议,根据该协议,NVIDIA 将于 2020 年9 月13 日从软银收购 Arm。根据协议条款,软银将保留 NVIDIA 预付的 12.5 亿美元,其中将在第四季度入账,英伟达将保留其 20 年的 Arm 许可证。",
+          "supports": "影响限制与不利结果的直接事实：根据协议条款,软银将保留 NVIDIA 预付的 12.5 亿美元,其中将在第四季度入账,英伟达将保留其 20 年的 Arm 许可证。"
+        },
+        {
+          "web_id": "39",
+          "url": "https://news.qq.com/rain/a/20250717A0A7VH00",
+          "domain": "qq.com",
+          "quote": "随后,在2024年9月19日,新思科技又宣布,已就将其光学解决方案集团(OSG)出售给领先的设计、仿真和测试解决方案提供商是德科技(Keysight\nTechnologies)。另外,根据2025年7月14日,中国市场监督管理总局批准新思科技收购Ansys附加限制性条款,新思科技需要剥离光学解决方案相关业务(即新思科技整个光学和光子器件仿真业务)以及剥离功耗分析软件有关业务(即安似科技功耗分析软件相关的研发、分销、许可、销售等业务)。",
+          "supports": "影响限制与不利结果的直接事实：另外,根据2025年7月14日,中国市场监督管理总局批准新思科技收购Ansys附加限制性条款,新思科技需要剥离光学解决方案相关业务(即新思科技整个光学和光子器件仿真业务)以及剥离功耗分析软件有关业务(即安似科技功耗分析软件相关的研发、分销、许可、销售等业务)。"
+        }
+      ],
+      "source_domains": [
+        "fastonetech.com",
+        "qq.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "监管阻碍导致Arm交易终止与预付款保留，新思剥离相关业务均有明确事实。",
+      "support_reason": "逐字引文直接支撑该项要求；按主域名和稿件去重后有2个独立来源。",
+      "inference_or_gaps": []
+    }
+  ],
+  "summary": {
+    "point_count": 8,
+    "coverage_counts": {
+      "direct": 3,
+      "inferred": 5,
+      "none": 0
+    },
+    "coverage_total": 11,
+    "coverage_average": 1.38,
+    "coverage_max": 2,
+    "support_total": 14,
+    "support_average": 1.75,
+    "support_max": 3
+  }
+}

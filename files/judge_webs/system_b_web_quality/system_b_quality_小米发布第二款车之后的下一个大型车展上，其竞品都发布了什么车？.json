@@ -1,0 +1,283 @@
+{
+  "evaluations": [
+    {
+      "point_id": "第二款车与发布时间",
+      "coverage": "direct",
+      "coverage_score": 2,
+      "support": 3,
+      "evidence": [
+        {
+          "web_id": "7",
+          "url": "https://finance.eastmoney.com/a/202412093263234596.html",
+          "domain": "eastmoney.com",
+          "quote": "新京报贝壳财经讯(记者陈维城)12月9日晚间,小米汽车官方微博发布动态显示, 小米汽车 第二款车型为SUV,定名为“小米YU7”,预计2025年6-7月正式上市。",
+          "supports": "第二款车与发布时间的直接事实：新京报贝壳财经讯(记者陈维城)12月9日晚间,小米汽车官方微博发布动态显示, 小米汽车 第二款车型为SUV,定名为“小米YU7”,预计2025年6-7月正式上市。"
+        },
+        {
+          "web_id": "10",
+          "url": "https://www.toutiao.com/article/7507265220360978981/",
+          "domain": "toutiao.com",
+          "quote": "5月22日晚,小米集团董事长雷军在小米15周年战略新品发布会上宣布,小米YU7正式发布,定位",
+          "supports": "第二款车与发布时间的直接事实：5月22日晚,小米集团董事长雷军在小米15周年战略新品发布会上宣布,小米YU7正式发布,定位"
+        },
+        {
+          "web_id": "11",
+          "url": "https://smartcar.cnmo.com/news/794033.html",
+          "domain": "cnmo.com",
+          "quote": "【CNMO科技消息】2025年6月26日晚间,经过多轮预热和宣传,小米旗下首款纯电动SUV——小米YU7正式上市。",
+          "supports": "第二款车与发布时间的直接事实：【CNMO科技消息】2025年6月26日晚间,经过多轮预热和宣传,小米旗下首款纯电动SUV——小米YU7正式上市。"
+        }
+      ],
+      "source_domains": [
+        "cnmo.com",
+        "eastmoney.com",
+        "toutiao.com"
+      ],
+      "independent_source_count": 3,
+      "coverage_reason": "第二款车型身份及发布、上市两类事件直接出现，可按车型名关联。",
+      "support_reason": "逐字引文直接支撑该项要求；按主域名和稿件去重后有3个独立来源。",
+      "inference_or_gaps": []
+    },
+    {
+      "point_id": "大型车展范围",
+      "coverage": "direct",
+      "coverage_score": 2,
+      "support": 3,
+      "evidence": [
+        {
+          "web_id": "14",
+          "url": "http://www.chezhanri.com/chengduchezhan",
+          "domain": "chezhanri.com",
+          "quote": "时间: 2025年02月22日-02月23日 地点: 成都深业车城 地点: 中国西部国际博览城 地点: 成都国际商贸城音乐喷泉广场 作为西部地区规模最大规格最高的年度汽车盛会,成都国际汽车展览会在社会各方的鼎力支持下走过了十六个年头。经过近年来的高速发展,成都车展已从国内众多的区域车展中脱颖而出,成为中国四大A级车展之一。",
+          "supports": "大型车展范围的直接事实：时间: 2025年02月22日-02月23日 地点: 成都深业车城 地点: 中国西部国际博览城 地点: 成都国际商贸城音乐喷泉广场 作为西部地区规模最大规格最高的年度汽车盛会,成都国际汽车展览会在社会各方的鼎力支持下走过了十六个年头。"
+        },
+        {
+          "web_id": "24",
+          "url": "https://news.qq.com/rain/a/20250508A0980F00",
+          "domain": "qq.com",
+          "quote": "作为西部地区规模最大、规格最高的年度汽车盛会,自\n1998\n年创办以来,成都车展已成为中国四大\nA\n级车展之一(IT之家注:北京、上海、广州、成都)。",
+          "supports": "大型车展范围的直接事实：级车展之一(IT之家注:北京、上海、广州、成都)。"
+        }
+      ],
+      "source_domains": [
+        "chezhanri.com",
+        "qq.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "车展属性和大型A级认定依据明确，两个来源描述对应范围。",
+      "support_reason": "逐字引文直接支撑该项要求；按主域名和稿件去重后有2个独立来源。",
+      "inference_or_gaps": []
+    },
+    {
+      "point_id": "发布之后",
+      "coverage": "direct",
+      "coverage_score": 2,
+      "support": 3,
+      "evidence": [
+        {
+          "web_id": "10",
+          "url": "https://www.toutiao.com/article/7507265220360978981/",
+          "domain": "toutiao.com",
+          "quote": "5月22日晚,小米集团董事长雷军在小米15周年战略新品发布会上宣布,小米YU7正式发布,定位",
+          "supports": "发布之后的直接事实：5月22日晚,小米集团董事长雷军在小米15周年战略新品发布会上宣布,小米YU7正式发布,定位"
+        },
+        {
+          "web_id": "11",
+          "url": "https://smartcar.cnmo.com/news/794033.html",
+          "domain": "cnmo.com",
+          "quote": "【CNMO科技消息】2025年6月26日晚间,经过多轮预热和宣传,小米旗下首款纯电动SUV——小米YU7正式上市。",
+          "supports": "发布之后的直接事实：【CNMO科技消息】2025年6月26日晚间,经过多轮预热和宣传,小米旗下首款纯电动SUV——小米YU7正式上市。"
+        },
+        {
+          "web_id": "24",
+          "url": "https://news.qq.com/rain/a/20250508A0980F00",
+          "domain": "qq.com",
+          "quote": "IT之家\n5\n月\n8\n日消息,第二十八届成都国际汽车展览会(2025\n成都车展)今日官宣,将于\n8\n月\n29\n日\n-\n9\n月\n7\n日举办。",
+          "supports": "发布之后的直接事实：日消息,第二十八届成都国际汽车展览会(2025"
+        }
+      ],
+      "source_domains": [
+        "cnmo.com",
+        "qq.com",
+        "toutiao.com"
+      ],
+      "independent_source_count": 3,
+      "coverage_reason": "发布及上市日期与成都举办日期均有原文，可执行时间筛选。",
+      "support_reason": "逐字引文直接支撑该项要求；按主域名和稿件去重后有3个独立来源。",
+      "inference_or_gaps": []
+    },
+    {
+      "point_id": "下一场车展",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "24",
+          "url": "https://news.qq.com/rain/a/20250508A0980F00",
+          "domain": "qq.com",
+          "quote": "IT之家\n5\n月\n8\n日消息,第二十八届成都国际汽车展览会(2025\n成都车展)今日官宣,将于\n8\n月\n29\n日\n-\n9\n月\n7\n日举办。作为西部地区规模最大、规格最高的年度汽车盛会,自\n1998\n年创办以来,成都车展已成为中国四大\nA\n级车展之一(IT之家注:北京、上海、广州、成都)。",
+          "supports": "下一场车展的局部事实：级车展之一(IT之家注:北京、上海、广州、成都)。"
+        },
+        {
+          "web_id": "17",
+          "url": "https://globalimporter.net/tradeexpo-d-1286710.htm",
+          "domain": "globalimporter.net",
+          "quote": "所属行业: 汽配 国家/地区 : 中国 举办城市: 广州 展馆名称: 中国进出口商品交易会琶洲展馆 举办时间: 2025/11/21~2025/11/30 2025广州车展,2025中国广州车展,2025广州国际车展,2025广州汽车工业展,2025年广州车展,2025中国·广州车展,2025中国车展,2025车展 2025中国国际车展 2025广州车展-2025第二十三届广州国际汽车展览会 时间:2025年11月21日-30日 地点:中国进出口商品交易会琶洲展馆 2025广州车展:周文静 15102164859 QQ:469598553 广州国际汽车展览会将于2025年11月在中国进出口商品交易会展馆举办,整车展期:11月21日至30日 ,零部件展期:11月21日至24日。",
+          "supports": "下一场车展的局部事实：所属行业: 汽配 国家/地区 : 中国 举办城市: 广州 展馆名称: 中国进出口商品交易会琶洲展馆 举办时间: 2025/11/21~2025/11/30 2025广州车展,2025中国广州车展,2025广州国际车展,2025广州汽车工业展,2025年广州车展,2025中国·广州车展,2025中国车展,2025车展 2025中国国际车展 2025广州车展-2025第二十三届广州国际汽车展览会 时间…（其余条件见完整引文）"
+        }
+      ],
+      "source_domains": [
+        "globalimporter.net",
+        "qq.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "只有部分合格车展日期，无法覆盖发布至目标展会之间的候选区间。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有2个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补齐期间日程并明确大型及发布口径，不能仅按已有两场车展认定下一场。"
+      ]
+    },
+    {
+      "point_id": "竞品范围",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "43",
+          "url": "https://aikahao.xcar.com.cn/item/2287363.html",
+          "domain": "xcar.com.cn",
+          "quote": "·小米汽车的第二款车型MX11是一款纯电SUV,该车与小米SU7共享平台和部分零部件,将搭载两个电机,配备后轮转向,溜背式轿跑SUV设计,尾灯与SU7相似,起步价预计比小米SU7贵2万左右,计划于2025年2、3月上市,网传小米或将与对比对标竞品-特斯拉新款ModelY同期上市。",
+          "supports": "竞品范围的局部事实：·小米汽车的第二款车型MX11是一款纯电SUV,该车与小米SU7共享平台和部分零部件,将搭载两个电机,配备后轮转向,溜背式轿跑SUV设计,尾灯与SU7相似,起步价预计比小米SU7贵2万左右,计划于2025年2、3月上市,网传小米或将与对比对标竞品-特斯拉新款ModelY同期上市。"
+        },
+        {
+          "web_id": "1",
+          "url": "https://chd.in-en.com/html/chd-2441580.shtml",
+          "domain": "in-en.com",
+          "quote": "有汽车博主在社交媒体晒出了一张图片,其中明确显示小米的第二款车型可能为豪华中大型SUV,并且大概率为增程车型,对标理想旗舰L9。",
+          "supports": "竞品范围的局部事实：有汽车博主在社交媒体晒出了一张图片,其中明确显示小米的第二款车型可能为豪华中大型SUV,并且大概率为增程车型,对标理想旗舰L9。"
+        }
+      ],
+      "source_domains": [
+        "in-en.com",
+        "xcar.com.cn"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "竞品材料主要是发布前预测，未形成实际车型身份下的一致竞品集合。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有2个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需明确最终车型的竞争标准、成员及品牌范围。"
+      ]
+    },
+    {
+      "point_id": "竞争主体限定",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "43",
+          "url": "https://aikahao.xcar.com.cn/item/2287363.html",
+          "domain": "xcar.com.cn",
+          "quote": "·小米汽车的第二款车型MX11是一款纯电SUV,该车与小米SU7共享平台和部分零部件,将搭载两个电机,配备后轮转向,溜背式轿跑SUV设计,尾灯与SU7相似,起步价预计比小米SU7贵2万左右,计划于2025年2、3月上市,网传小米或将与对比对标竞品-特斯拉新款ModelY同期上市。",
+          "supports": "竞争主体限定的局部事实：·小米汽车的第二款车型MX11是一款纯电SUV,该车与小米SU7共享平台和部分零部件,将搭载两个电机,配备后轮转向,溜背式轿跑SUV设计,尾灯与SU7相似,起步价预计比小米SU7贵2万左右,计划于2025年2、3月上市,网传小米或将与对比对标竞品-特斯拉新款ModelY同期上市。"
+        },
+        {
+          "web_id": "39",
+          "url": "https://news.china.com/socialgd/10000169/20250901/48779362.html",
+          "domain": "china.com",
+          "quote": "在成都车展上,大SUV(涵盖“中大型SUV”及“大型SUV”)的竞争尤为激烈。蔚来全新ES8在车展开幕前一周开启预售,蔚来汽车董事长李斌表示:“大三排SUV的纯电时代正在到来。”纯电和混动已成为大SUV的主要竞争焦点。乐道L90在车展首日实现了第1万台新车交付;理想i8也在车展亮相;问界M8纯电版在成都车展前夕正式上市,并在24小时内实现大定1万台。混动阵营方面,理想L系列、领克900等车型登台。即将发布的全新问界M7在成都车展上首次亮相,成为展台亮点之一。此外,沃尔沃推出了全新XC70切入中大型混动SUV赛道,现代帕里斯帝以29.38万元起的预售价进军中大型SUV市场。",
+          "supports": "竞争主体限定的局部事实：乐道L90在车展首日实现了第1万台新车交付;理想i8也在车展亮相;问界M8纯电版在成都车展前夕正式上市,并在24小时内实现大定1万台。"
+        }
+      ],
+      "source_domains": [
+        "china.com",
+        "xcar.com.cn"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "对标关系与参展品牌分别出现，但未把各发布主体限定到统一竞品清单。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有2个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需逐条核对竞争主体与发布车型归属。"
+      ]
+    },
+    {
+      "point_id": "车展发布事件",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "30",
+          "url": "https://data.eastmoney.com/report/zw_industry.jshtml?encodeUrl=LL5s7nKJR4zExFgtJe+5/gScefjiJj3KLw4KIOITzi4=",
+          "domain": "eastmoney.com",
+          "quote": "第二十八届成都国际汽车展览会(以下简称:“成都国际车展”)将于8月29日至9月7日在中国西部国际博览城拉开大幕。在2025年成都车展期间上市共有13款,以性能车、豪华车为主,车企借车展声量快速建立品牌高度。\n在车展前一个月内上市车型共12款,主流新能源车型密集发布,抢占暑期购车潮。车展后上市车型有3款,高端与细分市场车型精准卡位,延续热度并规避竞争。",
+          "supports": "车展发布事件的局部事实：第二十八届成都国际汽车展览会(以下简称:“成都国际车展”)将于8月29日至9月7日在中国西部国际博览城拉开大幕。"
+        },
+        {
+          "web_id": "39",
+          "url": "https://news.china.com/socialgd/10000169/20250901/48779362.html",
+          "domain": "china.com",
+          "quote": "蔚来全新ES8在车展开幕前一周开启预售,蔚来汽车董事长李斌表示:“大三排SUV的纯电时代正在到来。”纯电和混动已成为大SUV的主要竞争焦点。乐道L90在车展首日实现了第1万台新车交付;理想i8也在车展亮相;问界M8纯电版在成都车展前夕正式上市,并在24小时内实现大定1万台。混动阵营方面,理想L系列、领克900等车型登台。即将发布的全新问界M7在成都车展上首次亮相,成为展台亮点之一。此外,沃尔沃推出了全新XC70切入中大型混动SUV赛道,现代帕里斯帝以29.38万元起的预售价进军中大型SUV市场。",
+          "supports": "车展发布事件的局部事实：乐道L90在车展首日实现了第1万台新车交付;理想i8也在车展亮相;问界M8纯电版在成都车展前夕正式上市,并在24小时内实现大定1万台。"
+        }
+      ],
+      "source_domains": [
+        "china.com",
+        "eastmoney.com"
+      ],
+      "independent_source_count": 2,
+      "coverage_reason": "原文区分部分展前上市和展上亮相，但目标车展未定，且不能将亮相一律当发布。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有2个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需按目标车展和发布口径筛选各记录。"
+      ]
+    },
+    {
+      "point_id": "发布车型清单",
+      "coverage": "inferred",
+      "coverage_score": 1,
+      "support": 1,
+      "evidence": [
+        {
+          "web_id": "39",
+          "url": "https://news.china.com/socialgd/10000169/20250901/48779362.html",
+          "domain": "china.com",
+          "quote": "蔚来全新ES8在车展开幕前一周开启预售,蔚来汽车董事长李斌表示:“大三排SUV的纯电时代正在到来。”纯电和混动已成为大SUV的主要竞争焦点。乐道L90在车展首日实现了第1万台新车交付;理想i8也在车展亮相;问界M8纯电版在成都车展前夕正式上市,并在24小时内实现大定1万台。混动阵营方面,理想L系列、领克900等车型登台。即将发布的全新问界M7在成都车展上首次亮相,成为展台亮点之一。此外,沃尔沃推出了全新XC70切入中大型混动SUV赛道,现代帕里斯帝以29.38万元起的预售价进军中大型SUV市场。",
+          "supports": "发布车型清单的局部事实：乐道L90在车展首日实现了第1万台新车交付;理想i8也在车展亮相;问界M8纯电版在成都车展前夕正式上市,并在24小时内实现大定1万台。"
+        },
+        {
+          "web_id": "39",
+          "url": "https://news.china.com/socialgd/10000169/20250901/48779362.html",
+          "domain": "china.com",
+          "quote": "昊铂HL增程版在成都车展上亮相,提供五座、六座两种布局,官方指导价26.98万-29.98万元。该车搭载60kWh宁德时代骁遥超级增混电池,提供350km纯电续航,综合续航1369km,充电10分钟即可补能210km。新一代智己LS6增程版也在本次车展亮相,搭载“恒星”超级增程技术,纯电续航超过450km,综合续航1500km。",
+          "supports": "发布车型清单的局部事实：该车搭载60kWh宁德时代骁遥超级增混电池,提供350km纯电续航,综合续航1369km,充电10分钟即可补能210km。"
+        }
+      ],
+      "source_domains": [
+        "china.com"
+      ],
+      "independent_source_count": 1,
+      "coverage_reason": "只支持若干大型SUV事件，未覆盖小米实际竞品集合。",
+      "support_reason": "可引用原文只覆盖部分要求，具体缺口见 coverage_reason；虽有1个独立来源，仍按弱支撑计1分。",
+      "inference_or_gaps": [
+        "需补齐竞品逐主体的发布车型或明确无发布记录。"
+      ]
+    }
+  ],
+  "summary": {
+    "point_count": 8,
+    "coverage_counts": {
+      "direct": 3,
+      "inferred": 5,
+      "none": 0
+    },
+    "coverage_total": 11,
+    "coverage_average": 1.38,
+    "coverage_max": 2,
+    "support_total": 14,
+    "support_average": 1.75,
+    "support_max": 3
+  }
+}

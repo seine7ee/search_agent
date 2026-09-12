@@ -1,0 +1,59 @@
+"""Common run metrics shared by deep-search synthesis schemes."""
+
+from __future__ import annotations
+
+import time
+from dataclasses import dataclass, field
+from datetime import UTC, datetime
+from typing import Any
+
+
+def _utc_now() -> str:
+    return datetime.now(UTC).isoformat()
+
+
+@dataclass
+class RunMetrics:
+    scheme: str
+    total_turns: int = 0
+    search_turns: int = 0
+    model_call_count: int = 0
+    search_action_count: int = 0
+    search_query_count: int = 0
+    web_result_count: int = 0
+    unique_web_count: int = 0
+    termination_type: str = "RUNNING"
+    final_action: str | None = None
+    last_model_action: str | None = None
+    started_at: str = field(default_factory=_utc_now)
+    finished_at: str | None = None
+    elapsed_ms: float | None = None
+    _started_monotonic: float = field(default_factory=time.perf_counter, repr=False)
+
+    def finish(self, termination_type: str, final_action: str) -> None:
+        self.termination_type = termination_type
+        self.final_action = final_action
+        self.finished_at = _utc_now()
+        self.elapsed_ms = round(
+            (time.perf_counter() - self._started_monotonic) * 1000, 2
+        )
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "scheme": self.scheme,
+            "total_turns": self.total_turns,
+            "search_turns": self.search_turns,
+            "model_call_count": self.model_call_count,
+            "search_action_count": self.search_action_count,
+            "search_query_count": self.search_query_count,
+            "web_result_count": self.web_result_count,
+            "unique_web_count": self.unique_web_count,
+            "termination_type": self.termination_type,
+            "terminated_by_model": self.termination_type == "MODEL_STOP",
+            "reached_max_turns": self.termination_type == "MAX_TURNS",
+            "final_action": self.final_action,
+            "last_model_action": self.last_model_action,
+            "started_at": self.started_at,
+            "finished_at": self.finished_at,
+            "elapsed_ms": self.elapsed_ms,
+        }

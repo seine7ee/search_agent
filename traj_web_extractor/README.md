@@ -1,6 +1,6 @@
 # 按搜索目标提取轨迹网页
 
-原始轨迹的目标/网页提取只使用 Python 标准库，不调用模型或搜索引擎。新增的相关片段抽取复用 `req_qwen.py` 调用 Qwen3-8B。两种流程都不修改输入文件。
+原始轨迹的目标/网页提取只使用 Python 标准库，不调用模型或搜索引擎。相关片段抽取可配置使用 `req_qwen.py` 的 Qwen3-8B 或 `req_ds.py` 的 DeepSeek 接口。两种流程都不修改输入文件。
 
 ## 完整流程与批量运行（推荐入口）
 
@@ -8,8 +8,8 @@
 
 1. 调用现有 `extract_search_traj_file`，抽取目标及其关联的完整网页。
 2. 将中间结果存入 `traj_web_extractor/search_goals/`。
-3. 读取已保存的中间结果，调用现有 Qwen3-8B 抽取器逐目标、逐网页抽取片段。
-4. 每完成一个网页，将对应的四字段记录立即追加到 `traj_web_extractor/webs_quotes/` 下的 JSONL 文件，不再等待整条轨迹完成。
+3. 读取已保存的中间结果，调用配置的模型逐目标、逐网页抽取片段。
+4. 每完成一个网页，将对应记录立即追加到 `traj_web_extractor/webs_quotes/` 下的 JSONL 文件，不再等待整条轨迹完成。
 
 ### 批量脚本
 
@@ -23,9 +23,11 @@ INPUT_FILES = [
 MAX_WORKERS = 1
 MAX_ATTEMPTS = 3
 RETRY_DELAY_SECONDS = 1.0
+EXTRACTION_MODE = "sentence_ids"  # 或 "verbatim"
+MODEL_PROVIDER = "ds"             # 或 "qwen"
 ```
 
-列表支持绝对路径，也支持相对于项目根目录的路径；脚本内已填入现有“任贤齐和古天乐……”原始轨迹作为示例，不需要先生成 search_goals 文件。配置现有 `silicon_key` 环境变量并安装项目依赖后，在项目根目录运行：
+列表支持绝对路径，也支持相对于项目根目录的路径；脚本内已填入现有样例，不需要先生成 search_goals 文件。使用 Qwen 时配置其接口凭证，使用 DeepSeek 时配置 `config.config.ds_api_key`，安装项目依赖后在项目根目录运行：
 
 ```bash
 python3 -m traj_web_extractor.run_batch_extraction
@@ -48,14 +50,19 @@ python3 -m traj_web_extractor.run_pipeline /path/to/raw_trajectory.json
 ```python
 from traj_web_extractor import run_trajectory_pipeline, run_batch_pipeline
 
-report = run_trajectory_pipeline("/path/to/raw_trajectory.json")
+report = run_trajectory_pipeline(
+    "/path/to/raw_trajectory.json",
+    extraction_mode="sentence_ids",
+    model_provider="ds",
+)
 batch_report = run_batch_pipeline(
     ["/path/to/raw_trajectory_1.json", "/path/to/raw_trajectory_2.json"],
     max_workers=2,
+    model_provider="qwen",
 )
 ```
 
-Python 方法也不需要指定输出路径。单文件返回执行报告；批量返回总数、成功数、失败数、耗时，以及按输入列表顺序排列的单文件报告。每条报告包含实际保存的 `search_goals_path`、`quotes_path`、目标数、网页配对数、记录数和片段数。`quotes_complete` 表示是否全部完成；失败时的 `record_count`、`quote_count` 是已确认写入的部分结果统计，不代表整条轨迹成功。
+Python 方法也不需要指定输出路径。单文件返回执行报告；批量返回总数、成功数、失败数、耗时，以及按输入列表顺序排列的单文件报告。报告会记录实际使用的 `extraction_mode`、`model_provider`、结果路径、目标数、网页配对数、记录数和片段数。`quotes_complete` 表示是否全部完成；失败时的 `record_count`、`quote_count` 是已确认写入的部分结果统计，不代表整条轨迹成功。
 
 ### 自动路径、重复运行与错误处理
 
@@ -75,7 +82,7 @@ traj_web_extractor/webs_quotes/原文件名__毫秒时间戳_随机标识_quotes
 - `status` 为 `FAILED` 时，`error` 提供错误类型与原因；有结果路径也不代表整个任务完成，不将错误伪装成空 quotes。
 - 脚本最终输出 JSON 汇总。全部成功退出码为 0，有失败或配置无效时退出码为 1。空列表视为无任务，正常退出。
 
-中间数据格式和每条 quotes 记录的四字段结构不变；quotes 文件容器改为逐行追加的 JSONL。原有的网页编号、自定义 prompt 和 `req_qwen.py` 不由编排层改写。以下原有分阶段入口继续可用；要使用自动双目录流程，请使用本节入口。
+中间数据格式不变；quotes 文件容器为逐行追加的 JSONL。`verbatim` 保留原有四字段结果，`sentence_ids` 增加分句与编号字段。以下分阶段入口继续可用；要使用自动双目录流程，请使用本节入口。
 
 ### 流程测试（不调用真实 API）
 
@@ -133,13 +140,13 @@ python3 -m traj_web_extractor "batch_trajectories/multi_agent/traj_任贤齐和�
 python3 -m unittest traj_web_extractor.test_extractor -v
 ```
 
-## 逐网页相关信息抽取（Qwen3-8B）
+## 逐网页相关信息抽取（模型可配置）
 
 输入为上一阶段生成的 `search_goals.json`（顶层包含 `user_query` 和 `search_goals`）。
 
 ### 直接运行
 
-在 `run_quote_extraction.py` 中设置 `INPUT_PATH`、`OUTPUT_PATH`、`MAX_ATTEMPTS` 和 `RETRY_DELAY_SECONDS` 后运行：
+在 `run_quote_extraction.py` 中设置 `INPUT_PATH`、`OUTPUT_PATH`、`MAX_ATTEMPTS`、`RETRY_DELAY_SECONDS`、`EXTRACTION_MODE` 和 `MODEL_PROVIDER` 后运行：
 
 ```bash
 python3 -m traj_web_extractor.run_quote_extraction
@@ -148,10 +155,14 @@ python3 -m traj_web_extractor.run_quote_extraction
 默认输入已指向本目录中的“任贤齐和古天乐……”样例；也支持直接运行该 Python 文件，或通过命令行指定文件：
 
 ```bash
-python3 -m traj_web_extractor.run_quote_extraction /path/to/search_goals.json -o /path/to/quotes.jsonl
+python3 -m traj_web_extractor.run_quote_extraction \
+  /path/to/search_goals.json \
+  -o /path/to/quotes.jsonl \
+  --extraction-mode sentence_ids \
+  --model-provider ds
 ```
 
-需要安装项目 `requirements.txt` 中的依赖，并按现有 `req_qwen.py` 配置 `silicon_key` 环境变量。默认复用其 `Qwen/Qwen3-8B` 模型、服务地址和流式请求逻辑，不修改该文件。执行入口会真实请求模型；测试使用模拟响应，不需要密钥。
+需要安装项目 `requirements.txt` 中的依赖。`qwen` 复用 `req_qwen_model`；`ds` 调用 `req_ds.request_model`，后者默认使用流式入口。当前默认提供方以 `quote_config.py` 为准。执行入口会真实请求模型；测试使用模拟响应，不需要密钥。
 
 ### Python 调用
 
@@ -163,12 +174,78 @@ records = extract_goal_web_quotes_file(
     output_path="/path/to/quotes.jsonl",  # 可省略：只返回结果列表
     max_attempts=3,
     retry_delay_seconds=1.0,
+    extraction_mode="sentence_ids",       # 或 "verbatim"
+    model_provider="ds",                  # 或 "qwen"
 )
 ```
 
 已有字典时调用 `extract_goal_web_quotes(data)`。测试时可注入 `request_model(messages) -> str`，不改变生产模型调用代码。
 
-### 上下文与抽取规则
+### 抽取方案与模型配置
+
+现有逐字片段方案和新增句子编号方案相互独立：
+
+| 配置值 | 上下文 | 模型输出 | 结果字段 |
+|---|---|---|---|
+| `verbatim` | 原始 `web_content` | `"片段1"｜"片段2"` 或 `无相关信息` | 原有四字段，包含 `quotes` |
+| `sentence_ids` | 规则分句并显示为 `[1] 句子` | 严格 JSON 整数数组，如 `[3, 5]`；无相关信息为 `[]` | 增加完整 `sentences`、模型选择的 `sentence_ids`，并由程序重建 `quotes` |
+
+抽取方案和模型提供方的默认值均位于 `quote_config.py`：
+
+```python
+DEFAULT_EXTRACTION_MODE = SENTENCE_IDS_MODE
+DEFAULT_MODEL_PROVIDER = DS_MODEL_PROVIDER
+```
+
+可通过以下任一种方式自由切换：
+
+- 修改上述全局默认值。
+- 批跑时修改 `run_batch_extraction.py` 中的 `EXTRACTION_MODE` 和 `MODEL_PROVIDER`。
+- Python 调用传入 `extraction_mode="sentence_ids"`、`model_provider="ds"` 等参数。
+- 单文件完整流程或分阶段入口传入 `--extraction-mode sentence_ids --model-provider ds`。命令行参数会覆盖默认配置。
+
+未显式传参时采用 `quote_config.py` 中的当前默认值；目前为 `sentence_ids + ds`。原有 `quote_prompts.py` 的上下文组装和 `parse_quotes` 的解析行为不变。非法抽取模式或模型提供方会在任何模型请求前报错。显式注入 `request_model(messages) -> str` 时，注入函数优先于配置提供方，便于测试或接入第三种模型。
+
+`req_ds.request_model_stream` 与 `request_model_standard` 均直接返回最终回答文本，不再将模型输出预解析为 JSON 对象；流式接口也不再强制 `json_object` 响应格式。因此它们可以原样返回编号数组 `[3, 5]`、逐字片段或 `无相关信息`，再由当前抽取方案自己的解析器校验。`request_model(messages, stream=True)` 默认使用流式入口，传入 `stream=False` 使用标准入口。
+
+### 句子编号方案
+
+`sentence_ids` 模式先清理网页中的换行，再进行分句。换行符本身永远不作为句子边界：英文单词或名字之间的换行替换为单个空格，例如 `Figure\nAI` 变成 `Figure AI`；中文字符之间的换行直接移除，例如 `波士顿动\n力` 变成 `波士顿动力`；标点前的换行也直接移除。连续换行统一按同一规则清理。
+
+完成清理后，只按照明确的全角/半角句末符号 `。．｡.!！?？;；` 切分。半角句号后即使缺少空格（例如 `said.The`）也能正确分句；数字小数点和常见小写点连接形式不会拆分。空白片段不编号，每个网页均从 1 开始编号。句子字符区间对应清理后的网页文本，最终 quote 也从该规范化文本切片，不依赖模型复述。
+
+模型只允许输出升序、不重复、且位于当前网页编号范围内的 JSON 整数数组。非 JSON、越界编号、倒序、重复编号或其他类型都会触发当前网页的既有重试逻辑。原始选择编号保存在 `sentence_ids`，例如：
+
+```json
+{
+  "search_goal_id": "G1",
+  "search_goal": "当前搜索重点",
+  "web": {"web_id": "1", "web_content": "一。二。三。四。五。六。"},
+  "sentences": [
+    {"sentence_id": 1, "sentence": "一。"},
+    {"sentence_id": 2, "sentence": "二。"},
+    {"sentence_id": 3, "sentence": "三。"},
+    {"sentence_id": 4, "sentence": "四。"},
+    {"sentence_id": 5, "sentence": "五。"},
+    {"sentence_id": 6, "sentence": "六。"}
+  ],
+  "sentence_ids": [3, 5],
+  "quotes": ["三。四。五。"]
+}
+```
+
+`sentences` 保存换行清理和规则切分后的全部非空句子及其编号，内部不再含原网页的换行符，顺序与传给模型的编号上下文完全一致；即使模型返回空数组，该字段也会完整保留。原始网页仍完整保存在 `web.web_content` 中，`sentence_ids` 只保存模型实际选中的编号。
+
+quote 合并规则按网页顺序执行：
+
+- 连续编号合并成一个连续 quote。
+- 两个已选编号只相差 2（中间仅缺一个编号）时，自动补入中间句并合并。例如 `[3, 5]` 使用原文第 3～5 句形成一个 quote。
+- 两个已选编号差值大于 2 时不补齐并拆开。例如 `[3, 6]` 形成两个 quote。
+- 规则具有传递性，例如 `[1, 3, 5, 8]` 形成第 1～5 句和第 8 句两个 quote；`sentence_ids` 仍保留模型实际输出的 `[1, 3, 5, 8]`，不会改写成补齐后的编号。
+
+编号模式复用原有逐网页执行、失败重试、诊断 messages、JSONL 逐条追加、`flush`/`fsync` 和批量编排逻辑。
+
+### 原有逐字片段方案的上下文与抽取规则
 
 遍历每个目标的每个网页，每个 `(search_goal, web)` 独立发起一次模型调用。上下文只包含：
 
@@ -191,7 +268,7 @@ records = extract_goal_web_quotes_file(
 
 ### 输出结果
 
-结果文件使用 JSONL，每个目标—网页对应一行完整 JSON 对象，严格保留目标顺序和网页顺序，没有外层数组或行间逗号。例如下面是两条独立记录：
+结果文件使用 JSONL，每个目标—网页对应一行完整 JSON 对象，严格保留目标顺序和网页顺序，没有外层数组或行间逗号。`verbatim` 模式保持原有四字段；`sentence_ids` 模式额外增加 `sentences` 和 `sentence_ids`。例如下面是两条原有模式的独立记录：
 
 ```jsonl
 {"search_goal_id":"G1","search_goal":"当前搜索重点","web":{"web_id":"1","web_content":"网页中的原始内容"},"quotes":["网页中的原始内容"]}
@@ -216,7 +293,11 @@ with open("/path/to/quotes.jsonl", encoding="utf-8") as file:
 ### 新增流程测试
 
 ```bash
-python3 -m unittest traj_web_extractor.test_jsonl_append -v
+python3 -m unittest \
+  traj_web_extractor.test_model_provider \
+  traj_web_extractor.test_sentence_id_quotes \
+  traj_web_extractor.test_jsonl_append \
+  traj_web_extractor.test_pipeline -v
 ```
 
 旧的严格原文校验测试与当前已注释的校验逻辑存在不一致；本次没有恢复该校验。

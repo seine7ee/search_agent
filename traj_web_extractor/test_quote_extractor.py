@@ -9,6 +9,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from unittest.mock import Mock, patch
 
+from traj_web_extractor import quote_config
 from traj_web_extractor.quote_extractor import (
     QuoteExtractionError,
     QuoteFormatError,
@@ -97,6 +98,9 @@ class QuotePromptTests(unittest.TestCase):
 
 class QuoteExtractionTests(unittest.TestCase):
     def setUp(self):
+        mode_patch = patch.object(quote_config, "DEFAULT_EXTRACTION_MODE", "verbatim")
+        mode_patch.start()
+        self.addCleanup(mode_patch.stop)
         self.web1 = {"web_id": "1", "web_content": "原文甲说明电影前提有误。", "tags": ["甲"]}
         self.web2 = {"id": "2", "web_content": "不相关的原文乙。"}
         self.data = {
@@ -135,7 +139,7 @@ class QuoteExtractionTests(unittest.TestCase):
         module = types.ModuleType("traj_web_extractor.req_qwen")
         module.req_qwen_model = Mock(return_value="无相关信息")
         with patch.dict(sys.modules, {module.__name__: module}):
-            results = extract_goal_web_quotes(self.data)
+            results = extract_goal_web_quotes(self.data, model_provider="qwen")
         self.assertEqual(module.req_qwen_model.call_count, 3)
         self.assertEqual([item["quotes"] for item in results], [[], [], []])
 

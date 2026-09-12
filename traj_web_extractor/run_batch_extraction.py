@@ -11,6 +11,7 @@ if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from traj_web_extractor.pipeline import run_batch_pipeline
+from traj_web_extractor.quote_config import DEFAULT_EXTRACTION_MODE, DEFAULT_MODEL_PROVIDER
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -34,6 +35,13 @@ INPUT_FILES = [
 MAX_WORKERS = 2
 MAX_ATTEMPTS = 3
 RETRY_DELAY_SECONDS = 1.0
+# "verbatim" 使用原有逐字片段方案；"sentence_ids" 使用句子编号方案。
+EXTRACTION_MODE = DEFAULT_EXTRACTION_MODE
+# "qwen" 调用 req_qwen_model；"ds" 调用 req_ds.request_model。
+MODEL_PROVIDER = DEFAULT_MODEL_PROVIDER
+
+print(f"extraction_mode: {EXTRACTION_MODE}")
+print(f"model_provider: {MODEL_PROVIDER}")
 
 
 def main() -> int:
@@ -48,6 +56,8 @@ def main() -> int:
         report = run_batch_pipeline(
             inputs, max_workers=MAX_WORKERS,
             max_attempts=MAX_ATTEMPTS, retry_delay_seconds=RETRY_DELAY_SECONDS,
+            extraction_mode=EXTRACTION_MODE,
+            model_provider=MODEL_PROVIDER,
         )
     except (TypeError, ValueError) as exc:
         print(f"批跑配置错误：{exc}", file=sys.stderr)

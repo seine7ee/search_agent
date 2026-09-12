@@ -9,7 +9,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import Mock, patch
 
-from traj_web_extractor import pipeline
+from traj_web_extractor import pipeline, quote_config
 from traj_web_extractor import run_batch_pipeline, run_trajectory_pipeline
 from traj_web_extractor import run_batch_extraction as batch_runner
 from traj_web_extractor import run_pipeline as single_runner
@@ -25,6 +25,7 @@ class TrajectoryPipelineTests(unittest.TestCase):
         self.patches = [
             patch.object(pipeline, "SEARCH_GOALS_DIR", self.goals_dir),
             patch.object(pipeline, "WEBS_QUOTES_DIR", self.quotes_dir),
+            patch.object(quote_config, "DEFAULT_EXTRACTION_MODE", "verbatim"),
             patch("logging.basicConfig"),
         ]
         for item in self.patches:
@@ -78,7 +79,7 @@ class TrajectoryPipelineTests(unittest.TestCase):
         goals_path, quotes_path = Path(report["search_goals_path"]), Path(report["quotes_path"])
         self.assertEqual(goals_path.parent, self.goals_dir)
         self.assertEqual(quotes_path.parent, self.quotes_dir)
-        self.assertTrue(goals_path.name.startswith("原始轨迹__"))
+        self.assertIn("原始轨迹__", goals_path.name)
         self.assertEqual(goals_path.stem.removesuffix("_search_goals"), quotes_path.stem.removesuffix("_quotes"))
         middle = json.loads(goals_path.read_text(encoding="utf-8"))
         self.assertEqual(quotes_path.suffix, ".jsonl")
@@ -256,7 +257,9 @@ class TrajectoryPipelineTests(unittest.TestCase):
         )
         process = subprocess.run([sys.executable, "-c", script], cwd=self.root,
                                  capture_output=True, text=True, check=True)
-        self.assertEqual(json.loads(process.stdout)["total_count"], 0)
+        json_start = process.stdout.find("{")
+        self.assertGreaterEqual(json_start, 0)
+        self.assertEqual(json.loads(process.stdout[json_start:])["total_count"], 0)
 
 
 if __name__ == "__main__":

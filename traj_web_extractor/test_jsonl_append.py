@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import Mock, patch
 
-from traj_web_extractor import pipeline
+from traj_web_extractor import pipeline, quote_config
 from traj_web_extractor.quote_extractor import (
     QuoteExtractionError, extract_goal_web_quotes, extract_goal_web_quotes_file,
 )
@@ -13,6 +13,9 @@ from traj_web_extractor.quote_extractor import (
 
 class JsonlAppendTests(unittest.TestCase):
     def setUp(self):
+        mode_patch = patch.object(quote_config, "DEFAULT_EXTRACTION_MODE", "verbatim")
+        mode_patch.start()
+        self.addCleanup(mode_patch.stop)
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)

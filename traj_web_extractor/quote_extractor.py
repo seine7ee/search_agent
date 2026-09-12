@@ -13,7 +13,19 @@ from pathlib import Path
 from typing import Any
 
 from .extractor import _array, _identifier, _object
+from .quote_config import (
+    DS_MODEL_PROVIDER,
+    SENTENCE_IDS_MODE,
+    resolve_extraction_mode,
+    resolve_model_provider,
+)
 from .quote_prompts import NO_RELEVANT_INFORMATION, build_quote_messages
+from .sentence_id_quotes import (
+    build_sentence_id_messages,
+    parse_sentence_ids,
+    rebuild_quotes,
+    split_web_content,
+)
 
 ModelRequest = Callable[[list[dict[str, str]]], str]
 RecordCallback = Callable[[dict[str, Any]], None]
@@ -85,6 +97,13 @@ def _request_qwen(messages: list[dict[str, str]]) -> str:
     return req_qwen_model(messages)
 
 
+def _request_ds(messages: list[dict[str, str]]) -> str:
+    # Lazy import: selecting Qwen does not load the DeepSeek adapter/config.
+    from .req_ds import request_model
+
+    return request_model(messages)
+
+
 def _prepare_jobs(data: Mapping[str, Any]) -> list[tuple[Any, str, Mapping[str, Any]]]:
     document = _object(data, "search_traj")
     if not isinstance(document.get("user_query"), str):
@@ -115,6 +134,8 @@ def extract_goal_web_quotes(
     max_attempts: int = 3,
     retry_delay_seconds: float = 1.0,
     on_record: RecordCallback | None = None,
+    extraction_mode: str | None = None,
+    model_provider: str | None = None,
 ) -> list[dict[str, Any]]:
     """Extract each goal-web pair independently, in goal/web order.
 
@@ -123,6 +144,9 @@ def extract_goal_web_quotes(
     messages; errors are never converted to empty quotes or silently skipped.
     on_record receives each successful record before requesting the next webpage;
     callback failures propagate without retrying the model or duplicating a save.
+    extraction_mode selects the original verbatim parser or the sentence-ID parser.
+    model_provider selects req_qwen_model or req_ds.request_model when no custom
+    request_model callable is injected.
     """
     if isinstance(max_attempts, bool) or not isinstance(max_attempts, int) or max_attempts < 1:
         raise ValueError("max_attempts must be a positive integer")
@@ -134,18 +158,38 @@ def extract_goal_web_quotes(
         raise ValueError("request_model must be callable")
     if on_record is not None and not callable(on_record):
         raise ValueError("on_record must be callable")
+    mode = resolve_extraction_mode(extraction_mode)
+    provider = resolve_model_provider(model_provider)
     jobs = _prepare_jobs(data)
-    requester = _request_qwen if request_model is None else request_model
+    if request_model is not None:
+        requester = request_model
+    elif provider == DS_MODEL_PROVIDER:
+        requester = _request_ds
+    else:
+        requester = _request_qwen
     results = []
     for job_index, (goal_id, search_goal, web) in enumerate(jobs):
         web_id = web.get("web_id", web.get("id", "unknown"))
-        messages = build_quote_messages(data["user_query"], search_goal, web["web_content"])
-        LOGGER.info("Extracting %s/%s: goal=%s web=%s", job_index + 1, len(jobs), goal_id, web_id)
+        sentences = None
+        if mode == SENTENCE_IDS_MODE:
+            sentences = split_web_content(web["web_content"])
+            messages = build_sentence_id_messages(
+                data["user_query"], search_goal, web["web_content"], sentences=sentences,
+            )
+        else:
+            messages = build_quote_messages(data["user_query"], search_goal, web["web_content"])
+        LOGGER.info("Extracting %s/%s: provider=%s mode=%s goal=%s web=%s",
+                    job_index + 1, len(jobs), provider, mode, goal_id, web_id)
         for attempt in range(1, max_attempts + 1):
             raw_response = None
             try:
                 raw_response = requester(deepcopy(messages))
-                quotes = parse_quotes(raw_response, web["web_content"])
+                if mode == SENTENCE_IDS_MODE:
+                    sentence_ids = parse_sentence_ids(raw_response, len(sentences))
+                    quotes = rebuild_quotes(web["web_content"], sentences, sentence_ids)
+                else:
+                    sentence_ids = None
+                    quotes = parse_quotes(raw_response, web["web_content"])
             except Exception as exc:
                 LOGGER.warning("Extraction failed: goal=%s web=%s attempt=%s/%s error=%s",
                                goal_id, web_id, attempt, max_attempts, type(exc).__name__)
@@ -162,8 +206,17 @@ def extract_goal_web_quotes(
                     "search_goal_id": goal_id,
                     "search_goal": search_goal,
                     "web": deepcopy(dict(web)),
-                    "quotes": quotes,
                 }
+                if sentence_ids is not None:
+                    record["sentences"] = [
+                        {
+                            "sentence_id": sentence.sentence_id,
+                            "sentence": sentence.text,
+                        }
+                        for sentence in sentences
+                    ]
+                    record["sentence_ids"] = sentence_ids
+                record["quotes"] = quotes
                 if on_record is not None:
                     on_record(deepcopy(record))
                 results.append(record)
@@ -179,6 +232,8 @@ def extract_goal_web_quotes_file(
     max_attempts: int = 3,
     retry_delay_seconds: float = 1.0,
     on_record_saved: RecordCallback | None = None,
+    extraction_mode: str | None = None,
+    model_provider: str | None = None,
 ) -> list[dict[str, Any]]:
     """Read search_goals JSON and append each completed web record to JSONL.
 
@@ -206,6 +261,8 @@ def extract_goal_web_quotes_file(
         return extract_goal_web_quotes(
             data, request_model=request_model,
             max_attempts=max_attempts, retry_delay_seconds=retry_delay_seconds,
+            extraction_mode=extraction_mode,
+            model_provider=model_provider,
         )
 
     output_file = None
@@ -238,6 +295,8 @@ def extract_goal_web_quotes_file(
             data, request_model=request_model,
             max_attempts=max_attempts, retry_delay_seconds=retry_delay_seconds,
             on_record=append_record,
+            extraction_mode=extraction_mode,
+            model_provider=model_provider,
         )
         if output_file is None:
             output_file = open_output()

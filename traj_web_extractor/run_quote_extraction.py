@@ -12,6 +12,12 @@ if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from traj_web_extractor.quote_extractor import QuoteExtractionError, extract_goal_web_quotes_file
+from traj_web_extractor.quote_config import (
+    DEFAULT_EXTRACTION_MODE,
+    DEFAULT_MODEL_PROVIDER,
+    EXTRACTION_MODES,
+    MODEL_PROVIDERS,
+)
 
 
 # 可直接修改这两个变量后运行本文件；也可以用命令行指定输入、输出路径。
@@ -21,14 +27,24 @@ INPUT_PATH = Path(__file__).resolve().parent / "output" / (
 OUTPUT_PATH = INPUT_PATH.with_name(f"{INPUT_PATH.stem}_quotes.jsonl")
 MAX_ATTEMPTS = 3
 RETRY_DELAY_SECONDS = 1.0
+EXTRACTION_MODE = DEFAULT_EXTRACTION_MODE
+MODEL_PROVIDER = DEFAULT_MODEL_PROVIDER
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="使用 Qwen3-8B 逐目标、逐网页抽取相关原文片段")
+    parser = argparse.ArgumentParser(description="使用配置模型逐目标、逐网页抽取相关信息")
     parser.add_argument("input", nargs="?", type=Path, help="search_goals.json 文件，省略时使用 INPUT_PATH")
     parser.add_argument("-o", "--output", type=Path, help="逐网页追加 JSONL（建议 .jsonl 后缀），已有文件不覆盖")
     parser.add_argument("--max-attempts", type=int, default=MAX_ATTEMPTS)
     parser.add_argument("--retry-delay-seconds", type=float, default=RETRY_DELAY_SECONDS)
+    parser.add_argument(
+        "--extraction-mode", choices=EXTRACTION_MODES, default=EXTRACTION_MODE,
+        help="verbatim=原有逐字片段方案，sentence_ids=句子编号方案",
+    )
+    parser.add_argument(
+        "--model-provider", choices=MODEL_PROVIDERS, default=MODEL_PROVIDER,
+        help="qwen=req_qwen_model，ds=req_ds.request_model",
+    )
     args = parser.parse_args()
     input_path = INPUT_PATH if args.input is None else args.input
     output_path = args.output
@@ -39,11 +55,15 @@ def main() -> int:
         results = extract_goal_web_quotes_file(
             input_path, output_path,
             max_attempts=args.max_attempts, retry_delay_seconds=args.retry_delay_seconds,
+            extraction_mode=args.extraction_mode,
+            model_provider=args.model_provider,
         )
     except (OSError, ValueError, QuoteExtractionError) as exc:
         parser.exit(1, f"相关片段抽取失败：{exc}\n")
     print(json.dumps({
         "output_path": str(output_path.resolve()),
+        "extraction_mode": args.extraction_mode,
+        "model_provider": args.model_provider,
         "record_count": len(results),
         "records_with_quotes": sum(bool(item["quotes"]) for item in results),
         "quote_count": sum(len(item["quotes"]) for item in results),

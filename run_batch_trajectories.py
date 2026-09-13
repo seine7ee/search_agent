@@ -63,6 +63,10 @@ QUERIES = [
     "比较当前主流 AI 编程助手的功能、模型和企业部署能力。",
 ]
 
+QUERIES = [
+    "摩拜单车最近一个完整财年的营收是多少?"
+]
+
 # QUERIES = [
 #     "DeepSeek 创始人本科就读的大学，现任校长是谁？",
 #     "《流浪地球2》导演的上一部长片，豆瓣评分多少？",
@@ -86,7 +90,7 @@ MAX_WORKERS = 1
 # 依次顺序运行的 schema 列表：本次运行会先完整跑完 single_agent 的所有 query，
 # 再开始跑 multi_agent，不会并行跨 schema 执行。
 # SCHEMES_TO_RUN = ["single_agent", "multi_agent"]
-SCHEMES_TO_RUN = ["scheme_a_full_webs"]
+SCHEMES_TO_RUN = ["multi_agent"]
 CURRENT_DATE = date.today().isoformat()
 LOG_LEVEL = "INFO"
 

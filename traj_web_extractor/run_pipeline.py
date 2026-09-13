@@ -27,7 +27,10 @@ def main() -> int:
     parser.add_argument("--retry-delay-seconds", type=float, default=1.0)
     parser.add_argument(
         "--extraction-mode", choices=EXTRACTION_MODES, default=DEFAULT_EXTRACTION_MODE,
-        help="相关信息抽取方案：verbatim=原文片段，sentence_ids=句子编号",
+        help=(
+            "相关信息抽取方案：verbatim=原文片段，sentence_ids=句子编号，"
+            "sentence_ranges=句子起止区间"
+        ),
     )
     parser.add_argument(
         "--model-provider", choices=MODEL_PROVIDERS, default=DEFAULT_MODEL_PROVIDER,

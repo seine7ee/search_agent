@@ -5,7 +5,8 @@ from __future__ import annotations
 
 VERBATIM_MODE = "verbatim"
 SENTENCE_IDS_MODE = "sentence_ids"
-EXTRACTION_MODES = (VERBATIM_MODE, SENTENCE_IDS_MODE)
+SENTENCE_RANGES_MODE = "sentence_ranges"
+EXTRACTION_MODES = (VERBATIM_MODE, SENTENCE_IDS_MODE, SENTENCE_RANGES_MODE)
 
 QWEN_MODEL_PROVIDER = "qwen"
 DS_MODEL_PROVIDER = "ds"
@@ -13,7 +14,7 @@ MODEL_PROVIDERS = (QWEN_MODEL_PROVIDER, DS_MODEL_PROVIDER)
 
 # Change this value to switch the default used by the Python API and runners.
 # Individual API/CLI calls can still override it without editing this file.
-DEFAULT_EXTRACTION_MODE = SENTENCE_IDS_MODE
+DEFAULT_EXTRACTION_MODE = SENTENCE_RANGES_MODE
 # qwen -> req_qwen.py:req_qwen_model; ds -> req_ds.py:request_model.
 DEFAULT_MODEL_PROVIDER = DS_MODEL_PROVIDER
 

@@ -1,0 +1,115 @@
+{
+  "trajectory": {
+    "user_query": "摩拜单车最近一个完整财年的营收是多少?",
+    "current_date": "2026-09-12",
+    "run_id": "66fa66d3376c45a7a249809be7042104",
+    "run_status": "FAILED",
+    "stop_reason": "RuntimeError: environment variable ds_api_key is not set",
+    "metrics": {
+      "scheme": "scheme_multi_agent",
+      "total_rounds": 0,
+      "search_rounds": 0,
+      "model_call_count": 1,
+      "planner_call_count": 0,
+      "evidence_extractor_call_count": 0,
+      "search_query_count": 0,
+      "web_result_count": 0,
+      "unique_web_count": 0,
+      "goal_created_count": 0,
+      "conflict_search_count": 0,
+      "termination_type": "FAILED",
+      "terminated_by_model": false,
+      "reached_max_rounds": false,
+      "final_action": "FAILED",
+      "last_model_action": null,
+      "started_at": "2026-09-12T13:39:56.681251+00:00",
+      "finished_at": "2026-09-12T13:39:56.683166+00:00",
+      "elapsed_ms": 1.72
+    },
+    "goals": [],
+    "evidences": [],
+    "conflicts": [],
+    "webs": [],
+    "rounds": [
+      {
+        "round_id": 1,
+        "kind": "init",
+        "failure": {
+          "stage": "round1_create_goal",
+          "error_type": "RuntimeError",
+          "error": "environment variable ds_api_key is not set",
+          "traceback": "Traceback (most recent call last):\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search_multi_agent/orchestrator.py\", line 107, in run\n    return self._run_impl(user_query, current_date=current_date)\n           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search_multi_agent/orchestrator.py\", line 180, in _run_impl\n    pending = self._run_round1(state)\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search_multi_agent/orchestrator.py\", line 335, in _run_round1\n    response = self._call_model(messages, \"planner\")\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search_multi_agent/orchestrator.py\", line 426, in _call_model\n    response = self.request_model(messages)\n  File \"/Users/seinelee/Documents/my_search_agent/get_model_infer.py\", line 127, in request_model\n    return request_model_stream(messages)\n  File \"/Users/seinelee/Documents/my_search_agent/get_model_infer.py\", line 84, in request_model_stream\n    raise RuntimeError(\"environment variable ds_api_key is not set\")\nRuntimeError: environment variable ds_api_key is not set\n",
+          "last_model_call": {
+            "agent": "planner",
+            "stage": "round1_create_goal",
+            "messages": [
+              {
+                "role": "system",
+                "content": "# 角色\n你是离线轨迹合成系统中的 Planner。这是第 1 轮，也是唯一一轮不产出证据、不识别冲突的轮次：你只负责从用户原始问题中创建第一个持久化搜索目标（search_goal），并规划可由网页搜索引擎执行的 query。\n\n# 目标规划约束\n1. 从原始问题最基础、最明确、可检索验证的信息缺口创建一个目标，不要一次展开整个答案；复杂问题应先锚定其中最基础的事实（例如时间锚点、主体定义），后续轮次再逐步展开。\n2. 本轮必须且只能输出一个 CREATE_GOAL 动作，search_goal_id 固定为 \"G1\"。\n3. 首轮没有已有目标，因此 depends_on_goal_ids=[]，supersedes_goal_id=null。\n4. search_goal 必须是单一、可闭环验证的事实目标；search_queries 提供 1～5 条互补 query，包含必要的实体、事件、时间或官方来源限定。\n\n# search_goal 表述约束（硬性要求）\n负责从 webs 中抽取证据的 Evidence Extractor 是无状态模块：它每次调用只能看到 search_goal 这段文字本身和当轮网页，看不到原始问题、看不到任何历史轮次或已确认的事实。因此 search_goal 必须能够脱离上下文独立理解，否则 Evidence Extractor 会因为读不懂指代对象而抽不出证据：\n1. 禁止使用依赖上下文才能理解的代词或指代词（如\"该\"\"其\"\"此\"\"上述\"\"这个\"）；search_goal 中提到的每个实体都必须直接写出其名称。\n2. 禁止使用未锚定的相对时间或相对顺序表达（如\"下一个\"\"之后\"\"当年\"\"目前\"\"最近\"）；所有时间都必须转换为具体日期或可独立检索的绝对表达。\n3. 如果 search_goal 依赖某个尚未确认的锚点实体（例如\"下一个车展具体是哪一场\"尚不确定），此时必须只创建确定这个锚点本身的目标，不要把\"确定锚点\"和\"基于锚点做进一步调查\"合并成一个目标——后者要等锚点所在目标 CLOSED、锚点的具体名称/日期已经写进 supported_statement 之后，再创建新目标并把确认后的具体名称/日期写入新目标的 search_goal 文本。\n\n# JSON 输出硬约束\n1. 只输出一个可被标准 JSON 解析器直接解析的 JSON 对象；不要 Markdown 代码块、注释、解释性前后缀或尾随逗号。\n2. 所有 key 和字符串必须使用双引号；空值使用 null，不得使用 None、单引号、NaN 或省略字段。\n3. 顶层只能包含 action 一个字段。\n\n## 唯一输出格式\n{\n  \"action\": {\n    \"action_reason\": \"为什么先搜索该目标\",\n    \"search_action\": \"CREATE_GOAL\",\n    \"search_goal_id\": \"G1\",\n    \"search_goal\": \"首个持久化搜索目标\",\n    \"depends_on_goal_ids\": [],\n    \"supersedes_goal_id\": null,\n    \"search_queries\": [\"query 1\", \"query 2\"]\n  }\n}"
+              },
+              {
+                "role": "user",
+                "content": "<constant_info>\nuser_query: 摩拜单车最近一个完整财年的营收是多少?\ncurrent_date: 2026-09-12\n</constant_info>\n\n<task>\n这是第 1 轮。请从原始问题最明显、最基础的信息缺口创建第一个 CREATE_GOAL，并规划搜索 query。\n</task>"
+              }
+            ],
+            "attempts": []
+          }
+        }
+      }
+    ],
+    "errors": [
+      {
+        "stage": "round1_create_goal",
+        "error_type": "RuntimeError",
+        "error": "environment variable ds_api_key is not set",
+        "traceback": "Traceback (most recent call last):\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search_multi_agent/orchestrator.py\", line 107, in run\n    return self._run_impl(user_query, current_date=current_date)\n           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search_multi_agent/orchestrator.py\", line 180, in _run_impl\n    pending = self._run_round1(state)\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search_multi_agent/orchestrator.py\", line 335, in _run_round1\n    response = self._call_model(messages, \"planner\")\n  File \"/Users/seinelee/Documents/my_search_agent/deep_search_multi_agent/orchestrator.py\", line 426, in _call_model\n    response = self.request_model(messages)\n  File \"/Users/seinelee/Documents/my_search_agent/get_model_infer.py\", line 127, in request_model\n    return request_model_stream(messages)\n  File \"/Users/seinelee/Documents/my_search_agent/get_model_infer.py\", line 84, in request_model_stream\n    raise RuntimeError(\"environment variable ds_api_key is not set\")\nRuntimeError: environment variable ds_api_key is not set\n",
+        "last_model_call": {
+          "agent": "planner",
+          "stage": "round1_create_goal",
+          "messages": [
+            {
+              "role": "system",
+              "content": "# 角色\n你是离线轨迹合成系统中的 Planner。这是第 1 轮，也是唯一一轮不产出证据、不识别冲突的轮次：你只负责从用户原始问题中创建第一个持久化搜索目标（search_goal），并规划可由网页搜索引擎执行的 query。\n\n# 目标规划约束\n1. 从原始问题最基础、最明确、可检索验证的信息缺口创建一个目标，不要一次展开整个答案；复杂问题应先锚定其中最基础的事实（例如时间锚点、主体定义），后续轮次再逐步展开。\n2. 本轮必须且只能输出一个 CREATE_GOAL 动作，search_goal_id 固定为 \"G1\"。\n3. 首轮没有已有目标，因此 depends_on_goal_ids=[]，supersedes_goal_id=null。\n4. search_goal 必须是单一、可闭环验证的事实目标；search_queries 提供 1～5 条互补 query，包含必要的实体、事件、时间或官方来源限定。\n\n# search_goal 表述约束（硬性要求）\n负责从 webs 中抽取证据的 Evidence Extractor 是无状态模块：它每次调用只能看到 search_goal 这段文字本身和当轮网页，看不到原始问题、看不到任何历史轮次或已确认的事实。因此 search_goal 必须能够脱离上下文独立理解，否则 Evidence Extractor 会因为读不懂指代对象而抽不出证据：\n1. 禁止使用依赖上下文才能理解的代词或指代词（如\"该\"\"其\"\"此\"\"上述\"\"这个\"）；search_goal 中提到的每个实体都必须直接写出其名称。\n2. 禁止使用未锚定的相对时间或相对顺序表达（如\"下一个\"\"之后\"\"当年\"\"目前\"\"最近\"）；所有时间都必须转换为具体日期或可独立检索的绝对表达。\n3. 如果 search_goal 依赖某个尚未确认的锚点实体（例如\"下一个车展具体是哪一场\"尚不确定），此时必须只创建确定这个锚点本身的目标，不要把\"确定锚点\"和\"基于锚点做进一步调查\"合并成一个目标——后者要等锚点所在目标 CLOSED、锚点的具体名称/日期已经写进 supported_statement 之后，再创建新目标并把确认后的具体名称/日期写入新目标的 search_goal 文本。\n\n# JSON 输出硬约束\n1. 只输出一个可被标准 JSON 解析器直接解析的 JSON 对象；不要 Markdown 代码块、注释、解释性前后缀或尾随逗号。\n2. 所有 key 和字符串必须使用双引号；空值使用 null，不得使用 None、单引号、NaN 或省略字段。\n3. 顶层只能包含 action 一个字段。\n\n## 唯一输出格式\n{\n  \"action\": {\n    \"action_reason\": \"为什么先搜索该目标\",\n    \"search_action\": \"CREATE_GOAL\",\n    \"search_goal_id\": \"G1\",\n    \"search_goal\": \"首个持久化搜索目标\",\n    \"depends_on_goal_ids\": [],\n    \"supersedes_goal_id\": null,\n    \"search_queries\": [\"query 1\", \"query 2\"]\n  }\n}"
+            },
+            {
+              "role": "user",
+              "content": "<constant_info>\nuser_query: 摩拜单车最近一个完整财年的营收是多少?\ncurrent_date: 2026-09-12\n</constant_info>\n\n<task>\n这是第 1 轮。请从原始问题最明显、最基础的信息缺口创建第一个 CREATE_GOAL，并规划搜索 query。\n</task>"
+            }
+          ],
+          "attempts": []
+        }
+      }
+    ]
+  },
+  "answer_agent_handoff": {
+    "user_query": "摩拜单车最近一个完整财年的营收是多少?",
+    "run_id": "66fa66d3376c45a7a249809be7042104",
+    "run_status": "FAILED",
+    "stop_reason": "RuntimeError: environment variable ds_api_key is not set",
+    "metrics": {
+      "scheme": "scheme_multi_agent",
+      "total_rounds": 0,
+      "search_rounds": 0,
+      "model_call_count": 1,
+      "planner_call_count": 0,
+      "evidence_extractor_call_count": 0,
+      "search_query_count": 0,
+      "web_result_count": 0,
+      "unique_web_count": 0,
+      "goal_created_count": 0,
+      "conflict_search_count": 0,
+      "termination_type": "FAILED",
+      "terminated_by_model": false,
+      "reached_max_rounds": false,
+      "final_action": "FAILED",
+      "last_model_action": null,
+      "started_at": "2026-09-12T13:39:56.681251+00:00",
+      "finished_at": "2026-09-12T13:39:56.683166+00:00",
+      "elapsed_ms": 1.72
+    },
+    "search_goals": [],
+    "evidences": [],
+    "conflicts": [],
+    "webs": []
+  }
+}

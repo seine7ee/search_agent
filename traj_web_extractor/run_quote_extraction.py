@@ -39,7 +39,10 @@ def main() -> int:
     parser.add_argument("--retry-delay-seconds", type=float, default=RETRY_DELAY_SECONDS)
     parser.add_argument(
         "--extraction-mode", choices=EXTRACTION_MODES, default=EXTRACTION_MODE,
-        help="verbatim=原有逐字片段方案，sentence_ids=句子编号方案",
+        help=(
+            "verbatim=原有逐字片段方案，sentence_ids=句子编号方案，"
+            "sentence_ranges=句子起止区间方案"
+        ),
     )
     parser.add_argument(
         "--model-provider", choices=MODEL_PROVIDERS, default=MODEL_PROVIDER,

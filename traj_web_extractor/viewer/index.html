@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quote Trace · 抽取结果检视</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <div class="loading-screen" id="loading-screen" role="status" aria-live="polite">
+    <span class="loading-mark" aria-hidden="true"></span>
+    <p>正在载入抽取轨迹…</p>
+  </div>
+
+  <div class="app-shell" id="app-shell" hidden>
+    <aside class="sidebar">
+      <div class="brand-block">
+        <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div>
+          <p class="eyebrow">TRAJ WEB EXTRACTOR</p>
+          <h1>Quote Trace</h1>
+        </div>
+      </div>
+
+      <section class="file-block" aria-labelledby="source-heading">
+        <div class="file-heading-row">
+          <h2 id="source-heading">结果文件</h2>
+          <span id="file-count"></span>
+        </div>
+        <label class="file-select-wrap" for="result-file">
+          <select id="result-file" aria-label="选择抽取结果文件"></select>
+        </label>
+        <p class="file-load-status" id="file-load-status" aria-live="polite"></p>
+        <span class="field-label current-file-label">当前加载</span>
+        <p class="source-name" id="source-name"></p>
+        <p class="source-path" id="source-path"></p>
+      </section>
+
+      <section class="sidebar-stats" aria-label="数据概览">
+        <div><strong id="stat-goals">—</strong><span>搜索目标</span></div>
+        <div><strong id="stat-webs">—</strong><span>网页</span></div>
+        <div><strong id="stat-quotes">—</strong><span>Quotes</span></div>
+      </section>
+
+      <nav class="goal-nav" aria-labelledby="goal-nav-heading">
+        <div class="nav-heading-row">
+          <h2 id="goal-nav-heading">搜索目标</h2>
+          <span id="goal-count"></span>
+        </div>
+        <div id="goal-nav-list"></div>
+      </nav>
+
+      <div class="legend" aria-label="句子标记图例">
+        <h2>句子标记</h2>
+        <div><span class="legend-swatch selected"></span>模型选中</div>
+        <div><span class="legend-swatch bridged"></span>规则补全</div>
+        <div><span class="legend-swatch plain"></span>未抽取</div>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <header class="query-panel">
+        <p class="eyebrow">USER QUERY</p>
+        <p class="query-text" id="user-query"></p>
+        <div class="warning-list" id="warning-list" hidden></div>
+      </header>
+
+      <section class="goal-panel" aria-labelledby="active-goal-title">
+        <div class="goal-kicker">
+          <span class="goal-id" id="active-goal-id"></span>
+          <span class="goal-position" id="goal-position"></span>
+        </div>
+        <h2 id="active-goal-title"></h2>
+        <div class="goal-metrics" id="goal-metrics"></div>
+      </section>
+
+      <section class="control-bar" aria-label="网页结果控制">
+        <label class="search-box" for="web-filter">
+          <span aria-hidden="true"></span>
+          <input id="web-filter" type="search" placeholder="搜索标题、站点、句子或 quote…" autocomplete="off">
+        </label>
+        <div class="control-actions">
+          <span class="result-count" id="result-count"></span>
+          <button type="button" class="quiet-button" id="expand-all">全部展开</button>
+          <button type="button" class="quiet-button" id="collapse-all">全部收起</button>
+        </div>
+      </section>
+
+      <section class="web-list" id="web-list" aria-live="polite"></section>
+    </main>
+  </div>
+
+  <section class="fatal-error" id="fatal-error" hidden role="alert">
+    <p class="eyebrow">LOAD ERROR</p>
+    <h1>无法加载抽取结果</h1>
+    <p id="fatal-error-message"></p>
+  </section>
+
+  <script src="/assets/app.js" defer></script>
+</body>
+</html>

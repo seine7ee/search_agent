@@ -27,7 +27,8 @@ INPUT_FILES = [
     "batch_trajectories/multi_agent/traj_比较中国主要云计算厂商最新公开的收入、增速和市场定位。_2026-08-24_1787540246054.json",
     "batch_trajectories/multi_agent/traj_目前主流大模型长上下文能力的技术路线和公开评测结果有哪些？_2026-08-24_1787538403874.json",
     "batch_trajectories/multi_agent/traj_近三年动力电池技术有哪些重要突破，分别由哪些企业推动？_2026-08-24_1787542217694.json",
-    "batch_trajectories/multi_agent/traj_小米发布第二款车之后的下一个大型车展上，其竞品都发布了什么车？_2026-08-24_1787535881631.json"
+    "batch_trajectories/multi_agent/traj_小米发布第二款车之后的下一个大型车展上，其竞品都发布了什么车？_2026-08-24_1787535881631.json",
+    "batch_trajectories/multi_agent/traj_摩拜单车最近一个完整财年的营收是多少?_2026-09-12_1789220468021.json"
 ]
 
 # 文件级线程数；每个文件内部按目标、网页顺序调用模型。
@@ -35,7 +36,8 @@ INPUT_FILES = [
 MAX_WORKERS = 2
 MAX_ATTEMPTS = 3
 RETRY_DELAY_SECONDS = 1.0
-# "verbatim" 使用原有逐字片段方案；"sentence_ids" 使用句子编号方案。
+# "verbatim" 使用原文片段；"sentence_ids" 使用句子编号；
+# "sentence_ranges" 使用语义片段的句子起止区间。
 EXTRACTION_MODE = DEFAULT_EXTRACTION_MODE
 # "qwen" 调用 req_qwen_model；"ds" 调用 req_ds.request_model。
 MODEL_PROVIDER = DEFAULT_MODEL_PROVIDER

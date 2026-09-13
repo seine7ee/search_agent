@@ -2,6 +2,41 @@
 
 原始轨迹的目标/网页提取只使用 Python 标准库，不调用模型或搜索引擎。相关片段抽取可配置使用 `req_qwen.py` 的 Qwen3-8B 或 `req_ds.py` 的 DeepSeek 接口。两种流程都不修改输入文件。
 
+## 抽取结果可视化
+
+本目录提供一个无第三方依赖的本地检视页面。服务启动时会自动扫描 `traj_web_extractor/webs_quotes/` 下的全部 JSONL 文件，页面左侧可直接选择并加载任一结果。选中后按 search goal 分组、按 web 展开，集中展示用户 query、当前 search goal、网页元数据、拆分后的句子及编号、模型选中的 sentence IDs 或 sentence ranges、规则补全句子和最终 quotes。页面还支持 search goal 切换、全文过滤、网页批量展开/收起和原始 `web_content` 查看。
+
+在项目根目录运行：
+
+```bash
+python3 -m traj_web_extractor.run_visualizer \
+  "/path/to/quotes.jsonl"
+```
+
+然后访问 `http://127.0.0.1:8765`。命令中的文件路径只决定页面首次选中的文件，页面仍会列出扫描目录中的其他 JSONL；不传时优先打开当前“小米车展”样例。可用 `--host`、`--port` 修改监听地址，也可用 `--quotes-dir` 扫描其他目录：
+
+```bash
+python3 -m traj_web_extractor.run_visualizer \
+  --quotes-dir "/path/to/webs_quotes" \
+  "initial_quotes.jsonl"
+```
+
+首次选中的文件必须位于扫描目录内，接口也只允许按启动时生成的文件列表加载结果，不能通过页面读取目录外文件。quotes JSONL 本身不保存 `user_query`，页面会根据同一次运行的文件标识自动查找相邻模块 `search_goals/` 下的配套 JSON 并读取 query，也可为首次文件显式指定：
+
+```bash
+python3 -m traj_web_extractor.run_visualizer \
+  "/path/to/quotes.jsonl" \
+  --search-goals "/path/to/search_goals.json"
+```
+
+页面用青绿色标记模型实际选中的编号；当 quotes 合并规则在两个相距一个句子的编号之间自动补齐上下文时，该中间句以琥珀色标记。所有动态文本都作为纯文本渲染，网页 URL 仅允许 `http`/`https` 协议。
+
+可视化模块测试：
+
+```bash
+python3 -m unittest traj_web_extractor.test_visualizer -v
+```
+
 ## 完整流程与批量运行（推荐入口）
 
 输入原始轨迹 JSON，一次完成以下流程，无需指定任何输出路径：
@@ -23,7 +58,7 @@ INPUT_FILES = [
 MAX_WORKERS = 1
 MAX_ATTEMPTS = 3
 RETRY_DELAY_SECONDS = 1.0
-EXTRACTION_MODE = "sentence_ids"  # 或 "verbatim"
+EXTRACTION_MODE = "sentence_ids"  # 或 "verbatim"、"sentence_ranges"
 MODEL_PROVIDER = "ds"             # 或 "qwen"
 ```
 
@@ -82,7 +117,7 @@ traj_web_extractor/webs_quotes/原文件名__毫秒时间戳_随机标识_quotes
 - `status` 为 `FAILED` 时，`error` 提供错误类型与原因；有结果路径也不代表整个任务完成，不将错误伪装成空 quotes。
 - 脚本最终输出 JSON 汇总。全部成功退出码为 0，有失败或配置无效时退出码为 1。空列表视为无任务，正常退出。
 
-中间数据格式不变；quotes 文件容器为逐行追加的 JSONL。`verbatim` 保留原有四字段结果，`sentence_ids` 增加分句与编号字段。以下分阶段入口继续可用；要使用自动双目录流程，请使用本节入口。
+中间数据格式不变；quotes 文件容器为逐行追加的 JSONL。`verbatim` 保留原有四字段结果，`sentence_ids` 增加分句与编号字段，`sentence_ranges` 增加分句与语义片段起止区间。以下分阶段入口继续可用；要使用自动双目录流程，请使用本节入口。
 
 ### 流程测试（不调用真实 API）
 
@@ -174,7 +209,7 @@ records = extract_goal_web_quotes_file(
     output_path="/path/to/quotes.jsonl",  # 可省略：只返回结果列表
     max_attempts=3,
     retry_delay_seconds=1.0,
-    extraction_mode="sentence_ids",       # 或 "verbatim"
+    extraction_mode="sentence_ids",       # 或 "verbatim"、"sentence_ranges"
     model_provider="ds",                  # 或 "qwen"
 )
 ```
@@ -183,17 +218,18 @@ records = extract_goal_web_quotes_file(
 
 ### 抽取方案与模型配置
 
-现有逐字片段方案和新增句子编号方案相互独立：
+三种上下文组装与输出解析方案相互独立，可通过同一个配置项切换：
 
 | 配置值 | 上下文 | 模型输出 | 结果字段 |
 |---|---|---|---|
 | `verbatim` | 原始 `web_content` | `"片段1"｜"片段2"` 或 `无相关信息` | 原有四字段，包含 `quotes` |
 | `sentence_ids` | 规则分句并显示为 `[1] 句子` | 严格 JSON 整数数组，如 `[3, 5]`；无相关信息为 `[]` | 增加完整 `sentences`、模型选择的 `sentence_ids`，并由程序重建 `quotes` |
+| `sentence_ranges` | 与 `sentence_ids` 相同的规则分句与编号 | 起止区间，如 `[3, 5]\|[8, 8]`；无相关信息为 `[]` | 增加完整 `sentences`、模型选择的 `sentence_ranges`，并按闭区间重建 `quotes` |
 
 抽取方案和模型提供方的默认值均位于 `quote_config.py`：
 
 ```python
-DEFAULT_EXTRACTION_MODE = SENTENCE_IDS_MODE
+DEFAULT_EXTRACTION_MODE = SENTENCE_RANGES_MODE
 DEFAULT_MODEL_PROVIDER = DS_MODEL_PROVIDER
 ```
 
@@ -201,12 +237,12 @@ DEFAULT_MODEL_PROVIDER = DS_MODEL_PROVIDER
 
 - 修改上述全局默认值。
 - 批跑时修改 `run_batch_extraction.py` 中的 `EXTRACTION_MODE` 和 `MODEL_PROVIDER`。
-- Python 调用传入 `extraction_mode="sentence_ids"`、`model_provider="ds"` 等参数。
-- 单文件完整流程或分阶段入口传入 `--extraction-mode sentence_ids --model-provider ds`。命令行参数会覆盖默认配置。
+- Python 调用传入 `extraction_mode="sentence_ids"`、`extraction_mode="sentence_ranges"`、`model_provider="ds"` 等参数。
+- 单文件完整流程或分阶段入口传入 `--extraction-mode sentence_ranges --model-provider ds`。命令行参数会覆盖默认配置。
 
-未显式传参时采用 `quote_config.py` 中的当前默认值；目前为 `sentence_ids + ds`。原有 `quote_prompts.py` 的上下文组装和 `parse_quotes` 的解析行为不变。非法抽取模式或模型提供方会在任何模型请求前报错。显式注入 `request_model(messages) -> str` 时，注入函数优先于配置提供方，便于测试或接入第三种模型。
+未显式传参时采用 `quote_config.py` 中的当前默认值；目前为 `sentence_ranges + ds`。原有 `quote_prompts.py` 的上下文组装和 `parse_quotes` 的解析行为不变。非法抽取模式或模型提供方会在任何模型请求前报错。显式注入 `request_model(messages) -> str` 时，注入函数优先于配置提供方，便于测试或接入第三种模型。
 
-`req_ds.request_model_stream` 与 `request_model_standard` 均直接返回最终回答文本，不再将模型输出预解析为 JSON 对象；流式接口也不再强制 `json_object` 响应格式。因此它们可以原样返回编号数组 `[3, 5]`、逐字片段或 `无相关信息`，再由当前抽取方案自己的解析器校验。`request_model(messages, stream=True)` 默认使用流式入口，传入 `stream=False` 使用标准入口。
+`req_ds.request_model_stream` 与 `request_model_standard` 均直接返回最终回答文本，不再将模型输出预解析为 JSON 对象；流式接口也不再强制 `json_object` 响应格式。因此它们可以原样返回编号数组 `[3, 5]`、区间串 `[3, 5]|[8, 8]`、逐字片段或 `无相关信息`，再由当前抽取方案自己的解析器校验。`request_model(messages, stream=True)` 默认使用流式入口，传入 `stream=False` 使用标准入口。
 
 ### 句子编号方案
 
@@ -245,6 +281,53 @@ quote 合并规则按网页顺序执行：
 
 编号模式复用原有逐网页执行、失败重试、诊断 messages、JSONL 逐条追加、`flush`/`fsync` 和批量编排逻辑。
 
+### 句子起止区间方案
+
+`sentence_ranges` 使用与编号方案完全相同的换行清理、句子切分和编号上下文，但让模型直接确定语义完整片段的闭区间边界。开始和停止编号都包含在最终 quote 中：
+
+```text
+[3, 5]|[8, 8]
+```
+
+表示抽取第 3～5 句形成第一条 quote，并将孤立的第 8 句形成第二条 quote。完全没有相关信息时输出 `[]`。
+
+边界约束如下：
+
+- 尽可能合并属于同一主题、事实链或解释链的信息。如果两个相关边界之间最多间隔 3 句，或只是跨过一个分段/过渡内容，Prompt 要求模型直接输出覆盖首尾的一个区间。
+- 连续两句或更多句共同表达一项相关信息时，必须使用一个覆盖完整语义的区间，不能拆成相邻区间。
+- 语义自足的孤立一句使用 `[n, n]`。
+- 多个不连续片段使用 ASCII `|` 分隔，按开始编号升序排列。
+- 区间必须位于当前网页句子范围内，满足 `start <= end`，且不得重叠。
+- 模型输出的任意格式、类型、边界或顺序错误都会触发当前网页的既有重试逻辑。
+- Harness 解析模型结果时会再次归并：相邻区间，或中间最多间隔 2 个句子的区间，会合并成一个更大的闭区间。该规则支持传递合并。
+
+保存结果示例：
+
+```json
+{
+  "search_goal_id": "G1",
+  "search_goal": "当前搜索重点",
+  "web": {"web_id": "1", "web_content": "一。二。三。四。五。"},
+  "sentences": [
+    {"sentence_id": 1, "sentence": "一。"},
+    {"sentence_id": 2, "sentence": "二。"},
+    {"sentence_id": 3, "sentence": "三。"},
+    {"sentence_id": 4, "sentence": "四。"},
+    {"sentence_id": 5, "sentence": "五。"}
+  ],
+  "sentence_ranges": [[2, 4]],
+  "quotes": ["二。三。四。"]
+}
+```
+
+程序先应用 Harness 的区间归并规则，再依据规范化网页文本中的句子字符区间重建 quote，不采用模型复述内容。例如模型输出 `[2, 4]|[6, 6]`，中间只隔第 5 句，最终保存为 `sentence_ranges: [[2, 6]]`，并使用第 2～6 句形成一条 quote。
+
+区间方案测试（不调用真实模型）：
+
+```bash
+python3 -m unittest traj_web_extractor.test_sentence_range_quotes -v
+```
+
 ### 原有逐字片段方案的上下文与抽取规则
 
 遍历每个目标的每个网页，每个 `(search_goal, web)` 独立发起一次模型调用。上下文只包含：
@@ -268,7 +351,7 @@ quote 合并规则按网页顺序执行：
 
 ### 输出结果
 
-结果文件使用 JSONL，每个目标—网页对应一行完整 JSON 对象，严格保留目标顺序和网页顺序，没有外层数组或行间逗号。`verbatim` 模式保持原有四字段；`sentence_ids` 模式额外增加 `sentences` 和 `sentence_ids`。例如下面是两条原有模式的独立记录：
+结果文件使用 JSONL，每个目标—网页对应一行完整 JSON 对象，严格保留目标顺序和网页顺序，没有外层数组或行间逗号。`verbatim` 模式保持原有四字段；`sentence_ids` 模式额外增加 `sentences` 和 `sentence_ids`；`sentence_ranges` 模式额外增加 `sentences` 和 `sentence_ranges`。例如下面是两条原有模式的独立记录：
 
 ```jsonl
 {"search_goal_id":"G1","search_goal":"当前搜索重点","web":{"web_id":"1","web_content":"网页中的原始内容"},"quotes":["网页中的原始内容"]}

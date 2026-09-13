@@ -1,4 +1,4 @@
-"""Run Qwen3-8B passage extraction for each (search goal, webpage) pair."""
+"""Run configurable passage extraction for each (search goal, webpage) pair."""
 
 from __future__ import annotations
 
@@ -16,6 +16,7 @@ from .extractor import _array, _identifier, _object
 from .quote_config import (
     DS_MODEL_PROVIDER,
     SENTENCE_IDS_MODE,
+    SENTENCE_RANGES_MODE,
     resolve_extraction_mode,
     resolve_model_provider,
 )
@@ -25,6 +26,11 @@ from .sentence_id_quotes import (
     parse_sentence_ids,
     rebuild_quotes,
     split_web_content,
+)
+from .sentence_range_quotes import (
+    build_sentence_range_messages,
+    parse_sentence_ranges,
+    rebuild_range_quotes,
 )
 
 ModelRequest = Callable[[list[dict[str, str]]], str]
@@ -144,7 +150,7 @@ def extract_goal_web_quotes(
     messages; errors are never converted to empty quotes or silently skipped.
     on_record receives each successful record before requesting the next webpage;
     callback failures propagate without retrying the model or duplicating a save.
-    extraction_mode selects the original verbatim parser or the sentence-ID parser.
+    extraction_mode selects verbatim, sentence-ID, or sentence-range extraction.
     model_provider selects req_qwen_model or req_ds.request_model when no custom
     request_model callable is injected.
     """
@@ -171,11 +177,16 @@ def extract_goal_web_quotes(
     for job_index, (goal_id, search_goal, web) in enumerate(jobs):
         web_id = web.get("web_id", web.get("id", "unknown"))
         sentences = None
-        if mode == SENTENCE_IDS_MODE:
+        if mode in (SENTENCE_IDS_MODE, SENTENCE_RANGES_MODE):
             sentences = split_web_content(web["web_content"])
-            messages = build_sentence_id_messages(
-                data["user_query"], search_goal, web["web_content"], sentences=sentences,
-            )
+            if mode == SENTENCE_RANGES_MODE:
+                messages = build_sentence_range_messages(
+                    data["user_query"], search_goal, web["web_content"], sentences=sentences,
+                )
+            else:
+                messages = build_sentence_id_messages(
+                    data["user_query"], search_goal, web["web_content"], sentences=sentences,
+                )
         else:
             messages = build_quote_messages(data["user_query"], search_goal, web["web_content"])
         LOGGER.info("Extracting %s/%s: provider=%s mode=%s goal=%s web=%s",
@@ -184,11 +195,17 @@ def extract_goal_web_quotes(
             raw_response = None
             try:
                 raw_response = requester(deepcopy(messages))
-                if mode == SENTENCE_IDS_MODE:
+                sentence_ids = None
+                sentence_ranges = None
+                if mode == SENTENCE_RANGES_MODE:
+                    sentence_ranges = parse_sentence_ranges(raw_response, len(sentences))
+                    quotes = rebuild_range_quotes(
+                        web["web_content"], sentences, sentence_ranges,
+                    )
+                elif mode == SENTENCE_IDS_MODE:
                     sentence_ids = parse_sentence_ids(raw_response, len(sentences))
                     quotes = rebuild_quotes(web["web_content"], sentences, sentence_ids)
                 else:
-                    sentence_ids = None
                     quotes = parse_quotes(raw_response, web["web_content"])
             except Exception as exc:
                 LOGGER.warning("Extraction failed: goal=%s web=%s attempt=%s/%s error=%s",
@@ -207,7 +224,7 @@ def extract_goal_web_quotes(
                     "search_goal": search_goal,
                     "web": deepcopy(dict(web)),
                 }
-                if sentence_ids is not None:
+                if sentences is not None:
                     record["sentences"] = [
                         {
                             "sentence_id": sentence.sentence_id,
@@ -215,7 +232,10 @@ def extract_goal_web_quotes(
                         }
                         for sentence in sentences
                     ]
+                if sentence_ids is not None:
                     record["sentence_ids"] = sentence_ids
+                if sentence_ranges is not None:
+                    record["sentence_ranges"] = sentence_ranges
                 record["quotes"] = quotes
                 if on_record is not None:
                     on_record(deepcopy(record))

@@ -1,0 +1,163 @@
+{
+  "surface": "report",
+  "title": "网页抽取提升信息密度，但全量历史回放未必提升搜索效率",
+  "generatedAt": "2026-09-13T00:00:00Z",
+  "status": "reviewed",
+  "buildStatus": "complete",
+  "filters": [],
+  "queries": {
+    "comparison": {
+      "rows": [
+        {
+          "group": 1,
+          "query": "小米发布第二款车之后的下一个大型车展上，其竞品都发布了什么车？",
+          "goal_web_pairs": 119,
+          "unique_urls": 119,
+          "empty_pages": 23,
+          "full_selected_pages": 30,
+          "raw_chars": 61163,
+          "quote_chars": 36290,
+          "web_compression_pct": 40.66674296551837,
+          "density_multiplier_if_relevance_preserved": 1.6853954257371178,
+          "old_planner_chars": 119140,
+          "new_planner_quote_only_chars": 189727,
+          "new_planner_source_chars": 242754,
+          "quote_only_planner_reduction_pct": -59.24710424710425,
+          "source_planner_reduction_pct": -103.75524592915899,
+          "old_evidence_quote_count": 34,
+          "old_evidence_quotes_verbatim_in_input": 29,
+          "old_evidence_quotes_retained": 29,
+          "extractor_input_chars": 76940,
+          "round_web_exposures": 125,
+          "snapshot_mismatches": 0,
+          "nonempty_extracted_records_not_fully_present_in_original_round": 0,
+          "quote_count": 34,
+          "quote_verbatim_in_own_original_web": 29,
+          "quote_verbatim_in_extraction_input": 29,
+          "retained_quotes": 29,
+          "hypothetical_2k_history_reduction_pct": 5.778915561524256,
+          "hypothetical_4k_history_reduction_pct": -2.614571092831963,
+          "new_extractor_input_chars_reconstructed_from_current_prompt": 241171,
+          "new_extractor_range_output_chars": 713,
+          "old_extractor_json_output_chars": 5774,
+          "search_rounds": 6,
+          "elapsed_seconds": 743.6578900000001
+        },
+        {
+          "group": 2,
+          "query": "近三年动力电池技术有哪些重要突破，分别由哪些企业推动？",
+          "goal_web_pairs": 43,
+          "unique_urls": 43,
+          "empty_pages": 9,
+          "full_selected_pages": 13,
+          "raw_chars": 28152,
+          "quote_chars": 16926,
+          "web_compression_pct": 39.87638533674339,
+          "density_multiplier_if_relevance_preserved": 1.663239985820631,
+          "old_planner_chars": 48139,
+          "new_planner_quote_only_chars": 43184,
+          "new_planner_source_chars": 50479,
+          "quote_only_planner_reduction_pct": 10.293109536965872,
+          "source_planner_reduction_pct": -4.860923575479337,
+          "old_evidence_quote_count": 29,
+          "old_evidence_quotes_verbatim_in_input": 18,
+          "old_evidence_quotes_retained": 18,
+          "extractor_input_chars": 32479,
+          "round_web_exposures": 43,
+          "snapshot_mismatches": 0,
+          "nonempty_extracted_records_not_fully_present_in_original_round": 0,
+          "quote_count": 29,
+          "quote_verbatim_in_own_original_web": 18,
+          "quote_verbatim_in_extraction_input": 18,
+          "retained_quotes": 18,
+          "hypothetical_2k_history_reduction_pct": 16.267475435717405,
+          "hypothetical_4k_history_reduction_pct": 12.112839901119676,
+          "new_extractor_input_chars_reconstructed_from_current_prompt": 93753,
+          "new_extractor_range_output_chars": 245,
+          "old_extractor_json_output_chars": 7607,
+          "search_rounds": 2,
+          "elapsed_seconds": 301.99803
+        },
+        {
+          "group": 3,
+          "query": "梳理生成式 AI 在搜索产品中的主要落地方式和代表性产品。",
+          "goal_web_pairs": 62,
+          "unique_urls": 56,
+          "empty_pages": 8,
+          "full_selected_pages": 13,
+          "raw_chars": 41985,
+          "quote_chars": 23404,
+          "web_compression_pct": 44.25628200547814,
+          "density_multiplier_if_relevance_preserved": 1.7939241155358059,
+          "old_planner_chars": 69438,
+          "new_planner_quote_only_chars": 74004,
+          "new_planner_source_chars": 89257,
+          "quote_only_planner_reduction_pct": -6.5756502203404565,
+          "source_planner_reduction_pct": -28.542008698407216,
+          "old_evidence_quote_count": 42,
+          "old_evidence_quotes_verbatim_in_input": 38,
+          "old_evidence_quotes_retained": 37,
+          "extractor_input_chars": 48276,
+          "round_web_exposures": 62,
+          "snapshot_mismatches": 0,
+          "nonempty_extracted_records_not_fully_present_in_original_round": 0,
+          "quote_count": 42,
+          "quote_verbatim_in_own_original_web": 38,
+          "quote_verbatim_in_extraction_input": 38,
+          "retained_quotes": 37,
+          "hypothetical_2k_history_reduction_pct": 14.30052708891385,
+          "hypothetical_4k_history_reduction_pct": 8.53999251130505,
+          "new_extractor_input_chars_reconstructed_from_current_prompt": 140100,
+          "new_extractor_range_output_chars": 424,
+          "old_extractor_json_output_chars": 5682,
+          "search_rounds": 3,
+          "elapsed_seconds": 562.87976
+        }
+      ],
+      "source": {
+        "label": "三组本地轨迹与句子区间抽取结果的离线测量",
+        "files": [
+          "/Users/seinelee/Documents/my_search_agent/batch_trajectories/multi_agent/traj_小米发布第二款车之后的下一个大型车展上，其竞品都发布了什么车？_2026-08-24_1787535881631.json",
+          "/Users/seinelee/Documents/my_search_agent/batch_trajectories/multi_agent/traj_近三年动力电池技术有哪些重要突破，分别由哪些企业推动？_2026-08-24_1787542217694.json",
+          "/Users/seinelee/Documents/my_search_agent/batch_trajectories/multi_agent/traj_梳理生成式 AI 在搜索产品中的主要落地方式和代表性产品。_2026-08-24_1787537840987.json",
+          "/Users/seinelee/Documents/my_search_agent/traj_web_extractor/webs_quotes/sentence_ranges_ds_traj_小米发布第二款车之后的下一个大型车展上，其竞品都发布了什么车？_2026-08-24_1787535881631__1789235858256_d05bb3fb1c46_quotes.jsonl",
+          "/Users/seinelee/Documents/my_search_agent/traj_web_extractor/webs_quotes/sentence_ranges_ds_traj_近三年动力电池技术有哪些重要突破，分别由哪些企业推动？_2026-08-24_1787542217694__1789235508684_494b9c24549e_quotes.jsonl",
+          "/Users/seinelee/Documents/my_search_agent/traj_web_extractor/webs_quotes/sentence_ranges_ds_traj_梳理生成式 AI 在搜索产品中的主要落地方式和代表性产品。_2026-08-24_1787537840987__1789234768491_e8efee17e498_quotes.jsonl"
+        ],
+        "evidenceFlow": [
+          {
+            "title": "原始输入",
+            "detail": "指定三组轨迹的planner_call.messages、evidence_extractor_call.messages、metrics及quotes JSONL。"
+          },
+          {
+            "title": "统计与反事实重建",
+            "detail": "analyze.py按goal_id与web_id映射到原轮次；保留系统提示和状态开销，只替换网页与证据部分。diagnose.py核对原轮正文、引文及2k/4k历史预算场景。"
+          }
+        ],
+        "metricDefinitions": [
+          {
+            "label": "网页压缩率",
+            "definition": "1−quotes去空白字符数/web_content去空白字符数；按goal-web对统计。",
+            "componentIds": [
+              "report-findings",
+              "report-methods"
+            ]
+          },
+          {
+            "label": "累计输入变化",
+            "definition": "新旧Planner各轮messages.content字符数累计比较；不等同token、费用或耗时。",
+            "componentIds": [
+              "report-context",
+              "report-methods"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "report": {
+    "title": "网页抽取提升信息密度，但全量历史回放未必提升搜索效率",
+    "subtitle": "小米车展、动力电池、生成式AI搜索三组轨迹的实测与条件性估计"
+  },
+  "id": "report:879f2326-e6fd-4960-baf2-251cdf71c565"
+}

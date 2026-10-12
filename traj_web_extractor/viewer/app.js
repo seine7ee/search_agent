@@ -68,6 +68,45 @@ function selectedIdsForRecord(record) {
   return selected;
 }
 
+function rangeFragmentsForRecord(record) {
+  if (Array.isArray(record.range_fragments)) return record.range_fragments;
+  return (record.sentence_ranges || []).map(([start, end], index) => ({
+    fragment_id: index + 1,
+    start_sentence_id: start,
+    end_sentence_id: end,
+    sentence_count: end - start + 1,
+    quote: record.quotes[index] ?? null,
+  }));
+}
+
+function focusRangeFragment(card, fragmentId) {
+  if (!card) return;
+  card.open = true;
+  card.querySelectorAll("[data-fragment-id]").forEach((node) => {
+    const active = Number(node.dataset.fragmentId) === fragmentId;
+    node.classList.toggle("range-active", active);
+    if (node.tagName === "BUTTON") node.setAttribute("aria-pressed", String(active));
+  });
+  const firstSentence = card.querySelector(`.sentence-row[data-fragment-id="${fragmentId}"]`);
+  if (firstSentence) {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    firstSentence.scrollIntoView({ block: "center", behavior: reducedMotion ? "auto" : "smooth" });
+  }
+}
+
+function rangeJumpButton(fragment, className, label) {
+  const button = element("button", className, label);
+  button.type = "button";
+  button.dataset.fragmentId = fragment.fragment_id;
+  button.setAttribute("aria-pressed", "false");
+  button.setAttribute(
+    "aria-label",
+    `定位片段 ${fragment.fragment_id}，第 ${fragment.start_sentence_id} 至 ${fragment.end_sentence_id} 句`,
+  );
+  button.addEventListener("click", () => focusRangeFragment(button.closest(".web-card"), fragment.fragment_id));
+  return button;
+}
+
 function metadataRow(list, label, value, options = {}) {
   list.append(element("dt", "", label));
   const data = element("dd");
@@ -101,8 +140,9 @@ function searchableText(record) {
 function renderSentencePanel(record) {
   const panel = element("section", "sentence-panel");
   const heading = element("div", "section-heading");
+  const usesRanges = record.selection_mode === "sentence_ranges";
   heading.append(
-    element("h4", "", "拆分句子与编号"),
+    element("h4", "", usesRanges ? "拆分句子与区间覆盖" : "拆分句子与编号"),
     element("span", "", `${record.sentences.length} 句`),
   );
   panel.append(heading);
@@ -113,7 +153,8 @@ function renderSentencePanel(record) {
   }
 
   const selected = selectedIdsForRecord(record);
-  const bridged = record.selection_mode === "sentence_ranges"
+  const fragments = usesRanges ? rangeFragmentsForRecord(record) : [];
+  const bridged = usesRanges
     ? new Set()
     : deriveBridgedIds(record.sentence_ids);
   const list = element("div", "sentence-list");
@@ -122,16 +163,33 @@ function renderSentencePanel(record) {
     let status = "未抽取";
     if (selected.has(item.sentence_id)) {
       className += " selected";
-      status = "模型选中";
+      status = usesRanges ? "抽取区间覆盖" : "模型选中";
     } else if (bridged.has(item.sentence_id)) {
       className += " bridged";
       status = "规则补全";
     }
     const row = element("div", className);
     row.title = status;
+    const coveringFragment = fragments.find((fragment) => (
+      fragment.start_sentence_id <= item.sentence_id && item.sentence_id <= fragment.end_sentence_id
+    ));
+    const sentenceBody = element("div", "sentence-body");
+    if (coveringFragment) {
+      row.dataset.fragmentId = coveringFragment.fragment_id;
+      const isStart = item.sentence_id === coveringFragment.start_sentence_id;
+      const isEnd = item.sentence_id === coveringFragment.end_sentence_id;
+      row.classList.toggle("range-start", isStart);
+      row.classList.toggle("range-end", isEnd);
+      const boundary = isStart && isEnd ? "单句" : isStart ? "开始" : isEnd ? "结束" : "区间内";
+      sentenceBody.append(element(
+        "span", "sentence-range-label", `片段 ${coveringFragment.fragment_id} · ${boundary}`,
+      ));
+      row.title = `片段 ${coveringFragment.fragment_id} · [${coveringFragment.start_sentence_id}, ${coveringFragment.end_sentence_id}]`;
+    }
+    sentenceBody.append(element("p", "sentence-text", item.sentence));
     row.append(
       element("span", "sentence-id", `[${item.sentence_id}]`),
-      element("p", "sentence-text", item.sentence),
+      sentenceBody,
     );
     list.append(row);
   });
@@ -155,34 +213,65 @@ function renderExtractionPanel(record) {
   info.append(metadata);
   panel.append(info);
 
-  const ids = element("section", "subsection");
   const usesRanges = record.selection_mode === "sentence_ranges";
-  const selections = usesRanges ? record.sentence_ranges : record.sentence_ids;
-  ids.append(element(
-    "h4",
-    "",
-    usesRanges ? `模型抽取区间 · ${selections.length}` : `模型抽取 ID · ${selections.length}`,
-  ));
-  if (selections.length) {
-    const idList = element("div", "id-list");
-    selections.forEach((item) => {
-      const label = usesRanges ? `[${item[0]}, ${item[1]}]` : item;
-      idList.append(element("span", "id-chip", label));
-    });
-    ids.append(idList);
-  } else {
-    ids.append(element("p", "empty-state", usesRanges ? "模型未选择句子区间。" : "模型未选中句子。"));
-  }
-  panel.append(ids);
+  (record.record_warnings || []).forEach((warning) => {
+    panel.append(element("p", "record-warning", warning));
+  });
 
-  const quotes = element("section", "subsection");
-  quotes.append(element("h4", "", `最终 Quotes · ${record.quotes.length}`));
-  if (record.quotes.length) {
-    record.quotes.forEach((quote) => quotes.append(element("blockquote", "quote-card", quote)));
+  if (usesRanges) {
+    const fragments = rangeFragmentsForRecord(record);
+    const ranges = element("section", "subsection range-results");
+    ranges.append(element("h4", "", `句子区间抽取 · ${fragments.length} 个片段`));
+    ranges.append(element("p", "range-explainer", "闭区间包含首尾句子；点击片段可定位原文。"));
+    const idList = element("div", "id-list");
+    fragments.forEach((fragment) => {
+      const label = `片段 ${fragment.fragment_id} · [${fragment.start_sentence_id}, ${fragment.end_sentence_id}]`;
+      idList.append(rangeJumpButton(fragment, "id-chip range-jump", label));
+    });
+    ranges.append(idList);
+    if (!fragments.length) {
+      ranges.append(element("p", "empty-state", "模型未选择句子区间。"));
+    }
+    fragments.forEach((fragment) => {
+      const quoteCard = element("article", "range-quote-card");
+      quoteCard.dataset.fragmentId = fragment.fragment_id;
+      const label = `片段 ${String(fragment.fragment_id).padStart(2, "0")} · [${fragment.start_sentence_id}, ${fragment.end_sentence_id}]`;
+      const anchor = rangeJumpButton(fragment, "range-quote-anchor range-jump", label);
+      anchor.append(element("span", "range-length", `${fragment.sentence_count} 句 · 定位原文`));
+      quoteCard.append(anchor);
+      quoteCard.append(fragment.quote === null
+        ? element("p", "empty-state", "此区间没有对应的已保存 quote。")
+        : element("blockquote", "range-quote-text", fragment.quote));
+      ranges.append(quoteCard);
+    });
+    record.quotes.slice(fragments.length).forEach((quote, index) => {
+      const extra = element("article", "range-quote-card unmatched-quote");
+      extra.append(element("h5", "", `未配对 Quote ${fragments.length + index + 1}`));
+      extra.append(element("blockquote", "range-quote-text", quote));
+      ranges.append(extra);
+    });
+    panel.append(ranges);
   } else {
-    quotes.append(element("p", "empty-state", "该网页未抽取出相关 quote。"));
+    const ids = element("section", "subsection");
+    ids.append(element("h4", "", `模型抽取 ID · ${record.sentence_ids.length}`));
+    if (record.sentence_ids.length) {
+      const idList = element("div", "id-list");
+      record.sentence_ids.forEach((id) => idList.append(element("span", "id-chip", id)));
+      ids.append(idList);
+    } else {
+      ids.append(element("p", "empty-state", "模型未选中句子。"));
+    }
+    panel.append(ids);
+
+    const quotes = element("section", "subsection");
+    quotes.append(element("h4", "", `最终 Quotes · ${record.quotes.length}`));
+    if (record.quotes.length) {
+      record.quotes.forEach((quote) => quotes.append(element("blockquote", "quote-card", quote)));
+    } else {
+      quotes.append(element("p", "empty-state", "该网页未抽取出相关 quote。"));
+    }
+    panel.append(quotes);
   }
-  panel.append(quotes);
 
   const raw = element("details", "raw-web");
   raw.append(element("summary", "", "查看原始 web_content"));
@@ -207,7 +296,7 @@ function renderWebCard(record, visibleIndex, openByDefault) {
   const badges = element("div", "summary-badges");
   const usesRanges = record.selection_mode === "sentence_ranges";
   const selectionCount = usesRanges ? record.sentence_ranges.length : record.sentence_ids.length;
-  const selectionLabel = usesRanges ? "ranges" : "IDs";
+  const selectionLabel = usesRanges ? "个区间" : "IDs";
   badges.append(element("span", `mini-badge ${selectionCount ? "has-quotes" : "empty"}`, `${selectionCount} ${selectionLabel}`));
   badges.append(element("span", `mini-badge ${record.quotes.length ? "has-quotes" : "empty"}`, `${record.quotes.length} quotes`));
   summary.append(badges);
@@ -258,7 +347,7 @@ function renderActiveGoal() {
 
   const metrics = byId("goal-metrics");
   metrics.replaceChildren();
-  [
+  const metricItems = [
     [goal.web_count, "个网页"],
     [goal.sentence_count, "个句子"],
     [
@@ -266,7 +355,11 @@ function renderActiveGoal() {
       goal.uses_sentence_ranges ? "个抽取区间" : "个选中 ID",
     ],
     [goal.quote_count, "条 Quotes"],
-  ].forEach(([number, label]) => {
+  ];
+  if (goal.uses_sentence_ranges) {
+    metricItems.splice(3, 0, [goal.selected_sentence_count, "句区间覆盖"]);
+  }
+  metricItems.forEach(([number, label]) => {
     const item = element("span");
     item.append(element("strong", "", number), document.createTextNode(` ${label}`));
     metrics.append(item);

@@ -1,0 +1,5 @@
+.report-page { --data-app-layout-intent: authored-report; --data-app-content-width: 1040px; }
+.extraction-report .report-hero { margin-bottom: 42px; }
+.extraction-report .report-section { margin-block: 34px; }
+.extraction-report table { font-size: 14px; }
+.extraction-report h1 { max-width: 920px; }

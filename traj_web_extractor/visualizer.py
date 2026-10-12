@@ -175,14 +175,31 @@ def _validate_record(record: dict[str, Any]) -> dict[str, Any]:
             raise ViewerDataError(
                 f"record {record_index}: sentence_ranges[{position}] has invalid bounds"
             )
-        if previous_end is not None and start <= previous_end + 1:
+        if previous_end is not None and start <= previous_end:
             raise ViewerDataError(
-                f"record {record_index}: sentence_ranges must be ordered and non-adjacent"
+                f"record {record_index}: sentence_ranges must be ordered and non-overlapping"
             )
         normalized_ranges.append([start, end])
         previous_end = end
     if any(not isinstance(item, str) for item in quotes):
         raise ViewerDataError(f"record {record_index}: quotes must contain strings")
+
+    record_warnings = []
+    if has_sentence_ranges and len(normalized_ranges) != len(quotes):
+        record_warnings.append(
+            f"区间数（{len(normalized_ranges)}）与 quotes 数（{len(quotes)}）不一致；"
+            "按保存顺序展示配对结果，不补造缺失内容。"
+        )
+    range_fragments = [
+        {
+            "fragment_id": position + 1,
+            "start_sentence_id": start,
+            "end_sentence_id": end,
+            "sentence_count": end - start + 1,
+            "quote": quotes[position] if position < len(quotes) else None,
+        }
+        for position, (start, end) in enumerate(normalized_ranges)
+    ]
 
     return {
         "record_index": record_index,
@@ -192,6 +209,8 @@ def _validate_record(record: dict[str, Any]) -> dict[str, Any]:
         "sentences": normalized_sentences,
         "sentence_ids": selected_ids,
         "sentence_ranges": normalized_ranges,
+        "range_fragments": range_fragments,
+        "record_warnings": record_warnings,
         "selection_mode": (
             "sentence_ranges" if has_sentence_ranges
             else "sentence_ids" if has_sentence_ids

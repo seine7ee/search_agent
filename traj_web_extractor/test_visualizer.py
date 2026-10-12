@@ -119,9 +119,81 @@ class VisualizerDataTests(unittest.TestCase):
 
         self.assertEqual(saved["selection_mode"], "sentence_ranges")
         self.assertEqual(saved["sentence_ranges"], [[1, 2]])
+        self.assertEqual(saved["range_fragments"], [{
+            "fragment_id": 1,
+            "start_sentence_id": 1,
+            "end_sentence_id": 2,
+            "sentence_count": 2,
+            "quote": "第一句。第二句。",
+        }])
         self.assertEqual(data["summary"]["selected_sentence_count"], 2)
         self.assertEqual(data["summary"]["range_count"], 1)
         self.assertTrue(data["goals"][0]["uses_sentence_ranges"])
+
+    def test_preserves_historical_ranges_without_reapplying_merge_rules(self) -> None:
+        record = self.record()
+        record.pop("sentence_ids")
+        record["sentence_ranges"] = [[1, 1], [3, 3]]
+        record["quotes"] = ["第一句。", "第三句。"]
+        self.write_records([record])
+
+        saved = load_view_data(self.quotes_path)["goals"][0]["records"][0]
+
+        self.assertEqual(saved["sentence_ranges"], [[1, 1], [3, 3]])
+        self.assertEqual([item["fragment_id"] for item in saved["range_fragments"]], [1, 2])
+        self.assertEqual([item["sentence_count"] for item in saved["range_fragments"]], [1, 1])
+        self.assertEqual([item["quote"] for item in saved["range_fragments"]], record["quotes"])
+        self.assertEqual(saved["record_warnings"], [])
+
+    def test_empty_ranges_keep_range_mode_and_empty_fragments(self) -> None:
+        record = self.record()
+        record.pop("sentence_ids")
+        record["sentence_ranges"] = []
+        record["quotes"] = []
+        self.write_records([record])
+
+        saved = load_view_data(self.quotes_path)["goals"][0]["records"][0]
+
+        self.assertEqual(saved["selection_mode"], "sentence_ranges")
+        self.assertEqual(saved["range_fragments"], [])
+        self.assertEqual(saved["record_warnings"], [])
+
+    def test_range_quote_mismatch_is_reported_without_fabricating_quotes(self) -> None:
+        record = self.record()
+        record.pop("sentence_ids")
+        record["sentence_ranges"] = [[1, 1], [3, 3]]
+        record["quotes"] = ["第一句。"]
+        self.write_records([record])
+
+        saved = load_view_data(self.quotes_path)["goals"][0]["records"][0]
+
+        self.assertEqual(saved["range_fragments"][1]["quote"], None)
+        self.assertEqual(saved["quotes"], ["第一句。"])
+        self.assertEqual(len(saved["record_warnings"]), 1)
+
+    def test_adjacent_historical_ranges_can_be_displayed_separately(self) -> None:
+        record = self.record()
+        record.pop("sentence_ids")
+        record["sentence_ranges"] = [[1, 1], [2, 2]]
+        record["quotes"] = ["第一句。", "第二句。"]
+        self.write_records([record])
+
+        saved = load_view_data(self.quotes_path)["goals"][0]["records"][0]
+
+        self.assertEqual(saved["sentence_ranges"], [[1, 1], [2, 2]])
+
+    def test_unpaired_extra_quotes_are_preserved(self) -> None:
+        record = self.record()
+        record.pop("sentence_ids")
+        record["sentence_ranges"] = [[1, 1]]
+        record["quotes"] = ["第一句。", "额外已保存的片段"]
+        self.write_records([record])
+
+        saved = load_view_data(self.quotes_path)["goals"][0]["records"][0]
+
+        self.assertEqual(len(saved["range_fragments"]), 1)
+        self.assertEqual(saved["quotes"], record["quotes"])
+        self.assertEqual(len(saved["record_warnings"]), 1)
 
 
 class VisualizerServerTests(unittest.TestCase):
@@ -191,6 +263,9 @@ class VisualizerDirectoryServerTests(unittest.TestCase):
         self.second_name = "second_quotes.jsonl"
         for stem, query in (("first", "第一个问题"), ("second", "第二个问题")):
             record = VisualizerDataTests.record(goal_id=stem.upper(), goal=f"{stem}目标")
+            if stem == "second":
+                record.pop("sentence_ids")
+                record["sentence_ranges"] = [[1, 3]]
             (self.quotes_dir / f"{stem}_quotes.jsonl").write_text(
                 json.dumps(record, ensure_ascii=False) + "\n",
                 encoding="utf-8",
@@ -225,7 +300,10 @@ class VisualizerDirectoryServerTests(unittest.TestCase):
         self.assertEqual({item["name"] for item in catalog["files"]}, {self.first_name, self.second_name})
 
         with urlopen(self.base_url + "/api/data", timeout=2) as response:
-            self.assertEqual(json.load(response)["user_query"], "第二个问题")
+            second = json.load(response)
+        self.assertEqual(second["user_query"], "第二个问题")
+        self.assertEqual(second["goals"][0]["records"][0]["selection_mode"], "sentence_ranges")
+        self.assertEqual(second["goals"][0]["records"][0]["range_fragments"][0]["sentence_count"], 3)
         first_url = self.base_url + "/api/data?file=" + quote(self.first_name)
         with urlopen(first_url, timeout=2) as response:
             first = json.load(response)

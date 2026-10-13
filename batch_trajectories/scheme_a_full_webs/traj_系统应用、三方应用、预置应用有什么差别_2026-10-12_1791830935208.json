@@ -1,0 +1,1565 @@
+{
+  "trajectory": {
+    "user_query": "系统应用、三方应用、预置应用有什么差别",
+    "current_date": "2026-10-12",
+    "run_id": "e8a4b6e09bed40b8b758d38d4e347d8b",
+    "run_status": "COMPLETED",
+    "stop_reason": "所有回答原始问题所必需的目标均已闭环",
+    "metrics": {
+      "scheme": "scheme_a",
+      "total_turns": 1,
+      "search_turns": 1,
+      "model_call_count": 3,
+      "search_action_count": 1,
+      "search_query_count": 5,
+      "web_result_count": 17,
+      "unique_web_count": 14,
+      "termination_type": "MODEL_STOP",
+      "terminated_by_model": true,
+      "reached_max_turns": false,
+      "final_action": "STOP",
+      "last_model_action": "STOP",
+      "started_at": "2026-10-12T18:48:55.209909+00:00",
+      "finished_at": "2026-10-12T18:50:37.113227+00:00",
+      "elapsed_ms": 101903.42
+    },
+    "goals": [
+      {
+        "search_goal_id": "GOAL_1",
+        "search_goal": "系统应用、三方应用、预置应用三者在定义、来源、安装位置、权限和可卸载性方面的核心差别是什么",
+        "status": "CLOSED",
+        "status_reason": "本轮证据已覆盖定义/来源、安装位置、权限、可卸载性四个维度：系统应用与三方应用在鸿蒙以app-feature（hos_system_app/hos_normal_app）区分、在Android以FLAG_SYSTEM/FLAG_UPDATED_SYSTEM_APP区分，系统应用可调用系统接口与系统级权限而三方应用不可；预置应用则是按安装时机定义的维度，出厂预装的既可为系统应用也可为三方应用；系统应用位于/system/app、/system/priv-app、/vendor/app等系统分区，系统分区内应用不可手动卸载，普通厂商预装的三方应用通常可卸载。各来源口径可通过'预置与系统/三方非同一维度、系统分区归属决定可卸载性'统一解释，无阻塞冲突。",
+        "answer": "三者不是同一维度：①定义与来源：系统应用是具备系统标识/系统签名的应用（鸿蒙app-feature=hos_system_app，Android有FLAG_SYSTEM或FLAG_UPDATED_SYSTEM_APP），可调用系统接口；三方应用是由非官方第三方开发的应用（鸿蒙app-feature=hos_normal_app，或用户自行下载安装），不能调用系统接口；预置应用是按安装时机定义的，指厂商在出厂或生产、流通、售后环节预先装入设备的应用，既可能是系统应用也可能是三方应用。②安装位置：系统应用位于/system/app、/system/priv-app、/vendor/app等系统分区，核心应用（Launcher、SystemUI、SettingsProvider等）在/system/priv-app。③权限：系统应用（尤其priv-app）可使用系统级权限，三方应用不可（系统级权限标注Not for use by third-party applications）。④可卸载性：位于/system/priv-app、/system/app等系统分区的应用（包括被放入其中的三方应用）不可手动卸载；而厂商普通预装的三方应用通常可以卸载。",
+        "supported_statement": "系统应用以系统标识/签名及系统接口与系统级权限使用能力定义，三方应用以非官方第三方开发且不具备系统接口权限定义，预置应用按出厂预装这一安装时机定义并可同时包含系统应用与三方应用；系统应用（及放入系统分区者）位于/system/app、/system/priv-app、/vendor/app等分区且不可手动卸载，普通预装三方应用通常可卸载。",
+        "supporting_evidence_ids": [
+          "E1",
+          "E2",
+          "E3",
+          "E4",
+          "E5",
+          "E6",
+          "E7",
+          "E8"
+        ],
+        "conflict_summary": "",
+        "conflicting_evidence_ids": [],
+        "evidence_gap": "",
+        "depends_on_goal_ids": [],
+        "search_queries": [
+          "系统应用 三方应用 预置应用 区别",
+          "Android 系统应用 预置应用 第三方应用 定义 区别",
+          "system app preinstalled app third-party app difference Android",
+          "预置应用 系统应用 第三方应用 权限 卸载 区别",
+          "site:source.android.com system apps preinstalled apps third-party apps"
+        ],
+        "web_ids": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14"
+        ],
+        "evidence_ids": [
+          "E1",
+          "E2",
+          "E3",
+          "E4",
+          "E5",
+          "E6",
+          "E7",
+          "E8",
+          "E9"
+        ],
+        "conflict_ids": [],
+        "turn_ids": [
+          1
+        ]
+      }
+    ],
+    "evidences": [
+      {
+        "evidence_id": "E1",
+        "statement": "按鸿蒙开发者社区2024年的说明，系统应用是profile证书中app-feature为hos_system_app的应用，可调用系统接口；三方应用是app-feature为hos_normal_app的应用，不能调用系统接口。",
+        "quotes": [
+          {
+            "web_id": "1",
+            "quotes": [
+              "profile证书中app-feature为hos_system_app的应用为系统应用,其能调用系统接口。profile证书中app-feature为hos_normal_app的应用为三方应用,其不能调用系统接口。"
+            ]
+          }
+        ],
+        "evidence_role": "直接给出鸿蒙语境下系统应用与三方应用的定义标识及系统接口调用权限差异",
+        "evidence_type": "direct_answer",
+        "search_goal_id": "GOAL_1"
+      },
+      {
+        "evidence_id": "E2",
+        "statement": "预置/预装应用指厂商在设备出厂时预先安装，或企业在智能终端生产、流通、售后等环节装入的应用软件；鸿蒙社区指出预置应用可以是系统应用，也可以是三方应用。",
+        "quotes": [
+          {
+            "web_id": "1",
+            "quotes": [
+              "预置应用比较好理解,就是厂商在出厂时预先安装在设备上的应用,系统或三方应用都可以。"
+            ]
+          },
+          {
+            "web_id": "2",
+            "quotes": [
+              "预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。"
+            ]
+          }
+        ],
+        "evidence_role": "界定预置应用的来源，并说明预置应用与系统/三方应用不是同一维度的互斥分类",
+        "evidence_type": "direct_answer",
+        "search_goal_id": "GOAL_1"
+      },
+      {
+        "evidence_id": "E3",
+        "statement": "在Android开发语境中，存在ApplicationInfo.FLAG_SYSTEM或FLAG_UPDATED_SYSTEM_APP标志的应用即被归为系统App，否则归为用户App；预装的第三方App可通过安装时间是否为整秒来识别。",
+        "quotes": [
+          {
+            "web_id": "11",
+            "quotes": [
+              "简单而言存在ApplicationInfo.FLAG_SYSTEM或ApplicationInfo.FLAG_UPDATED_SYSTEM_APP flag的即为系统App,否pp也会归到用户App中,那么有没有办法知道用户App中哪些是预装的哪些是用户手动安装的呢?",
+              "App的安装时间是整秒的为预装的第三方App 。"
+            ]
+          }
+        ],
+        "evidence_role": "补充Android开发语境下系统App与用户App的判定标志，以及预装三方App的识别口径",
+        "evidence_type": "direct_answer",
+        "search_goal_id": "GOAL_1"
+      },
+      {
+        "evidence_id": "E4",
+        "statement": "在Android系统中，系统应用可按路径进一步划分，如/system/app、/system/priv-app、/vendor/app；/system/priv-app存放Launcher、SystemUI、SettingsProvider等核心系统应用，这些应用能使用系统级权限；/system/app则包含基础应用和部分三方应用。",
+        "quotes": [
+          {
+            "web_id": "7",
+            "quotes": [
+              "如果要详细划分,系统App还可根据其路径不同进一步划分(如/system/app、/system/priv-app、/vendor/app等)。"
+            ]
+          },
+          {
+            "web_id": "10",
+            "quotes": [
+              "/system/priv-app 中包含 Launcher,SystemUI, SettingsProvider 以及系统一些重要服务等系统的核心应用,这些应用能使用系统级的权限。",
+              "/system/app 中包含 一些基础应用和一些三方应用,比如日历,闹钟,天气,魔镜,音乐,这些有的是系统签名应用,有的不是系统签名应用,都是用户无法手动卸载的。"
+            ]
+          }
+        ],
+        "evidence_role": "说明系统应用及部分三方应用在安装位置、系统级权限和分区上的差异",
+        "evidence_type": "direct_answer",
+        "search_goal_id": "GOAL_1"
+      },
+      {
+        "evidence_id": "E5",
+        "statement": "系统App通常不可卸载；位于/system/priv-app和/system/app目录下的文件不可手动删除，即使root后用adb push推入这两个目录作为系统应用，用户也无法删除。",
+        "quotes": [
+          {
+            "web_id": "7",
+            "quotes": [
+              "有的属于系统App,不可卸载"
+            ]
+          },
+          {
+            "web_id": "10",
+            "quotes": [
+              "/system/priv-app和/system/app目录下的文件都是不可手动删除的。",
+              "手机被 root 后,通过 adb push 可以把 apk 推送到这两个目录,作为系统应用,用户无法删除。"
+            ]
+          }
+        ],
+        "evidence_role": "说明系统应用及系统分区内应用在可卸载性上的约束",
+        "evidence_type": "constraint",
+        "search_goal_id": "GOAL_1"
+      },
+      {
+        "evidence_id": "E6",
+        "statement": "厂商预装的第三方App通常可以卸载；但若三方应用被放入/system/app等系统分区，则按相关来源仍属于用户无法手动卸载。",
+        "quotes": [
+          {
+            "web_id": "7",
+            "quotes": [
+              "有的属于第三方App,厂商会预装一些常用的或者给了他们广告费的App,这些是可以卸载的。"
+            ]
+          },
+          {
+            "web_id": "10",
+            "quotes": [
+              "/system/app 中包含 一些基础应用和一些三方应用,比如日历,闹钟,天气,魔镜,音乐,这些有的是系统签名应用,有的不是系统签名应用,都是用户无法手动卸载的。"
+            ]
+          }
+        ],
+        "evidence_role": "区分普通预装三方应用与系统分区内三方应用在可卸载性上的不同口径",
+        "evidence_type": "direct_answer",
+        "search_goal_id": "GOAL_1"
+      },
+      {
+        "evidence_id": "E7",
+        "statement": "第三方应用一般指由非官方/第三方编制的应用；在手机日常语境中，也常与用户自行下载安装的软件对应，而手机自带软件与之相对。",
+        "quotes": [
+          {
+            "web_id": "8",
+            "quotes": [
+              "第三方应用的定义有: 1、是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。",
+              "3、是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用 。"
+            ]
+          },
+          {
+            "web_id": "14",
+            "quotes": [
+              "手机自带的是本身手机自带的软件,是无法删除卸载的,第三方软件的话,就是自己下载的。"
+            ]
+          }
+        ],
+        "evidence_role": "界定三方应用的来源，并与手机自带软件作对照",
+        "evidence_type": "direct_answer",
+        "search_goal_id": "GOAL_1"
+      },
+      {
+        "evidence_id": "E8",
+        "statement": "在Android/HarmonyOS开发语境中，默认应用是三方应用，很多API必须由系统应用才能使用；Android系统级权限也标注为Not for use by third-party applications。",
+        "quotes": [
+          {
+            "web_id": "3",
+            "quotes": [
+              "默认的应用是第三方应用,而很多API必须得是系统应用才能使用,例如ServiceExtensionContext.startServiceExtensionAbility这样的API。"
+            ]
+          },
+          {
+            "web_id": "12",
+            "quotes": [
+              "其中有如下说明的权限为系统级权限: Not for use by third-party applications."
+            ]
+          }
+        ],
+        "evidence_role": "通过开发接口和系统级权限标注说明系统应用与三方应用在权限上的差异",
+        "evidence_type": "direct_answer",
+        "search_goal_id": "GOAL_1"
+      },
+      {
+        "evidence_id": "E9",
+        "statement": "有来源称预装软件一般无法删除卸载，只有获取root权限才可以（该来源未区分系统预装与三方预装）。",
+        "quotes": [
+          {
+            "web_id": "5",
+            "quotes": [
+              "还有就是用户的权限设定,预装软件一搬无法删除卸载,只有获取root权限才可以。"
+            ]
+          }
+        ],
+        "evidence_role": "提供预置应用可卸载性的另一种来源口径，提示预置应用不能一概而论",
+        "evidence_type": "counter_evidence",
+        "search_goal_id": "GOAL_1"
+      }
+    ],
+    "conflicts": [],
+    "webs": [
+      {
+        "url": "https://ost.51cto.com/answer/20240",
+        "title": "#鸿蒙学习大百科#系统、三方、预置这三种应用有哪些区别?-鸿蒙开发者社区-51CTO.COM",
+        "content": "预置应用比较好理解,就是厂商在出厂时预先安装在设备上的应用,系统或三方应用都可以。profile证书中app-feature为hos_system_app的应用为系统应用,其能调用系统接口。profile证书中app-feature为hos_normal_app的应用为三方应用,其不能调用系统接口。",
+        "website": "51CTO HarmonyOS开发者社区",
+        "date": "2024-10-31T09:37:41+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 51CTO HarmonyOS开发者社区｜网页时间: 2024-10-31T09:37:41+08:00｜网页标题: #鸿蒙学习大百科#系统、三方、预置这三种应用有哪些区别?-鸿蒙开发者社区-51CTO.COM｜网页内容：预置应用比较好理解,就是厂商在出厂时预先安装在设备上的应用,系统或三方应用都可以。profile证书中app-feature为hos_system_app的应用为系统应用,其能调用系统接口。profile证书中app-feature为hos_normal_app的应用为三方应用,其不能调用系统接口。",
+        "source_id": 1,
+        "web_id": "1"
+      },
+      {
+        "url": "https://www.wenjuan.com/lib_detail_full/547eb315f7405b665391a215",
+        "title": "预置应用调查问卷(厂商版) - 问卷调查调研模板  问卷网",
+        "content": "本问卷为针对手机厂商进行的预置应用可删除情况调查问卷。请按照实际情况规范填写,保证信息真实可信,完成填写后加盖公章。 请认真阅读关于预置应用及预置应用的分类说明:1) 预置应用定义    预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。 2) 预置应用分类    根据预装软件的功能及适用场景,预装软件分为三类:系统支撑类、基本功能类和扩展功能类。  系统支撑类预装软件,是指保证智能终端硬件和操作系统正常运行的应用程序,如adbd、rald、vold、toolbox等。  基本功能类预装软件,是指实现智能终端基本功能而预装的应用软件,如电话、短信、联系人、日历、拍照等。  扩展功能类预装软件,是指为丰富用户体验而预装的应用软件,如社交、游戏、视频、音乐等。 (以上定义与分类参考《TAF14-TSG01-C-电信研究院-M002-V1.0.0预置应用软件分类研究》)",
+        "website": "问卷网",
+        "date": "2014-12-05T21:47:24+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 问卷网｜网页时间: 2014-12-05T21:47:24+08:00｜网页标题: 预置应用调查问卷(厂商版) - 问卷调查调研模板  问卷网｜网页内容：本问卷为针对手机厂商进行的预置应用可删除情况调查问卷。请按照实际情况规范填写,保证信息真实可信,完成填写后加盖公章。 请认真阅读关于预置应用及预置应用的分类说明:1) 预置应用定义    预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。 2) 预置应用分类    根据预装软件的功能及适用场景,预装软件分为三类:系统支撑类、基本功能类和扩展功能类。  系统支撑类预装软件,是指保证智能终端硬件和操作系统正常运行的应用程序,如adbd、rald、vold、toolbox等。  基本功能类预装软件,是指实现智能终端基本功能而预装的应用软件,如电话、短信、联系人、日历、拍照等。  扩展功能类预装软件,是指为丰富用户体验而预装的应用软件,如社交、游戏、视频、音乐等。 (以上定义与分类参考《TAF14-TSG01-C-电信研究院-M002-V1.0.0预置应用软件分类研究》)",
+        "source_id": 2,
+        "web_id": "2"
+      },
+      {
+        "url": "https://ost.51cto.com/answer/12615",
+        "title": "如何将三方应用改为系统应用-鸿蒙开发者社区-51CTO.COM",
+        "content": "默认的应用是第三方应用,而很多API必须得是系统应用才能使用,例如ServiceExtensionContext.startServiceExtensionAbility这样的API。那开发者如何将三方应用设置为系统应用以便使用这些接口呢?",
+        "website": "51CTO HarmonyOS开发者社区",
+        "date": "2024-06-18T12:08:20+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 51CTO HarmonyOS开发者社区｜网页时间: 2024-06-18T12:08:20+08:00｜网页标题: 如何将三方应用改为系统应用-鸿蒙开发者社区-51CTO.COM｜网页内容：默认的应用是第三方应用,而很多API必须得是系统应用才能使用,例如ServiceExtensionContext.startServiceExtensionAbility这样的API。那开发者如何将三方应用设置为系统应用以便使用这些接口呢?",
+        "source_id": 3,
+        "web_id": "3"
+      },
+      {
+        "url": "http://www.wenjuan.com/j/JrEFri/",
+        "title": "预置应用调查问卷(厂商版)_历史项目_免费模板_问卷网",
+        "content": "本问卷为针对手机厂商进行的预置应用可删除情况调查问卷。请按照实际情况规范填写,保证信息真实可信,完成填写后加盖公章。 请认真阅读关于预置应用及预置应用的分类说明: 1) 预置应用定义 预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。 2) 预置应用分类 根据预装软件的功能及适用场景,预装软件分为三类:系统支撑类、基本功能类和扩展功能类。 系统支撑类预装软件 ,是指保证智能终端硬件和操作系统正常运行的应用程序,如adbd、rald、vold、toolbox等。 基本功能类预装软件 ,是指实现智能终端基本功能而预装的应用软件,如电话、短信、联系人、日历、拍照等。 扩展功能类预装软件 ,是指为丰富用户体验而预装的应用软件,如社交、游戏、视频、音乐等。 (以上定义与分类参考《TAF14-TSG01-C-电信研究院-M002-V1.0.0预置应用软件分类研究》) \"> 本页仅为文字内容,不可回答。 预置应用调查问卷(厂商版) 本问卷为针对手机厂商进行的预置应用可删除情况调查问卷。请按照实际情况规范填写,保证信息真实可信,完成填写后加盖公章。 请认真阅读关于预置应用及预置应用的分类说明: 1) 预置应用定义 预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。 2) 预置应用分类 根据预装软件的功能及适用场景,预装软件分为三类:系统支撑类、基本功能类和扩展功能类。 系统支撑类预装软件 ,是指保证智能终端硬件和操作系统正常运行的应用程序,如adbd、rald、vold、toolbox等。 基本功能类预装软件 ,是指实现智能终端基本功能而预装的应用软件,如电话、短信、联系人、日历、拍照等。 扩展功能类预装软件 ,是指为丰富用户体验而预装的应用软件,如社交、游戏、视频、音乐等。 (以上定义与分类参考《TAF14-TSG01-C-电信研究院-M0",
+        "website": "问卷网",
+        "date": "2014-01-01T00:00:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 问卷网｜网页时间: 2014-01-01T00:00:00+08:00｜网页标题: 预置应用调查问卷(厂商版)_历史项目_免费模板_问卷网｜网页内容：本问卷为针对手机厂商进行的预置应用可删除情况调查问卷。请按照实际情况规范填写,保证信息真实可信,完成填写后加盖公章。 请认真阅读关于预置应用及预置应用的分类说明: 1) 预置应用定义 预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。 2) 预置应用分类 根据预装软件的功能及适用场景,预装软件分为三类:系统支撑类、基本功能类和扩展功能类。 系统支撑类预装软件 ,是指保证智能终端硬件和操作系统正常运行的应用程序,如adbd、rald、vold、toolbox等。 基本功能类预装软件 ,是指实现智能终端基本功能而预装的应用软件,如电话、短信、联系人、日历、拍照等。 扩展功能类预装软件 ,是指为丰富用户体验而预装的应用软件,如社交、游戏、视频、音乐等。 (以上定义与分类参考《TAF14-TSG01-C-电信研究院-M002-V1.0.0预置应用软件分类研究》) \"> 本页仅为文字内容,不可回答。 预置应用调查问卷(厂商版) 本问卷为针对手机厂商进行的预置应用可删除情况调查问卷。请按照实际情况规范填写,保证信息真实可信,完成填写后加盖公章。 请认真阅读关于预置应用及预置应用的分类说明: 1) 预置应用定义 预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。 2) 预置应用分类 根据预装软件的功能及适用场景,预装软件分为三类:系统支撑类、基本功能类和扩展功能类。 系统支撑类预装软件 ,是指保证智能终端硬件和操作系统正常运行的应用程序,如adbd、rald、vold、toolbox等。 基本功能类预装软件 ,是指实现智能终端基本功能而预装的应用软件,如电话、短信、联系人、日历、拍照等。 扩展功能类预装软件 ,是指为丰富用户体验而预装的应用软件,如社交、游戏、视频、音乐等。 (以上定义与分类参考《TAF14-TSG01-C-电信研究院-M0",
+        "source_id": 4,
+        "web_id": "4"
+      },
+      {
+        "url": "http://wenwen.sogou.com/z/q808227552.htm",
+        "title": "android 手机上本地应用程序和第三方应用程序的区别? 他们公用相同的API,他们本质的区别是是么 - 搜狗问问",
+        "content": "预装软件一般是推广用的,有些是有区别的,这包含定制的东西,有些手机的预装软件虽然与普通软件的api一样,但是有一定的定制功能,界面可能有所修改,功能可能也有所删加,着取决于定制机的定位。还有就是用户的权限设定,预装软件一搬无法删除卸载,只有获取root权限才可以。其他方面,预装的软件和第三方程序基本上没什么区别, 一般大家经常讲的第三方登录只是一个概念,就是获得第三方平台的授权,而不是讲应用使用这种授权来注册用户完成登录的流程。 下面的是具体流程: 1、需要支持用户注册。 2、需要在应用登录的时候提供第三方平台的图标。 3、用户点击第三方平台图标以后,你们尝试判断用户是否已经授权。 4、如果用户授权,获取他的唯一识别符,比方说weibodb里面的weiboid这个字段。 5、如果用户没有授权,引导用户授权,授权成功后也可以获取weibo id。 6、然后用这个唯一识别符登录你们的系统,如果用户已经注册,则应该让用户登录到你们的系统,流程结束。 7、如果你们的系统发现用户没有注册,引导用户进入你们应用的注册页面,并通过share sdk的showuser方法获取用户资料,自动帮助用户完成注册资料的填写,然后等待用户确认。 8、如果用户确认了注册信息,你们的应用就根据他的信息完成这注册操作,如果操作成功,则应该让用户登录到你们的系统,流程结束。",
+        "website": "搜狗问答",
+        "date": "2016-10-28T15:12:34+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 搜狗问答｜网页时间: 2016-10-28T15:12:34+08:00｜网页标题: android 手机上本地应用程序和第三方应用程序的区别? 他们公用相同的API,他们本质的区别是是么 - 搜狗问问｜网页内容：预装软件一般是推广用的,有些是有区别的,这包含定制的东西,有些手机的预装软件虽然与普通软件的api一样,但是有一定的定制功能,界面可能有所修改,功能可能也有所删加,着取决于定制机的定位。还有就是用户的权限设定,预装软件一搬无法删除卸载,只有获取root权限才可以。其他方面,预装的软件和第三方程序基本上没什么区别, 一般大家经常讲的第三方登录只是一个概念,就是获得第三方平台的授权,而不是讲应用使用这种授权来注册用户完成登录的流程。 下面的是具体流程: 1、需要支持用户注册。 2、需要在应用登录的时候提供第三方平台的图标。 3、用户点击第三方平台图标以后,你们尝试判断用户是否已经授权。 4、如果用户授权,获取他的唯一识别符,比方说weibodb里面的weiboid这个字段。 5、如果用户没有授权,引导用户授权,授权成功后也可以获取weibo id。 6、然后用这个唯一识别符登录你们的系统,如果用户已经注册,则应该让用户登录到你们的系统,流程结束。 7、如果你们的系统发现用户没有注册,引导用户进入你们应用的注册页面,并通过share sdk的showuser方法获取用户资料,自动帮助用户完成注册资料的填写,然后等待用户确认。 8、如果用户确认了注册信息,你们的应用就根据他的信息完成这注册操作,如果操作成功,则应该让用户登录到你们的系统,流程结束。",
+        "source_id": 5,
+        "web_id": "5"
+      },
+      {
+        "url": "https://blog.csdn.net/baiyifei2016/article/details/128493729",
+        "title": "Android识别预装的第三方App方法实例_android 如何判断是预装的三方应用-CSDN博客",
+        "content": "系统内置 应用 对应的flag为 App licationInfo.FLAG_SYSTEMboolean isSystem App ( App lication aInfo){if((aInfo.flags & aInfo.FLAG_SYSTEM) == 0){return false;}else {return true;}} 06-25 1万+ android 源码中预安装 第三方 的apk软件热度 2已有 2578 次阅读2012-11-23 17:55 |系统分类: Android 开发| android , 安装, 第三方 申明:转载:http://blog.csdn.net/zhangchiytu/article/details/6424910 对于 Android 系统集成有源码的 第三方 库和程序,只需要提供An 安卓( Android )是一种基于Linux的自由及开放源代码的操作系统。主要使用于移动设备,如智能手机和平板电脑,由Google公司和开放手机联盟领导及开发。 Android 操作系统最初由Andy Rubin开发,主要支持手机。2005年8月由Google收购注资。2007年11月,Google与84家硬件制造商、软件开发商及电信营运商组建开放手机联盟共同研发改良 Android 系统。随后Goog... 一、添加到Removeable中(可卸载)1. 在alps/device/Amobile/A_101/device.mk 文件中添加改APK: OPera_MINI 名字# add third parth removable apkPRODUCT_PACKAGES += \\FaceBook \\MXPlayer \\Hungamaplay \\OPera_MINI \\Exceloemstub \\Ppt... 获取所有 应用 及相关信息 方法 1:",
+        "website": "CSDN",
+        "date": "2023-01-13T08:30:07+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: CSDN｜网页时间: 2023-01-13T08:30:07+08:00｜网页标题: Android识别预装的第三方App方法实例_android 如何判断是预装的三方应用-CSDN博客｜网页内容：系统内置 应用 对应的flag为 App licationInfo.FLAG_SYSTEMboolean isSystem App ( App lication aInfo){if((aInfo.flags & aInfo.FLAG_SYSTEM) == 0){return false;}else {return true;}} 06-25 1万+ android 源码中预安装 第三方 的apk软件热度 2已有 2578 次阅读2012-11-23 17:55 |系统分类: Android 开发| android , 安装, 第三方 申明:转载:http://blog.csdn.net/zhangchiytu/article/details/6424910 对于 Android 系统集成有源码的 第三方 库和程序,只需要提供An 安卓( Android )是一种基于Linux的自由及开放源代码的操作系统。主要使用于移动设备,如智能手机和平板电脑,由Google公司和开放手机联盟领导及开发。 Android 操作系统最初由Andy Rubin开发,主要支持手机。2005年8月由Google收购注资。2007年11月,Google与84家硬件制造商、软件开发商及电信营运商组建开放手机联盟共同研发改良 Android 系统。随后Goog... 一、添加到Removeable中(可卸载)1. 在alps/device/Amobile/A_101/device.mk 文件中添加改APK: OPera_MINI 名字# add third parth removable apkPRODUCT_PACKAGES += \\FaceBook \\MXPlayer \\Hungamaplay \\OPera_MINI \\Exceloemstub \\Ppt... 获取所有 应用 及相关信息 方法 1:",
+        "source_id": 2,
+        "web_id": "6"
+      },
+      {
+        "url": "https://blog.csdn.net/weixin_39562615/article/details/117481052",
+        "title": "android 安装第三方app,Android识别预装的第三方App方法实例-CSDN博客",
+        "content": "前言 新买一台手机,里面会有很多App,有的属于系统App,不可卸载,有的属于第三方App,厂商会预装一些常用的或者给了他们广告费的App,这些是可以卸载的。 如果要详细划分,系统App还可根据其路径不同进一步划分(如/system/app、/system/priv-app、/vendor/app等)。",
+        "website": "CSDN",
+        "date": "2024-03-20T16:03:04+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: CSDN｜网页时间: 2024-03-20T16:03:04+08:00｜网页标题: android 安装第三方app,Android识别预装的第三方App方法实例-CSDN博客｜网页内容：前言 新买一台手机,里面会有很多App,有的属于系统App,不可卸载,有的属于第三方App,厂商会预装一些常用的或者给了他们广告费的App,这些是可以卸载的。 如果要详细划分,系统App还可根据其路径不同进一步划分(如/system/app、/system/priv-app、/vendor/app等)。",
+        "source_id": 3,
+        "web_id": "7"
+      },
+      {
+        "url": "https://www.300.cn/itzspd/429049.html",
+        "title": "什么叫第三方应用 - IT知识教程 - 中企动力",
+        "content": "第三方应用的定义有: 1、是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。 2、是指某项应用,如PDF电子书格式,是由Adobe开发的,Adobe公司就称为官方,而由非Adobe公司开发的针对PDF电子书格式的所有应用软件,都可称为第三方软件。 3、是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用 。 应用(Application),一般指手机和平板电脑的应用。在面向对象上通常分为个人用户应用与企业级应用,在移动端系统分类上主要包括iOS(如:同步推等)、Android(如:AirDroid、百度应用等)和windows phone的xap和appx。",
+        "website": "中企动力",
+        "date": "2021-05-18T21:22:56+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 中企动力｜网页时间: 2021-05-18T21:22:56+08:00｜网页标题: 什么叫第三方应用 - IT知识教程 - 中企动力｜网页内容：第三方应用的定义有: 1、是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。 2、是指某项应用,如PDF电子书格式,是由Adobe开发的,Adobe公司就称为官方,而由非Adobe公司开发的针对PDF电子书格式的所有应用软件,都可称为第三方软件。 3、是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用 。 应用(Application),一般指手机和平板电脑的应用。在面向对象上通常分为个人用户应用与企业级应用,在移动端系统分类上主要包括iOS(如:同步推等)、Android(如:AirDroid、百度应用等)和windows phone的xap和appx。",
+        "source_id": 4,
+        "web_id": "8"
+      },
+      {
+        "url": "https://www.yebaike.com/22/2551693.html",
+        "title": "什么叫第三方应用 - 业百科",
+        "content": "第三方应用的定义有: 1、是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。 2、是指某项应用,如PDF电子书格式,是由Adobe开发的,Adobe公司就称为官方,而由非Adobe公司开发的针对PDF电子书格式的所有应用软件,都可称为第三方软件。 3、是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用。 应用(Application),一般指手机和平板电脑的应用。在面向对象上通常分为个人用户应用与企业级应用,在移动端系统分类上主要包括iOS(如:同步推等)、Android(如:AirDroid、百度应用等)和windowsphone的xap和appx。",
+        "website": "百度知道",
+        "date": "2020-11-12T05:30:05+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 百度知道｜网页时间: 2020-11-12T05:30:05+08:00｜网页标题: 什么叫第三方应用 - 业百科｜网页内容：第三方应用的定义有: 1、是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。 2、是指某项应用,如PDF电子书格式,是由Adobe开发的,Adobe公司就称为官方,而由非Adobe公司开发的针对PDF电子书格式的所有应用软件,都可称为第三方软件。 3、是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用。 应用(Application),一般指手机和平板电脑的应用。在面向对象上通常分为个人用户应用与企业级应用,在移动端系统分类上主要包括iOS(如:同步推等)、Android(如:AirDroid、百度应用等)和windowsphone的xap和appx。",
+        "source_id": 5,
+        "web_id": "9"
+      },
+      {
+        "url": "https://m.blog.csdn.net/wenzhi20102321/article/details/135704624",
+        "title": "Android系统目录priv-app 和app 详解",
+        "content": "Android系统目录priv-app 和app 详解\n文章目录\nAndroid系统目录priv-app 和app 详解\n一、前言 二、区别\n1、关于目录 2、关于进程 3、关于 System App\n有两类 App 属于 System App :\n4、关于 Privileged App\n两类 Privileged App\n(1)特定 uid 的 App (2)特定目录中的 App\n5、特殊权限 Privileged\n三、其他\n1、apk文件放在不同目录的测试效果 2、在Android系统中,`priv-app`和`app`目录小结 4、Android中不同应用权限级别从低到高总结场景\n一、前言\nAndroid4.4增加了/system/priv-app/目录,那么它与/system/app/目录有什么差别?\n本文主要从定义,作用,具体效果等方面进行分析。\n有一些是网上没有介绍到的内容。\n 如果只是知道 priv-app 目录比 app目录权限大一点,但是不了解具体区别的可以看看。\n二、区别\n1、关于目录\n4.4 之前没有/system/priv-app 目录,所有 /system/app 下的软件都能使用系统级的权限。\n/system/priv-app和/system/app目录下的文件都是不可手动删除的。\n手机被 root 后,通过 adb push 可以把 apk 推送到这两个目录,作为系统应用,用户无法删除。\n/system/priv-app 中包含 Launcher,SystemUI, SettingsProvider 以及系统一些重要服务等系统的核心应用,这些应用能使用系统级的权限。\n/system/app 中包含 一些基础应用和一些三方应用,比如日历,闹钟,天气,魔镜,音乐,这些有的是系统签名应用,有的不是系统签名应用,都是用户无法手动卸载的。\n放到 /sys",
+        "website": "CSDN",
+        "date": "2024-01-20T02:24:24+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: CSDN｜网页时间: 2024-01-20T02:24:24+08:00｜网页标题: Android系统目录priv-app 和app 详解｜网页内容：Android系统目录priv-app 和app 详解\n文章目录\nAndroid系统目录priv-app 和app 详解\n一、前言 二、区别\n1、关于目录 2、关于进程 3、关于 System App\n有两类 App 属于 System App :\n4、关于 Privileged App\n两类 Privileged App\n(1)特定 uid 的 App (2)特定目录中的 App\n5、特殊权限 Privileged\n三、其他\n1、apk文件放在不同目录的测试效果 2、在Android系统中,`priv-app`和`app`目录小结 4、Android中不同应用权限级别从低到高总结场景\n一、前言\nAndroid4.4增加了/system/priv-app/目录,那么它与/system/app/目录有什么差别?\n本文主要从定义,作用,具体效果等方面进行分析。\n有一些是网上没有介绍到的内容。\n 如果只是知道 priv-app 目录比 app目录权限大一点,但是不了解具体区别的可以看看。\n二、区别\n1、关于目录\n4.4 之前没有/system/priv-app 目录,所有 /system/app 下的软件都能使用系统级的权限。\n/system/priv-app和/system/app目录下的文件都是不可手动删除的。\n手机被 root 后,通过 adb push 可以把 apk 推送到这两个目录,作为系统应用,用户无法删除。\n/system/priv-app 中包含 Launcher,SystemUI, SettingsProvider 以及系统一些重要服务等系统的核心应用,这些应用能使用系统级的权限。\n/system/app 中包含 一些基础应用和一些三方应用,比如日历,闹钟,天气,魔镜,音乐,这些有的是系统签名应用,有的不是系统签名应用,都是用户无法手动卸载的。\n放到 /sys",
+        "source_id": 1,
+        "web_id": "10"
+      },
+      {
+        "url": "https://www.jb51.net/article/154858.htm",
+        "title": "Android识别预装的第三方App方法实例_Android_脚本之家",
+        "content": "这篇文章主要给大家介绍了关于Android如何识别预装的第三方App的相关资料,文中通过示例代码介绍的非常详细,需要的朋友可以参考借鉴,下面随着小编来一起学习学习吧 前言 新买一台手机,里面会有很多App,有的属于系统App,不可卸载,有的属于第三方App,厂商会预装一些常用的或者给了他们广告费的App,这些是可以卸载的。 如果要详细划分,系统App还可根据其路径不同进一步划分(如/system/app、/system/priv-app、/vendor/app等)。但对于开发者来说,手机上安装的App只分为2类:系统App和用户App,可以根据系统API区分,这里就不详细说了,简单而言存在ApplicationInfo.FLAG_SYSTEM或ApplicationInfo.FLAG_UPDATED_SYSTEM_APP flag的即为系统App,否pp也会归到用户App中,那么有没有办法知道用户App中哪些是预装的哪些是用户手动安装的呢? 在这里分享一种方法: App的安装时间是整秒的为预装的第三方App 。 如果不关心为什么能用这个奇怪方法来区分预装App的话,就可以关闭这篇文章了。 之前我也一直不清楚为什么可以用这种方法,当时我猜是因为手机第一次启动的时候时间是不准确的,会是某某年1月1日,然后因为启动时会扫描各个App目录然后安装Ap08\" it=\"1676feab448\" ut=\"167702c8a57\" version=\"1360\" userId=\"10118\">...</package><package name=\"com.android.providers.downloads\" codePath=\"/system/priv-app/DownloadProvider\" nativeLibraryPath=\"/system8\" sharedUserId=\"100",
+        "website": "脚本之家",
+        "date": "2019-01-18T09:06:46+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 脚本之家｜网页时间: 2019-01-18T09:06:46+08:00｜网页标题: Android识别预装的第三方App方法实例_Android_脚本之家｜网页内容：这篇文章主要给大家介绍了关于Android如何识别预装的第三方App的相关资料,文中通过示例代码介绍的非常详细,需要的朋友可以参考借鉴,下面随着小编来一起学习学习吧 前言 新买一台手机,里面会有很多App,有的属于系统App,不可卸载,有的属于第三方App,厂商会预装一些常用的或者给了他们广告费的App,这些是可以卸载的。 如果要详细划分,系统App还可根据其路径不同进一步划分(如/system/app、/system/priv-app、/vendor/app等)。但对于开发者来说,手机上安装的App只分为2类:系统App和用户App,可以根据系统API区分,这里就不详细说了,简单而言存在ApplicationInfo.FLAG_SYSTEM或ApplicationInfo.FLAG_UPDATED_SYSTEM_APP flag的即为系统App,否pp也会归到用户App中,那么有没有办法知道用户App中哪些是预装的哪些是用户手动安装的呢? 在这里分享一种方法: App的安装时间是整秒的为预装的第三方App 。 如果不关心为什么能用这个奇怪方法来区分预装App的话,就可以关闭这篇文章了。 之前我也一直不清楚为什么可以用这种方法,当时我猜是因为手机第一次启动的时候时间是不准确的,会是某某年1月1日,然后因为启动时会扫描各个App目录然后安装Ap08\" it=\"1676feab448\" ut=\"167702c8a57\" version=\"1360\" userId=\"10118\">...</package><package name=\"com.android.providers.downloads\" codePath=\"/system/priv-app/DownloadProvider\" nativeLibraryPath=\"/system8\" sharedUserId=\"100",
+        "source_id": 2,
+        "web_id": "11"
+      },
+      {
+        "url": "https://blog.csdn.net/lmz4727741/article/details/44986679?locationNum=10&fps=1",
+        "title": "关于android4.4系统内置应用时system下priv-app和app的区别 - lmz4727741的专栏 - CSDN博客",
+        "content": "一般都是系统核心应用如 Launcher 、 systemui 、 settings 等应用。 需要在 Android.mk 中做如下设置即可: LOCAL_PRIVILEGED_MODULE := true 那么那些权限是属于系统级权限呢?可以查看 Android API 文档 http://wear.techbrood.com/reference/android/Manifest.permission.html 其中有如下说明的权限为系统级权限: Not for use by third-party applications. 问题描述有些第三方app内置到手机不可卸载区域,有时候会无法正常使用。",
+        "website": "CSDN",
+        "date": "2015-04-10T23:47:53+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: CSDN｜网页时间: 2015-04-10T23:47:53+08:00｜网页标题: 关于android4.4系统内置应用时system下priv-app和app的区别 - lmz4727741的专栏 - CSDN博客｜网页内容：一般都是系统核心应用如 Launcher 、 systemui 、 settings 等应用。 需要在 Android.mk 中做如下设置即可: LOCAL_PRIVILEGED_MODULE := true 那么那些权限是属于系统级权限呢?可以查看 Android API 文档 http://wear.techbrood.com/reference/android/Manifest.permission.html 其中有如下说明的权限为系统级权限: Not for use by third-party applications. 问题描述有些第三方app内置到手机不可卸载区域,有时候会无法正常使用。",
+        "source_id": 1,
+        "web_id": "12"
+      },
+      {
+        "url": "http://www.apppark.cn/t-50243.html",
+        "title": "软件与APP运行环境、安装与卸载的对比",
+        "content": "软件和APP在运行环境、安装和卸载方面有一些区别: 运行环境: 软件: 一般指在计算机上运行的应用程序,可以包括桌面应用、服务器端应用等,运行环境可能是特定的操作系统或平台。 APP: 通常指移动设备上的应用程序,例如在iOS或Android操作系统上运行的应用,依赖于移动设备的操作系统和硬件环境。 安装: 软件: 安装软件通常需要下载安装文件(如.exe或.msi文件),然后在计算机上执行安装程序,将文件和相关组件复制到指定的目录并进行注册,可能需要管理员权限。 APP: 通过应用商店(如App Store、Google Play)进行安装,用户可以直接从商店下载并安装应用,通常只需点击下载按钮,系统会自动完成安装过程。 卸载: 软件: 在计算机上卸载软件可能需要使用操作系统提供的卸载程序或者在控制面板中进行卸载,这通常会删除安装时创建的文件和注册表中的相关条目。 APP: 用户可以在移动设备的应用商店中或设备设置中找到并选择卸载应用,这会将应用从设备中完全移除,包括应用本身和相关的数据。 总的来说,软件和APP在安装和卸载过程中存在一些异同,主要取决于它们运行的环境和设备平台。软件通常在桌面环境中安装和卸载,而APP更专注于移动设备,并通过应用商店进行安装和卸载。",
+        "website": "应用公园",
+        "date": "2023-12-18T20:45:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 应用公园｜网页时间: 2023-12-18T20:45:00+08:00｜网页标题: 软件与APP运行环境、安装与卸载的对比｜网页内容：软件和APP在运行环境、安装和卸载方面有一些区别: 运行环境: 软件: 一般指在计算机上运行的应用程序,可以包括桌面应用、服务器端应用等,运行环境可能是特定的操作系统或平台。 APP: 通常指移动设备上的应用程序,例如在iOS或Android操作系统上运行的应用,依赖于移动设备的操作系统和硬件环境。 安装: 软件: 安装软件通常需要下载安装文件(如.exe或.msi文件),然后在计算机上执行安装程序,将文件和相关组件复制到指定的目录并进行注册,可能需要管理员权限。 APP: 通过应用商店(如App Store、Google Play)进行安装,用户可以直接从商店下载并安装应用,通常只需点击下载按钮,系统会自动完成安装过程。 卸载: 软件: 在计算机上卸载软件可能需要使用操作系统提供的卸载程序或者在控制面板中进行卸载,这通常会删除安装时创建的文件和注册表中的相关条目。 APP: 用户可以在移动设备的应用商店中或设备设置中找到并选择卸载应用,这会将应用从设备中完全移除,包括应用本身和相关的数据。 总的来说,软件和APP在安装和卸载过程中存在一些异同,主要取决于它们运行的环境和设备平台。软件通常在桌面环境中安装和卸载,而APP更专注于移动设备,并通过应用商店进行安装和卸载。",
+        "source_id": 3,
+        "web_id": "13"
+      },
+      {
+        "url": "https://www.yebaike.com/22/2642801.html",
+        "title": "第三方应用指什么 - 业百科",
+        "content": "手机自带的是本身手机自带的软件,是无法删除卸载的,第三方软件的话,就是自己下载的。 定义 一是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。 二是指某项应用,如PDF电子书格式,是由Adobe开发的,Adobe公司就称为官方,而由非Adobe公司开发的针对PDF电子书格式的所有应用软件,都可称为第三方软件。 三是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用。",
+        "website": "百度知道",
+        "date": "2020-11-16T15:13:30+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 百度知道｜网页时间: 2020-11-16T15:13:30+08:00｜网页标题: 第三方应用指什么 - 业百科｜网页内容：手机自带的是本身手机自带的软件,是无法删除卸载的,第三方软件的话,就是自己下载的。 定义 一是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。 二是指某项应用,如PDF电子书格式,是由Adobe开发的,Adobe公司就称为官方,而由非Adobe公司开发的针对PDF电子书格式的所有应用软件,都可称为第三方软件。 三是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用。",
+        "source_id": 4,
+        "web_id": "14"
+      }
+    ],
+    "turns": [
+      {
+        "turn_id": 1,
+        "planner_input": {
+          "messages": [
+            {
+              "role": "system",
+              "content": "# 角色\n你是离线轨迹合成系统中首次处理用户 query 的 Search Planner。本阶段只负责创建第一个持久化搜索目标并规划可由网页搜索引擎执行的 query，不更新搜索状态，不输出答案或证据。\n\n# 目标规划约束\n1. 从原始问题最基础、最明确、可检索验证的信息缺口创建一个目标，不要一次展开整个答案。\n2. 本轮必须且只能输出一个 INIT_GOAL，search_goal_id 固定为 GOAL_1。\n3. 首轮没有已有目标，因此 target_goal_id=null、target_conflict_id=null、depends_on_goal_ids=[]。\n4. search_goal 必须是单一事实目标；search_queries 提供 1～5 条互补 query，包含必要的实体、事件、时间或官方来源限定。\n\n# JSON 输出硬约束\n1. 只输出一个可被标准 JSON 解析器直接解析的 JSON 对象；不要 Markdown 代码块、注释、解释性前后缀或尾随逗号。\n2. 所有 key 和字符串必须使用双引号；空值使用 null，不得使用 None、单引号、NaN 或省略整个顶层字段。\n3. 顶层只能包含 search_actions；search_actions 必须是长度为 1 的数组，并严格使用下列字段与结构。\n\n## 首轮唯一输出格式\n请严格按照以下JSON格式输出：\n{\n  \"search_actions\": [{\n    \"search_action\": \"INIT_GOAL\",\n    \"action_reason\": \"为什么先搜索该目标\",\n    \"target_goal_id\": null,\n    \"target_conflict_id\": null,\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"首个持久化搜索目标\",\n    \"depends_on_goal_ids\": [],\n    \"search_queries\": [\"query 1\", \"query 2\"]\n  }]\n}"
+            },
+            {
+              "role": "user",
+              "content": "<constant_info>\nuser_query: 系统应用、三方应用、预置应用有什么差别\ncurrent_date: 2026-10-12\n</constant_info>\n\n<task>\n这是首轮。请从原始问题最明显、最基础的信息缺口创建第一个 INIT_GOAL，并规划搜索 query。\n</task>"
+            }
+          ],
+          "response": {
+            "search_actions": [
+              {
+                "search_action": "INIT_GOAL",
+                "action_reason": "用户想了解系统应用、三方应用、预置应用之间的差别，首轮应先检索三者的基础定义、来源和核心区分维度，为后续细化权限、卸载和系统版本差异建立事实基础。",
+                "target_goal_id": null,
+                "target_conflict_id": null,
+                "search_goal_id": "GOAL_1",
+                "search_goal": "系统应用、三方应用、预置应用三者在定义、来源、安装位置、权限和可卸载性方面的核心差别是什么",
+                "depends_on_goal_ids": [],
+                "search_queries": [
+                  "系统应用 三方应用 预置应用 区别",
+                  "Android 系统应用 预置应用 第三方应用 定义 区别",
+                  "system app preinstalled app third-party app difference Android",
+                  "预置应用 系统应用 第三方应用 权限 卸载 区别",
+                  "site:source.android.com system apps preinstalled apps third-party apps"
+                ]
+              }
+            ]
+          },
+          "phase": "initial_plan"
+        },
+        "search_actions": [
+          {
+            "search_action": "INIT_GOAL",
+            "action_reason": "用户想了解系统应用、三方应用、预置应用之间的差别，首轮应先检索三者的基础定义、来源和核心区分维度，为后续细化权限、卸载和系统版本差异建立事实基础。",
+            "target_goal_id": null,
+            "target_conflict_id": null,
+            "search_goal_id": "GOAL_1",
+            "search_goal": "系统应用、三方应用、预置应用三者在定义、来源、安装位置、权限和可卸载性方面的核心差别是什么",
+            "depends_on_goal_ids": [],
+            "search_queries": [
+              "系统应用 三方应用 预置应用 区别",
+              "Android 系统应用 预置应用 第三方应用 定义 区别",
+              "system app preinstalled app third-party app difference Android",
+              "预置应用 系统应用 第三方应用 权限 卸载 区别",
+              "site:source.android.com system apps preinstalled apps third-party apps"
+            ]
+          }
+        ],
+        "executions": [
+          {
+            "search_action": {
+              "search_action": "INIT_GOAL",
+              "action_reason": "用户想了解系统应用、三方应用、预置应用之间的差别，首轮应先检索三者的基础定义、来源和核心区分维度，为后续细化权限、卸载和系统版本差异建立事实基础。",
+              "target_goal_id": null,
+              "target_conflict_id": null,
+              "search_goal_id": "GOAL_1",
+              "search_goal": "系统应用、三方应用、预置应用三者在定义、来源、安装位置、权限和可卸载性方面的核心差别是什么",
+              "depends_on_goal_ids": [],
+              "search_queries": [
+                "系统应用 三方应用 预置应用 区别",
+                "Android 系统应用 预置应用 第三方应用 定义 区别",
+                "system app preinstalled app third-party app difference Android",
+                "预置应用 系统应用 第三方应用 权限 卸载 区别",
+                "site:source.android.com system apps preinstalled apps third-party apps"
+              ]
+            },
+            "search_goal_id": "GOAL_1",
+            "search_queries": [
+              "系统应用 三方应用 预置应用 区别",
+              "Android 系统应用 预置应用 第三方应用 定义 区别",
+              "system app preinstalled app third-party app difference Android",
+              "预置应用 系统应用 第三方应用 权限 卸载 区别",
+              "site:source.android.com system apps preinstalled apps third-party apps"
+            ],
+            "search_calls": [
+              {
+                "query": "系统应用 三方应用 预置应用 区别",
+                "web_ids": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5"
+                ]
+              },
+              {
+                "query": "Android 系统应用 预置应用 第三方应用 定义 区别",
+                "web_ids": [
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9"
+                ]
+              },
+              {
+                "query": "system app preinstalled app third-party app difference Android",
+                "web_ids": [
+                  "10",
+                  "11",
+                  "1"
+                ]
+              },
+              {
+                "query": "预置应用 系统应用 第三方应用 权限 卸载 区别",
+                "web_ids": [
+                  "12",
+                  "5",
+                  "13",
+                  "14"
+                ]
+              },
+              {
+                "query": "site:source.android.com system apps preinstalled apps third-party apps",
+                "web_ids": []
+              }
+            ],
+            "search_errors": [],
+            "webs": [
+              {
+                "url": "https://ost.51cto.com/answer/20240",
+                "title": "#鸿蒙学习大百科#系统、三方、预置这三种应用有哪些区别?-鸿蒙开发者社区-51CTO.COM",
+                "content": "预置应用比较好理解,就是厂商在出厂时预先安装在设备上的应用,系统或三方应用都可以。profile证书中app-feature为hos_system_app的应用为系统应用,其能调用系统接口。profile证书中app-feature为hos_normal_app的应用为三方应用,其不能调用系统接口。",
+                "website": "51CTO HarmonyOS开发者社区",
+                "date": "2024-10-31T09:37:41+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 51CTO HarmonyOS开发者社区｜网页时间: 2024-10-31T09:37:41+08:00｜网页标题: #鸿蒙学习大百科#系统、三方、预置这三种应用有哪些区别?-鸿蒙开发者社区-51CTO.COM｜网页内容：预置应用比较好理解,就是厂商在出厂时预先安装在设备上的应用,系统或三方应用都可以。profile证书中app-feature为hos_system_app的应用为系统应用,其能调用系统接口。profile证书中app-feature为hos_normal_app的应用为三方应用,其不能调用系统接口。",
+                "source_id": 1,
+                "web_id": "1"
+              },
+              {
+                "url": "https://www.wenjuan.com/lib_detail_full/547eb315f7405b665391a215",
+                "title": "预置应用调查问卷(厂商版) - 问卷调查调研模板  问卷网",
+                "content": "本问卷为针对手机厂商进行的预置应用可删除情况调查问卷。请按照实际情况规范填写,保证信息真实可信,完成填写后加盖公章。 请认真阅读关于预置应用及预置应用的分类说明:1) 预置应用定义    预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。 2) 预置应用分类    根据预装软件的功能及适用场景,预装软件分为三类:系统支撑类、基本功能类和扩展功能类。  系统支撑类预装软件,是指保证智能终端硬件和操作系统正常运行的应用程序,如adbd、rald、vold、toolbox等。  基本功能类预装软件,是指实现智能终端基本功能而预装的应用软件,如电话、短信、联系人、日历、拍照等。  扩展功能类预装软件,是指为丰富用户体验而预装的应用软件,如社交、游戏、视频、音乐等。 (以上定义与分类参考《TAF14-TSG01-C-电信研究院-M002-V1.0.0预置应用软件分类研究》)",
+                "website": "问卷网",
+                "date": "2014-12-05T21:47:24+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 问卷网｜网页时间: 2014-12-05T21:47:24+08:00｜网页标题: 预置应用调查问卷(厂商版) - 问卷调查调研模板  问卷网｜网页内容：本问卷为针对手机厂商进行的预置应用可删除情况调查问卷。请按照实际情况规范填写,保证信息真实可信,完成填写后加盖公章。 请认真阅读关于预置应用及预置应用的分类说明:1) 预置应用定义    预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。 2) 预置应用分类    根据预装软件的功能及适用场景,预装软件分为三类:系统支撑类、基本功能类和扩展功能类。  系统支撑类预装软件,是指保证智能终端硬件和操作系统正常运行的应用程序,如adbd、rald、vold、toolbox等。  基本功能类预装软件,是指实现智能终端基本功能而预装的应用软件,如电话、短信、联系人、日历、拍照等。  扩展功能类预装软件,是指为丰富用户体验而预装的应用软件,如社交、游戏、视频、音乐等。 (以上定义与分类参考《TAF14-TSG01-C-电信研究院-M002-V1.0.0预置应用软件分类研究》)",
+                "source_id": 2,
+                "web_id": "2"
+              },
+              {
+                "url": "https://ost.51cto.com/answer/12615",
+                "title": "如何将三方应用改为系统应用-鸿蒙开发者社区-51CTO.COM",
+                "content": "默认的应用是第三方应用,而很多API必须得是系统应用才能使用,例如ServiceExtensionContext.startServiceExtensionAbility这样的API。那开发者如何将三方应用设置为系统应用以便使用这些接口呢?",
+                "website": "51CTO HarmonyOS开发者社区",
+                "date": "2024-06-18T12:08:20+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 51CTO HarmonyOS开发者社区｜网页时间: 2024-06-18T12:08:20+08:00｜网页标题: 如何将三方应用改为系统应用-鸿蒙开发者社区-51CTO.COM｜网页内容：默认的应用是第三方应用,而很多API必须得是系统应用才能使用,例如ServiceExtensionContext.startServiceExtensionAbility这样的API。那开发者如何将三方应用设置为系统应用以便使用这些接口呢?",
+                "source_id": 3,
+                "web_id": "3"
+              },
+              {
+                "url": "http://www.wenjuan.com/j/JrEFri/",
+                "title": "预置应用调查问卷(厂商版)_历史项目_免费模板_问卷网",
+                "content": "本问卷为针对手机厂商进行的预置应用可删除情况调查问卷。请按照实际情况规范填写,保证信息真实可信,完成填写后加盖公章。 请认真阅读关于预置应用及预置应用的分类说明: 1) 预置应用定义 预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。 2) 预置应用分类 根据预装软件的功能及适用场景,预装软件分为三类:系统支撑类、基本功能类和扩展功能类。 系统支撑类预装软件 ,是指保证智能终端硬件和操作系统正常运行的应用程序,如adbd、rald、vold、toolbox等。 基本功能类预装软件 ,是指实现智能终端基本功能而预装的应用软件,如电话、短信、联系人、日历、拍照等。 扩展功能类预装软件 ,是指为丰富用户体验而预装的应用软件,如社交、游戏、视频、音乐等。 (以上定义与分类参考《TAF14-TSG01-C-电信研究院-M002-V1.0.0预置应用软件分类研究》) \"> 本页仅为文字内容,不可回答。 预置应用调查问卷(厂商版) 本问卷为针对手机厂商进行的预置应用可删除情况调查问卷。请按照实际情况规范填写,保证信息真实可信,完成填写后加盖公章。 请认真阅读关于预置应用及预置应用的分类说明: 1) 预置应用定义 预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。 2) 预置应用分类 根据预装软件的功能及适用场景,预装软件分为三类:系统支撑类、基本功能类和扩展功能类。 系统支撑类预装软件 ,是指保证智能终端硬件和操作系统正常运行的应用程序,如adbd、rald、vold、toolbox等。 基本功能类预装软件 ,是指实现智能终端基本功能而预装的应用软件,如电话、短信、联系人、日历、拍照等。 扩展功能类预装软件 ,是指为丰富用户体验而预装的应用软件,如社交、游戏、视频、音乐等。 (以上定义与分类参考《TAF14-TSG01-C-电信研究院-M0",
+                "website": "问卷网",
+                "date": "2014-01-01T00:00:00+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 问卷网｜网页时间: 2014-01-01T00:00:00+08:00｜网页标题: 预置应用调查问卷(厂商版)_历史项目_免费模板_问卷网｜网页内容：本问卷为针对手机厂商进行的预置应用可删除情况调查问卷。请按照实际情况规范填写,保证信息真实可信,完成填写后加盖公章。 请认真阅读关于预置应用及预置应用的分类说明: 1) 预置应用定义 预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。 2) 预置应用分类 根据预装软件的功能及适用场景,预装软件分为三类:系统支撑类、基本功能类和扩展功能类。 系统支撑类预装软件 ,是指保证智能终端硬件和操作系统正常运行的应用程序,如adbd、rald、vold、toolbox等。 基本功能类预装软件 ,是指实现智能终端基本功能而预装的应用软件,如电话、短信、联系人、日历、拍照等。 扩展功能类预装软件 ,是指为丰富用户体验而预装的应用软件,如社交、游戏、视频、音乐等。 (以上定义与分类参考《TAF14-TSG01-C-电信研究院-M002-V1.0.0预置应用软件分类研究》) \"> 本页仅为文字内容,不可回答。 预置应用调查问卷(厂商版) 本问卷为针对手机厂商进行的预置应用可删除情况调查问卷。请按照实际情况规范填写,保证信息真实可信,完成填写后加盖公章。 请认真阅读关于预置应用及预置应用的分类说明: 1) 预置应用定义 预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。 2) 预置应用分类 根据预装软件的功能及适用场景,预装软件分为三类:系统支撑类、基本功能类和扩展功能类。 系统支撑类预装软件 ,是指保证智能终端硬件和操作系统正常运行的应用程序,如adbd、rald、vold、toolbox等。 基本功能类预装软件 ,是指实现智能终端基本功能而预装的应用软件,如电话、短信、联系人、日历、拍照等。 扩展功能类预装软件 ,是指为丰富用户体验而预装的应用软件,如社交、游戏、视频、音乐等。 (以上定义与分类参考《TAF14-TSG01-C-电信研究院-M0",
+                "source_id": 4,
+                "web_id": "4"
+              },
+              {
+                "url": "http://wenwen.sogou.com/z/q808227552.htm",
+                "title": "android 手机上本地应用程序和第三方应用程序的区别? 他们公用相同的API,他们本质的区别是是么 - 搜狗问问",
+                "content": "预装软件一般是推广用的,有些是有区别的,这包含定制的东西,有些手机的预装软件虽然与普通软件的api一样,但是有一定的定制功能,界面可能有所修改,功能可能也有所删加,着取决于定制机的定位。还有就是用户的权限设定,预装软件一搬无法删除卸载,只有获取root权限才可以。其他方面,预装的软件和第三方程序基本上没什么区别, 一般大家经常讲的第三方登录只是一个概念,就是获得第三方平台的授权,而不是讲应用使用这种授权来注册用户完成登录的流程。 下面的是具体流程: 1、需要支持用户注册。 2、需要在应用登录的时候提供第三方平台的图标。 3、用户点击第三方平台图标以后,你们尝试判断用户是否已经授权。 4、如果用户授权,获取他的唯一识别符,比方说weibodb里面的weiboid这个字段。 5、如果用户没有授权,引导用户授权,授权成功后也可以获取weibo id。 6、然后用这个唯一识别符登录你们的系统,如果用户已经注册,则应该让用户登录到你们的系统,流程结束。 7、如果你们的系统发现用户没有注册,引导用户进入你们应用的注册页面,并通过share sdk的showuser方法获取用户资料,自动帮助用户完成注册资料的填写,然后等待用户确认。 8、如果用户确认了注册信息,你们的应用就根据他的信息完成这注册操作,如果操作成功,则应该让用户登录到你们的系统,流程结束。",
+                "website": "搜狗问答",
+                "date": "2016-10-28T15:12:34+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 搜狗问答｜网页时间: 2016-10-28T15:12:34+08:00｜网页标题: android 手机上本地应用程序和第三方应用程序的区别? 他们公用相同的API,他们本质的区别是是么 - 搜狗问问｜网页内容：预装软件一般是推广用的,有些是有区别的,这包含定制的东西,有些手机的预装软件虽然与普通软件的api一样,但是有一定的定制功能,界面可能有所修改,功能可能也有所删加,着取决于定制机的定位。还有就是用户的权限设定,预装软件一搬无法删除卸载,只有获取root权限才可以。其他方面,预装的软件和第三方程序基本上没什么区别, 一般大家经常讲的第三方登录只是一个概念,就是获得第三方平台的授权,而不是讲应用使用这种授权来注册用户完成登录的流程。 下面的是具体流程: 1、需要支持用户注册。 2、需要在应用登录的时候提供第三方平台的图标。 3、用户点击第三方平台图标以后,你们尝试判断用户是否已经授权。 4、如果用户授权,获取他的唯一识别符,比方说weibodb里面的weiboid这个字段。 5、如果用户没有授权,引导用户授权,授权成功后也可以获取weibo id。 6、然后用这个唯一识别符登录你们的系统,如果用户已经注册,则应该让用户登录到你们的系统,流程结束。 7、如果你们的系统发现用户没有注册,引导用户进入你们应用的注册页面,并通过share sdk的showuser方法获取用户资料,自动帮助用户完成注册资料的填写,然后等待用户确认。 8、如果用户确认了注册信息,你们的应用就根据他的信息完成这注册操作,如果操作成功,则应该让用户登录到你们的系统,流程结束。",
+                "source_id": 5,
+                "web_id": "5"
+              },
+              {
+                "url": "https://blog.csdn.net/baiyifei2016/article/details/128493729",
+                "title": "Android识别预装的第三方App方法实例_android 如何判断是预装的三方应用-CSDN博客",
+                "content": "系统内置 应用 对应的flag为 App licationInfo.FLAG_SYSTEMboolean isSystem App ( App lication aInfo){if((aInfo.flags & aInfo.FLAG_SYSTEM) == 0){return false;}else {return true;}} 06-25 1万+ android 源码中预安装 第三方 的apk软件热度 2已有 2578 次阅读2012-11-23 17:55 |系统分类: Android 开发| android , 安装, 第三方 申明:转载:http://blog.csdn.net/zhangchiytu/article/details/6424910 对于 Android 系统集成有源码的 第三方 库和程序,只需要提供An 安卓( Android )是一种基于Linux的自由及开放源代码的操作系统。主要使用于移动设备,如智能手机和平板电脑,由Google公司和开放手机联盟领导及开发。 Android 操作系统最初由Andy Rubin开发,主要支持手机。2005年8月由Google收购注资。2007年11月,Google与84家硬件制造商、软件开发商及电信营运商组建开放手机联盟共同研发改良 Android 系统。随后Goog... 一、添加到Removeable中(可卸载)1. 在alps/device/Amobile/A_101/device.mk 文件中添加改APK: OPera_MINI 名字# add third parth removable apkPRODUCT_PACKAGES += \\FaceBook \\MXPlayer \\Hungamaplay \\OPera_MINI \\Exceloemstub \\Ppt... 获取所有 应用 及相关信息 方法 1:",
+                "website": "CSDN",
+                "date": "2023-01-13T08:30:07+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: CSDN｜网页时间: 2023-01-13T08:30:07+08:00｜网页标题: Android识别预装的第三方App方法实例_android 如何判断是预装的三方应用-CSDN博客｜网页内容：系统内置 应用 对应的flag为 App licationInfo.FLAG_SYSTEMboolean isSystem App ( App lication aInfo){if((aInfo.flags & aInfo.FLAG_SYSTEM) == 0){return false;}else {return true;}} 06-25 1万+ android 源码中预安装 第三方 的apk软件热度 2已有 2578 次阅读2012-11-23 17:55 |系统分类: Android 开发| android , 安装, 第三方 申明:转载:http://blog.csdn.net/zhangchiytu/article/details/6424910 对于 Android 系统集成有源码的 第三方 库和程序,只需要提供An 安卓( Android )是一种基于Linux的自由及开放源代码的操作系统。主要使用于移动设备,如智能手机和平板电脑,由Google公司和开放手机联盟领导及开发。 Android 操作系统最初由Andy Rubin开发,主要支持手机。2005年8月由Google收购注资。2007年11月,Google与84家硬件制造商、软件开发商及电信营运商组建开放手机联盟共同研发改良 Android 系统。随后Goog... 一、添加到Removeable中(可卸载)1. 在alps/device/Amobile/A_101/device.mk 文件中添加改APK: OPera_MINI 名字# add third parth removable apkPRODUCT_PACKAGES += \\FaceBook \\MXPlayer \\Hungamaplay \\OPera_MINI \\Exceloemstub \\Ppt... 获取所有 应用 及相关信息 方法 1:",
+                "source_id": 2,
+                "web_id": "6"
+              },
+              {
+                "url": "https://blog.csdn.net/weixin_39562615/article/details/117481052",
+                "title": "android 安装第三方app,Android识别预装的第三方App方法实例-CSDN博客",
+                "content": "前言 新买一台手机,里面会有很多App,有的属于系统App,不可卸载,有的属于第三方App,厂商会预装一些常用的或者给了他们广告费的App,这些是可以卸载的。 如果要详细划分,系统App还可根据其路径不同进一步划分(如/system/app、/system/priv-app、/vendor/app等)。",
+                "website": "CSDN",
+                "date": "2024-03-20T16:03:04+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: CSDN｜网页时间: 2024-03-20T16:03:04+08:00｜网页标题: android 安装第三方app,Android识别预装的第三方App方法实例-CSDN博客｜网页内容：前言 新买一台手机,里面会有很多App,有的属于系统App,不可卸载,有的属于第三方App,厂商会预装一些常用的或者给了他们广告费的App,这些是可以卸载的。 如果要详细划分,系统App还可根据其路径不同进一步划分(如/system/app、/system/priv-app、/vendor/app等)。",
+                "source_id": 3,
+                "web_id": "7"
+              },
+              {
+                "url": "https://www.300.cn/itzspd/429049.html",
+                "title": "什么叫第三方应用 - IT知识教程 - 中企动力",
+                "content": "第三方应用的定义有: 1、是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。 2、是指某项应用,如PDF电子书格式,是由Adobe开发的,Adobe公司就称为官方,而由非Adobe公司开发的针对PDF电子书格式的所有应用软件,都可称为第三方软件。 3、是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用 。 应用(Application),一般指手机和平板电脑的应用。在面向对象上通常分为个人用户应用与企业级应用,在移动端系统分类上主要包括iOS(如:同步推等)、Android(如:AirDroid、百度应用等)和windows phone的xap和appx。",
+                "website": "中企动力",
+                "date": "2021-05-18T21:22:56+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 中企动力｜网页时间: 2021-05-18T21:22:56+08:00｜网页标题: 什么叫第三方应用 - IT知识教程 - 中企动力｜网页内容：第三方应用的定义有: 1、是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。 2、是指某项应用,如PDF电子书格式,是由Adobe开发的,Adobe公司就称为官方,而由非Adobe公司开发的针对PDF电子书格式的所有应用软件,都可称为第三方软件。 3、是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用 。 应用(Application),一般指手机和平板电脑的应用。在面向对象上通常分为个人用户应用与企业级应用,在移动端系统分类上主要包括iOS(如:同步推等)、Android(如:AirDroid、百度应用等)和windows phone的xap和appx。",
+                "source_id": 4,
+                "web_id": "8"
+              },
+              {
+                "url": "https://www.yebaike.com/22/2551693.html",
+                "title": "什么叫第三方应用 - 业百科",
+                "content": "第三方应用的定义有: 1、是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。 2、是指某项应用,如PDF电子书格式,是由Adobe开发的,Adobe公司就称为官方,而由非Adobe公司开发的针对PDF电子书格式的所有应用软件,都可称为第三方软件。 3、是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用。 应用(Application),一般指手机和平板电脑的应用。在面向对象上通常分为个人用户应用与企业级应用,在移动端系统分类上主要包括iOS(如:同步推等)、Android(如:AirDroid、百度应用等)和windowsphone的xap和appx。",
+                "website": "百度知道",
+                "date": "2020-11-12T05:30:05+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 百度知道｜网页时间: 2020-11-12T05:30:05+08:00｜网页标题: 什么叫第三方应用 - 业百科｜网页内容：第三方应用的定义有: 1、是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。 2、是指某项应用,如PDF电子书格式,是由Adobe开发的,Adobe公司就称为官方,而由非Adobe公司开发的针对PDF电子书格式的所有应用软件,都可称为第三方软件。 3、是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用。 应用(Application),一般指手机和平板电脑的应用。在面向对象上通常分为个人用户应用与企业级应用,在移动端系统分类上主要包括iOS(如:同步推等)、Android(如:AirDroid、百度应用等)和windowsphone的xap和appx。",
+                "source_id": 5,
+                "web_id": "9"
+              },
+              {
+                "url": "https://m.blog.csdn.net/wenzhi20102321/article/details/135704624",
+                "title": "Android系统目录priv-app 和app 详解",
+                "content": "Android系统目录priv-app 和app 详解\n文章目录\nAndroid系统目录priv-app 和app 详解\n一、前言 二、区别\n1、关于目录 2、关于进程 3、关于 System App\n有两类 App 属于 System App :\n4、关于 Privileged App\n两类 Privileged App\n(1)特定 uid 的 App (2)特定目录中的 App\n5、特殊权限 Privileged\n三、其他\n1、apk文件放在不同目录的测试效果 2、在Android系统中,`priv-app`和`app`目录小结 4、Android中不同应用权限级别从低到高总结场景\n一、前言\nAndroid4.4增加了/system/priv-app/目录,那么它与/system/app/目录有什么差别?\n本文主要从定义,作用,具体效果等方面进行分析。\n有一些是网上没有介绍到的内容。\n 如果只是知道 priv-app 目录比 app目录权限大一点,但是不了解具体区别的可以看看。\n二、区别\n1、关于目录\n4.4 之前没有/system/priv-app 目录,所有 /system/app 下的软件都能使用系统级的权限。\n/system/priv-app和/system/app目录下的文件都是不可手动删除的。\n手机被 root 后,通过 adb push 可以把 apk 推送到这两个目录,作为系统应用,用户无法删除。\n/system/priv-app 中包含 Launcher,SystemUI, SettingsProvider 以及系统一些重要服务等系统的核心应用,这些应用能使用系统级的权限。\n/system/app 中包含 一些基础应用和一些三方应用,比如日历,闹钟,天气,魔镜,音乐,这些有的是系统签名应用,有的不是系统签名应用,都是用户无法手动卸载的。\n放到 /sys",
+                "website": "CSDN",
+                "date": "2024-01-20T02:24:24+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: CSDN｜网页时间: 2024-01-20T02:24:24+08:00｜网页标题: Android系统目录priv-app 和app 详解｜网页内容：Android系统目录priv-app 和app 详解\n文章目录\nAndroid系统目录priv-app 和app 详解\n一、前言 二、区别\n1、关于目录 2、关于进程 3、关于 System App\n有两类 App 属于 System App :\n4、关于 Privileged App\n两类 Privileged App\n(1)特定 uid 的 App (2)特定目录中的 App\n5、特殊权限 Privileged\n三、其他\n1、apk文件放在不同目录的测试效果 2、在Android系统中,`priv-app`和`app`目录小结 4、Android中不同应用权限级别从低到高总结场景\n一、前言\nAndroid4.4增加了/system/priv-app/目录,那么它与/system/app/目录有什么差别?\n本文主要从定义,作用,具体效果等方面进行分析。\n有一些是网上没有介绍到的内容。\n 如果只是知道 priv-app 目录比 app目录权限大一点,但是不了解具体区别的可以看看。\n二、区别\n1、关于目录\n4.4 之前没有/system/priv-app 目录,所有 /system/app 下的软件都能使用系统级的权限。\n/system/priv-app和/system/app目录下的文件都是不可手动删除的。\n手机被 root 后,通过 adb push 可以把 apk 推送到这两个目录,作为系统应用,用户无法删除。\n/system/priv-app 中包含 Launcher,SystemUI, SettingsProvider 以及系统一些重要服务等系统的核心应用,这些应用能使用系统级的权限。\n/system/app 中包含 一些基础应用和一些三方应用,比如日历,闹钟,天气,魔镜,音乐,这些有的是系统签名应用,有的不是系统签名应用,都是用户无法手动卸载的。\n放到 /sys",
+                "source_id": 1,
+                "web_id": "10"
+              },
+              {
+                "url": "https://www.jb51.net/article/154858.htm",
+                "title": "Android识别预装的第三方App方法实例_Android_脚本之家",
+                "content": "这篇文章主要给大家介绍了关于Android如何识别预装的第三方App的相关资料,文中通过示例代码介绍的非常详细,需要的朋友可以参考借鉴,下面随着小编来一起学习学习吧 前言 新买一台手机,里面会有很多App,有的属于系统App,不可卸载,有的属于第三方App,厂商会预装一些常用的或者给了他们广告费的App,这些是可以卸载的。 如果要详细划分,系统App还可根据其路径不同进一步划分(如/system/app、/system/priv-app、/vendor/app等)。但对于开发者来说,手机上安装的App只分为2类:系统App和用户App,可以根据系统API区分,这里就不详细说了,简单而言存在ApplicationInfo.FLAG_SYSTEM或ApplicationInfo.FLAG_UPDATED_SYSTEM_APP flag的即为系统App,否pp也会归到用户App中,那么有没有办法知道用户App中哪些是预装的哪些是用户手动安装的呢? 在这里分享一种方法: App的安装时间是整秒的为预装的第三方App 。 如果不关心为什么能用这个奇怪方法来区分预装App的话,就可以关闭这篇文章了。 之前我也一直不清楚为什么可以用这种方法,当时我猜是因为手机第一次启动的时候时间是不准确的,会是某某年1月1日,然后因为启动时会扫描各个App目录然后安装Ap08\" it=\"1676feab448\" ut=\"167702c8a57\" version=\"1360\" userId=\"10118\">...</package><package name=\"com.android.providers.downloads\" codePath=\"/system/priv-app/DownloadProvider\" nativeLibraryPath=\"/system8\" sharedUserId=\"100",
+                "website": "脚本之家",
+                "date": "2019-01-18T09:06:46+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 脚本之家｜网页时间: 2019-01-18T09:06:46+08:00｜网页标题: Android识别预装的第三方App方法实例_Android_脚本之家｜网页内容：这篇文章主要给大家介绍了关于Android如何识别预装的第三方App的相关资料,文中通过示例代码介绍的非常详细,需要的朋友可以参考借鉴,下面随着小编来一起学习学习吧 前言 新买一台手机,里面会有很多App,有的属于系统App,不可卸载,有的属于第三方App,厂商会预装一些常用的或者给了他们广告费的App,这些是可以卸载的。 如果要详细划分,系统App还可根据其路径不同进一步划分(如/system/app、/system/priv-app、/vendor/app等)。但对于开发者来说,手机上安装的App只分为2类:系统App和用户App,可以根据系统API区分,这里就不详细说了,简单而言存在ApplicationInfo.FLAG_SYSTEM或ApplicationInfo.FLAG_UPDATED_SYSTEM_APP flag的即为系统App,否pp也会归到用户App中,那么有没有办法知道用户App中哪些是预装的哪些是用户手动安装的呢? 在这里分享一种方法: App的安装时间是整秒的为预装的第三方App 。 如果不关心为什么能用这个奇怪方法来区分预装App的话,就可以关闭这篇文章了。 之前我也一直不清楚为什么可以用这种方法,当时我猜是因为手机第一次启动的时候时间是不准确的,会是某某年1月1日,然后因为启动时会扫描各个App目录然后安装Ap08\" it=\"1676feab448\" ut=\"167702c8a57\" version=\"1360\" userId=\"10118\">...</package><package name=\"com.android.providers.downloads\" codePath=\"/system/priv-app/DownloadProvider\" nativeLibraryPath=\"/system8\" sharedUserId=\"100",
+                "source_id": 2,
+                "web_id": "11"
+              },
+              {
+                "url": "https://blog.csdn.net/lmz4727741/article/details/44986679?locationNum=10&fps=1",
+                "title": "关于android4.4系统内置应用时system下priv-app和app的区别 - lmz4727741的专栏 - CSDN博客",
+                "content": "一般都是系统核心应用如 Launcher 、 systemui 、 settings 等应用。 需要在 Android.mk 中做如下设置即可: LOCAL_PRIVILEGED_MODULE := true 那么那些权限是属于系统级权限呢?可以查看 Android API 文档 http://wear.techbrood.com/reference/android/Manifest.permission.html 其中有如下说明的权限为系统级权限: Not for use by third-party applications. 问题描述有些第三方app内置到手机不可卸载区域,有时候会无法正常使用。",
+                "website": "CSDN",
+                "date": "2015-04-10T23:47:53+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: CSDN｜网页时间: 2015-04-10T23:47:53+08:00｜网页标题: 关于android4.4系统内置应用时system下priv-app和app的区别 - lmz4727741的专栏 - CSDN博客｜网页内容：一般都是系统核心应用如 Launcher 、 systemui 、 settings 等应用。 需要在 Android.mk 中做如下设置即可: LOCAL_PRIVILEGED_MODULE := true 那么那些权限是属于系统级权限呢?可以查看 Android API 文档 http://wear.techbrood.com/reference/android/Manifest.permission.html 其中有如下说明的权限为系统级权限: Not for use by third-party applications. 问题描述有些第三方app内置到手机不可卸载区域,有时候会无法正常使用。",
+                "source_id": 1,
+                "web_id": "12"
+              },
+              {
+                "url": "http://www.apppark.cn/t-50243.html",
+                "title": "软件与APP运行环境、安装与卸载的对比",
+                "content": "软件和APP在运行环境、安装和卸载方面有一些区别: 运行环境: 软件: 一般指在计算机上运行的应用程序,可以包括桌面应用、服务器端应用等,运行环境可能是特定的操作系统或平台。 APP: 通常指移动设备上的应用程序,例如在iOS或Android操作系统上运行的应用,依赖于移动设备的操作系统和硬件环境。 安装: 软件: 安装软件通常需要下载安装文件(如.exe或.msi文件),然后在计算机上执行安装程序,将文件和相关组件复制到指定的目录并进行注册,可能需要管理员权限。 APP: 通过应用商店(如App Store、Google Play)进行安装,用户可以直接从商店下载并安装应用,通常只需点击下载按钮,系统会自动完成安装过程。 卸载: 软件: 在计算机上卸载软件可能需要使用操作系统提供的卸载程序或者在控制面板中进行卸载,这通常会删除安装时创建的文件和注册表中的相关条目。 APP: 用户可以在移动设备的应用商店中或设备设置中找到并选择卸载应用,这会将应用从设备中完全移除,包括应用本身和相关的数据。 总的来说,软件和APP在安装和卸载过程中存在一些异同,主要取决于它们运行的环境和设备平台。软件通常在桌面环境中安装和卸载,而APP更专注于移动设备,并通过应用商店进行安装和卸载。",
+                "website": "应用公园",
+                "date": "2023-12-18T20:45:00+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 应用公园｜网页时间: 2023-12-18T20:45:00+08:00｜网页标题: 软件与APP运行环境、安装与卸载的对比｜网页内容：软件和APP在运行环境、安装和卸载方面有一些区别: 运行环境: 软件: 一般指在计算机上运行的应用程序,可以包括桌面应用、服务器端应用等,运行环境可能是特定的操作系统或平台。 APP: 通常指移动设备上的应用程序,例如在iOS或Android操作系统上运行的应用,依赖于移动设备的操作系统和硬件环境。 安装: 软件: 安装软件通常需要下载安装文件(如.exe或.msi文件),然后在计算机上执行安装程序,将文件和相关组件复制到指定的目录并进行注册,可能需要管理员权限。 APP: 通过应用商店(如App Store、Google Play)进行安装,用户可以直接从商店下载并安装应用,通常只需点击下载按钮,系统会自动完成安装过程。 卸载: 软件: 在计算机上卸载软件可能需要使用操作系统提供的卸载程序或者在控制面板中进行卸载,这通常会删除安装时创建的文件和注册表中的相关条目。 APP: 用户可以在移动设备的应用商店中或设备设置中找到并选择卸载应用,这会将应用从设备中完全移除,包括应用本身和相关的数据。 总的来说,软件和APP在安装和卸载过程中存在一些异同,主要取决于它们运行的环境和设备平台。软件通常在桌面环境中安装和卸载,而APP更专注于移动设备,并通过应用商店进行安装和卸载。",
+                "source_id": 3,
+                "web_id": "13"
+              },
+              {
+                "url": "https://www.yebaike.com/22/2642801.html",
+                "title": "第三方应用指什么 - 业百科",
+                "content": "手机自带的是本身手机自带的软件,是无法删除卸载的,第三方软件的话,就是自己下载的。 定义 一是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。 二是指某项应用,如PDF电子书格式,是由Adobe开发的,Adobe公司就称为官方,而由非Adobe公司开发的针对PDF电子书格式的所有应用软件,都可称为第三方软件。 三是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用。",
+                "website": "百度知道",
+                "date": "2020-11-16T15:13:30+08:00",
+                "isNavigational": false,
+                "web_content": "网页来源: 百度知道｜网页时间: 2020-11-16T15:13:30+08:00｜网页标题: 第三方应用指什么 - 业百科｜网页内容：手机自带的是本身手机自带的软件,是无法删除卸载的,第三方软件的话,就是自己下载的。 定义 一是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。 二是指某项应用,如PDF电子书格式,是由Adobe开发的,Adobe公司就称为官方,而由非Adobe公司开发的针对PDF电子书格式的所有应用软件,都可称为第三方软件。 三是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用。",
+                "source_id": 4,
+                "web_id": "14"
+              }
+            ],
+            "evidence_processor": {
+              "messages": [
+                {
+                  "role": "system",
+                  "content": "你是离线轨迹合成系统中的 Evidence Processor。你只负责围绕当前 search_goal，从本轮网页中抽取可复核证据，并识别会影响目标结论的实质冲突。你不规划搜索、不更新目标状态、不回答原始问题。\n\n核心约束：\n1. 证据必须与 current_search_goal 直接相关；忽略无关网页和只有猜测、宣传、转述但不能支持结论的内容。\n2. statement 是对一个或多个原文片段的谨慎归一化，不得超出 quotes 能支持的范围；涉及时间、范围、口径时必须写清。\n3. quotes 必须逐字来自本轮 search_webs，保持原意，不得改写、拼接不存在的句子；web_id 必须使用上下文给出的编号。\n4. 可用多个独立网页共同支持一个 evidence；同一事实的重复转载不应伪装成多份独立证据。\n5. conflict 只记录针对同一主体、同一口径且无法同时成立的陈述。时间口径不同、车型/系列概念不同等，应先在 statement 中限定，不要误判冲突。\n6. 不得引用历史网页全文。可参考 prior_goal_state 和 prior_evidences 理解缺口，但本轮新增 quotes 只能来自 current_search_webs。\n7. 没有可靠证据时返回空 evidences；没有实质冲突时返回空 conflicts。\n8. evidence_id 和 conflict_id 使用上下文给出的下一可用编号开始递增。\n9. 只输出一个合法 JSON 对象，不要 Markdown 代码块，不要解释性前后缀。\n\n输出结构：\n{\n  \"evidences\": [{\n    \"evidence_id\": \"E1\",\n    \"statement\": \"证据支持的归一化陈述\",\n    \"quotes\": [{\n      \"web_id\": \"1\",\n      \"quotes\": [\"网页原文片段\"]\n    }],\n    \"evidence_role\": \"该证据对当前目标的作用\",\n    \"evidence_type\": \"direct_answer|prerequisite|constraint|counter_evidence\"\n  }],\n  \"conflicts\": [{\n    \"conflict_id\": \"C1\",\n    \"conflict_object\": \"发生冲突的主体、属性与口径\",\n    \"conflict_evidence_ids\": [\"E1\", \"E2\"]\n  }]\n}"
+                },
+                {
+                  "role": "user",
+                  "content": "<constant_info>\nuser_query: 系统应用、三方应用、预置应用有什么差别\ncurrent_date: 2026-10-12\n</constant_info>\n\n<current_search_goal>\nsearch_goal_id: GOAL_1\nsearch_goal: 系统应用、三方应用、预置应用三者在定义、来源、安装位置、权限和可卸载性方面的核心差别是什么\n</current_search_goal>\n\n<prior_goal_state>\n{\n  \"status\": \"OPEN\",\n  \"answer\": \"\",\n  \"supported_statement\": \"\",\n  \"conflict_summary\": \"\",\n  \"evidence_gap\": \"\"\n}\n</prior_goal_state>\n\n<prior_evidences>\n[]\n</prior_evidences>\n\n<id_allocation>\nnext_evidence_id: E1\nnext_conflict_id: C1\n</id_allocation>\n\n<current_search_webs>\n[1]网页来源: 51CTO HarmonyOS开发者社区｜网页时间: 2024-10-31T09:37:41+08:00｜网页标题: #鸿蒙学习大百科#系统、三方、预置这三种应用有哪些区别?-鸿蒙开发者社区-51CTO.COM｜网页内容：预置应用比较好理解,就是厂商在出厂时预先安装在设备上的应用,系统或三方应用都可以。profile证书中app-feature为hos_system_app的应用为系统应用,其能调用系统接口。profile证书中app-feature为hos_normal_app的应用为三方应用,其不能调用系统接口。\n\n[2]网页来源: 问卷网｜网页时间: 2014-12-05T21:47:24+08:00｜网页标题: 预置应用调查问卷(厂商版) - 问卷调查调研模板  问卷网｜网页内容：本问卷为针对手机厂商进行的预置应用可删除情况调查问卷。请按照实际情况规范填写,保证信息真实可信,完成填写后加盖公章。 请认真阅读关于预置应用及预置应用的分类说明:1) 预置应用定义    预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。 2) 预置应用分类    根据预装软件的功能及适用场景,预装软件分为三类:系统支撑类、基本功能类和扩展功能类。  系统支撑类预装软件,是指保证智能终端硬件和操作系统正常运行的应用程序,如adbd、rald、vold、toolbox等。  基本功能类预装软件,是指实现智能终端基本功能而预装的应用软件,如电话、短信、联系人、日历、拍照等。  扩展功能类预装软件,是指为丰富用户体验而预装的应用软件,如社交、游戏、视频、音乐等。 (以上定义与分类参考《TAF14-TSG01-C-电信研究院-M002-V1.0.0预置应用软件分类研究》)\n\n[3]网页来源: 51CTO HarmonyOS开发者社区｜网页时间: 2024-06-18T12:08:20+08:00｜网页标题: 如何将三方应用改为系统应用-鸿蒙开发者社区-51CTO.COM｜网页内容：默认的应用是第三方应用,而很多API必须得是系统应用才能使用,例如ServiceExtensionContext.startServiceExtensionAbility这样的API。那开发者如何将三方应用设置为系统应用以便使用这些接口呢?\n\n[4]网页来源: 问卷网｜网页时间: 2014-01-01T00:00:00+08:00｜网页标题: 预置应用调查问卷(厂商版)_历史项目_免费模板_问卷网｜网页内容：本问卷为针对手机厂商进行的预置应用可删除情况调查问卷。请按照实际情况规范填写,保证信息真实可信,完成填写后加盖公章。 请认真阅读关于预置应用及预置应用的分类说明: 1) 预置应用定义 预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。 2) 预置应用分类 根据预装软件的功能及适用场景,预装软件分为三类:系统支撑类、基本功能类和扩展功能类。 系统支撑类预装软件 ,是指保证智能终端硬件和操作系统正常运行的应用程序,如adbd、rald、vold、toolbox等。 基本功能类预装软件 ,是指实现智能终端基本功能而预装的应用软件,如电话、短信、联系人、日历、拍照等。 扩展功能类预装软件 ,是指为丰富用户体验而预装的应用软件,如社交、游戏、视频、音乐等。 (以上定义与分类参考《TAF14-TSG01-C-电信研究院-M002-V1.0.0预置应用软件分类研究》) \"> 本页仅为文字内容,不可回答。 预置应用调查问卷(厂商版) 本问卷为针对手机厂商进行的预置应用可删除情况调查问卷。请按照实际情况规范填写,保证信息真实可信,完成填写后加盖公章。 请认真阅读关于预置应用及预置应用的分类说明: 1) 预置应用定义 预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。 2) 预置应用分类 根据预装软件的功能及适用场景,预装软件分为三类:系统支撑类、基本功能类和扩展功能类。 系统支撑类预装软件 ,是指保证智能终端硬件和操作系统正常运行的应用程序,如adbd、rald、vold、toolbox等。 基本功能类预装软件 ,是指实现智能终端基本功能而预装的应用软件,如电话、短信、联系人、日历、拍照等。 扩展功能类预装软件 ,是指为丰富用户体验而预装的应用软件,如社交、游戏、视频、音乐等。 (以上定义与分类参考《TAF14-TSG01-C-电信研究院-M0\n\n[5]网页来源: 搜狗问答｜网页时间: 2016-10-28T15:12:34+08:00｜网页标题: android 手机上本地应用程序和第三方应用程序的区别? 他们公用相同的API,他们本质的区别是是么 - 搜狗问问｜网页内容：预装软件一般是推广用的,有些是有区别的,这包含定制的东西,有些手机的预装软件虽然与普通软件的api一样,但是有一定的定制功能,界面可能有所修改,功能可能也有所删加,着取决于定制机的定位。还有就是用户的权限设定,预装软件一搬无法删除卸载,只有获取root权限才可以。其他方面,预装的软件和第三方程序基本上没什么区别, 一般大家经常讲的第三方登录只是一个概念,就是获得第三方平台的授权,而不是讲应用使用这种授权来注册用户完成登录的流程。 下面的是具体流程: 1、需要支持用户注册。 2、需要在应用登录的时候提供第三方平台的图标。 3、用户点击第三方平台图标以后,你们尝试判断用户是否已经授权。 4、如果用户授权,获取他的唯一识别符,比方说weibodb里面的weiboid这个字段。 5、如果用户没有授权,引导用户授权,授权成功后也可以获取weibo id。 6、然后用这个唯一识别符登录你们的系统,如果用户已经注册,则应该让用户登录到你们的系统,流程结束。 7、如果你们的系统发现用户没有注册,引导用户进入你们应用的注册页面,并通过share sdk的showuser方法获取用户资料,自动帮助用户完成注册资料的填写,然后等待用户确认。 8、如果用户确认了注册信息,你们的应用就根据他的信息完成这注册操作,如果操作成功,则应该让用户登录到你们的系统,流程结束。\n\n[6]网页来源: CSDN｜网页时间: 2023-01-13T08:30:07+08:00｜网页标题: Android识别预装的第三方App方法实例_android 如何判断是预装的三方应用-CSDN博客｜网页内容：系统内置 应用 对应的flag为 App licationInfo.FLAG_SYSTEMboolean isSystem App ( App lication aInfo){if((aInfo.flags & aInfo.FLAG_SYSTEM) == 0){return false;}else {return true;}} 06-25 1万+ android 源码中预安装 第三方 的apk软件热度 2已有 2578 次阅读2012-11-23 17:55 |系统分类: Android 开发| android , 安装, 第三方 申明:转载:http://blog.csdn.net/zhangchiytu/article/details/6424910 对于 Android 系统集成有源码的 第三方 库和程序,只需要提供An 安卓( Android )是一种基于Linux的自由及开放源代码的操作系统。主要使用于移动设备,如智能手机和平板电脑,由Google公司和开放手机联盟领导及开发。 Android 操作系统最初由Andy Rubin开发,主要支持手机。2005年8月由Google收购注资。2007年11月,Google与84家硬件制造商、软件开发商及电信营运商组建开放手机联盟共同研发改良 Android 系统。随后Goog... 一、添加到Removeable中(可卸载)1. 在alps/device/Amobile/A_101/device.mk 文件中添加改APK: OPera_MINI 名字# add third parth removable apkPRODUCT_PACKAGES += \\FaceBook \\MXPlayer \\Hungamaplay \\OPera_MINI \\Exceloemstub \\Ppt... 获取所有 应用 及相关信息 方法 1:\n\n[7]网页来源: CSDN｜网页时间: 2024-03-20T16:03:04+08:00｜网页标题: android 安装第三方app,Android识别预装的第三方App方法实例-CSDN博客｜网页内容：前言 新买一台手机,里面会有很多App,有的属于系统App,不可卸载,有的属于第三方App,厂商会预装一些常用的或者给了他们广告费的App,这些是可以卸载的。 如果要详细划分,系统App还可根据其路径不同进一步划分(如/system/app、/system/priv-app、/vendor/app等)。\n\n[8]网页来源: 中企动力｜网页时间: 2021-05-18T21:22:56+08:00｜网页标题: 什么叫第三方应用 - IT知识教程 - 中企动力｜网页内容：第三方应用的定义有: 1、是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。 2、是指某项应用,如PDF电子书格式,是由Adobe开发的,Adobe公司就称为官方,而由非Adobe公司开发的针对PDF电子书格式的所有应用软件,都可称为第三方软件。 3、是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用 。 应用(Application),一般指手机和平板电脑的应用。在面向对象上通常分为个人用户应用与企业级应用,在移动端系统分类上主要包括iOS(如:同步推等)、Android(如:AirDroid、百度应用等)和windows phone的xap和appx。\n\n[9]网页来源: 百度知道｜网页时间: 2020-11-12T05:30:05+08:00｜网页标题: 什么叫第三方应用 - 业百科｜网页内容：第三方应用的定义有: 1、是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。 2、是指某项应用,如PDF电子书格式,是由Adobe开发的,Adobe公司就称为官方,而由非Adobe公司开发的针对PDF电子书格式的所有应用软件,都可称为第三方软件。 3、是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用。 应用(Application),一般指手机和平板电脑的应用。在面向对象上通常分为个人用户应用与企业级应用,在移动端系统分类上主要包括iOS(如:同步推等)、Android(如:AirDroid、百度应用等)和windowsphone的xap和appx。\n\n[10]网页来源: CSDN｜网页时间: 2024-01-20T02:24:24+08:00｜网页标题: Android系统目录priv-app 和app 详解｜网页内容：Android系统目录priv-app 和app 详解\n文章目录\nAndroid系统目录priv-app 和app 详解\n一、前言 二、区别\n1、关于目录 2、关于进程 3、关于 System App\n有两类 App 属于 System App :\n4、关于 Privileged App\n两类 Privileged App\n(1)特定 uid 的 App (2)特定目录中的 App\n5、特殊权限 Privileged\n三、其他\n1、apk文件放在不同目录的测试效果 2、在Android系统中,`priv-app`和`app`目录小结 4、Android中不同应用权限级别从低到高总结场景\n一、前言\nAndroid4.4增加了/system/priv-app/目录,那么它与/system/app/目录有什么差别?\n本文主要从定义,作用,具体效果等方面进行分析。\n有一些是网上没有介绍到的内容。\n 如果只是知道 priv-app 目录比 app目录权限大一点,但是不了解具体区别的可以看看。\n二、区别\n1、关于目录\n4.4 之前没有/system/priv-app 目录,所有 /system/app 下的软件都能使用系统级的权限。\n/system/priv-app和/system/app目录下的文件都是不可手动删除的。\n手机被 root 后,通过 adb push 可以把 apk 推送到这两个目录,作为系统应用,用户无法删除。\n/system/priv-app 中包含 Launcher,SystemUI, SettingsProvider 以及系统一些重要服务等系统的核心应用,这些应用能使用系统级的权限。\n/system/app 中包含 一些基础应用和一些三方应用,比如日历,闹钟,天气,魔镜,音乐,这些有的是系统签名应用,有的不是系统签名应用,都是用户无法手动卸载的。\n放到 /sys\n\n[11]网页来源: 脚本之家｜网页时间: 2019-01-18T09:06:46+08:00｜网页标题: Android识别预装的第三方App方法实例_Android_脚本之家｜网页内容：这篇文章主要给大家介绍了关于Android如何识别预装的第三方App的相关资料,文中通过示例代码介绍的非常详细,需要的朋友可以参考借鉴,下面随着小编来一起学习学习吧 前言 新买一台手机,里面会有很多App,有的属于系统App,不可卸载,有的属于第三方App,厂商会预装一些常用的或者给了他们广告费的App,这些是可以卸载的。 如果要详细划分,系统App还可根据其路径不同进一步划分(如/system/app、/system/priv-app、/vendor/app等)。但对于开发者来说,手机上安装的App只分为2类:系统App和用户App,可以根据系统API区分,这里就不详细说了,简单而言存在ApplicationInfo.FLAG_SYSTEM或ApplicationInfo.FLAG_UPDATED_SYSTEM_APP flag的即为系统App,否pp也会归到用户App中,那么有没有办法知道用户App中哪些是预装的哪些是用户手动安装的呢? 在这里分享一种方法: App的安装时间是整秒的为预装的第三方App 。 如果不关心为什么能用这个奇怪方法来区分预装App的话,就可以关闭这篇文章了。 之前我也一直不清楚为什么可以用这种方法,当时我猜是因为手机第一次启动的时候时间是不准确的,会是某某年1月1日,然后因为启动时会扫描各个App目录然后安装Ap08\" it=\"1676feab448\" ut=\"167702c8a57\" version=\"1360\" userId=\"10118\">...</package><package name=\"com.android.providers.downloads\" codePath=\"/system/priv-app/DownloadProvider\" nativeLibraryPath=\"/system8\" sharedUserId=\"100\n\n[12]网页来源: CSDN｜网页时间: 2015-04-10T23:47:53+08:00｜网页标题: 关于android4.4系统内置应用时system下priv-app和app的区别 - lmz4727741的专栏 - CSDN博客｜网页内容：一般都是系统核心应用如 Launcher 、 systemui 、 settings 等应用。 需要在 Android.mk 中做如下设置即可: LOCAL_PRIVILEGED_MODULE := true 那么那些权限是属于系统级权限呢?可以查看 Android API 文档 http://wear.techbrood.com/reference/android/Manifest.permission.html 其中有如下说明的权限为系统级权限: Not for use by third-party applications. 问题描述有些第三方app内置到手机不可卸载区域,有时候会无法正常使用。\n\n[13]网页来源: 应用公园｜网页时间: 2023-12-18T20:45:00+08:00｜网页标题: 软件与APP运行环境、安装与卸载的对比｜网页内容：软件和APP在运行环境、安装和卸载方面有一些区别: 运行环境: 软件: 一般指在计算机上运行的应用程序,可以包括桌面应用、服务器端应用等,运行环境可能是特定的操作系统或平台。 APP: 通常指移动设备上的应用程序,例如在iOS或Android操作系统上运行的应用,依赖于移动设备的操作系统和硬件环境。 安装: 软件: 安装软件通常需要下载安装文件(如.exe或.msi文件),然后在计算机上执行安装程序,将文件和相关组件复制到指定的目录并进行注册,可能需要管理员权限。 APP: 通过应用商店(如App Store、Google Play)进行安装,用户可以直接从商店下载并安装应用,通常只需点击下载按钮,系统会自动完成安装过程。 卸载: 软件: 在计算机上卸载软件可能需要使用操作系统提供的卸载程序或者在控制面板中进行卸载,这通常会删除安装时创建的文件和注册表中的相关条目。 APP: 用户可以在移动设备的应用商店中或设备设置中找到并选择卸载应用,这会将应用从设备中完全移除,包括应用本身和相关的数据。 总的来说,软件和APP在安装和卸载过程中存在一些异同,主要取决于它们运行的环境和设备平台。软件通常在桌面环境中安装和卸载,而APP更专注于移动设备,并通过应用商店进行安装和卸载。\n\n[14]网页来源: 百度知道｜网页时间: 2020-11-16T15:13:30+08:00｜网页标题: 第三方应用指什么 - 业百科｜网页内容：手机自带的是本身手机自带的软件,是无法删除卸载的,第三方软件的话,就是自己下载的。 定义 一是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。 二是指某项应用,如PDF电子书格式,是由Adobe开发的,Adobe公司就称为官方,而由非Adobe公司开发的针对PDF电子书格式的所有应用软件,都可称为第三方软件。 三是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用。\n</current_search_webs>"
+                }
+              ],
+              "response": {
+                "evidences": [
+                  {
+                    "evidence_id": "E1",
+                    "statement": "按鸿蒙开发者社区2024年的说明，系统应用是profile证书中app-feature为hos_system_app的应用，可调用系统接口；三方应用是app-feature为hos_normal_app的应用，不能调用系统接口。",
+                    "quotes": [
+                      {
+                        "web_id": "1",
+                        "quotes": [
+                          "profile证书中app-feature为hos_system_app的应用为系统应用,其能调用系统接口。profile证书中app-feature为hos_normal_app的应用为三方应用,其不能调用系统接口。"
+                        ]
+                      }
+                    ],
+                    "evidence_role": "直接给出鸿蒙语境下系统应用与三方应用的定义标识及系统接口调用权限差异",
+                    "evidence_type": "direct_answer"
+                  },
+                  {
+                    "evidence_id": "E2",
+                    "statement": "预置/预装应用指厂商在设备出厂时预先安装，或企业在智能终端生产、流通、售后等环节装入的应用软件；鸿蒙社区指出预置应用可以是系统应用，也可以是三方应用。",
+                    "quotes": [
+                      {
+                        "web_id": "1",
+                        "quotes": [
+                          "预置应用比较好理解,就是厂商在出厂时预先安装在设备上的应用,系统或三方应用都可以。"
+                        ]
+                      },
+                      {
+                        "web_id": "2",
+                        "quotes": [
+                          "预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。"
+                        ]
+                      }
+                    ],
+                    "evidence_role": "界定预置应用的来源，并说明预置应用与系统/三方应用不是同一维度的互斥分类",
+                    "evidence_type": "direct_answer"
+                  },
+                  {
+                    "evidence_id": "E3",
+                    "statement": "在Android开发语境中，存在ApplicationInfo.FLAG_SYSTEM或FLAG_UPDATED_SYSTEM_APP标志的应用即被归为系统App，否则归为用户App；预装的第三方App可通过安装时间是否为整秒来识别。",
+                    "quotes": [
+                      {
+                        "web_id": "11",
+                        "quotes": [
+                          "简单而言存在ApplicationInfo.FLAG_SYSTEM或ApplicationInfo.FLAG_UPDATED_SYSTEM_APP flag的即为系统App,否pp也会归到用户App中,那么有没有办法知道用户App中哪些是预装的哪些是用户手动安装的呢?",
+                          "App的安装时间是整秒的为预装的第三方App 。"
+                        ]
+                      }
+                    ],
+                    "evidence_role": "补充Android开发语境下系统App与用户App的判定标志，以及预装三方App的识别口径",
+                    "evidence_type": "direct_answer"
+                  },
+                  {
+                    "evidence_id": "E4",
+                    "statement": "在Android系统中，系统应用可按路径进一步划分，如/system/app、/system/priv-app、/vendor/app；/system/priv-app存放Launcher、SystemUI、SettingsProvider等核心系统应用，这些应用能使用系统级权限；/system/app则包含基础应用和部分三方应用。",
+                    "quotes": [
+                      {
+                        "web_id": "7",
+                        "quotes": [
+                          "如果要详细划分,系统App还可根据其路径不同进一步划分(如/system/app、/system/priv-app、/vendor/app等)。"
+                        ]
+                      },
+                      {
+                        "web_id": "10",
+                        "quotes": [
+                          "/system/priv-app 中包含 Launcher,SystemUI, SettingsProvider 以及系统一些重要服务等系统的核心应用,这些应用能使用系统级的权限。",
+                          "/system/app 中包含 一些基础应用和一些三方应用,比如日历,闹钟,天气,魔镜,音乐,这些有的是系统签名应用,有的不是系统签名应用,都是用户无法手动卸载的。"
+                        ]
+                      }
+                    ],
+                    "evidence_role": "说明系统应用及部分三方应用在安装位置、系统级权限和分区上的差异",
+                    "evidence_type": "direct_answer"
+                  },
+                  {
+                    "evidence_id": "E5",
+                    "statement": "系统App通常不可卸载；位于/system/priv-app和/system/app目录下的文件不可手动删除，即使root后用adb push推入这两个目录作为系统应用，用户也无法删除。",
+                    "quotes": [
+                      {
+                        "web_id": "7",
+                        "quotes": [
+                          "有的属于系统App,不可卸载"
+                        ]
+                      },
+                      {
+                        "web_id": "10",
+                        "quotes": [
+                          "/system/priv-app和/system/app目录下的文件都是不可手动删除的。",
+                          "手机被 root 后,通过 adb push 可以把 apk 推送到这两个目录,作为系统应用,用户无法删除。"
+                        ]
+                      }
+                    ],
+                    "evidence_role": "说明系统应用及系统分区内应用在可卸载性上的约束",
+                    "evidence_type": "constraint"
+                  },
+                  {
+                    "evidence_id": "E6",
+                    "statement": "厂商预装的第三方App通常可以卸载；但若三方应用被放入/system/app等系统分区，则按相关来源仍属于用户无法手动卸载。",
+                    "quotes": [
+                      {
+                        "web_id": "7",
+                        "quotes": [
+                          "有的属于第三方App,厂商会预装一些常用的或者给了他们广告费的App,这些是可以卸载的。"
+                        ]
+                      },
+                      {
+                        "web_id": "10",
+                        "quotes": [
+                          "/system/app 中包含 一些基础应用和一些三方应用,比如日历,闹钟,天气,魔镜,音乐,这些有的是系统签名应用,有的不是系统签名应用,都是用户无法手动卸载的。"
+                        ]
+                      }
+                    ],
+                    "evidence_role": "区分普通预装三方应用与系统分区内三方应用在可卸载性上的不同口径",
+                    "evidence_type": "direct_answer"
+                  },
+                  {
+                    "evidence_id": "E7",
+                    "statement": "第三方应用一般指由非官方/第三方编制的应用；在手机日常语境中，也常与用户自行下载安装的软件对应，而手机自带软件与之相对。",
+                    "quotes": [
+                      {
+                        "web_id": "8",
+                        "quotes": [
+                          "第三方应用的定义有: 1、是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。",
+                          "3、是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用 。"
+                        ]
+                      },
+                      {
+                        "web_id": "14",
+                        "quotes": [
+                          "手机自带的是本身手机自带的软件,是无法删除卸载的,第三方软件的话,就是自己下载的。"
+                        ]
+                      }
+                    ],
+                    "evidence_role": "界定三方应用的来源，并与手机自带软件作对照",
+                    "evidence_type": "direct_answer"
+                  },
+                  {
+                    "evidence_id": "E8",
+                    "statement": "在Android/HarmonyOS开发语境中，默认应用是三方应用，很多API必须由系统应用才能使用；Android系统级权限也标注为Not for use by third-party applications。",
+                    "quotes": [
+                      {
+                        "web_id": "3",
+                        "quotes": [
+                          "默认的应用是第三方应用,而很多API必须得是系统应用才能使用,例如ServiceExtensionContext.startServiceExtensionAbility这样的API。"
+                        ]
+                      },
+                      {
+                        "web_id": "12",
+                        "quotes": [
+                          "其中有如下说明的权限为系统级权限: Not for use by third-party applications."
+                        ]
+                      }
+                    ],
+                    "evidence_role": "通过开发接口和系统级权限标注说明系统应用与三方应用在权限上的差异",
+                    "evidence_type": "direct_answer"
+                  },
+                  {
+                    "evidence_id": "E9",
+                    "statement": "有来源称预装软件一般无法删除卸载，只有获取root权限才可以（该来源未区分系统预装与三方预装）。",
+                    "quotes": [
+                      {
+                        "web_id": "5",
+                        "quotes": [
+                          "还有就是用户的权限设定,预装软件一搬无法删除卸载,只有获取root权限才可以。"
+                        ]
+                      }
+                    ],
+                    "evidence_role": "提供预置应用可卸载性的另一种来源口径，提示预置应用不能一概而论",
+                    "evidence_type": "counter_evidence"
+                  }
+                ],
+                "conflicts": []
+              }
+            },
+            "evidences": [
+              {
+                "evidence_id": "E1",
+                "statement": "按鸿蒙开发者社区2024年的说明，系统应用是profile证书中app-feature为hos_system_app的应用，可调用系统接口；三方应用是app-feature为hos_normal_app的应用，不能调用系统接口。",
+                "quotes": [
+                  {
+                    "web_id": "1",
+                    "quotes": [
+                      "profile证书中app-feature为hos_system_app的应用为系统应用,其能调用系统接口。profile证书中app-feature为hos_normal_app的应用为三方应用,其不能调用系统接口。"
+                    ]
+                  }
+                ],
+                "evidence_role": "直接给出鸿蒙语境下系统应用与三方应用的定义标识及系统接口调用权限差异",
+                "evidence_type": "direct_answer",
+                "search_goal_id": "GOAL_1"
+              },
+              {
+                "evidence_id": "E2",
+                "statement": "预置/预装应用指厂商在设备出厂时预先安装，或企业在智能终端生产、流通、售后等环节装入的应用软件；鸿蒙社区指出预置应用可以是系统应用，也可以是三方应用。",
+                "quotes": [
+                  {
+                    "web_id": "1",
+                    "quotes": [
+                      "预置应用比较好理解,就是厂商在出厂时预先安装在设备上的应用,系统或三方应用都可以。"
+                    ]
+                  },
+                  {
+                    "web_id": "2",
+                    "quotes": [
+                      "预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。"
+                    ]
+                  }
+                ],
+                "evidence_role": "界定预置应用的来源，并说明预置应用与系统/三方应用不是同一维度的互斥分类",
+                "evidence_type": "direct_answer",
+                "search_goal_id": "GOAL_1"
+              },
+              {
+                "evidence_id": "E3",
+                "statement": "在Android开发语境中，存在ApplicationInfo.FLAG_SYSTEM或FLAG_UPDATED_SYSTEM_APP标志的应用即被归为系统App，否则归为用户App；预装的第三方App可通过安装时间是否为整秒来识别。",
+                "quotes": [
+                  {
+                    "web_id": "11",
+                    "quotes": [
+                      "简单而言存在ApplicationInfo.FLAG_SYSTEM或ApplicationInfo.FLAG_UPDATED_SYSTEM_APP flag的即为系统App,否pp也会归到用户App中,那么有没有办法知道用户App中哪些是预装的哪些是用户手动安装的呢?",
+                      "App的安装时间是整秒的为预装的第三方App 。"
+                    ]
+                  }
+                ],
+                "evidence_role": "补充Android开发语境下系统App与用户App的判定标志，以及预装三方App的识别口径",
+                "evidence_type": "direct_answer",
+                "search_goal_id": "GOAL_1"
+              },
+              {
+                "evidence_id": "E4",
+                "statement": "在Android系统中，系统应用可按路径进一步划分，如/system/app、/system/priv-app、/vendor/app；/system/priv-app存放Launcher、SystemUI、SettingsProvider等核心系统应用，这些应用能使用系统级权限；/system/app则包含基础应用和部分三方应用。",
+                "quotes": [
+                  {
+                    "web_id": "7",
+                    "quotes": [
+                      "如果要详细划分,系统App还可根据其路径不同进一步划分(如/system/app、/system/priv-app、/vendor/app等)。"
+                    ]
+                  },
+                  {
+                    "web_id": "10",
+                    "quotes": [
+                      "/system/priv-app 中包含 Launcher,SystemUI, SettingsProvider 以及系统一些重要服务等系统的核心应用,这些应用能使用系统级的权限。",
+                      "/system/app 中包含 一些基础应用和一些三方应用,比如日历,闹钟,天气,魔镜,音乐,这些有的是系统签名应用,有的不是系统签名应用,都是用户无法手动卸载的。"
+                    ]
+                  }
+                ],
+                "evidence_role": "说明系统应用及部分三方应用在安装位置、系统级权限和分区上的差异",
+                "evidence_type": "direct_answer",
+                "search_goal_id": "GOAL_1"
+              },
+              {
+                "evidence_id": "E5",
+                "statement": "系统App通常不可卸载；位于/system/priv-app和/system/app目录下的文件不可手动删除，即使root后用adb push推入这两个目录作为系统应用，用户也无法删除。",
+                "quotes": [
+                  {
+                    "web_id": "7",
+                    "quotes": [
+                      "有的属于系统App,不可卸载"
+                    ]
+                  },
+                  {
+                    "web_id": "10",
+                    "quotes": [
+                      "/system/priv-app和/system/app目录下的文件都是不可手动删除的。",
+                      "手机被 root 后,通过 adb push 可以把 apk 推送到这两个目录,作为系统应用,用户无法删除。"
+                    ]
+                  }
+                ],
+                "evidence_role": "说明系统应用及系统分区内应用在可卸载性上的约束",
+                "evidence_type": "constraint",
+                "search_goal_id": "GOAL_1"
+              },
+              {
+                "evidence_id": "E6",
+                "statement": "厂商预装的第三方App通常可以卸载；但若三方应用被放入/system/app等系统分区，则按相关来源仍属于用户无法手动卸载。",
+                "quotes": [
+                  {
+                    "web_id": "7",
+                    "quotes": [
+                      "有的属于第三方App,厂商会预装一些常用的或者给了他们广告费的App,这些是可以卸载的。"
+                    ]
+                  },
+                  {
+                    "web_id": "10",
+                    "quotes": [
+                      "/system/app 中包含 一些基础应用和一些三方应用,比如日历,闹钟,天气,魔镜,音乐,这些有的是系统签名应用,有的不是系统签名应用,都是用户无法手动卸载的。"
+                    ]
+                  }
+                ],
+                "evidence_role": "区分普通预装三方应用与系统分区内三方应用在可卸载性上的不同口径",
+                "evidence_type": "direct_answer",
+                "search_goal_id": "GOAL_1"
+              },
+              {
+                "evidence_id": "E7",
+                "statement": "第三方应用一般指由非官方/第三方编制的应用；在手机日常语境中，也常与用户自行下载安装的软件对应，而手机自带软件与之相对。",
+                "quotes": [
+                  {
+                    "web_id": "8",
+                    "quotes": [
+                      "第三方应用的定义有: 1、是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。",
+                      "3、是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用 。"
+                    ]
+                  },
+                  {
+                    "web_id": "14",
+                    "quotes": [
+                      "手机自带的是本身手机自带的软件,是无法删除卸载的,第三方软件的话,就是自己下载的。"
+                    ]
+                  }
+                ],
+                "evidence_role": "界定三方应用的来源，并与手机自带软件作对照",
+                "evidence_type": "direct_answer",
+                "search_goal_id": "GOAL_1"
+              },
+              {
+                "evidence_id": "E8",
+                "statement": "在Android/HarmonyOS开发语境中，默认应用是三方应用，很多API必须由系统应用才能使用；Android系统级权限也标注为Not for use by third-party applications。",
+                "quotes": [
+                  {
+                    "web_id": "3",
+                    "quotes": [
+                      "默认的应用是第三方应用,而很多API必须得是系统应用才能使用,例如ServiceExtensionContext.startServiceExtensionAbility这样的API。"
+                    ]
+                  },
+                  {
+                    "web_id": "12",
+                    "quotes": [
+                      "其中有如下说明的权限为系统级权限: Not for use by third-party applications."
+                    ]
+                  }
+                ],
+                "evidence_role": "通过开发接口和系统级权限标注说明系统应用与三方应用在权限上的差异",
+                "evidence_type": "direct_answer",
+                "search_goal_id": "GOAL_1"
+              },
+              {
+                "evidence_id": "E9",
+                "statement": "有来源称预装软件一般无法删除卸载，只有获取root权限才可以（该来源未区分系统预装与三方预装）。",
+                "quotes": [
+                  {
+                    "web_id": "5",
+                    "quotes": [
+                      "还有就是用户的权限设定,预装软件一搬无法删除卸载,只有获取root权限才可以。"
+                    ]
+                  }
+                ],
+                "evidence_role": "提供预置应用可卸载性的另一种来源口径，提示预置应用不能一概而论",
+                "evidence_type": "counter_evidence",
+                "search_goal_id": "GOAL_1"
+              }
+            ],
+            "conflicts": []
+          }
+        ],
+        "state_updates": [
+          {
+            "search_goal_id": "GOAL_1",
+            "search_goal": "系统应用、三方应用、预置应用三者在定义、来源、安装位置、权限和可卸载性方面的核心差别是什么",
+            "status": "CLOSED",
+            "status_reason": "本轮证据已覆盖定义/来源、安装位置、权限、可卸载性四个维度：系统应用与三方应用在鸿蒙以app-feature（hos_system_app/hos_normal_app）区分、在Android以FLAG_SYSTEM/FLAG_UPDATED_SYSTEM_APP区分，系统应用可调用系统接口与系统级权限而三方应用不可；预置应用则是按安装时机定义的维度，出厂预装的既可为系统应用也可为三方应用；系统应用位于/system/app、/system/priv-app、/vendor/app等系统分区，系统分区内应用不可手动卸载，普通厂商预装的三方应用通常可卸载。各来源口径可通过'预置与系统/三方非同一维度、系统分区归属决定可卸载性'统一解释，无阻塞冲突。",
+            "answer": "三者不是同一维度：①定义与来源：系统应用是具备系统标识/系统签名的应用（鸿蒙app-feature=hos_system_app，Android有FLAG_SYSTEM或FLAG_UPDATED_SYSTEM_APP），可调用系统接口；三方应用是由非官方第三方开发的应用（鸿蒙app-feature=hos_normal_app，或用户自行下载安装），不能调用系统接口；预置应用是按安装时机定义的，指厂商在出厂或生产、流通、售后环节预先装入设备的应用，既可能是系统应用也可能是三方应用。②安装位置：系统应用位于/system/app、/system/priv-app、/vendor/app等系统分区，核心应用（Launcher、SystemUI、SettingsProvider等）在/system/priv-app。③权限：系统应用（尤其priv-app）可使用系统级权限，三方应用不可（系统级权限标注Not for use by third-party applications）。④可卸载性：位于/system/priv-app、/system/app等系统分区的应用（包括被放入其中的三方应用）不可手动卸载；而厂商普通预装的三方应用通常可以卸载。",
+            "supported_statement": "系统应用以系统标识/签名及系统接口与系统级权限使用能力定义，三方应用以非官方第三方开发且不具备系统接口权限定义，预置应用按出厂预装这一安装时机定义并可同时包含系统应用与三方应用；系统应用（及放入系统分区者）位于/system/app、/system/priv-app、/vendor/app等分区且不可手动卸载，普通预装三方应用通常可卸载。",
+            "supporting_evidence_ids": [
+              "E1",
+              "E2",
+              "E3",
+              "E4",
+              "E5",
+              "E6",
+              "E7",
+              "E8"
+            ],
+            "conflict_summary": "",
+            "conflicting_evidence_ids": [],
+            "evidence_gap": ""
+          }
+        ],
+        "planner_output": {
+          "messages": [
+            {
+              "role": "system",
+              "content": "# 角色\n你是离线轨迹合成系统中非首轮的 Search Planner。你需要根据历史目标的紧凑状态和本轮网页、evidence、conflict，更新本轮涉及目标的状态，并决定继续搜索还是 STOP。你不摘录新证据，也不得凭常识补充事实。\n\n# 输入语义\n1. search_history 按轮次提供已经执行过的 search_goal、搜索动机、query 和网页，用于重建历史搜索行为、避免重复检索；它不代表本轮新证据。\n2. search_status 只包含历史紧凑状态。带有 \"in_progress\": true 的目标尚未经过 Planner 状态判定，不能把该标签当作 OPEN 等正式状态。\n3. 已有历史状态只提供 search_goal_id、search_goal、status、answer、conflict_summary、evidence_gap；search_status 不提供任何 evidence ID、conflict ID 或依赖关系。\n4. current_turn_info 提供本轮搜索结果、evidence 和 conflict，是本轮状态更新中引用 ID 的唯一依据。\n\n# 状态更新约束\n1. 只更新 current_turn_info 中本轮涉及的 search_goal；不得重复改写未被本轮搜索影响的历史目标。\n2. 状态只允许 OPEN、CLOSED、CLOSED_BY_REFUTED、UNRESOLVED、SUPERSEDED、DROPPED。\n3. CLOSED 必须已有足以直接回答目标的 supporting evidence，且不存在阻塞冲突；OPEN 必须明确 evidence_gap。\n4. supporting_evidence_ids 与 conflicting_evidence_ids 只能填写 current_turn_info 中存在的 E 开头 evidence_id，不得填写 C 开头 conflict_id 或编造 ID。\n5. depends_on_goal_ids 由 orchestrator 维护，search_state_updates 不得输出或修改该字段；状态判定也不得借此改变目标依赖关系。\n\n# 下一轮动作约束\n1. 信息未闭环时，search_action 只允许 CONTINUE_SEARCH、VERIFY_CONFLICT、EXPAND_GOAL、REFINE_GOAL。注意正确拼写是 CONTINUE_SEARCH。\n2. CONTINUE_SEARCH：填写 target_goal_id、action_reason、search_queries；不填写 target_conflict_id、search_goal_id、search_goal、depends_on_goal_ids。\n3. VERIFY_CONFLICT：填写 target_goal_id、target_conflict_id、action_reason、search_queries；target_conflict_id 必须是 current_turn_info 中存在的 C 开头 conflict_id；不创建新目标。\n4. EXPAND_GOAL：填写新的 search_goal_id、search_goal、action_reason、search_queries；存在依赖时才填写 depends_on_goal_ids，不填写 target_goal_id 或 target_conflict_id。\n5. REFINE_GOAL：target_goal_id 指向被替代目标，并填写新的 search_goal_id、search_goal、action_reason、search_queries；存在依赖时才填写 depends_on_goal_ids，不填写 target_conflict_id。\n6. 每个非 STOP 动作必须提供 1～5 条可执行、互补的 search_queries。\n7. 信息已闭环时只允许一个 STOP；STOP 必须是唯一动作，且只包含 search_action 和 action_reason。\n\n# JSON 输出硬约束\n1. 只输出一个可被标准 JSON 解析器直接解析的 JSON 对象；不要 Markdown 代码块、注释、解释性前后缀或尾随逗号。\n2. 所有 key 和字符串必须使用双引号；空值使用 null，不得使用 None、单引号或 NaN。\n3. 顶层必须同时包含 search_state_updates 和 next_turn_search_actions；两者不得改名、缺失或额外嵌套。\n4. search_state_updates 必须是对象数组；next_turn_search_actions 必须是对象，其中 search_actions 必须是非空对象数组。\n\n## 信息未闭环时的输出格式\n{\n  \"search_state_updates\": [{\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"原搜索目标\",\n    \"status\": \"OPEN|CLOSED|CLOSED_BY_REFUTED|UNRESOLVED|SUPERSEDED|DROPPED\",\n    \"status_reason\": \"状态原因\",\n    \"answer\": \"当前直接答案；OPEN 时可为部分答案\",\n    \"supported_statement\": \"证据支持的归一化事实\",\n    \"supporting_evidence_ids\": [\"E1\"],\n    \"conflict_summary\": \"未解决且影响答案的冲突\",\n    \"conflicting_evidence_ids\": [\"E2\"],\n    \"evidence_gap\": \"距离闭环还缺少什么\"\n  }],\n  \"next_turn_search_actions\": {\n    \"action_reason\": \"下一轮整体规划理由\",\n    \"search_actions\": [{\n      \"search_action\": \"CONTINUE_SEARCH\",\n      \"action_reason\": \"为什么需要继续搜索\",\n      \"target_goal_id\": \"GOAL_1\",\n      \"search_queries\": [\"query 1\", \"query 2\"]\n    }]\n  }\n}\n\n## 信息已经闭环时的输出格式\n{\n  \"search_state_updates\": [{\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"原搜索目标\",\n    \"status\": \"CLOSED\",\n    \"status_reason\": \"已有充分证据且不存在阻塞冲突\",\n    \"answer\": \"当前直接答案\",\n    \"supported_statement\": \"证据支持的归一化事实\",\n    \"supporting_evidence_ids\": [\"E1\"],\n    \"conflict_summary\": \"\",\n    \"conflicting_evidence_ids\": [],\n    \"evidence_gap\": \"\"\n  }],\n  \"next_turn_search_actions\": {\n    \"action_reason\": \"所有回答原始问题所必需的目标均已闭环\",\n    \"search_actions\": [{\n      \"search_action\": \"STOP\",\n      \"action_reason\": \"所有必要目标均已闭环\"\n    }]\n  }\n}"
+            },
+            {
+              "role": "user",
+              "content": "<constant_info>\nuser_query: 系统应用、三方应用、预置应用有什么差别\ncurrent_date: 2026-10-12\n</constant_info>\n\n<search_history>\n（暂无历史搜索轨迹）\n</search_history>\n\n<search_status>\n[\n  {\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"系统应用、三方应用、预置应用三者在定义、来源、安装位置、权限和可卸载性方面的核心差别是什么\",\n    \"in_progress\": true\n  }\n]\n</search_status>\n\n<current_turn_info>\n[\n  {\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"系统应用、三方应用、预置应用三者在定义、来源、安装位置、权限和可卸载性方面的核心差别是什么\",\n    \"search_queries\": [\n      \"系统应用 三方应用 预置应用 区别\",\n      \"Android 系统应用 预置应用 第三方应用 定义 区别\",\n      \"system app preinstalled app third-party app difference Android\",\n      \"预置应用 系统应用 第三方应用 权限 卸载 区别\",\n      \"site:source.android.com system apps preinstalled apps third-party apps\"\n    ],\n    \"search_errors\": [],\n    \"search_webs\": [\n      \"[1]网页来源: 51CTO HarmonyOS开发者社区｜网页时间: 2024-10-31T09:37:41+08:00｜网页标题: #鸿蒙学习大百科#系统、三方、预置这三种应用有哪些区别?-鸿蒙开发者社区-51CTO.COM｜网页内容：预置应用比较好理解,就是厂商在出厂时预先安装在设备上的应用,系统或三方应用都可以。profile证书中app-feature为hos_system_app的应用为系统应用,其能调用系统接口。profile证书中app-feature为hos_normal_app的应用为三方应用,其不能调用系统接口。\",\n      \"[2]网页来源: 问卷网｜网页时间: 2014-12-05T21:47:24+08:00｜网页标题: 预置应用调查问卷(厂商版) - 问卷调查调研模板  问卷网｜网页内容：本问卷为针对手机厂商进行的预置应用可删除情况调查问卷。请按照实际情况规范填写,保证信息真实可信,完成填写后加盖公章。 请认真阅读关于预置应用及预置应用的分类说明:1) 预置应用定义    预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。 2) 预置应用分类    根据预装软件的功能及适用场景,预装软件分为三类:系统支撑类、基本功能类和扩展功能类。  系统支撑类预装软件,是指保证智能终端硬件和操作系统正常运行的应用程序,如adbd、rald、vold、toolbox等。  基本功能类预装软件,是指实现智能终端基本功能而预装的应用软件,如电话、短信、联系人、日历、拍照等。  扩展功能类预装软件,是指为丰富用户体验而预装的应用软件,如社交、游戏、视频、音乐等。 (以上定义与分类参考《TAF14-TSG01-C-电信研究院-M002-V1.0.0预置应用软件分类研究》)\",\n      \"[3]网页来源: 51CTO HarmonyOS开发者社区｜网页时间: 2024-06-18T12:08:20+08:00｜网页标题: 如何将三方应用改为系统应用-鸿蒙开发者社区-51CTO.COM｜网页内容：默认的应用是第三方应用,而很多API必须得是系统应用才能使用,例如ServiceExtensionContext.startServiceExtensionAbility这样的API。那开发者如何将三方应用设置为系统应用以便使用这些接口呢?\",\n      \"[4]网页来源: 问卷网｜网页时间: 2014-01-01T00:00:00+08:00｜网页标题: 预置应用调查问卷(厂商版)_历史项目_免费模板_问卷网｜网页内容：本问卷为针对手机厂商进行的预置应用可删除情况调查问卷。请按照实际情况规范填写,保证信息真实可信,完成填写后加盖公章。 请认真阅读关于预置应用及预置应用的分类说明: 1) 预置应用定义 预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。 2) 预置应用分类 根据预装软件的功能及适用场景,预装软件分为三类:系统支撑类、基本功能类和扩展功能类。 系统支撑类预装软件 ,是指保证智能终端硬件和操作系统正常运行的应用程序,如adbd、rald、vold、toolbox等。 基本功能类预装软件 ,是指实现智能终端基本功能而预装的应用软件,如电话、短信、联系人、日历、拍照等。 扩展功能类预装软件 ,是指为丰富用户体验而预装的应用软件,如社交、游戏、视频、音乐等。 (以上定义与分类参考《TAF14-TSG01-C-电信研究院-M002-V1.0.0预置应用软件分类研究》) \\\"> 本页仅为文字内容,不可回答。 预置应用调查问卷(厂商版) 本问卷为针对手机厂商进行的预置应用可删除情况调查问卷。请按照实际情况规范填写,保证信息真实可信,完成填写后加盖公章。 请认真阅读关于预置应用及预置应用的分类说明: 1) 预置应用定义 预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。 2) 预置应用分类 根据预装软件的功能及适用场景,预装软件分为三类:系统支撑类、基本功能类和扩展功能类。 系统支撑类预装软件 ,是指保证智能终端硬件和操作系统正常运行的应用程序,如adbd、rald、vold、toolbox等。 基本功能类预装软件 ,是指实现智能终端基本功能而预装的应用软件,如电话、短信、联系人、日历、拍照等。 扩展功能类预装软件 ,是指为丰富用户体验而预装的应用软件,如社交、游戏、视频、音乐等。 (以上定义与分类参考《TAF14-TSG01-C-电信研究院-M0\",\n      \"[5]网页来源: 搜狗问答｜网页时间: 2016-10-28T15:12:34+08:00｜网页标题: android 手机上本地应用程序和第三方应用程序的区别? 他们公用相同的API,他们本质的区别是是么 - 搜狗问问｜网页内容：预装软件一般是推广用的,有些是有区别的,这包含定制的东西,有些手机的预装软件虽然与普通软件的api一样,但是有一定的定制功能,界面可能有所修改,功能可能也有所删加,着取决于定制机的定位。还有就是用户的权限设定,预装软件一搬无法删除卸载,只有获取root权限才可以。其他方面,预装的软件和第三方程序基本上没什么区别, 一般大家经常讲的第三方登录只是一个概念,就是获得第三方平台的授权,而不是讲应用使用这种授权来注册用户完成登录的流程。 下面的是具体流程: 1、需要支持用户注册。 2、需要在应用登录的时候提供第三方平台的图标。 3、用户点击第三方平台图标以后,你们尝试判断用户是否已经授权。 4、如果用户授权,获取他的唯一识别符,比方说weibodb里面的weiboid这个字段。 5、如果用户没有授权,引导用户授权,授权成功后也可以获取weibo id。 6、然后用这个唯一识别符登录你们的系统,如果用户已经注册,则应该让用户登录到你们的系统,流程结束。 7、如果你们的系统发现用户没有注册,引导用户进入你们应用的注册页面,并通过share sdk的showuser方法获取用户资料,自动帮助用户完成注册资料的填写,然后等待用户确认。 8、如果用户确认了注册信息,你们的应用就根据他的信息完成这注册操作,如果操作成功,则应该让用户登录到你们的系统,流程结束。\",\n      \"[6]网页来源: CSDN｜网页时间: 2023-01-13T08:30:07+08:00｜网页标题: Android识别预装的第三方App方法实例_android 如何判断是预装的三方应用-CSDN博客｜网页内容：系统内置 应用 对应的flag为 App licationInfo.FLAG_SYSTEMboolean isSystem App ( App lication aInfo){if((aInfo.flags & aInfo.FLAG_SYSTEM) == 0){return false;}else {return true;}} 06-25 1万+ android 源码中预安装 第三方 的apk软件热度 2已有 2578 次阅读2012-11-23 17:55 |系统分类: Android 开发| android , 安装, 第三方 申明:转载:http://blog.csdn.net/zhangchiytu/article/details/6424910 对于 Android 系统集成有源码的 第三方 库和程序,只需要提供An 安卓( Android )是一种基于Linux的自由及开放源代码的操作系统。主要使用于移动设备,如智能手机和平板电脑,由Google公司和开放手机联盟领导及开发。 Android 操作系统最初由Andy Rubin开发,主要支持手机。2005年8月由Google收购注资。2007年11月,Google与84家硬件制造商、软件开发商及电信营运商组建开放手机联盟共同研发改良 Android 系统。随后Goog... 一、添加到Removeable中(可卸载)1. 在alps/device/Amobile/A_101/device.mk 文件中添加改APK: OPera_MINI 名字# add third parth removable apkPRODUCT_PACKAGES += \\\\FaceBook \\\\MXPlayer \\\\Hungamaplay \\\\OPera_MINI \\\\Exceloemstub \\\\Ppt... 获取所有 应用 及相关信息 方法 1:\",\n      \"[7]网页来源: CSDN｜网页时间: 2024-03-20T16:03:04+08:00｜网页标题: android 安装第三方app,Android识别预装的第三方App方法实例-CSDN博客｜网页内容：前言 新买一台手机,里面会有很多App,有的属于系统App,不可卸载,有的属于第三方App,厂商会预装一些常用的或者给了他们广告费的App,这些是可以卸载的。 如果要详细划分,系统App还可根据其路径不同进一步划分(如/system/app、/system/priv-app、/vendor/app等)。\",\n      \"[8]网页来源: 中企动力｜网页时间: 2021-05-18T21:22:56+08:00｜网页标题: 什么叫第三方应用 - IT知识教程 - 中企动力｜网页内容：第三方应用的定义有: 1、是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。 2、是指某项应用,如PDF电子书格式,是由Adobe开发的,Adobe公司就称为官方,而由非Adobe公司开发的针对PDF电子书格式的所有应用软件,都可称为第三方软件。 3、是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用 。 应用(Application),一般指手机和平板电脑的应用。在面向对象上通常分为个人用户应用与企业级应用,在移动端系统分类上主要包括iOS(如:同步推等)、Android(如:AirDroid、百度应用等)和windows phone的xap和appx。\",\n      \"[9]网页来源: 百度知道｜网页时间: 2020-11-12T05:30:05+08:00｜网页标题: 什么叫第三方应用 - 业百科｜网页内容：第三方应用的定义有: 1、是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。 2、是指某项应用,如PDF电子书格式,是由Adobe开发的,Adobe公司就称为官方,而由非Adobe公司开发的针对PDF电子书格式的所有应用软件,都可称为第三方软件。 3、是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用。 应用(Application),一般指手机和平板电脑的应用。在面向对象上通常分为个人用户应用与企业级应用,在移动端系统分类上主要包括iOS(如:同步推等)、Android(如:AirDroid、百度应用等)和windowsphone的xap和appx。\",\n      \"[10]网页来源: CSDN｜网页时间: 2024-01-20T02:24:24+08:00｜网页标题: Android系统目录priv-app 和app 详解｜网页内容：Android系统目录priv-app 和app 详解\\n文章目录\\nAndroid系统目录priv-app 和app 详解\\n一、前言 二、区别\\n1、关于目录 2、关于进程 3、关于 System App\\n有两类 App 属于 System App :\\n4、关于 Privileged App\\n两类 Privileged App\\n(1)特定 uid 的 App (2)特定目录中的 App\\n5、特殊权限 Privileged\\n三、其他\\n1、apk文件放在不同目录的测试效果 2、在Android系统中,`priv-app`和`app`目录小结 4、Android中不同应用权限级别从低到高总结场景\\n一、前言\\nAndroid4.4增加了/system/priv-app/目录,那么它与/system/app/目录有什么差别?\\n本文主要从定义,作用,具体效果等方面进行分析。\\n有一些是网上没有介绍到的内容。\\n 如果只是知道 priv-app 目录比 app目录权限大一点,但是不了解具体区别的可以看看。\\n二、区别\\n1、关于目录\\n4.4 之前没有/system/priv-app 目录,所有 /system/app 下的软件都能使用系统级的权限。\\n/system/priv-app和/system/app目录下的文件都是不可手动删除的。\\n手机被 root 后,通过 adb push 可以把 apk 推送到这两个目录,作为系统应用,用户无法删除。\\n/system/priv-app 中包含 Launcher,SystemUI, SettingsProvider 以及系统一些重要服务等系统的核心应用,这些应用能使用系统级的权限。\\n/system/app 中包含 一些基础应用和一些三方应用,比如日历,闹钟,天气,魔镜,音乐,这些有的是系统签名应用,有的不是系统签名应用,都是用户无法手动卸载的。\\n放到 /sys\",\n      \"[11]网页来源: 脚本之家｜网页时间: 2019-01-18T09:06:46+08:00｜网页标题: Android识别预装的第三方App方法实例_Android_脚本之家｜网页内容：这篇文章主要给大家介绍了关于Android如何识别预装的第三方App的相关资料,文中通过示例代码介绍的非常详细,需要的朋友可以参考借鉴,下面随着小编来一起学习学习吧 前言 新买一台手机,里面会有很多App,有的属于系统App,不可卸载,有的属于第三方App,厂商会预装一些常用的或者给了他们广告费的App,这些是可以卸载的。 如果要详细划分,系统App还可根据其路径不同进一步划分(如/system/app、/system/priv-app、/vendor/app等)。但对于开发者来说,手机上安装的App只分为2类:系统App和用户App,可以根据系统API区分,这里就不详细说了,简单而言存在ApplicationInfo.FLAG_SYSTEM或ApplicationInfo.FLAG_UPDATED_SYSTEM_APP flag的即为系统App,否pp也会归到用户App中,那么有没有办法知道用户App中哪些是预装的哪些是用户手动安装的呢? 在这里分享一种方法: App的安装时间是整秒的为预装的第三方App 。 如果不关心为什么能用这个奇怪方法来区分预装App的话,就可以关闭这篇文章了。 之前我也一直不清楚为什么可以用这种方法,当时我猜是因为手机第一次启动的时候时间是不准确的,会是某某年1月1日,然后因为启动时会扫描各个App目录然后安装Ap08\\\" it=\\\"1676feab448\\\" ut=\\\"167702c8a57\\\" version=\\\"1360\\\" userId=\\\"10118\\\">...</package><package name=\\\"com.android.providers.downloads\\\" codePath=\\\"/system/priv-app/DownloadProvider\\\" nativeLibraryPath=\\\"/system8\\\" sharedUserId=\\\"100\",\n      \"[12]网页来源: CSDN｜网页时间: 2015-04-10T23:47:53+08:00｜网页标题: 关于android4.4系统内置应用时system下priv-app和app的区别 - lmz4727741的专栏 - CSDN博客｜网页内容：一般都是系统核心应用如 Launcher 、 systemui 、 settings 等应用。 需要在 Android.mk 中做如下设置即可: LOCAL_PRIVILEGED_MODULE := true 那么那些权限是属于系统级权限呢?可以查看 Android API 文档 http://wear.techbrood.com/reference/android/Manifest.permission.html 其中有如下说明的权限为系统级权限: Not for use by third-party applications. 问题描述有些第三方app内置到手机不可卸载区域,有时候会无法正常使用。\",\n      \"[13]网页来源: 应用公园｜网页时间: 2023-12-18T20:45:00+08:00｜网页标题: 软件与APP运行环境、安装与卸载的对比｜网页内容：软件和APP在运行环境、安装和卸载方面有一些区别: 运行环境: 软件: 一般指在计算机上运行的应用程序,可以包括桌面应用、服务器端应用等,运行环境可能是特定的操作系统或平台。 APP: 通常指移动设备上的应用程序,例如在iOS或Android操作系统上运行的应用,依赖于移动设备的操作系统和硬件环境。 安装: 软件: 安装软件通常需要下载安装文件(如.exe或.msi文件),然后在计算机上执行安装程序,将文件和相关组件复制到指定的目录并进行注册,可能需要管理员权限。 APP: 通过应用商店(如App Store、Google Play)进行安装,用户可以直接从商店下载并安装应用,通常只需点击下载按钮,系统会自动完成安装过程。 卸载: 软件: 在计算机上卸载软件可能需要使用操作系统提供的卸载程序或者在控制面板中进行卸载,这通常会删除安装时创建的文件和注册表中的相关条目。 APP: 用户可以在移动设备的应用商店中或设备设置中找到并选择卸载应用,这会将应用从设备中完全移除,包括应用本身和相关的数据。 总的来说,软件和APP在安装和卸载过程中存在一些异同,主要取决于它们运行的环境和设备平台。软件通常在桌面环境中安装和卸载,而APP更专注于移动设备,并通过应用商店进行安装和卸载。\",\n      \"[14]网页来源: 百度知道｜网页时间: 2020-11-16T15:13:30+08:00｜网页标题: 第三方应用指什么 - 业百科｜网页内容：手机自带的是本身手机自带的软件,是无法删除卸载的,第三方软件的话,就是自己下载的。 定义 一是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。 二是指某项应用,如PDF电子书格式,是由Adobe开发的,Adobe公司就称为官方,而由非Adobe公司开发的针对PDF电子书格式的所有应用软件,都可称为第三方软件。 三是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用。\"\n    ],\n    \"evidences\": [\n      {\n        \"evidence_id\": \"E1\",\n        \"statement\": \"按鸿蒙开发者社区2024年的说明，系统应用是profile证书中app-feature为hos_system_app的应用，可调用系统接口；三方应用是app-feature为hos_normal_app的应用，不能调用系统接口。\",\n        \"quotes\": [\n          {\n            \"web_id\": \"1\",\n            \"quotes\": [\n              \"profile证书中app-feature为hos_system_app的应用为系统应用,其能调用系统接口。profile证书中app-feature为hos_normal_app的应用为三方应用,其不能调用系统接口。\"\n            ]\n          }\n        ],\n        \"evidence_role\": \"直接给出鸿蒙语境下系统应用与三方应用的定义标识及系统接口调用权限差异\",\n        \"evidence_type\": \"direct_answer\",\n        \"search_goal_id\": \"GOAL_1\"\n      },\n      {\n        \"evidence_id\": \"E2\",\n        \"statement\": \"预置/预装应用指厂商在设备出厂时预先安装，或企业在智能终端生产、流通、售后等环节装入的应用软件；鸿蒙社区指出预置应用可以是系统应用，也可以是三方应用。\",\n        \"quotes\": [\n          {\n            \"web_id\": \"1\",\n            \"quotes\": [\n              \"预置应用比较好理解,就是厂商在出厂时预先安装在设备上的应用,系统或三方应用都可以。\"\n            ]\n          },\n          {\n            \"web_id\": \"2\",\n            \"quotes\": [\n              \"预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。\"\n            ]\n          }\n        ],\n        \"evidence_role\": \"界定预置应用的来源，并说明预置应用与系统/三方应用不是同一维度的互斥分类\",\n        \"evidence_type\": \"direct_answer\",\n        \"search_goal_id\": \"GOAL_1\"\n      },\n      {\n        \"evidence_id\": \"E3\",\n        \"statement\": \"在Android开发语境中，存在ApplicationInfo.FLAG_SYSTEM或FLAG_UPDATED_SYSTEM_APP标志的应用即被归为系统App，否则归为用户App；预装的第三方App可通过安装时间是否为整秒来识别。\",\n        \"quotes\": [\n          {\n            \"web_id\": \"11\",\n            \"quotes\": [\n              \"简单而言存在ApplicationInfo.FLAG_SYSTEM或ApplicationInfo.FLAG_UPDATED_SYSTEM_APP flag的即为系统App,否pp也会归到用户App中,那么有没有办法知道用户App中哪些是预装的哪些是用户手动安装的呢?\",\n              \"App的安装时间是整秒的为预装的第三方App 。\"\n            ]\n          }\n        ],\n        \"evidence_role\": \"补充Android开发语境下系统App与用户App的判定标志，以及预装三方App的识别口径\",\n        \"evidence_type\": \"direct_answer\",\n        \"search_goal_id\": \"GOAL_1\"\n      },\n      {\n        \"evidence_id\": \"E4\",\n        \"statement\": \"在Android系统中，系统应用可按路径进一步划分，如/system/app、/system/priv-app、/vendor/app；/system/priv-app存放Launcher、SystemUI、SettingsProvider等核心系统应用，这些应用能使用系统级权限；/system/app则包含基础应用和部分三方应用。\",\n        \"quotes\": [\n          {\n            \"web_id\": \"7\",\n            \"quotes\": [\n              \"如果要详细划分,系统App还可根据其路径不同进一步划分(如/system/app、/system/priv-app、/vendor/app等)。\"\n            ]\n          },\n          {\n            \"web_id\": \"10\",\n            \"quotes\": [\n              \"/system/priv-app 中包含 Launcher,SystemUI, SettingsProvider 以及系统一些重要服务等系统的核心应用,这些应用能使用系统级的权限。\",\n              \"/system/app 中包含 一些基础应用和一些三方应用,比如日历,闹钟,天气,魔镜,音乐,这些有的是系统签名应用,有的不是系统签名应用,都是用户无法手动卸载的。\"\n            ]\n          }\n        ],\n        \"evidence_role\": \"说明系统应用及部分三方应用在安装位置、系统级权限和分区上的差异\",\n        \"evidence_type\": \"direct_answer\",\n        \"search_goal_id\": \"GOAL_1\"\n      },\n      {\n        \"evidence_id\": \"E5\",\n        \"statement\": \"系统App通常不可卸载；位于/system/priv-app和/system/app目录下的文件不可手动删除，即使root后用adb push推入这两个目录作为系统应用，用户也无法删除。\",\n        \"quotes\": [\n          {\n            \"web_id\": \"7\",\n            \"quotes\": [\n              \"有的属于系统App,不可卸载\"\n            ]\n          },\n          {\n            \"web_id\": \"10\",\n            \"quotes\": [\n              \"/system/priv-app和/system/app目录下的文件都是不可手动删除的。\",\n              \"手机被 root 后,通过 adb push 可以把 apk 推送到这两个目录,作为系统应用,用户无法删除。\"\n            ]\n          }\n        ],\n        \"evidence_role\": \"说明系统应用及系统分区内应用在可卸载性上的约束\",\n        \"evidence_type\": \"constraint\",\n        \"search_goal_id\": \"GOAL_1\"\n      },\n      {\n        \"evidence_id\": \"E6\",\n        \"statement\": \"厂商预装的第三方App通常可以卸载；但若三方应用被放入/system/app等系统分区，则按相关来源仍属于用户无法手动卸载。\",\n        \"quotes\": [\n          {\n            \"web_id\": \"7\",\n            \"quotes\": [\n              \"有的属于第三方App,厂商会预装一些常用的或者给了他们广告费的App,这些是可以卸载的。\"\n            ]\n          },\n          {\n            \"web_id\": \"10\",\n            \"quotes\": [\n              \"/system/app 中包含 一些基础应用和一些三方应用,比如日历,闹钟,天气,魔镜,音乐,这些有的是系统签名应用,有的不是系统签名应用,都是用户无法手动卸载的。\"\n            ]\n          }\n        ],\n        \"evidence_role\": \"区分普通预装三方应用与系统分区内三方应用在可卸载性上的不同口径\",\n        \"evidence_type\": \"direct_answer\",\n        \"search_goal_id\": \"GOAL_1\"\n      },\n      {\n        \"evidence_id\": \"E7\",\n        \"statement\": \"第三方应用一般指由非官方/第三方编制的应用；在手机日常语境中，也常与用户自行下载安装的软件对应，而手机自带软件与之相对。\",\n        \"quotes\": [\n          {\n            \"web_id\": \"8\",\n            \"quotes\": [\n              \"第三方应用的定义有: 1、是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。\",\n              \"3、是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用 。\"\n            ]\n          },\n          {\n            \"web_id\": \"14\",\n            \"quotes\": [\n              \"手机自带的是本身手机自带的软件,是无法删除卸载的,第三方软件的话,就是自己下载的。\"\n            ]\n          }\n        ],\n        \"evidence_role\": \"界定三方应用的来源，并与手机自带软件作对照\",\n        \"evidence_type\": \"direct_answer\",\n        \"search_goal_id\": \"GOAL_1\"\n      },\n      {\n        \"evidence_id\": \"E8\",\n        \"statement\": \"在Android/HarmonyOS开发语境中，默认应用是三方应用，很多API必须由系统应用才能使用；Android系统级权限也标注为Not for use by third-party applications。\",\n        \"quotes\": [\n          {\n            \"web_id\": \"3\",\n            \"quotes\": [\n              \"默认的应用是第三方应用,而很多API必须得是系统应用才能使用,例如ServiceExtensionContext.startServiceExtensionAbility这样的API。\"\n            ]\n          },\n          {\n            \"web_id\": \"12\",\n            \"quotes\": [\n              \"其中有如下说明的权限为系统级权限: Not for use by third-party applications.\"\n            ]\n          }\n        ],\n        \"evidence_role\": \"通过开发接口和系统级权限标注说明系统应用与三方应用在权限上的差异\",\n        \"evidence_type\": \"direct_answer\",\n        \"search_goal_id\": \"GOAL_1\"\n      },\n      {\n        \"evidence_id\": \"E9\",\n        \"statement\": \"有来源称预装软件一般无法删除卸载，只有获取root权限才可以（该来源未区分系统预装与三方预装）。\",\n        \"quotes\": [\n          {\n            \"web_id\": \"5\",\n            \"quotes\": [\n              \"还有就是用户的权限设定,预装软件一搬无法删除卸载,只有获取root权限才可以。\"\n            ]\n          }\n        ],\n        \"evidence_role\": \"提供预置应用可卸载性的另一种来源口径，提示预置应用不能一概而论\",\n        \"evidence_type\": \"counter_evidence\",\n        \"search_goal_id\": \"GOAL_1\"\n      }\n    ],\n    \"conflicts\": []\n  }\n]\n</current_turn_info>\n\n<task>\n请更新 current_turn_info 中涉及的搜索目标状态，再判断原始问题是否已闭环：若已闭环输出 STOP；否则针对关键缺口规划下一轮动作。\nsupporting_evidence_ids 和 conflicting_evidence_ids 只能填写上下文中存在的 E 开头 evidence_id；VERIFY_CONFLICT.target_conflict_id 只能填写 C 开头 conflict_id。\n只输出 current_turn_info 中本轮涉及目标的 search_state_updates，不要重复更新其他历史目标。\nsearch_state_updates 不得输出 depends_on_goal_ids；目标依赖关系由编排器维护，状态判定时不可修改。\n\n# 请严格按照以下格式输出\n## JSON 输出硬约束\n1. 只输出一个可被标准 JSON 解析器直接解析的 JSON 对象；不要 Markdown 代码块、注释、解释性前后缀或尾随逗号。\n2. 所有 key 和字符串必须使用双引号；空值使用 null，不得使用 None、单引号或 NaN。\n3. 顶层必须同时包含 search_state_updates 和 next_turn_search_actions；两者不得改名、缺失或额外嵌套。\n4. search_state_updates 必须是对象数组；next_turn_search_actions 必须是对象，其中 search_actions 必须是非空对象数组。\n\n### 信息未闭环时的输出格式\n{\n  \"search_state_updates\": [{\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"原搜索目标\",\n    \"status\": \"OPEN|CLOSED|CLOSED_BY_REFUTED|UNRESOLVED|SUPERSEDED|DROPPED\",\n    \"status_reason\": \"状态原因\",\n    \"answer\": \"当前直接答案；OPEN 时可为部分答案\",\n    \"supported_statement\": \"证据支持的归一化事实\",\n    \"supporting_evidence_ids\": [\"E1\"],\n    \"conflict_summary\": \"未解决且影响答案的冲突\",\n    \"conflicting_evidence_ids\": [\"E2\"],\n    \"evidence_gap\": \"距离闭环还缺少什么\"\n  }],\n  \"next_turn_search_actions\": {\n    \"action_reason\": \"下一轮整体规划理由\",\n    \"search_actions\": [{\n      \"search_action\": \"CONTINUE_SEARCH\",\n      \"action_reason\": \"为什么需要继续搜索\",\n      \"target_goal_id\": \"GOAL_1\",\n      \"search_queries\": [\"query 1\", \"query 2\"]\n    }]\n  }\n}\n\n### 信息已经闭环时的输出格式\n{\n  \"search_state_updates\": [{\n    \"search_goal_id\": \"GOAL_1\",\n    \"search_goal\": \"原搜索目标\",\n    \"status\": \"CLOSED\",\n    \"status_reason\": \"已有充分证据且不存在阻塞冲突\",\n    \"answer\": \"当前直接答案\",\n    \"supported_statement\": \"证据支持的归一化事实\",\n    \"supporting_evidence_ids\": [\"E1\"],\n    \"conflict_summary\": \"\",\n    \"conflicting_evidence_ids\": [],\n    \"evidence_gap\": \"\"\n  }],\n  \"next_turn_search_actions\": {\n    \"action_reason\": \"所有回答原始问题所必需的目标均已闭环\",\n    \"search_actions\": [{\n      \"search_action\": \"STOP\",\n      \"action_reason\": \"所有必要目标均已闭环\"\n    }]\n  }\n}\n</task>"
+            }
+          ],
+          "response": {
+            "search_state_updates": [
+              {
+                "search_goal_id": "GOAL_1",
+                "search_goal": "系统应用、三方应用、预置应用三者在定义、来源、安装位置、权限和可卸载性方面的核心差别是什么",
+                "status": "CLOSED",
+                "status_reason": "本轮证据已覆盖定义/来源、安装位置、权限、可卸载性四个维度：系统应用与三方应用在鸿蒙以app-feature（hos_system_app/hos_normal_app）区分、在Android以FLAG_SYSTEM/FLAG_UPDATED_SYSTEM_APP区分，系统应用可调用系统接口与系统级权限而三方应用不可；预置应用则是按安装时机定义的维度，出厂预装的既可为系统应用也可为三方应用；系统应用位于/system/app、/system/priv-app、/vendor/app等系统分区，系统分区内应用不可手动卸载，普通厂商预装的三方应用通常可卸载。各来源口径可通过'预置与系统/三方非同一维度、系统分区归属决定可卸载性'统一解释，无阻塞冲突。",
+                "answer": "三者不是同一维度：①定义与来源：系统应用是具备系统标识/系统签名的应用（鸿蒙app-feature=hos_system_app，Android有FLAG_SYSTEM或FLAG_UPDATED_SYSTEM_APP），可调用系统接口；三方应用是由非官方第三方开发的应用（鸿蒙app-feature=hos_normal_app，或用户自行下载安装），不能调用系统接口；预置应用是按安装时机定义的，指厂商在出厂或生产、流通、售后环节预先装入设备的应用，既可能是系统应用也可能是三方应用。②安装位置：系统应用位于/system/app、/system/priv-app、/vendor/app等系统分区，核心应用（Launcher、SystemUI、SettingsProvider等）在/system/priv-app。③权限：系统应用（尤其priv-app）可使用系统级权限，三方应用不可（系统级权限标注Not for use by third-party applications）。④可卸载性：位于/system/priv-app、/system/app等系统分区的应用（包括被放入其中的三方应用）不可手动卸载；而厂商普通预装的三方应用通常可以卸载。",
+                "supported_statement": "系统应用以系统标识/签名及系统接口与系统级权限使用能力定义，三方应用以非官方第三方开发且不具备系统接口权限定义，预置应用按出厂预装这一安装时机定义并可同时包含系统应用与三方应用；系统应用（及放入系统分区者）位于/system/app、/system/priv-app、/vendor/app等分区且不可手动卸载，普通预装三方应用通常可卸载。",
+                "supporting_evidence_ids": [
+                  "E1",
+                  "E2",
+                  "E3",
+                  "E4",
+                  "E5",
+                  "E6",
+                  "E7",
+                  "E8"
+                ],
+                "conflict_summary": "",
+                "conflicting_evidence_ids": [],
+                "evidence_gap": ""
+              }
+            ],
+            "next_turn_search_actions": {
+              "action_reason": "GOAL_1在定义/来源、安装位置、权限、可卸载性四个维度均已有充分且相互可协调的证据，无阻塞冲突，原始问题已闭环",
+              "search_actions": [
+                {
+                  "search_action": "STOP",
+                  "action_reason": "所有回答原始问题所必需的目标均已闭环"
+                }
+              ]
+            }
+          },
+          "phase": "state_update_and_next_plan"
+        },
+        "next_search_actions": [
+          {
+            "search_action": "STOP",
+            "action_reason": "所有回答原始问题所必需的目标均已闭环"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "answer_agent_handoff": {
+    "user_query": "系统应用、三方应用、预置应用有什么差别",
+    "run_id": "e8a4b6e09bed40b8b758d38d4e347d8b",
+    "run_status": "COMPLETED",
+    "stop_reason": "所有回答原始问题所必需的目标均已闭环",
+    "metrics": {
+      "scheme": "scheme_a",
+      "total_turns": 1,
+      "search_turns": 1,
+      "model_call_count": 3,
+      "search_action_count": 1,
+      "search_query_count": 5,
+      "web_result_count": 17,
+      "unique_web_count": 14,
+      "termination_type": "MODEL_STOP",
+      "terminated_by_model": true,
+      "reached_max_turns": false,
+      "final_action": "STOP",
+      "last_model_action": "STOP",
+      "started_at": "2026-10-12T18:48:55.209909+00:00",
+      "finished_at": "2026-10-12T18:50:37.113227+00:00",
+      "elapsed_ms": 101903.42
+    },
+    "search_goals": [
+      {
+        "search_goal_id": "GOAL_1",
+        "search_goal": "系统应用、三方应用、预置应用三者在定义、来源、安装位置、权限和可卸载性方面的核心差别是什么",
+        "status": "CLOSED",
+        "status_reason": "本轮证据已覆盖定义/来源、安装位置、权限、可卸载性四个维度：系统应用与三方应用在鸿蒙以app-feature（hos_system_app/hos_normal_app）区分、在Android以FLAG_SYSTEM/FLAG_UPDATED_SYSTEM_APP区分，系统应用可调用系统接口与系统级权限而三方应用不可；预置应用则是按安装时机定义的维度，出厂预装的既可为系统应用也可为三方应用；系统应用位于/system/app、/system/priv-app、/vendor/app等系统分区，系统分区内应用不可手动卸载，普通厂商预装的三方应用通常可卸载。各来源口径可通过'预置与系统/三方非同一维度、系统分区归属决定可卸载性'统一解释，无阻塞冲突。",
+        "answer": "三者不是同一维度：①定义与来源：系统应用是具备系统标识/系统签名的应用（鸿蒙app-feature=hos_system_app，Android有FLAG_SYSTEM或FLAG_UPDATED_SYSTEM_APP），可调用系统接口；三方应用是由非官方第三方开发的应用（鸿蒙app-feature=hos_normal_app，或用户自行下载安装），不能调用系统接口；预置应用是按安装时机定义的，指厂商在出厂或生产、流通、售后环节预先装入设备的应用，既可能是系统应用也可能是三方应用。②安装位置：系统应用位于/system/app、/system/priv-app、/vendor/app等系统分区，核心应用（Launcher、SystemUI、SettingsProvider等）在/system/priv-app。③权限：系统应用（尤其priv-app）可使用系统级权限，三方应用不可（系统级权限标注Not for use by third-party applications）。④可卸载性：位于/system/priv-app、/system/app等系统分区的应用（包括被放入其中的三方应用）不可手动卸载；而厂商普通预装的三方应用通常可以卸载。",
+        "supported_statement": "系统应用以系统标识/签名及系统接口与系统级权限使用能力定义，三方应用以非官方第三方开发且不具备系统接口权限定义，预置应用按出厂预装这一安装时机定义并可同时包含系统应用与三方应用；系统应用（及放入系统分区者）位于/system/app、/system/priv-app、/vendor/app等分区且不可手动卸载，普通预装三方应用通常可卸载。",
+        "supporting_evidence_ids": [
+          "E1",
+          "E2",
+          "E3",
+          "E4",
+          "E5",
+          "E6",
+          "E7",
+          "E8"
+        ],
+        "conflict_summary": "",
+        "conflicting_evidence_ids": [],
+        "evidence_gap": "",
+        "depends_on_goal_ids": [],
+        "search_queries": [
+          "系统应用 三方应用 预置应用 区别",
+          "Android 系统应用 预置应用 第三方应用 定义 区别",
+          "system app preinstalled app third-party app difference Android",
+          "预置应用 系统应用 第三方应用 权限 卸载 区别",
+          "site:source.android.com system apps preinstalled apps third-party apps"
+        ],
+        "web_ids": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14"
+        ],
+        "evidence_ids": [
+          "E1",
+          "E2",
+          "E3",
+          "E4",
+          "E5",
+          "E6",
+          "E7",
+          "E8",
+          "E9"
+        ],
+        "conflict_ids": [],
+        "turn_ids": [
+          1
+        ]
+      }
+    ],
+    "evidences": [
+      {
+        "evidence_id": "E1",
+        "statement": "按鸿蒙开发者社区2024年的说明，系统应用是profile证书中app-feature为hos_system_app的应用，可调用系统接口；三方应用是app-feature为hos_normal_app的应用，不能调用系统接口。",
+        "quotes": [
+          {
+            "web_id": "1",
+            "quotes": [
+              "profile证书中app-feature为hos_system_app的应用为系统应用,其能调用系统接口。profile证书中app-feature为hos_normal_app的应用为三方应用,其不能调用系统接口。"
+            ]
+          }
+        ],
+        "evidence_role": "直接给出鸿蒙语境下系统应用与三方应用的定义标识及系统接口调用权限差异",
+        "evidence_type": "direct_answer",
+        "search_goal_id": "GOAL_1"
+      },
+      {
+        "evidence_id": "E2",
+        "statement": "预置/预装应用指厂商在设备出厂时预先安装，或企业在智能终端生产、流通、售后等环节装入的应用软件；鸿蒙社区指出预置应用可以是系统应用，也可以是三方应用。",
+        "quotes": [
+          {
+            "web_id": "1",
+            "quotes": [
+              "预置应用比较好理解,就是厂商在出厂时预先安装在设备上的应用,系统或三方应用都可以。"
+            ]
+          },
+          {
+            "web_id": "2",
+            "quotes": [
+              "预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。"
+            ]
+          }
+        ],
+        "evidence_role": "界定预置应用的来源，并说明预置应用与系统/三方应用不是同一维度的互斥分类",
+        "evidence_type": "direct_answer",
+        "search_goal_id": "GOAL_1"
+      },
+      {
+        "evidence_id": "E3",
+        "statement": "在Android开发语境中，存在ApplicationInfo.FLAG_SYSTEM或FLAG_UPDATED_SYSTEM_APP标志的应用即被归为系统App，否则归为用户App；预装的第三方App可通过安装时间是否为整秒来识别。",
+        "quotes": [
+          {
+            "web_id": "11",
+            "quotes": [
+              "简单而言存在ApplicationInfo.FLAG_SYSTEM或ApplicationInfo.FLAG_UPDATED_SYSTEM_APP flag的即为系统App,否pp也会归到用户App中,那么有没有办法知道用户App中哪些是预装的哪些是用户手动安装的呢?",
+              "App的安装时间是整秒的为预装的第三方App 。"
+            ]
+          }
+        ],
+        "evidence_role": "补充Android开发语境下系统App与用户App的判定标志，以及预装三方App的识别口径",
+        "evidence_type": "direct_answer",
+        "search_goal_id": "GOAL_1"
+      },
+      {
+        "evidence_id": "E4",
+        "statement": "在Android系统中，系统应用可按路径进一步划分，如/system/app、/system/priv-app、/vendor/app；/system/priv-app存放Launcher、SystemUI、SettingsProvider等核心系统应用，这些应用能使用系统级权限；/system/app则包含基础应用和部分三方应用。",
+        "quotes": [
+          {
+            "web_id": "7",
+            "quotes": [
+              "如果要详细划分,系统App还可根据其路径不同进一步划分(如/system/app、/system/priv-app、/vendor/app等)。"
+            ]
+          },
+          {
+            "web_id": "10",
+            "quotes": [
+              "/system/priv-app 中包含 Launcher,SystemUI, SettingsProvider 以及系统一些重要服务等系统的核心应用,这些应用能使用系统级的权限。",
+              "/system/app 中包含 一些基础应用和一些三方应用,比如日历,闹钟,天气,魔镜,音乐,这些有的是系统签名应用,有的不是系统签名应用,都是用户无法手动卸载的。"
+            ]
+          }
+        ],
+        "evidence_role": "说明系统应用及部分三方应用在安装位置、系统级权限和分区上的差异",
+        "evidence_type": "direct_answer",
+        "search_goal_id": "GOAL_1"
+      },
+      {
+        "evidence_id": "E5",
+        "statement": "系统App通常不可卸载；位于/system/priv-app和/system/app目录下的文件不可手动删除，即使root后用adb push推入这两个目录作为系统应用，用户也无法删除。",
+        "quotes": [
+          {
+            "web_id": "7",
+            "quotes": [
+              "有的属于系统App,不可卸载"
+            ]
+          },
+          {
+            "web_id": "10",
+            "quotes": [
+              "/system/priv-app和/system/app目录下的文件都是不可手动删除的。",
+              "手机被 root 后,通过 adb push 可以把 apk 推送到这两个目录,作为系统应用,用户无法删除。"
+            ]
+          }
+        ],
+        "evidence_role": "说明系统应用及系统分区内应用在可卸载性上的约束",
+        "evidence_type": "constraint",
+        "search_goal_id": "GOAL_1"
+      },
+      {
+        "evidence_id": "E6",
+        "statement": "厂商预装的第三方App通常可以卸载；但若三方应用被放入/system/app等系统分区，则按相关来源仍属于用户无法手动卸载。",
+        "quotes": [
+          {
+            "web_id": "7",
+            "quotes": [
+              "有的属于第三方App,厂商会预装一些常用的或者给了他们广告费的App,这些是可以卸载的。"
+            ]
+          },
+          {
+            "web_id": "10",
+            "quotes": [
+              "/system/app 中包含 一些基础应用和一些三方应用,比如日历,闹钟,天气,魔镜,音乐,这些有的是系统签名应用,有的不是系统签名应用,都是用户无法手动卸载的。"
+            ]
+          }
+        ],
+        "evidence_role": "区分普通预装三方应用与系统分区内三方应用在可卸载性上的不同口径",
+        "evidence_type": "direct_answer",
+        "search_goal_id": "GOAL_1"
+      },
+      {
+        "evidence_id": "E7",
+        "statement": "第三方应用一般指由非官方/第三方编制的应用；在手机日常语境中，也常与用户自行下载安装的软件对应，而手机自带软件与之相对。",
+        "quotes": [
+          {
+            "web_id": "8",
+            "quotes": [
+              "第三方应用的定义有: 1、是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。",
+              "3、是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用 。"
+            ]
+          },
+          {
+            "web_id": "14",
+            "quotes": [
+              "手机自带的是本身手机自带的软件,是无法删除卸载的,第三方软件的话,就是自己下载的。"
+            ]
+          }
+        ],
+        "evidence_role": "界定三方应用的来源，并与手机自带软件作对照",
+        "evidence_type": "direct_answer",
+        "search_goal_id": "GOAL_1"
+      },
+      {
+        "evidence_id": "E8",
+        "statement": "在Android/HarmonyOS开发语境中，默认应用是三方应用，很多API必须由系统应用才能使用；Android系统级权限也标注为Not for use by third-party applications。",
+        "quotes": [
+          {
+            "web_id": "3",
+            "quotes": [
+              "默认的应用是第三方应用,而很多API必须得是系统应用才能使用,例如ServiceExtensionContext.startServiceExtensionAbility这样的API。"
+            ]
+          },
+          {
+            "web_id": "12",
+            "quotes": [
+              "其中有如下说明的权限为系统级权限: Not for use by third-party applications."
+            ]
+          }
+        ],
+        "evidence_role": "通过开发接口和系统级权限标注说明系统应用与三方应用在权限上的差异",
+        "evidence_type": "direct_answer",
+        "search_goal_id": "GOAL_1"
+      },
+      {
+        "evidence_id": "E9",
+        "statement": "有来源称预装软件一般无法删除卸载，只有获取root权限才可以（该来源未区分系统预装与三方预装）。",
+        "quotes": [
+          {
+            "web_id": "5",
+            "quotes": [
+              "还有就是用户的权限设定,预装软件一搬无法删除卸载,只有获取root权限才可以。"
+            ]
+          }
+        ],
+        "evidence_role": "提供预置应用可卸载性的另一种来源口径，提示预置应用不能一概而论",
+        "evidence_type": "counter_evidence",
+        "search_goal_id": "GOAL_1"
+      }
+    ],
+    "conflicts": [],
+    "webs": [
+      {
+        "url": "https://ost.51cto.com/answer/20240",
+        "title": "#鸿蒙学习大百科#系统、三方、预置这三种应用有哪些区别?-鸿蒙开发者社区-51CTO.COM",
+        "content": "预置应用比较好理解,就是厂商在出厂时预先安装在设备上的应用,系统或三方应用都可以。profile证书中app-feature为hos_system_app的应用为系统应用,其能调用系统接口。profile证书中app-feature为hos_normal_app的应用为三方应用,其不能调用系统接口。",
+        "website": "51CTO HarmonyOS开发者社区",
+        "date": "2024-10-31T09:37:41+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 51CTO HarmonyOS开发者社区｜网页时间: 2024-10-31T09:37:41+08:00｜网页标题: #鸿蒙学习大百科#系统、三方、预置这三种应用有哪些区别?-鸿蒙开发者社区-51CTO.COM｜网页内容：预置应用比较好理解,就是厂商在出厂时预先安装在设备上的应用,系统或三方应用都可以。profile证书中app-feature为hos_system_app的应用为系统应用,其能调用系统接口。profile证书中app-feature为hos_normal_app的应用为三方应用,其不能调用系统接口。",
+        "source_id": 1,
+        "web_id": "1"
+      },
+      {
+        "url": "https://www.wenjuan.com/lib_detail_full/547eb315f7405b665391a215",
+        "title": "预置应用调查问卷(厂商版) - 问卷调查调研模板  问卷网",
+        "content": "本问卷为针对手机厂商进行的预置应用可删除情况调查问卷。请按照实际情况规范填写,保证信息真实可信,完成填写后加盖公章。 请认真阅读关于预置应用及预置应用的分类说明:1) 预置应用定义    预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。 2) 预置应用分类    根据预装软件的功能及适用场景,预装软件分为三类:系统支撑类、基本功能类和扩展功能类。  系统支撑类预装软件,是指保证智能终端硬件和操作系统正常运行的应用程序,如adbd、rald、vold、toolbox等。  基本功能类预装软件,是指实现智能终端基本功能而预装的应用软件,如电话、短信、联系人、日历、拍照等。  扩展功能类预装软件,是指为丰富用户体验而预装的应用软件,如社交、游戏、视频、音乐等。 (以上定义与分类参考《TAF14-TSG01-C-电信研究院-M002-V1.0.0预置应用软件分类研究》)",
+        "website": "问卷网",
+        "date": "2014-12-05T21:47:24+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 问卷网｜网页时间: 2014-12-05T21:47:24+08:00｜网页标题: 预置应用调查问卷(厂商版) - 问卷调查调研模板  问卷网｜网页内容：本问卷为针对手机厂商进行的预置应用可删除情况调查问卷。请按照实际情况规范填写,保证信息真实可信,完成填写后加盖公章。 请认真阅读关于预置应用及预置应用的分类说明:1) 预置应用定义    预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。 2) 预置应用分类    根据预装软件的功能及适用场景,预装软件分为三类:系统支撑类、基本功能类和扩展功能类。  系统支撑类预装软件,是指保证智能终端硬件和操作系统正常运行的应用程序,如adbd、rald、vold、toolbox等。  基本功能类预装软件,是指实现智能终端基本功能而预装的应用软件,如电话、短信、联系人、日历、拍照等。  扩展功能类预装软件,是指为丰富用户体验而预装的应用软件,如社交、游戏、视频、音乐等。 (以上定义与分类参考《TAF14-TSG01-C-电信研究院-M002-V1.0.0预置应用软件分类研究》)",
+        "source_id": 2,
+        "web_id": "2"
+      },
+      {
+        "url": "https://ost.51cto.com/answer/12615",
+        "title": "如何将三方应用改为系统应用-鸿蒙开发者社区-51CTO.COM",
+        "content": "默认的应用是第三方应用,而很多API必须得是系统应用才能使用,例如ServiceExtensionContext.startServiceExtensionAbility这样的API。那开发者如何将三方应用设置为系统应用以便使用这些接口呢?",
+        "website": "51CTO HarmonyOS开发者社区",
+        "date": "2024-06-18T12:08:20+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 51CTO HarmonyOS开发者社区｜网页时间: 2024-06-18T12:08:20+08:00｜网页标题: 如何将三方应用改为系统应用-鸿蒙开发者社区-51CTO.COM｜网页内容：默认的应用是第三方应用,而很多API必须得是系统应用才能使用,例如ServiceExtensionContext.startServiceExtensionAbility这样的API。那开发者如何将三方应用设置为系统应用以便使用这些接口呢?",
+        "source_id": 3,
+        "web_id": "3"
+      },
+      {
+        "url": "http://www.wenjuan.com/j/JrEFri/",
+        "title": "预置应用调查问卷(厂商版)_历史项目_免费模板_问卷网",
+        "content": "本问卷为针对手机厂商进行的预置应用可删除情况调查问卷。请按照实际情况规范填写,保证信息真实可信,完成填写后加盖公章。 请认真阅读关于预置应用及预置应用的分类说明: 1) 预置应用定义 预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。 2) 预置应用分类 根据预装软件的功能及适用场景,预装软件分为三类:系统支撑类、基本功能类和扩展功能类。 系统支撑类预装软件 ,是指保证智能终端硬件和操作系统正常运行的应用程序,如adbd、rald、vold、toolbox等。 基本功能类预装软件 ,是指实现智能终端基本功能而预装的应用软件,如电话、短信、联系人、日历、拍照等。 扩展功能类预装软件 ,是指为丰富用户体验而预装的应用软件,如社交、游戏、视频、音乐等。 (以上定义与分类参考《TAF14-TSG01-C-电信研究院-M002-V1.0.0预置应用软件分类研究》) \"> 本页仅为文字内容,不可回答。 预置应用调查问卷(厂商版) 本问卷为针对手机厂商进行的预置应用可删除情况调查问卷。请按照实际情况规范填写,保证信息真实可信,完成填写后加盖公章。 请认真阅读关于预置应用及预置应用的分类说明: 1) 预置应用定义 预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。 2) 预置应用分类 根据预装软件的功能及适用场景,预装软件分为三类:系统支撑类、基本功能类和扩展功能类。 系统支撑类预装软件 ,是指保证智能终端硬件和操作系统正常运行的应用程序,如adbd、rald、vold、toolbox等。 基本功能类预装软件 ,是指实现智能终端基本功能而预装的应用软件,如电话、短信、联系人、日历、拍照等。 扩展功能类预装软件 ,是指为丰富用户体验而预装的应用软件,如社交、游戏、视频、音乐等。 (以上定义与分类参考《TAF14-TSG01-C-电信研究院-M0",
+        "website": "问卷网",
+        "date": "2014-01-01T00:00:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 问卷网｜网页时间: 2014-01-01T00:00:00+08:00｜网页标题: 预置应用调查问卷(厂商版)_历史项目_免费模板_问卷网｜网页内容：本问卷为针对手机厂商进行的预置应用可删除情况调查问卷。请按照实际情况规范填写,保证信息真实可信,完成填写后加盖公章。 请认真阅读关于预置应用及预置应用的分类说明: 1) 预置应用定义 预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。 2) 预置应用分类 根据预装软件的功能及适用场景,预装软件分为三类:系统支撑类、基本功能类和扩展功能类。 系统支撑类预装软件 ,是指保证智能终端硬件和操作系统正常运行的应用程序,如adbd、rald、vold、toolbox等。 基本功能类预装软件 ,是指实现智能终端基本功能而预装的应用软件,如电话、短信、联系人、日历、拍照等。 扩展功能类预装软件 ,是指为丰富用户体验而预装的应用软件,如社交、游戏、视频、音乐等。 (以上定义与分类参考《TAF14-TSG01-C-电信研究院-M002-V1.0.0预置应用软件分类研究》) \"> 本页仅为文字内容,不可回答。 预置应用调查问卷(厂商版) 本问卷为针对手机厂商进行的预置应用可删除情况调查问卷。请按照实际情况规范填写,保证信息真实可信,完成填写后加盖公章。 请认真阅读关于预置应用及预置应用的分类说明: 1) 预置应用定义 预装软件是指企业在智能终端的生产、流通、售后等环节装入智能终端的应用软件。 2) 预置应用分类 根据预装软件的功能及适用场景,预装软件分为三类:系统支撑类、基本功能类和扩展功能类。 系统支撑类预装软件 ,是指保证智能终端硬件和操作系统正常运行的应用程序,如adbd、rald、vold、toolbox等。 基本功能类预装软件 ,是指实现智能终端基本功能而预装的应用软件,如电话、短信、联系人、日历、拍照等。 扩展功能类预装软件 ,是指为丰富用户体验而预装的应用软件,如社交、游戏、视频、音乐等。 (以上定义与分类参考《TAF14-TSG01-C-电信研究院-M0",
+        "source_id": 4,
+        "web_id": "4"
+      },
+      {
+        "url": "http://wenwen.sogou.com/z/q808227552.htm",
+        "title": "android 手机上本地应用程序和第三方应用程序的区别? 他们公用相同的API,他们本质的区别是是么 - 搜狗问问",
+        "content": "预装软件一般是推广用的,有些是有区别的,这包含定制的东西,有些手机的预装软件虽然与普通软件的api一样,但是有一定的定制功能,界面可能有所修改,功能可能也有所删加,着取决于定制机的定位。还有就是用户的权限设定,预装软件一搬无法删除卸载,只有获取root权限才可以。其他方面,预装的软件和第三方程序基本上没什么区别, 一般大家经常讲的第三方登录只是一个概念,就是获得第三方平台的授权,而不是讲应用使用这种授权来注册用户完成登录的流程。 下面的是具体流程: 1、需要支持用户注册。 2、需要在应用登录的时候提供第三方平台的图标。 3、用户点击第三方平台图标以后,你们尝试判断用户是否已经授权。 4、如果用户授权,获取他的唯一识别符,比方说weibodb里面的weiboid这个字段。 5、如果用户没有授权,引导用户授权,授权成功后也可以获取weibo id。 6、然后用这个唯一识别符登录你们的系统,如果用户已经注册,则应该让用户登录到你们的系统,流程结束。 7、如果你们的系统发现用户没有注册,引导用户进入你们应用的注册页面,并通过share sdk的showuser方法获取用户资料,自动帮助用户完成注册资料的填写,然后等待用户确认。 8、如果用户确认了注册信息,你们的应用就根据他的信息完成这注册操作,如果操作成功,则应该让用户登录到你们的系统,流程结束。",
+        "website": "搜狗问答",
+        "date": "2016-10-28T15:12:34+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 搜狗问答｜网页时间: 2016-10-28T15:12:34+08:00｜网页标题: android 手机上本地应用程序和第三方应用程序的区别? 他们公用相同的API,他们本质的区别是是么 - 搜狗问问｜网页内容：预装软件一般是推广用的,有些是有区别的,这包含定制的东西,有些手机的预装软件虽然与普通软件的api一样,但是有一定的定制功能,界面可能有所修改,功能可能也有所删加,着取决于定制机的定位。还有就是用户的权限设定,预装软件一搬无法删除卸载,只有获取root权限才可以。其他方面,预装的软件和第三方程序基本上没什么区别, 一般大家经常讲的第三方登录只是一个概念,就是获得第三方平台的授权,而不是讲应用使用这种授权来注册用户完成登录的流程。 下面的是具体流程: 1、需要支持用户注册。 2、需要在应用登录的时候提供第三方平台的图标。 3、用户点击第三方平台图标以后,你们尝试判断用户是否已经授权。 4、如果用户授权,获取他的唯一识别符,比方说weibodb里面的weiboid这个字段。 5、如果用户没有授权,引导用户授权,授权成功后也可以获取weibo id。 6、然后用这个唯一识别符登录你们的系统,如果用户已经注册,则应该让用户登录到你们的系统,流程结束。 7、如果你们的系统发现用户没有注册,引导用户进入你们应用的注册页面,并通过share sdk的showuser方法获取用户资料,自动帮助用户完成注册资料的填写,然后等待用户确认。 8、如果用户确认了注册信息,你们的应用就根据他的信息完成这注册操作,如果操作成功,则应该让用户登录到你们的系统,流程结束。",
+        "source_id": 5,
+        "web_id": "5"
+      },
+      {
+        "url": "https://blog.csdn.net/baiyifei2016/article/details/128493729",
+        "title": "Android识别预装的第三方App方法实例_android 如何判断是预装的三方应用-CSDN博客",
+        "content": "系统内置 应用 对应的flag为 App licationInfo.FLAG_SYSTEMboolean isSystem App ( App lication aInfo){if((aInfo.flags & aInfo.FLAG_SYSTEM) == 0){return false;}else {return true;}} 06-25 1万+ android 源码中预安装 第三方 的apk软件热度 2已有 2578 次阅读2012-11-23 17:55 |系统分类: Android 开发| android , 安装, 第三方 申明:转载:http://blog.csdn.net/zhangchiytu/article/details/6424910 对于 Android 系统集成有源码的 第三方 库和程序,只需要提供An 安卓( Android )是一种基于Linux的自由及开放源代码的操作系统。主要使用于移动设备,如智能手机和平板电脑,由Google公司和开放手机联盟领导及开发。 Android 操作系统最初由Andy Rubin开发,主要支持手机。2005年8月由Google收购注资。2007年11月,Google与84家硬件制造商、软件开发商及电信营运商组建开放手机联盟共同研发改良 Android 系统。随后Goog... 一、添加到Removeable中(可卸载)1. 在alps/device/Amobile/A_101/device.mk 文件中添加改APK: OPera_MINI 名字# add third parth removable apkPRODUCT_PACKAGES += \\FaceBook \\MXPlayer \\Hungamaplay \\OPera_MINI \\Exceloemstub \\Ppt... 获取所有 应用 及相关信息 方法 1:",
+        "website": "CSDN",
+        "date": "2023-01-13T08:30:07+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: CSDN｜网页时间: 2023-01-13T08:30:07+08:00｜网页标题: Android识别预装的第三方App方法实例_android 如何判断是预装的三方应用-CSDN博客｜网页内容：系统内置 应用 对应的flag为 App licationInfo.FLAG_SYSTEMboolean isSystem App ( App lication aInfo){if((aInfo.flags & aInfo.FLAG_SYSTEM) == 0){return false;}else {return true;}} 06-25 1万+ android 源码中预安装 第三方 的apk软件热度 2已有 2578 次阅读2012-11-23 17:55 |系统分类: Android 开发| android , 安装, 第三方 申明:转载:http://blog.csdn.net/zhangchiytu/article/details/6424910 对于 Android 系统集成有源码的 第三方 库和程序,只需要提供An 安卓( Android )是一种基于Linux的自由及开放源代码的操作系统。主要使用于移动设备,如智能手机和平板电脑,由Google公司和开放手机联盟领导及开发。 Android 操作系统最初由Andy Rubin开发,主要支持手机。2005年8月由Google收购注资。2007年11月,Google与84家硬件制造商、软件开发商及电信营运商组建开放手机联盟共同研发改良 Android 系统。随后Goog... 一、添加到Removeable中(可卸载)1. 在alps/device/Amobile/A_101/device.mk 文件中添加改APK: OPera_MINI 名字# add third parth removable apkPRODUCT_PACKAGES += \\FaceBook \\MXPlayer \\Hungamaplay \\OPera_MINI \\Exceloemstub \\Ppt... 获取所有 应用 及相关信息 方法 1:",
+        "source_id": 2,
+        "web_id": "6"
+      },
+      {
+        "url": "https://blog.csdn.net/weixin_39562615/article/details/117481052",
+        "title": "android 安装第三方app,Android识别预装的第三方App方法实例-CSDN博客",
+        "content": "前言 新买一台手机,里面会有很多App,有的属于系统App,不可卸载,有的属于第三方App,厂商会预装一些常用的或者给了他们广告费的App,这些是可以卸载的。 如果要详细划分,系统App还可根据其路径不同进一步划分(如/system/app、/system/priv-app、/vendor/app等)。",
+        "website": "CSDN",
+        "date": "2024-03-20T16:03:04+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: CSDN｜网页时间: 2024-03-20T16:03:04+08:00｜网页标题: android 安装第三方app,Android识别预装的第三方App方法实例-CSDN博客｜网页内容：前言 新买一台手机,里面会有很多App,有的属于系统App,不可卸载,有的属于第三方App,厂商会预装一些常用的或者给了他们广告费的App,这些是可以卸载的。 如果要详细划分,系统App还可根据其路径不同进一步划分(如/system/app、/system/priv-app、/vendor/app等)。",
+        "source_id": 3,
+        "web_id": "7"
+      },
+      {
+        "url": "https://www.300.cn/itzspd/429049.html",
+        "title": "什么叫第三方应用 - IT知识教程 - 中企动力",
+        "content": "第三方应用的定义有: 1、是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。 2、是指某项应用,如PDF电子书格式,是由Adobe开发的,Adobe公司就称为官方,而由非Adobe公司开发的针对PDF电子书格式的所有应用软件,都可称为第三方软件。 3、是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用 。 应用(Application),一般指手机和平板电脑的应用。在面向对象上通常分为个人用户应用与企业级应用,在移动端系统分类上主要包括iOS(如:同步推等)、Android(如:AirDroid、百度应用等)和windows phone的xap和appx。",
+        "website": "中企动力",
+        "date": "2021-05-18T21:22:56+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 中企动力｜网页时间: 2021-05-18T21:22:56+08:00｜网页标题: 什么叫第三方应用 - IT知识教程 - 中企动力｜网页内容：第三方应用的定义有: 1、是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。 2、是指某项应用,如PDF电子书格式,是由Adobe开发的,Adobe公司就称为官方,而由非Adobe公司开发的针对PDF电子书格式的所有应用软件,都可称为第三方软件。 3、是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用 。 应用(Application),一般指手机和平板电脑的应用。在面向对象上通常分为个人用户应用与企业级应用,在移动端系统分类上主要包括iOS(如:同步推等)、Android(如:AirDroid、百度应用等)和windows phone的xap和appx。",
+        "source_id": 4,
+        "web_id": "8"
+      },
+      {
+        "url": "https://www.yebaike.com/22/2551693.html",
+        "title": "什么叫第三方应用 - 业百科",
+        "content": "第三方应用的定义有: 1、是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。 2、是指某项应用,如PDF电子书格式,是由Adobe开发的,Adobe公司就称为官方,而由非Adobe公司开发的针对PDF电子书格式的所有应用软件,都可称为第三方软件。 3、是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用。 应用(Application),一般指手机和平板电脑的应用。在面向对象上通常分为个人用户应用与企业级应用,在移动端系统分类上主要包括iOS(如:同步推等)、Android(如:AirDroid、百度应用等)和windowsphone的xap和appx。",
+        "website": "百度知道",
+        "date": "2020-11-12T05:30:05+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 百度知道｜网页时间: 2020-11-12T05:30:05+08:00｜网页标题: 什么叫第三方应用 - 业百科｜网页内容：第三方应用的定义有: 1、是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。 2、是指某项应用,如PDF电子书格式,是由Adobe开发的,Adobe公司就称为官方,而由非Adobe公司开发的针对PDF电子书格式的所有应用软件,都可称为第三方软件。 3、是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用。 应用(Application),一般指手机和平板电脑的应用。在面向对象上通常分为个人用户应用与企业级应用,在移动端系统分类上主要包括iOS(如:同步推等)、Android(如:AirDroid、百度应用等)和windowsphone的xap和appx。",
+        "source_id": 5,
+        "web_id": "9"
+      },
+      {
+        "url": "https://m.blog.csdn.net/wenzhi20102321/article/details/135704624",
+        "title": "Android系统目录priv-app 和app 详解",
+        "content": "Android系统目录priv-app 和app 详解\n文章目录\nAndroid系统目录priv-app 和app 详解\n一、前言 二、区别\n1、关于目录 2、关于进程 3、关于 System App\n有两类 App 属于 System App :\n4、关于 Privileged App\n两类 Privileged App\n(1)特定 uid 的 App (2)特定目录中的 App\n5、特殊权限 Privileged\n三、其他\n1、apk文件放在不同目录的测试效果 2、在Android系统中,`priv-app`和`app`目录小结 4、Android中不同应用权限级别从低到高总结场景\n一、前言\nAndroid4.4增加了/system/priv-app/目录,那么它与/system/app/目录有什么差别?\n本文主要从定义,作用,具体效果等方面进行分析。\n有一些是网上没有介绍到的内容。\n 如果只是知道 priv-app 目录比 app目录权限大一点,但是不了解具体区别的可以看看。\n二、区别\n1、关于目录\n4.4 之前没有/system/priv-app 目录,所有 /system/app 下的软件都能使用系统级的权限。\n/system/priv-app和/system/app目录下的文件都是不可手动删除的。\n手机被 root 后,通过 adb push 可以把 apk 推送到这两个目录,作为系统应用,用户无法删除。\n/system/priv-app 中包含 Launcher,SystemUI, SettingsProvider 以及系统一些重要服务等系统的核心应用,这些应用能使用系统级的权限。\n/system/app 中包含 一些基础应用和一些三方应用,比如日历,闹钟,天气,魔镜,音乐,这些有的是系统签名应用,有的不是系统签名应用,都是用户无法手动卸载的。\n放到 /sys",
+        "website": "CSDN",
+        "date": "2024-01-20T02:24:24+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: CSDN｜网页时间: 2024-01-20T02:24:24+08:00｜网页标题: Android系统目录priv-app 和app 详解｜网页内容：Android系统目录priv-app 和app 详解\n文章目录\nAndroid系统目录priv-app 和app 详解\n一、前言 二、区别\n1、关于目录 2、关于进程 3、关于 System App\n有两类 App 属于 System App :\n4、关于 Privileged App\n两类 Privileged App\n(1)特定 uid 的 App (2)特定目录中的 App\n5、特殊权限 Privileged\n三、其他\n1、apk文件放在不同目录的测试效果 2、在Android系统中,`priv-app`和`app`目录小结 4、Android中不同应用权限级别从低到高总结场景\n一、前言\nAndroid4.4增加了/system/priv-app/目录,那么它与/system/app/目录有什么差别?\n本文主要从定义,作用,具体效果等方面进行分析。\n有一些是网上没有介绍到的内容。\n 如果只是知道 priv-app 目录比 app目录权限大一点,但是不了解具体区别的可以看看。\n二、区别\n1、关于目录\n4.4 之前没有/system/priv-app 目录,所有 /system/app 下的软件都能使用系统级的权限。\n/system/priv-app和/system/app目录下的文件都是不可手动删除的。\n手机被 root 后,通过 adb push 可以把 apk 推送到这两个目录,作为系统应用,用户无法删除。\n/system/priv-app 中包含 Launcher,SystemUI, SettingsProvider 以及系统一些重要服务等系统的核心应用,这些应用能使用系统级的权限。\n/system/app 中包含 一些基础应用和一些三方应用,比如日历,闹钟,天气,魔镜,音乐,这些有的是系统签名应用,有的不是系统签名应用,都是用户无法手动卸载的。\n放到 /sys",
+        "source_id": 1,
+        "web_id": "10"
+      },
+      {
+        "url": "https://www.jb51.net/article/154858.htm",
+        "title": "Android识别预装的第三方App方法实例_Android_脚本之家",
+        "content": "这篇文章主要给大家介绍了关于Android如何识别预装的第三方App的相关资料,文中通过示例代码介绍的非常详细,需要的朋友可以参考借鉴,下面随着小编来一起学习学习吧 前言 新买一台手机,里面会有很多App,有的属于系统App,不可卸载,有的属于第三方App,厂商会预装一些常用的或者给了他们广告费的App,这些是可以卸载的。 如果要详细划分,系统App还可根据其路径不同进一步划分(如/system/app、/system/priv-app、/vendor/app等)。但对于开发者来说,手机上安装的App只分为2类:系统App和用户App,可以根据系统API区分,这里就不详细说了,简单而言存在ApplicationInfo.FLAG_SYSTEM或ApplicationInfo.FLAG_UPDATED_SYSTEM_APP flag的即为系统App,否pp也会归到用户App中,那么有没有办法知道用户App中哪些是预装的哪些是用户手动安装的呢? 在这里分享一种方法: App的安装时间是整秒的为预装的第三方App 。 如果不关心为什么能用这个奇怪方法来区分预装App的话,就可以关闭这篇文章了。 之前我也一直不清楚为什么可以用这种方法,当时我猜是因为手机第一次启动的时候时间是不准确的,会是某某年1月1日,然后因为启动时会扫描各个App目录然后安装Ap08\" it=\"1676feab448\" ut=\"167702c8a57\" version=\"1360\" userId=\"10118\">...</package><package name=\"com.android.providers.downloads\" codePath=\"/system/priv-app/DownloadProvider\" nativeLibraryPath=\"/system8\" sharedUserId=\"100",
+        "website": "脚本之家",
+        "date": "2019-01-18T09:06:46+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 脚本之家｜网页时间: 2019-01-18T09:06:46+08:00｜网页标题: Android识别预装的第三方App方法实例_Android_脚本之家｜网页内容：这篇文章主要给大家介绍了关于Android如何识别预装的第三方App的相关资料,文中通过示例代码介绍的非常详细,需要的朋友可以参考借鉴,下面随着小编来一起学习学习吧 前言 新买一台手机,里面会有很多App,有的属于系统App,不可卸载,有的属于第三方App,厂商会预装一些常用的或者给了他们广告费的App,这些是可以卸载的。 如果要详细划分,系统App还可根据其路径不同进一步划分(如/system/app、/system/priv-app、/vendor/app等)。但对于开发者来说,手机上安装的App只分为2类:系统App和用户App,可以根据系统API区分,这里就不详细说了,简单而言存在ApplicationInfo.FLAG_SYSTEM或ApplicationInfo.FLAG_UPDATED_SYSTEM_APP flag的即为系统App,否pp也会归到用户App中,那么有没有办法知道用户App中哪些是预装的哪些是用户手动安装的呢? 在这里分享一种方法: App的安装时间是整秒的为预装的第三方App 。 如果不关心为什么能用这个奇怪方法来区分预装App的话,就可以关闭这篇文章了。 之前我也一直不清楚为什么可以用这种方法,当时我猜是因为手机第一次启动的时候时间是不准确的,会是某某年1月1日,然后因为启动时会扫描各个App目录然后安装Ap08\" it=\"1676feab448\" ut=\"167702c8a57\" version=\"1360\" userId=\"10118\">...</package><package name=\"com.android.providers.downloads\" codePath=\"/system/priv-app/DownloadProvider\" nativeLibraryPath=\"/system8\" sharedUserId=\"100",
+        "source_id": 2,
+        "web_id": "11"
+      },
+      {
+        "url": "https://blog.csdn.net/lmz4727741/article/details/44986679?locationNum=10&fps=1",
+        "title": "关于android4.4系统内置应用时system下priv-app和app的区别 - lmz4727741的专栏 - CSDN博客",
+        "content": "一般都是系统核心应用如 Launcher 、 systemui 、 settings 等应用。 需要在 Android.mk 中做如下设置即可: LOCAL_PRIVILEGED_MODULE := true 那么那些权限是属于系统级权限呢?可以查看 Android API 文档 http://wear.techbrood.com/reference/android/Manifest.permission.html 其中有如下说明的权限为系统级权限: Not for use by third-party applications. 问题描述有些第三方app内置到手机不可卸载区域,有时候会无法正常使用。",
+        "website": "CSDN",
+        "date": "2015-04-10T23:47:53+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: CSDN｜网页时间: 2015-04-10T23:47:53+08:00｜网页标题: 关于android4.4系统内置应用时system下priv-app和app的区别 - lmz4727741的专栏 - CSDN博客｜网页内容：一般都是系统核心应用如 Launcher 、 systemui 、 settings 等应用。 需要在 Android.mk 中做如下设置即可: LOCAL_PRIVILEGED_MODULE := true 那么那些权限是属于系统级权限呢?可以查看 Android API 文档 http://wear.techbrood.com/reference/android/Manifest.permission.html 其中有如下说明的权限为系统级权限: Not for use by third-party applications. 问题描述有些第三方app内置到手机不可卸载区域,有时候会无法正常使用。",
+        "source_id": 1,
+        "web_id": "12"
+      },
+      {
+        "url": "http://www.apppark.cn/t-50243.html",
+        "title": "软件与APP运行环境、安装与卸载的对比",
+        "content": "软件和APP在运行环境、安装和卸载方面有一些区别: 运行环境: 软件: 一般指在计算机上运行的应用程序,可以包括桌面应用、服务器端应用等,运行环境可能是特定的操作系统或平台。 APP: 通常指移动设备上的应用程序,例如在iOS或Android操作系统上运行的应用,依赖于移动设备的操作系统和硬件环境。 安装: 软件: 安装软件通常需要下载安装文件(如.exe或.msi文件),然后在计算机上执行安装程序,将文件和相关组件复制到指定的目录并进行注册,可能需要管理员权限。 APP: 通过应用商店(如App Store、Google Play)进行安装,用户可以直接从商店下载并安装应用,通常只需点击下载按钮,系统会自动完成安装过程。 卸载: 软件: 在计算机上卸载软件可能需要使用操作系统提供的卸载程序或者在控制面板中进行卸载,这通常会删除安装时创建的文件和注册表中的相关条目。 APP: 用户可以在移动设备的应用商店中或设备设置中找到并选择卸载应用,这会将应用从设备中完全移除,包括应用本身和相关的数据。 总的来说,软件和APP在安装和卸载过程中存在一些异同,主要取决于它们运行的环境和设备平台。软件通常在桌面环境中安装和卸载,而APP更专注于移动设备,并通过应用商店进行安装和卸载。",
+        "website": "应用公园",
+        "date": "2023-12-18T20:45:00+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 应用公园｜网页时间: 2023-12-18T20:45:00+08:00｜网页标题: 软件与APP运行环境、安装与卸载的对比｜网页内容：软件和APP在运行环境、安装和卸载方面有一些区别: 运行环境: 软件: 一般指在计算机上运行的应用程序,可以包括桌面应用、服务器端应用等,运行环境可能是特定的操作系统或平台。 APP: 通常指移动设备上的应用程序,例如在iOS或Android操作系统上运行的应用,依赖于移动设备的操作系统和硬件环境。 安装: 软件: 安装软件通常需要下载安装文件(如.exe或.msi文件),然后在计算机上执行安装程序,将文件和相关组件复制到指定的目录并进行注册,可能需要管理员权限。 APP: 通过应用商店(如App Store、Google Play)进行安装,用户可以直接从商店下载并安装应用,通常只需点击下载按钮,系统会自动完成安装过程。 卸载: 软件: 在计算机上卸载软件可能需要使用操作系统提供的卸载程序或者在控制面板中进行卸载,这通常会删除安装时创建的文件和注册表中的相关条目。 APP: 用户可以在移动设备的应用商店中或设备设置中找到并选择卸载应用,这会将应用从设备中完全移除,包括应用本身和相关的数据。 总的来说,软件和APP在安装和卸载过程中存在一些异同,主要取决于它们运行的环境和设备平台。软件通常在桌面环境中安装和卸载,而APP更专注于移动设备,并通过应用商店进行安装和卸载。",
+        "source_id": 3,
+        "web_id": "13"
+      },
+      {
+        "url": "https://www.yebaike.com/22/2642801.html",
+        "title": "第三方应用指什么 - 业百科",
+        "content": "手机自带的是本身手机自带的软件,是无法删除卸载的,第三方软件的话,就是自己下载的。 定义 一是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。 二是指某项应用,如PDF电子书格式,是由Adobe开发的,Adobe公司就称为官方,而由非Adobe公司开发的针对PDF电子书格式的所有应用软件,都可称为第三方软件。 三是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用。",
+        "website": "百度知道",
+        "date": "2020-11-16T15:13:30+08:00",
+        "isNavigational": false,
+        "web_content": "网页来源: 百度知道｜网页时间: 2020-11-16T15:13:30+08:00｜网页标题: 第三方应用指什么 - 业百科｜网页内容：手机自带的是本身手机自带的软件,是无法删除卸载的,第三方软件的话,就是自己下载的。 定义 一是指由第三方编制的某个软件的插件。许多软件都提供插件功能,软件的编制方被称为官方,如果是由非官方编制的插件,可称为第三方软件。 二是指某项应用,如PDF电子书格式,是由Adobe开发的,Adobe公司就称为官方,而由非Adobe公司开发的针对PDF电子书格式的所有应用软件,都可称为第三方软件。 三是针对某种设备开发的软件,如手机,摄像机等设备,生产商一般也都开发有软件,但也有众多的编程爱好者或者组织专门针对某类设备开发出来的应用软件,就称为第三方应用。",
+        "source_id": 4,
+        "web_id": "14"
+      }
+    ]
+  }
+}
